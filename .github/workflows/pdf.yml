@@ -1,0 +1,56 @@
+name: Render PDFs
+on:
+  push:
+    branches: [main]
+    paths: ['*/index.html']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: pdf
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm i --no-audit --no-fund puppeteer@23
+      - name: Find changed audits
+        id: changed
+        run: |
+          dirs=""
+          if [ "${{ github.event_name }}" != "workflow_dispatch" ] && [ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]; then
+            dirs=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- '*/index.html' 2>/dev/null | xargs -n1 dirname 2>/dev/null | sort -u | tr '\n' ' ')
+          fi
+          if [ -z "$dirs" ]; then dirs=$(for d in */; do d=${d%/}; [ -f "$d/index.html" ] && echo -n "$d "; done); fi
+          echo "dirs=$dirs" >> $GITHUB_OUTPUT
+          echo "Rendering: $dirs"
+      - name: Render
+        run: |
+          cat > render.js <<'JS'
+          const puppeteer = require('puppeteer'); const path = require('path');
+          (async () => {
+            const dirs = process.argv.slice(2).filter(Boolean);
+            const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+            for (const d of dirs) {
+              const page = await browser.newPage();
+              await page.goto('file://' + path.resolve(d, 'index.html'), { waitUntil: 'networkidle0', timeout: 90000 });
+              await page.emulateMediaType('print');
+              await page.evaluate(() => document.fonts && document.fonts.ready);
+              await new Promise(r => setTimeout(r, 1500));
+              await page.pdf({ path: path.join(d, d + '-monetisation-audit.pdf'), format: 'A4', printBackground: true, preferCSSPageSize: true, margin: { top: 0, right: 0, bottom: 0, left: 0 } });
+              await page.close(); console.log('rendered', d);
+            }
+            await browser.close();
+          })().catch(e => { console.error(e); process.exit(1); });
+          JS
+          node render.js ${{ steps.changed.outputs.dirs }}
+      - run: |
+          git config user.name 'audit-bot'
+          git config user.email 'audit-bot@autoraaiautomation.com'
+          git add '*.pdf'
+          git commit -m 'Render PDFs [skip ci]' || echo 'PDFs unchanged'
+          git push
