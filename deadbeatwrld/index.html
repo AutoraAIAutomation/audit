@@ -1,0 +1,351 @@
+<!DOCTYPE html><html lang='en-GB'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><title>Monetisation Audit — @deadbeatwrld</title><link rel='preconnect' href='https://fonts.googleapis.com'><link rel='preconnect' href='https://fonts.gstatic.com' crossorigin><link href='https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap' rel='stylesheet'><style>
+:root{--bg:#0d0d0d;--surface:#1a1a1a;--ink:#f5f0e8;--muted:#8a8378;--accent:#c9a13b;--accent2:#7a1f2b;--line:rgba(245,240,232,.14)}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}
+body{font-family:'Work Sans',Helvetica,Arial,sans-serif;font-size:15.5px;line-height:1.62;font-weight:350;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.dsp{font-family:'Unbounded','Unbounded Fallback',Impact,Haettenschweiler,sans-serif;font-weight:800;letter-spacing:-.02em;margin:0}
+p{margin:0 0 12px}
+a{color:var(--accent)}
+.page{position:relative;background:var(--bg);border-bottom:1px solid rgba(245,240,232,.08)}
+.runner{display:flex;justify-content:space-between;align-items:center;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:26px}
+.runner .pn{font-family:'Unbounded',sans-serif;font-weight:600;color:var(--accent)}
+.eyebrow{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin:0 0 10px;font-weight:600}
+.eyebrow.red{color:#c0475a}
+h2.sec{font-size:34px;line-height:1.05;margin:0 0 6px}
+h2.sec .thin{font-weight:400;color:var(--muted)}
+.lead{font-size:16.5px;color:#ded6c9;max-width:62ch;margin:10px 0 20px}
+.rule{height:3px;width:74px;background:var(--accent);margin:14px 0 22px;border-radius:2px}
+.rule.red{background:var(--accent2);width:44px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:18px 20px;margin-bottom:14px}
+.card.gold{border-color:rgba(201,161,59,.45)}
+.card h3{font-size:16px;letter-spacing:-.01em;margin:0 0 8px}
+.card h3 .n{color:var(--accent);margin-right:8px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stat{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:3px;padding:14px 14px 12px}
+.stat .v{font-family:'Unbounded',sans-serif;font-weight:800;font-size:26px;line-height:1;color:var(--ink)}
+.stat .k{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.tbl{width:100%;border-collapse:collapse;margin:8px 0 12px;font-size:14.2px}
+.tbl th{font-family:'Work Sans',sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:600;padding:8px 10px;border-bottom:1px solid var(--accent)}
+.tbl td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl td.r,.tbl th.r{text-align:right;font-variant-numeric:tabular-nums}
+.tbl tr.total td{border-bottom:none;border-top:1px solid var(--accent);color:var(--accent);font-weight:600}
+.tbl .nm{font-weight:600;color:var(--ink)}
+.mono-badge{width:62px;height:62px;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Unbounded',sans-serif;font-weight:800;font-size:20px;color:var(--accent);letter-spacing:.02em}
+.covertop{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:30px}
+.covertop .brand{font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);text-align:right;line-height:2}
+.cover-title{font-size:13px;letter-spacing:.42em;text-transform:uppercase;color:var(--ink);font-family:'Unbounded',sans-serif;font-weight:600}
+.cover-name{font-size:46px;line-height:1;margin:16px 0 6px}
+.cover-handle{font-family:'Unbounded',sans-serif;font-weight:400;font-size:17px;color:var(--accent)}
+.cover-meta{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.cover-pos{font-size:17px;color:#ded6c9;max-width:52ch;margin:18px 0 0;border-left:2px solid var(--accent2);padding-left:14px}
+.hero{margin:30px 0 8px}
+.hero .h-lab{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.hero .h-num{font-family:'Unbounded',sans-serif;font-weight:800;font-size:64px;line-height:.98;letter-spacing:-.04em;color:var(--ink)}
+.hero .h-num .to{display:block;color:var(--accent)}
+.hero .h-sub{font-size:15px;color:#ded6c9;max-width:46ch;margin-top:14px}
+.hero .h-sub b{color:var(--ink);font-weight:600}
+.inside{display:grid;grid-template-columns:1fr 1fr;gap:6px 22px;margin-top:26px;border-top:1px solid var(--line);padding-top:16px}
+.inside div{font-size:13px;color:var(--muted);padding:4px 0;border-bottom:1px solid rgba(245,240,232,.06)}
+.inside div span{color:var(--accent);font-family:'Unbounded',sans-serif;font-size:11px;margin-right:9px}
+.coverfoot{position:absolute;left:0;right:0;bottom:16mm;padding:0 16mm;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between}
+.deco{position:absolute;right:-70px;top:120px;opacity:.5;pointer-events:none}
+.deco2{position:absolute;left:-40px;bottom:60px;opacity:.35;pointer-events:none}
+ul.tick{list-style:none;padding:0;margin:0 0 12px}
+ul.tick li{padding:0 0 7px 20px;position:relative;font-size:14.6px}
+ul.tick li:before{content:'';position:absolute;left:0;top:9px;width:8px;height:8px;background:var(--accent);transform:rotate(45deg)}
+ul.tick.red li:before{background:var(--accent2)}
+.phase{display:grid;grid-template-columns:52px 1fr;gap:14px;border-top:1px solid var(--line);padding:13px 0}
+.phase .pnum{font-family:'Unbounded',sans-serif;font-weight:800;font-size:24px;color:var(--accent);line-height:1}
+.phase h4{font-size:14.5px;margin:0 0 4px}
+.phase p{margin:0;font-size:14.2px;color:#cfc7ba}
+.slide{background:#000;border:1px solid var(--line);border-radius:3px;padding:16px 18px;margin-bottom:12px}
+.slide .sl{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.slide p{margin:0;font-size:15.5px;color:#fff;line-height:1.55}
+.pull{font-family:'Unbounded',sans-serif;font-weight:600;font-size:19px;line-height:1.35;color:var(--accent);margin:18px 0}
+.note{font-size:12.5px;color:var(--muted);line-height:1.5}
+.tag{display:inline-block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--accent);color:var(--accent);padding:3px 8px;border-radius:2px;margin-bottom:10px}
+.tag.r2{border-color:#c0475a;color:#c0475a}
+.tag.m{border-color:var(--muted);color:var(--muted)}
+.mathbox{background:var(--surface);border:1px solid rgba(201,161,59,.4);border-radius:4px;padding:18px 20px;margin:6px 0 14px}
+.mathline{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px dashed rgba(245,240,232,.12);font-size:14.5px}
+.mathline:last-child{border-bottom:none}
+.mathline .lbl{color:#cfc7ba}
+.mathline .val{font-family:'Unbounded',sans-serif;font-weight:600;font-size:16px;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}
+.mathline.big .val{font-size:22px;color:var(--accent)}
+.two{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+.endcard{background:var(--surface);border:1px solid rgba(201,161,59,.5);border-radius:4px;padding:24px;margin-top:8px}
+.endcard .cta{font-family:'Unbounded',sans-serif;font-weight:600;font-size:18px;line-height:1.4;color:var(--ink);margin:0 0 14px}
+.sig{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.dl{position:fixed;top:16px;right:16px;z-index:99;background:var(--accent);color:#0d0d0d;text-decoration:none;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;padding:10px 14px;border-radius:2px}
+.dl:hover{background:var(--ink)}
+@page{size:A4;margin:0}
+@media print{html,body{background:var(--bg)}.page{width:210mm;min-height:297mm;break-after:page;page-break-after:always;padding:16mm 16mm 18mm;box-sizing:border-box;position:relative;overflow:hidden}.page:last-child{break-after:auto;page-break-after:auto}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}.no-print{display:none!important}}
+@media screen{.page{max-width:900px;margin:0 auto;padding:48px 28px}.coverfoot{position:static;padding:0;margin-top:34px}}
+@media screen and (max-width:640px){.grid2,.grid3,.two,.inside{grid-template-columns:1fr}.hero .h-num{font-size:42px}.cover-name{font-size:32px}h2.sec{font-size:26px}.tbl{font-size:13px}.dl{display:none}}
+</style></head><body>
+<a class='no-print dl' href='deadbeatwrld-monetisation-audit.pdf'>Download the PDF &darr;</a>
+
+<!-- 1 COVER -->
+<section class='page'>
+<svg class='deco' width='320' height='320' viewBox='0 0 320 320' fill='none'><circle cx='160' cy='160' r='158' stroke='#c9a13b' stroke-width='1' opacity='.45'/><circle cx='160' cy='160' r='120' stroke='#7a1f2b' stroke-width='6' opacity='.6'/><circle cx='160' cy='160' r='82' stroke='#c9a13b' stroke-width='1' opacity='.3'/></svg>
+<svg class='deco2' width='240' height='120' viewBox='0 0 240 120' fill='none'><path d='M0 100 L240 20' stroke='#7a1f2b' stroke-width='10'/><path d='M0 118 L240 38' stroke='#c9a13b' stroke-width='1.5' opacity='.6'/></svg>
+<div class='covertop'><div class='mono-badge'>KB</div><div class='brand'>Autora AI Automation<br>September 2026</div></div>
+<div class='cover-title'>Monetisation Audit</div>
+<h1 class='cover-name'>KRISTINE<br>BULKLEY</h1>
+<div class='cover-handle'>@deadbeatwrld</div>
+<div class='cover-meta'>127,369 followers &nbsp;·&nbsp; Verified &nbsp;·&nbsp; Digital creator</div>
+<p class='cover-pos'>Nightlife culture, exotic entertainment strategy and creative reinvention — taught without the sugarcoating.</p>
+<div class='hero'>
+<div class='h-lab'>Revenue potential, currently unmonetised</div>
+<div class='h-num'>$95,520<span class='to'>to $143,280</span></div>
+<p class='h-sub'>in unlocked revenue from <b>a single $150 offer</b>, based on 6,368 engaged followers converting at 10–15%. Estimate, full working on page 04.</p>
+</div>
+<div class='inside'>
+<div><span>01</span>What your numbers say</div>
+<div><span>04</span>Where the number comes from</div>
+<div><span>02</span>The three pillars that sell</div>
+<div><span>05</span>The product ladder</div>
+<div><span>03</span>Audience value and maths</div>
+<div><span>06</span>Six-phase launch plan</div>
+<div><span>07</span>Offer detail, one page each</div>
+<div><span>08</span>The first post to publish</div>
+</div>
+<div class='coverfoot'><span>Prepared by Euan Grant · Autora AI Automation</span><span>audit.autoraaiautomation.com/deadbeatwrld</span></div>
+</section>
+
+<!-- 2 NUMBERS -->
+<section class='page'>
+<div class='runner'><span>Monetisation Audit · @deadbeatwrld</span><span class='pn'>02</span></div>
+<p class='eyebrow'>Section one</p>
+<h2 class='sec'>What your numbers <span class='thin'>say</span></h2>
+<div class='rule'></div>
+<p class='lead'>You have a small, verified, tightly-followed account with an audience that does not scroll past you. 127,369 people, 92 accounts followed back, 54 posts. That ratio matters: nothing about this profile reads as a content farm, so when you speak, people treat it as first-hand testimony rather than advice from a stranger.</p>
+<div class='grid3'>
+<div class='stat'><div class='v'>127,369</div><div class='k'>Followers</div></div>
+<div class='stat'><div class='v'>1,466</div><div class='k'>Average likes</div></div>
+<div class='stat'><div class='v'>67</div><div class='k'>Average comments</div></div>
+</div>
+<div class='grid3' style='margin-top:12px'>
+<div class='stat'><div class='v'>1.2%</div><div class='k'>Engagement rate</div></div>
+<div class='stat'><div class='v'>54</div><div class='k'>Posts published</div></div>
+<div class='stat'><div class='v'>Verified</div><div class='k'>Account status</div></div>
+</div>
+<p class='pull'>The reach sits in video. The trust sits in the industry talk.</p>
+<p>Public data shows your typical post lands around 1,466 likes, but your long-form interview and industry-breakdown videos run to tens of thousands of views — six to fifty times the like-count baseline. That is the signature of content that gets sent to someone, not just tapped. Nightlife workers are sharing your videos with other nightlife workers.</p>
+<p style='margin-bottom:0'>Two commercial signals stand out. First, your comment-to-like ratio spikes on the money and survival topics, not the outfit posts — people are asking questions there. Second, the same audience already buys from you in another currency: they stream the music, they turn up to the listening party. They have proven they will act on a call to action. Nobody has yet given them something to buy that solves their problem.</p>
+</section>
+
+<!-- 3 PILLARS -->
+<section class='page'>
+<div class='runner'><span>Monetisation Audit · @deadbeatwrld</span><span class='pn'>03</span></div>
+<p class='eyebrow'>Section one, continued</p>
+<h2 class='sec'>The three pillars <span class='thin'>that sell</span></h2>
+<div class='rule'></div>
+<p class='lead'>Your niche is nightlife culture, exotic entertainment strategy and creative reinvention. The hidden transformation underneath it: moving beyond the chaotic, predatory cycles of nightlife work by mastering human psychology, setting strict boundaries, and turning raw hustle into lasting financial independence. Three themes carry it.</p>
+<div class='card gold'><span class='tag'>Sales potential: high</span><h3><span class='n'>01</span>The psychology of high-value interactions</h3><p style='margin-bottom:8px'>The &ldquo;OG way&rdquo; versus hustle culture: customer service, dialogue, and psychological sales instead of scraping dollars off the floor.</p><p class='note' style='margin:0'>Observed: 899 likes · 56 comments · 78,414 views. Your audience engages deeply when you explain the exact mechanics of reading people, selling an experience and commanding respect rather than compromising self-worth.</p></div>
+<div class='card gold'><span class='tag'>Sales potential: high</span><h3><span class='n'>02</span>Raw industry realities and boundary setting</h3><p style='margin-bottom:8px'>Mistreatment, uncomfortable client dynamics, and holding hard boundaries in high-pressure rooms.</p><p class='note' style='margin:0'>Observed: 2,038 likes · 64 comments · 149,059 views. You hold strong authority here because you do not sugarcoat the dangers. Followers look to you as a guide for self-preservation and street-smart navigation.</p></div>
+<div class='card'><span class='tag m'>Sales potential: medium</span><h3><span class='n'>03</span>Financial accountability and the creative exit</h3><p style='margin-bottom:8px'>The contradiction of fast club money alongside being broke, evicted and without leverage.</p><p class='note' style='margin:0'>Observed: 1,624 likes · 121 comments · 63,650 views. Strong lifestyle alignment and music listeners, but the commercial hunger sits in avoiding the financial traps you call out rather than in the story itself.</p></div>
+<p style='margin-bottom:0'><b>Verdict.</b> High engagement across client psychology, financial survival and boundary management proves there is pent-up demand. Release a dedicated operational framework for nightlife workers and creators and the probability of sales is high.</p>
+</section>
+
+<!-- 4 MATHS -->
+<section class='page'>
+<div class='runner'><span>Monetisation Audit · @deadbeatwrld</span><span class='pn'>04</span></div>
+<p class='eyebrow red'>Section two</p>
+<h2 class='sec'>Where the number <span class='thin'>comes from</span></h2>
+<div class='rule red'></div>
+<p class='lead'>No magic. Four inputs, all conservative market premises, all shown so you can argue with any of them.</p>
+<div class='mathbox'>
+<div class='mathline'><span class='lbl'>Follower base (public data)</span><span class='val'>127,369</span></div>
+<div class='mathline'><span class='lbl'>Engaged audience &mdash; 5% market premise</span><span class='val'>6,368</span></div>
+<div class='mathline'><span class='lbl'>Conversion of engaged audience</span><span class='val'>10% &ndash; 15%</span></div>
+<div class='mathline'><span class='lbl'>Estimated buyers</span><span class='val'>637 &ndash; 955</span></div>
+<div class='mathline'><span class='lbl'>Product price</span><span class='val'>$150</span></div>
+<div class='mathline big'><span class='lbl'>Conservative &mdash; 6,368 &times; 10% &times; $150</span><span class='val'>$95,520</span></div>
+<div class='mathline big'><span class='lbl'>Optimistic &mdash; 6,368 &times; 15% &times; $150</span><span class='val'>$143,280</span></div>
+</div>
+<p><b>Why 5% engaged.</b> Of 127,369 followers, only the people who actually watch, comment and share are buyers. Five percent is the standard conservative premise and it sits sensibly under your video reach: single videos already pass 78,000 and 149,000 views.</p>
+<p style='margin-bottom:14px'><b>Why 10–15%.</b> That is the conversion applied to the engaged 6,368 across a full launch sequence with a real close date, not a single post. Buyer counts above are rounded; the revenue lines use the unrounded 636.8 and 955.2.</p>
+<h3 style='font-size:15px;margin-bottom:6px'>If you priced it differently</h3>
+<table class='tbl'><thead><tr><th>Price point</th><th class='r'>At 10% (637 buyers)</th><th class='r'>At 15% (955 buyers)</th></tr></thead><tbody>
+<tr><td class='nm'>$97</td><td class='r'>$61,770</td><td class='r'>$92,654</td></tr>
+<tr><td class='nm'>$150 &mdash; recommended</td><td class='r'>$95,520</td><td class='r'>$143,280</td></tr>
+<tr><td class='nm'>$197</td><td class='r'>$125,450</td><td class='r'>$188,174</td></tr>
+</tbody></table>
+<p class='note' style='margin:0'>All figures are estimates based on public profile data and the assumptions above. They are a model of what the audience could support, not a guarantee of sales.</p>
+</section>
+
+<!-- 5 LADDER -->
+<section class='page'>
+<div class='runner'><span>Monetisation Audit · @deadbeatwrld</span><span class='pn'>05</span></div>
+<p class='eyebrow'>Section three</p>
+<h2 class='sec'>The product <span class='thin'>ladder</span></h2>
+<div class='rule'></div>
+<p class='lead'>Three paths, built by crossing what your content already demonstrates with what your audience shows it wants. Option 1 is the big bet and carries the headline number. Options 2 and 3 are the rungs either side of it.</p>
+<table class='tbl'><thead><tr><th>Offer</th><th class='r'>Price</th><th class='r'>Buyers (est.)</th><th class='r'>Revenue range (est.)</th></tr></thead><tbody>
+<tr><td class='nm'>The High-Earner Playbook<br><span class='note'>Flagship video and template system</span></td><td class='r'>$150</td><td class='r'>637&ndash;955</td><td class='r'>$95,520&ndash;$143,280</td></tr>
+<tr><td class='nm'>The Nightlife Exit Blueprint<br><span class='note'>Financial and operational roadmap</span></td><td class='r'>$49</td><td class='r'>318&ndash;509</td><td class='r'>$15,582&ndash;$24,941</td></tr>
+<tr><td class='nm'>Street-Smart Negotiation Clinic<br><span class='note'>Tactical masterclass</span></td><td class='r'>$97</td><td class='r'>191&ndash;318</td><td class='r'>$18,527&ndash;$30,846</td></tr>
+<tr class='total'><td>All three, staged across 12 months</td><td class='r'>&mdash;</td><td class='r'>&mdash;</td><td class='r'>$129,629&ndash;$199,067</td></tr>
+</tbody></table>
+<div class='grid2'>
+<div class='card'><h3 style='margin-bottom:6px'>Conversion assumptions</h3><p class='note' style='margin:0'>All three use the same engaged base of 6,368. Playbook 10–15% (audit premise). Exit Blueprint 5–8%, a lower-priced add-on bought by fewer people than the flagship once the flagship exists. Clinic 3–5%, a narrower tactical training at a mid price. Lower conversion at each step because the audience shrinks as you ask for a second and third purchase.</p></div>
+<div class='card'><h3 style='margin-bottom:6px'>Read the total carefully</h3><p class='note' style='margin:0'>The stacked figure assumes three separate launches across a year and does not strip out buyer overlap — the same person may buy two products, and some will buy none. Treat $95,520–$143,280 from the flagship alone as the number to plan against; the ladder total is upside, not a forecast.</p></div>
+</div>
+<p class='note' style='margin:6px 0 0'>Prices for Options 2 and 3 were set in this document; the audit priced only the flagship at $150.</p>
+</section>
+
+<!-- 6 OFFER 1 -->
+<section class='page'>
+<div class='runner'><span>Monetisation Audit · @deadbeatwrld</span><span class='pn'>06</span></div>
+<p class='eyebrow'>Offer detail · one of three</p>
+<h2 class='sec'>The High-Earner <span class='thin'>Playbook</span></h2>
+<div class='rule'></div>
+<span class='tag'>The big bet · $150 · $95,520&ndash;$143,280</span>
+<p class='lead' style='margin-top:12px'>A complete video and template system teaching nightlife entertainers how to move from scraping for tips to mastering customer dialogue, filtering high-value clients and protecting emotional energy.</p>
+<div class='two'>
+<div>
+<h3 style='font-size:15px;margin-bottom:8px'>What is inside</h3>
+<ul class='tick'>
+<li>The psychology module: reading a room, reading a person, and selling the experience instead of the minute.</li>
+<li>Dialogue frameworks for opening, qualifying and closing without dropping your price or your standards.</li>
+<li>The client filter: how to spot who is actually spending and who is wasting your shift.</li>
+<li>Boundary scripts for the moments that usually cost women money or safety.</li>
+<li>Energy protection: shift structure, recovery, and knowing when to walk.</li>
+<li>Templates: nightly earnings tracker, client notes sheet, shift debrief.</li>
+</ul>
+</div>
+<div>
+<div class='card gold'><h3>Who it is for</h3><p class='note' style='margin:0'>Dancers, bottle servers and nightlife workers who are exhausted by constant chaos, burnout and empty pockets despite high-energy shifts.</p></div>
+<div class='card'><h3>Why it sells</h3><p class='note' style='margin:0'>It solves the exact frustration your top content surfaces: how to close high sales through genuine rapport and authority without compromising personal boundaries.</p></div>
+</div>
+</div>
+<p class='pull' style='margin:14px 0'>The promise: earn more per shift by running your floor like a system, not a scramble.</p>
+<div class='card' style='margin-bottom:0'><h3>First step to build it</h3><p style='margin:0;font-size:14.5px'>Record one 20-minute voice note walking through your last strong shift, hour by hour, saying out loud what you decided and why. That transcript is the spine of the psychology module. Do not film anything, do not design anything, and do not name the price until the validation carousel on page 11 has run.</p></div>
+</section>
+
+<!-- 7 OFFER 2 -->
+<section class='page'>
+<div class='runner'><span>Monetisation Audit · @deadbeatwrld</span><span class='pn'>07</span></div>
+<p class='eyebrow red'>Offer detail · two of three</p>
+<h2 class='sec'>The Nightlife <span class='thin'>Exit Blueprint</span></h2>
+<div class='rule red'></div>
+<span class='tag r2'>The roadmap · $49 · $15,582&ndash;$24,941</span>
+<p class='lead' style='margin-top:12px'>A step-by-step financial and operational roadmap covering cash preservation, credit building, emergency funds, and redirecting club earnings into independent creative projects. Where the Playbook is floor tactics, this is financial self-defence and a clean transition out.</p>
+<div class='two'>
+<div>
+<h3 style='font-size:15px;margin-bottom:8px'>What is inside</h3>
+<ul class='tick red'>
+<li>Cash preservation: the split you make the moment you leave the club, before anything is spent.</li>
+<li>Building credit and a paper trail when your income is cash and irregular.</li>
+<li>The emergency fund target, how to size it against your real monthly floor.</li>
+<li>Redirecting earnings into a creative project so the money buys leverage, not just a weekend.</li>
+<li>The exit timeline: what has to be true financially before you stop dancing.</li>
+</ul>
+</div>
+<div>
+<div class='card'><h3>Who it is for</h3><p class='note' style='margin:0'>Anyone making fast money and still ending up broke, evicted or without leverage — the exact contradiction your third pillar names out loud.</p></div>
+<div class='card'><h3>Why this price</h3><p class='note' style='margin:0'>$49 keeps it an easy yes and an entry point to the ladder. At 5–8% of 6,368 engaged followers that is 318–509 buyers.</p></div>
+</div>
+</div>
+<p class='pull' style='margin:14px 0'>The promise: keep the money you already earn, and buy yourself a way out.</p>
+<div class='card' style='margin-bottom:0'><h3>First step to build it</h3><p style='margin:0;font-size:14.5px'>Write the one-page version first: your own money rules, in plain language, in the order you would teach them to a friend on her first week. Post two of those rules as a story poll and watch which one gets the most replies — that becomes chapter one.</p></div>
+</section>
+
+<!-- 8 OFFER 3 -->
+<section class='page'>
+<div class='runner'><span>Monetisation Audit · @deadbeatwrld</span><span class='pn'>08</span></div>
+<p class='eyebrow'>Offer detail · three of three</p>
+<h2 class='sec'>Street-Smart Negotiation <span class='thin'>&amp; Boundary Clinic</span></h2>
+<div class='rule'></div>
+<span class='tag'>The tactical training · $97 · $18,527&ndash;$30,846</span>
+<p class='lead' style='margin-top:12px'>An intensive video masterclass breaking down live dialogue scripts, screening weird client behaviour, handling pushy customers and commanding respect in hostile rooms. Fast, narrow and entirely about communication control and personal safety.</p>
+<div class='two'>
+<div>
+<h3 style='font-size:15px;margin-bottom:8px'>What is inside</h3>
+<ul class='tick'>
+<li>Line-by-line breakdowns of real conversations: what was said, what it meant, what to say back.</li>
+<li>The screening checklist for behaviour that signals trouble before it starts.</li>
+<li>Three ways to refuse without escalating, and one way to leave a room fast.</li>
+<li>Holding a price and holding a limit in the same sentence.</li>
+<li>Recovery: what to do in the ten minutes after a bad interaction.</li>
+</ul>
+</div>
+<div>
+<div class='card gold'><h3>Who it is for</h3><p class='note' style='margin:0'>Workers who do not need a full system, they need the words. Also the fastest product to deliver — it can run as a single live session, recorded and sold on.</p></div>
+<div class='card'><h3>Why this price</h3><p class='note' style='margin:0'>$97 for a short, high-intensity training. At 3–5% of the 6,368 engaged audience that is 191–318 buyers.</p></div>
+</div>
+</div>
+<p class='pull' style='margin:14px 0'>The promise: never again be caught without the right sentence.</p>
+<div class='card' style='margin-bottom:0'><h3>First step to build it</h3><p style='margin:0;font-size:14.5px'>Open a Q&amp;A box asking &ldquo;what did a customer say to you this week that you did not know how to answer?&rdquo;. Forty replies gives you the whole curriculum and the marketing copy at the same time, in your audience&rsquo;s own words.</p></div>
+</section>
+
+<!-- 9 LAUNCH 1 -->
+<section class='page'>
+<div class='runner'><span>Monetisation Audit · @deadbeatwrld</span><span class='pn'>09</span></div>
+<p class='eyebrow'>Section four</p>
+<h2 class='sec'>The launch plan <span class='thin'>· phases one to three</span></h2>
+<div class='rule'></div>
+<p class='lead'>Six phases. Nothing is built until Phase 2 has proven people will raise their hand. The whole sequence runs on stories and a private group, which is where your audience already talks to you.</p>
+<div class='phase'><div class='pnum'>01</div><div><h4>Build up</h4><p>Engage your community and tease that something big is coming. Interactive stories — polls, question boxes, DMs — touching directly on their pain points, plus proof of your own results. High interaction is the only goal of this phase. No product, no price, no link.</p></div></div>
+<div class='phase'><div class='pnum'>02</div><div><h4>Invitation</h4><p>Announce it is on the way and invite your audience into a private group on WhatsApp or Telegram where all the details will be revealed. Tease the time-limited exclusive bonus. The size of that group is your real forecast — compare it against the 637–955 buyers in the model.</p></div></div>
+<div class='phase'><div class='pnum'>03</div><div><h4>Anticipation</h4><p>Build curiosity inside the group. Tease what is coming, share the results people can achieve, and make the timeline crystal clear so everyone is ready to act the moment doors open. Daily presence, short messages, answer everything.</p></div></div>
+<p class='pull' style='margin-top:20px'>Phases 1 to 3 cost you nothing but attention. If the group does not fill, you have lost a week, not a product.</p>
+<p class='note' style='margin:0'>Continued on the next page.</p>
+</section>
+
+<!-- 10 LAUNCH 2 -->
+<section class='page'>
+<div class='runner'><span>Monetisation Audit · @deadbeatwrld</span><span class='pn'>10</span></div>
+<p class='eyebrow'>Section four, continued</p>
+<h2 class='sec'>The launch plan <span class='thin'>· phases four to six</span></h2>
+<div class='rule'></div>
+<div class='phase'><div class='pnum'>04</div><div><h4>Reveal</h4><p>Deliver the full breakdown inside the group: what is included, the exclusive bonus, the price, and the open and close dates. Leave no doubt about what is on offer and no question unanswered.</p></div></div>
+<div class='phase'><div class='pnum'>05</div><div><h4>Conversion</h4><p>Send the enrolment link. Run a poll to see who is in and who has questions, then follow up one-to-one in the DMs with everyone who raises a hand. That is where most of your conversions happen — not on the sales page.</p></div></div>
+<div class='phase'><div class='pnum'>06</div><div><h4>Urgency</h4><p>Countdown messages at 24h, 12h, 6h, 2h and closed, each one making them picture exactly what they lose by staying out. The close must be real. Reopening destroys your credibility for the next launch, and there will be a next launch.</p></div></div>
+<h3 style='font-size:15px;margin:22px 0 6px'>What to watch at each gate</h3>
+<table class='tbl'><thead><tr><th>Gate</th><th>Signal that you are on track</th></tr></thead><tbody>
+<tr><td class='nm'>End of Phase 2</td><td>Private group filling steadily from story taps alone</td></tr>
+<tr><td class='nm'>End of Phase 3</td><td>People asking the price before you name it</td></tr>
+<tr><td class='nm'>First 48h of Phase 5</td><td>A meaningful share of your first-day sales coming from DM replies</td></tr>
+<tr><td class='nm'>Close</td><td>Cart shuts on time, every unanswered DM followed up</td></tr>
+</tbody></table>
+<p class='note' style='margin:0'>Run the flagship first. Options 2 and 3 launch to the same list later in the year using the identical six phases.</p>
+</section>
+
+<!-- 11 FIRST POST -->
+<section class='page'>
+<div class='runner'><span>Monetisation Audit · @deadbeatwrld</span><span class='pn'>11</span></div>
+<p class='eyebrow red'>Section five</p>
+<h2 class='sec'>The first post <span class='thin'>· validate before you build</span></h2>
+<div class='rule red'></div>
+<p class='lead'>Post this carousel before anything is built. Black background, white text, your voice. Three slides.</p>
+<div class='slide'><div class='sl'>Slide 1 — the hook</div><p>Making fast money means nothing if you have to sacrifice your dignity and your sanity just to pay rent.</p></div>
+<div class='slide'><div class='sl'>Slide 2 — the agitation</div><p>Most people in this game never learn how to sell with their mind. They run themselves into the ground, let people cross their boundaries, and end up with zero leverage. Working hard isn&rsquo;t the problem. The lack of an actual system is.</p></div>
+<div class='slide'><div class='sl'>Slide 3 — curiosity and call to action</div><p>I put together the exact psychological blueprint to command high value, set bulletproof boundaries, and keep your cash. Reply &lsquo;I WANT&rsquo; if this resonates with you.</p></div>
+<div class='grid2' style='margin-top:6px'>
+<div class='card'><h3>What to measure</h3><p class='note' style='margin:0'>Count the &lsquo;I WANT&rsquo; replies in the first 48 hours. Every reply is a name for the Phase 2 group. Reply to each one personally and ask the single question: what is the part of this you most need fixed?</p></div>
+<div class='card gold'><h3>Then build</h3><p class='note' style='margin:0'>Build the module their answers repeat most, first. That way the product is written by the buyers before the first dollar is asked for, and the launch copy is already on your phone.</p></div>
+</div>
+</section>
+
+<!-- 12 CLOSE -->
+<section class='page'>
+<div class='runner'><span>Monetisation Audit · @deadbeatwrld</span><span class='pn'>12</span></div>
+<svg class='deco' width='300' height='300' viewBox='0 0 300 300' fill='none' style='top:200px'><circle cx='150' cy='150' r='148' stroke='#c9a13b' stroke-width='1' opacity='.4'/><circle cx='150' cy='150' r='104' stroke='#7a1f2b' stroke-width='6' opacity='.55'/></svg>
+<p class='eyebrow'>Closing</p>
+<h2 class='sec'>What to do <span class='thin'>next</span></h2>
+<div class='rule'></div>
+<p class='lead'>You already have the audience, the authority and the proof that people act when you ask. The only missing piece is something to buy.</p>
+<div class='phase'><div class='pnum'>01</div><div><h4>This week</h4><p>Post the validation carousel on page 11 and reply to every &lsquo;I WANT&rsquo;.</p></div></div>
+<div class='phase'><div class='pnum'>02</div><div><h4>Next week</h4><p>Open the private group and start Phase 1. Record the 20-minute voice note that becomes the Playbook&rsquo;s spine.</p></div></div>
+<div class='phase'><div class='pnum'>03</div><div><h4>Within 30 days</h4><p>Run the full six-phase launch on the $150 High-Earner Playbook, with a real close date.</p></div></div>
+<div class='endcard'>
+<div class='mono-badge' style='margin-bottom:16px'>KB</div>
+<p class='cta'>Reply to this DM and I&rsquo;ll walk you through the numbers and what to build first.</p>
+<p class='sig'>Prepared by Euan Grant · Autora AI Automation · September 2026</p>
+</div>
+<p class='note' style='margin-top:16px'>All revenue figures in this document are estimates based on public profile data and the assumptions set out on page 04. They model what your audience could support and are not a guarantee of earnings.</p>
+</section>
+</body></html>
