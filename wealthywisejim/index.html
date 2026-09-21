@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang='en-GB'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Monetisation Audit · @wealthywisejim</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+<link href='https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap' rel='stylesheet'>
+<style>
+:root{
+  --bg:#12224A;
+  --surface:#1C3168;
+  --ink:#F5F7FA;
+  --muted:#9AA7C7;
+  --accent:#2F5FE0;
+  --accent2:#E8A33D;
+  --line:rgba(154,167,199,.28);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4,.display{font-family:'Sora','Sora Fallback',Helvetica,Arial,sans-serif;margin:0;letter-spacing:-.02em;}
+p{margin:0 0 12px}
+ul{margin:0 0 12px;padding-left:18px}
+li{margin-bottom:7px}
+strong{color:var(--ink);font-weight:600}
+.small{font-size:13px;color:var(--muted);line-height:1.5}
+.muted{color:var(--muted)}
+.gold{color:var(--accent2)}
+
+/* ---------- page shell ---------- */
+.page{background:var(--bg);position:relative;}
+.rh{display:flex;justify-content:space-between;align-items:center;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:26px;font-family:'Sora',Helvetica,Arial,sans-serif;}
+.rh span:last-child{color:var(--accent2);font-weight:700}
+
+/* ---------- type scale ---------- */
+.eyebrow{font-family:'Sora',Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent2);margin-bottom:10px;display:block}
+h2.sec{font-size:34px;line-height:1.08;font-weight:800;margin-bottom:6px}
+h3.sub{font-size:19px;font-weight:700;margin:22px 0 6px}
+h4.mini{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);margin-bottom:6px;font-family:'Sora',Helvetica,Arial,sans-serif}
+.lede{font-size:16.5px;color:var(--muted);max-width:60ch;margin-bottom:18px}
+
+/* ---------- components ---------- */
+.pill{display:inline-block;background:var(--accent);color:#fff;border-radius:999px;padding:6px 16px;font-family:'Sora',Helvetica,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;}
+.bubble{background:var(--ink);color:#0E1B3C;border-radius:16px;padding:18px 20px;font-family:'Sora',Helvetica,Arial,sans-serif;font-weight:700;font-size:21px;line-height:1.3;border:3px solid #0E1B3C;box-shadow:0 0 0 2px var(--ink);}
+.card{background:var(--surface);border-radius:14px;padding:16px 18px;border-left:3px solid var(--accent2);margin-bottom:12px}
+.card.blue{border-left-color:var(--accent)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stat{background:var(--surface);border-radius:14px;padding:14px 16px}
+.stat .n{font-family:'Sora',Helvetica,Arial,sans-serif;font-size:30px;font-weight:800;line-height:1;color:var(--ink)}
+.stat .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:7px}
+table{width:100%;border-collapse:collapse;margin:14px 0 10px;font-size:14px}
+th{font-family:'Sora',Helvetica,Arial,sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 10px 8px 0;border-bottom:1px solid var(--line);font-weight:700}
+td{padding:10px 10px 10px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink)}
+td:last-child,th:last-child{padding-right:0}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.hi td{background:rgba(232,163,61,.10);font-weight:600}
+.mathrow{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding:11px 0;gap:14px}
+.mathrow .lab{font-size:14.5px}
+.mathrow .lab em{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:2px}
+.mathrow .val{font-family:'Sora',Helvetica,Arial,sans-serif;font-weight:700;font-size:19px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.total{background:var(--surface);border-radius:14px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;margin-top:14px;border:1px solid rgba(232,163,61,.4)}
+.total .val{font-family:'Sora',Helvetica,Arial,sans-serif;font-size:38px;font-weight:800;color:var(--accent2);line-height:1}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--bg);background:var(--accent2);border-radius:999px;padding:3px 10px;font-weight:700;font-family:'Sora',Helvetica,Arial,sans-serif}
+.tag.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}
+.slide{background:#0A1330;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:12px}
+.slide .sn{font-family:'Sora',Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px}
+.slide p{font-family:'Sora',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.45;font-weight:600;margin:0 0 6px}
+.phase{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}
+.phase .pn{font-family:'Sora',Helvetica,Arial,sans-serif;font-size:26px;font-weight:800;color:var(--accent);line-height:1;min-width:38px}
+.phase h4{font-family:'Sora',Helvetica,Arial,sans-serif;font-size:16px;margin:0 0 4px;font-weight:700}
+.phase p{margin:0;font-size:14px;color:var(--muted)}
+.rule{height:4px;background:var(--accent2);width:64px;border-radius:4px;margin:14px 0 18px}
+
+/* ---------- cover ---------- */
+.cover{background:var(--bg);}
+.cover-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:34px}
+.mono{width:58px;height:58px}
+.cover-name{font-size:46px;font-weight:800;line-height:1.02;margin-bottom:8px}
+.cover-handle{font-size:14px;color:var(--muted);letter-spacing:.04em;margin-bottom:22px}
+.hero{margin:26px 0 22px}
+.hero .label{display:block;font-family:'Sora',Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent2);margin-bottom:6px}
+.hero-num{font-family:'Sora',Helvetica,Arial,sans-serif;font-size:104px;line-height:.92;font-weight:800;color:var(--accent2);letter-spacing:-.04em}
+.hero-line{max-width:52ch;color:var(--muted);font-size:14.5px;margin-top:12px}
+.inside{border-top:1px solid var(--line);padding-top:16px;margin-top:8px}
+.inside ol{margin:0;padding-left:18px;columns:2;column-gap:26px;font-size:13.5px;color:var(--muted)}
+.inside li{margin-bottom:5px}
+.cover-foot{margin-top:24px;font-size:11.5px;color:var(--muted);letter-spacing:.06em}
+.dl{position:fixed;top:14px;right:14px;z-index:99;background:var(--accent2);color:#12224A;text-decoration:none;font-family:'Sora',Helvetica,Arial,sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:9px 15px;border-radius:999px}
+
+@media (max-width:640px){
+  .grid2,.grid3{grid-template-columns:1fr}
+  .hero-num{font-size:68px}
+  .cover-name{font-size:34px}
+  h2.sec{font-size:27px}
+  .inside ol{columns:1}
+  table{font-size:13px}
+}
+
+@page { size: A4; margin: 0; }
+@media print {
+  html, body { background: var(--bg); }
+  .page { width: 210mm; min-height: 297mm; break-after: page; page-break-after: always; padding: 16mm 16mm 18mm; box-sizing: border-box; position: relative; overflow: hidden; }
+  .page:last-child { break-after: auto; page-break-after: auto; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .no-print { display: none !important; }
+  .hero-num{font-size:96px}
+  .cover-name{font-size:44px}
+  body{font-size:14.5px}
+  table{font-size:13px}
+}
+@media screen { .page { max-width: 900px; margin: 0 auto; padding: 48px 28px; } }
+</style>
+</head>
+<body>
+<a class='dl no-print' href='wealthywisejim-monetisation-audit.pdf'>Download the PDF</a>
+
+<!-- 1. COVER -->
+<section class='page cover'>
+  <div class='cover-top'>
+    <span class='pill'>Monetisation Audit</span>
+    <svg class='mono' viewBox='0 0 58 58' role='img' aria-label='JM monogram'>
+      <rect x='1' y='1' width='56' height='56' rx='14' fill='none' stroke='#E8A33D' stroke-width='2'/>
+      <text x='29' y='37' text-anchor='middle' font-family='Sora, Helvetica, Arial' font-size='22' font-weight='800' fill='#F5F7FA'>JM</text>
+    </svg>
+  </div>
+
+  <h1 class='cover-name'>Jimooth Mahendra</h1>
+  <p class='cover-handle'>@wealthywisejim · 10,008 followers · 8.1% engagement rate · 118 posts <span class='muted'>(public data)</span></p>
+
+  <div class='bubble'>You explain the German pay slip better than anyone your audience follows. That explanation is the product.</div>
+
+  <div class='hero'>
+    <span class='label'>Conservative estimate · first cohort</span>
+    <div class='hero-num'>€12,000</div>
+    <p class='hero-line'><strong>Estimate.</strong> One 8-week group programme at €1,500, with 8 of the 20 seats filled — that is 1.6% of the 500 people who already comment on your salary breakdowns and budget videos. The full 20-seat cohort and the rest of the ladder are set out inside.</p>
+  </div>
+
+  <div class='inside'>
+    <h4 class='mini'>What is inside</h4>
+    <ol>
+      <li>What your numbers say</li>
+      <li>The demand in your comments</li>
+      <li>Where the number comes from</li>
+      <li>Scenarios and what moves them</li>
+      <li>The product ladder</li>
+      <li>Offer detail, all three</li>
+      <li>The six-phase launch</li>
+      <li>The first post to publish</li>
+    </ol>
+  </div>
+
+  <p class='cover-foot'>Prepared by Euan Grant · Autora AI Automation · September 2026</p>
+</section>
+
+<!-- 2. WHAT YOUR NUMBERS SAY -->
+<section class='page'>
+  <div class='rh'><span>Monetisation Audit · @wealthywisejim</span><span>02</span></div>
+  <span class='eyebrow'>Section one</span>
+  <h2 class='sec'>What your numbers say</h2>
+  <div class='rule'></div>
+  <p class='lede'>All figures on this page are public profile data from your account, taken at the time of the audit.</p>
+
+  <div class='grid3'>
+    <div class='stat'><div class='n'>10,008</div><div class='k'>Followers</div></div>
+    <div class='stat'><div class='n'>8.1%</div><div class='k'>Engagement rate</div></div>
+    <div class='stat'><div class='n'>118</div><div class='k'>Posts</div></div>
+  </div>
+  <div style='height:12px'></div>
+  <div class='grid3'>
+    <div class='stat'><div class='n'>761</div><div class='k'>Average likes</div></div>
+    <div class='stat'><div class='n'>50</div><div class='k'>Average comments</div></div>
+    <div class='stat'><div class='n'>88,299</div><div class='k'>Best recent reach (views)</div></div>
+  </div>
+
+  <h3 class='sub'>The transformation you are already selling for free</h3>
+  <p>Turning high-earning foreign professionals in Germany from confused taxpayers into confident wealth builders: people who understand their tax class, keep more of their gross, and build real security in a system that was not written for them.</p>
+
+  <h3 class='sub'>Your three content pillars</h3>
+  <div class='card'><h4 class='mini'>Pillar 1 · German salary and tax reality</h4><p style='margin:0'>Net take-home breakdowns, tax classes, social contributions, where the tax money actually goes, the 2027 tax-free allowance change. The €60,000 salary breakdown did 2,584 likes and 101 comments on 70,750 views.</p></div>
+  <div class='card blue'><h4 class='mini'>Pillar 2 · Expat budgeting systems</h4><p style='margin:0'>Budgeting a €3,800 monthly salary, the €1,200-a-year grocery change, and the public 365-day, €20,000 emergency fund run you are 78 days into. This is where people ask for the template.</p></div>
+  <div class='card'><h4 class='mini'>Pillar 3 · Relocation and cross-border money</h4><p style='margin:0'>UPI going live in France (2,875 likes, 88,299 views), German city rankings (846 likes, 22,710 views), pensions, EU and Canada news. Big reach, broad authority, lower purchase intent.</p></div>
+</section>
+
+<!-- 3. THE DEMAND -->
+<section class='page'>
+  <div class='rh'><span>Monetisation Audit · @wealthywisejim</span><span>03</span></div>
+  <span class='eyebrow'>Section one, continued</span>
+  <h2 class='sec'>The demand in your comments</h2>
+  <div class='rule'></div>
+  <p class='lede'>Likes tell you a post travelled. Comments tell you somebody wants to act. Your comment counts cluster on exactly two themes.</p>
+
+  <table>
+    <thead><tr><th style='width:31%'>Theme</th><th>Evidence</th><th class='num'>Likes</th><th class='num'>Comments</th><th style='width:13%'>Intent</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Salary &amp; tax reality</strong></td><td>€60,000 gross-to-net breakdown</td><td class='num'>2,584</td><td class='num'>101</td><td>High</td></tr>
+      <tr><td><strong>Budgeting systems</strong></td><td>Budgeting a €3,800 monthly salary</td><td class='num'>1,307</td><td class='num'>103</td><td>High</td></tr>
+      <tr><td><strong>Budgeting systems</strong></td><td>€1,200 saved on groceries in a year</td><td class='num'>573</td><td class='num'>259</td><td>High</td></tr>
+      <tr><td><strong>Cross-border money</strong></td><td>UPI available in France</td><td class='num'>2,875</td><td class='num'>16</td><td>Medium</td></tr>
+      <tr><td><strong>Relocation</strong></td><td>Top German cities to live in</td><td class='num'>846</td><td class='num'>63</td><td>Medium</td></tr>
+    </tbody>
+  </table>
+
+  <p>The grocery post is the tell. It is not your biggest reach, it is a fraction of the UPI video, and it produced <strong>259 comments</strong> — more than twice anything else. People do not write 259 comments about a tip. They write them about a system they want to copy.</p>
+
+  <div class='card blue'>
+    <h4 class='mini'>Verdict</h4>
+    <p style='margin:0'>Your followers are not short of general tips. They want an end-to-end financial roadmap built specifically for life in Germany — one that starts at their pay slip and ends at an invested, funded plan. That is a paid programme, not a post.</p>
+  </div>
+</section>
+
+<!-- 4. WHERE THE NUMBER COMES FROM -->
+<section class='page'>
+  <div class='rh'><span>Monetisation Audit · @wealthywisejim</span><span>04</span></div>
+  <span class='eyebrow'>Section two</span>
+  <h2 class='sec'>Where the number comes from</h2>
+  <div class='rule'></div>
+  <p class='lede'>Every figure in this document is built from the four lines below. Nothing else is assumed.</p>
+
+  <div class='mathrow'><div class='lab'>Follower base<em>Public profile data</em></div><div class='val'>10,008</div></div>
+  <div class='mathrow'><div class='lab'>Engaged audience, 5% of followers<em>Assumption: the share who watch most posts and comment. Supported by 50 average comments per post and 259 on the grocery video.</em></div><div class='val'>500</div></div>
+  <div class='mathrow'><div class='lab'>Conversion to a €1,500 programme, conservative<em>Assumption: 1.6% of the engaged 500. Low, because the price is high and this is a first launch with no buyer history.</em></div><div class='val'>8 seats</div></div>
+  <div class='mathrow'><div class='lab'>Price per seat<em>8-week group mentorship, direct access to you, deliberately limited to 20 places</em></div><div class='val'>€1,500</div></div>
+
+  <div class='total'>
+    <div><span class='tag'>Estimate</span><div class='small' style='margin-top:8px'>8 seats × €1,500 · first cohort, conservative case</div></div>
+    <div class='val'>€12,000</div>
+  </div>
+
+  <p class='small' style='margin-top:16px'><strong>On currency:</strong> the audit was drafted with dollar signs. Your audience earns, is taxed and spends in euros, so every price here is stated in euros at the same numeric value: €1,500 a seat, €30,000 for a full cohort. No conversion has been applied.</p>
+  <p class='small'><strong>On the 5%:</strong> it is a market premise, not a measured number. If your story replies and DM volume say the truly engaged group is larger than 500, every figure in this document moves up proportionally.</p>
+</section>
+
+<!-- 5. SCENARIOS -->
+<section class='page'>
+  <div class='rh'><span>Monetisation Audit · @wealthywisejim</span><span>05</span></div>
+  <span class='eyebrow'>Section two, continued</span>
+  <h2 class='sec'>Three scenarios for one cohort</h2>
+  <div class='rule'></div>
+  <p class='lede'>Same price, same 20-seat cap, same 500 engaged followers. The only variable is how many of them say yes.</p>
+
+  <table>
+    <thead><tr><th>Scenario</th><th class='num'>Seats</th><th class='num'>% of 500 engaged</th><th class='num'>Price</th><th class='num'>Revenue</th></tr></thead>
+    <tbody>
+      <tr class='hi'><td><strong>Conservative</strong> — the cover figure</td><td class='num'>8</td><td class='num'>1.6%</td><td class='num'>€1,500</td><td class='num'>€12,000</td></tr>
+      <tr><td>Middle</td><td class='num'>14</td><td class='num'>2.8%</td><td class='num'>€1,500</td><td class='num'>€21,000</td></tr>
+      <tr><td>Full cohort — the ceiling</td><td class='num'>20</td><td class='num'>4.0%</td><td class='num'>€1,500</td><td class='num'>€30,000</td></tr>
+    </tbody>
+  </table>
+  <p class='small'>All three are estimates. The €30,000 full-cohort figure is the audit's stated revenue potential; it assumes a 4% conversion of your engaged audience, which is achievable but sits above the normal range for a first launch at this price. Plan on the €12,000 line and treat anything above it as upside.</p>
+
+  <h3 class='sub'>What actually moves the number</h3>
+  <div class='grid2'>
+    <div class='card'><h4 class='mini'>Moves it up</h4><ul style='margin:0'><li>A waiting list built before doors open, so launch week converts a warm group rather than cold followers</li><li>Salary and budgeting posts in the four weeks before launch, not city rankings — those bring reach, not buyers</li><li>Your emergency fund run finishing publicly during the programme window as live proof of the method</li></ul></div>
+    <div class='card blue'><h4 class='mini'>Moves it down</h4><ul style='margin:0'><li>Launching to the feed only, with no private group and no DM follow-up</li><li>Opening before the carousel on page 11 has been tested</li><li>Reopening a closed cart, which costs you the next launch</li></ul></div>
+  </div>
+</section>
+
+<!-- 6. LADDER -->
+<section class='page'>
+  <div class='rh'><span>Monetisation Audit · @wealthywisejim</span><span>06</span></div>
+  <span class='eyebrow'>Section three</span>
+  <h2 class='sec'>The product ladder</h2>
+  <div class='rule'></div>
+  <p class='lede'>Three offers, each aimed at a different point in your audience's German money journey. Run them in sequence across a year, not at once.</p>
+
+  <table>
+    <thead><tr><th style='width:27%'>Offer</th><th class='num'>Price</th><th style='width:30%'>Who it is for</th><th class='num'>Buyers (est.)</th><th class='num'>Revenue (est.)</th></tr></thead>
+    <tbody>
+      <tr class='hi'><td><strong>Germany Expat Wealth Accelerator</strong><br><span class='small'>8-week group mentorship, 20 spots</span></td><td class='num'>€1,500</td><td>Professionals on a good gross salary who have no structured plan</td><td class='num'>8 – 20</td><td class='num'>€12,000 – €30,000</td></tr>
+      <tr><td><strong>Net Salary &amp; Tax Optimisation Clinic</strong><br><span class='small'>Live workshop plus pay slip audit system</span></td><td class='num'>€149</td><td>Anyone who has watched your tax class videos and suspects they are overpaying</td><td class='num'>10 – 15</td><td class='num'>€1,490 – €2,235</td></tr>
+      <tr><td><strong>12-Month Financial Independence Blueprint</strong><br><span class='small'>Private mastermind, 12 months</span></td><td class='num'>€2,400</td><td>Seasoned expats planning permanent residency and long-term wealth</td><td class='num'>3 – 6</td><td class='num'>€7,200 – €14,400</td></tr>
+    </tbody>
+  </table>
+
+  <p class='small'><strong>Assumptions.</strong> All conversions are taken from the same engaged audience of 500. Accelerator 1.6%–4.0%. Clinic 2%–3%, higher because the price is low and the problem is immediate. Blueprint 0.6%–1.2%, lower because the commitment is a year and the price is the highest on the ladder. The €149 and €2,400 prices are not in the audit; they are set to sit sensibly either side of the €1,500 programme.</p>
+
+  <div class='total'>
+    <div><span class='tag ghost'>Estimate · all three, over 12 months</span><div class='small' style='margin-top:8px'>Conservative case: €12,000 + €1,490 + €7,200</div></div>
+    <div class='val' style='font-size:32px'>€20,690</div>
+  </div>
+</section>
+
+<!-- 7. OFFER 1 -->
+<section class='page'>
+  <div class='rh'><span>Monetisation Audit · @wealthywisejim</span><span>07</span></div>
+  <span class='eyebrow'>Section four · Offer one</span>
+  <h2 class='sec'>Germany Expat Wealth Accelerator</h2>
+  <div class='rule'></div>
+  <div class='bubble' style='font-size:18px'>&ldquo;I make decent money in Germany, but after taxes and living costs I have no system to grow it.&rdquo;</div>
+  <p class='small' style='margin-top:10px'>That sentence is the root problem underneath your best-performing content. This offer answers it end to end.</p>
+
+  <div class='grid2' style='margin-top:14px'>
+    <div class='card'>
+      <h4 class='mini'>What it is</h4>
+      <p style='margin:0'>An 8-week intensive group mentorship with direct access to you, capped at 20 people, at €1,500 a seat.</p>
+    </div>
+    <div class='card blue'>
+      <h4 class='mini'>Who it is for</h4>
+      <p style='margin:0'>International professionals working in Germany who earn a good gross salary, feel lost in the system, and have no structured investment plan.</p>
+    </div>
+  </div>
+
+  <h3 class='sub'>What is inside</h3>
+  <ul>
+    <li><strong>Tax class optimisation</strong> — the pay slip walkthrough from your €60,000 breakdown, applied to each member's own numbers</li>
+    <li><strong>Local investing setup</strong> — getting invested properly from inside Germany, not from advice written for another country</li>
+    <li><strong>Pension planning</strong> — what the German pension will actually pay them, and what has to sit on top of it</li>
+    <li><strong>A custom emergency fund blueprint</strong> — your own €20,000-in-12-months run, turned into a plan built around their salary, without pausing investments</li>
+  </ul>
+
+  <h3 class='sub'>The promise</h3>
+  <p>In eight weeks they leave with their tax position corrected, money invested through German accounts, a pension gap they can name, and a dated emergency fund plan. One roadmap for money in Germany, instead of forty saved reels.</p>
+
+  <div class='card'>
+    <h4 class='mini'>First step to build it</h4>
+    <p style='margin:0'>Write the eight week titles on one page before anything else. If you cannot name week five, the programme is not ready to sell. Then run the carousel on page 11 and open a waiting list.</p>
+  </div>
+</section>
+
+<!-- 8. OFFERS 2 & 3 -->
+<section class='page'>
+  <div class='rh'><span>Monetisation Audit · @wealthywisejim</span><span>08</span></div>
+  <span class='eyebrow'>Section four, continued</span>
+  <h2 class='sec'>The other two rungs</h2>
+  <div class='rule'></div>
+
+  <h3 class='sub'>Offer two · Net Salary &amp; Tax Optimisation Clinic — €149</h3>
+  <p><strong>What it is.</strong> A live, focused workshop plus an audit system where members open their own German pay slip, work through tax deductions, and find the unnecessary insurance and subscription drains.</p>
+  <p><strong>The difference.</strong> It fixes cash leaks and maximises monthly take-home pay. It does not touch long-term investing, which is what the Accelerator is for.</p>
+  <p><strong>Who it is for.</strong> The people commenting on your tax class and &ldquo;where your tax money goes&rdquo; videos who are not ready for €1,500 but are very ready to stop overpaying.</p>
+  <p><strong>The promise.</strong> They leave the session with a specific euro figure they are going to recover each month, and the steps to claim it.</p>
+  <p class='small'><strong>Revenue estimate:</strong> 10–15 buyers, 2%–3% of the engaged 500 = €1,490–€2,235. Its real job is to create your first buyers, who are the warmest possible audience for the Accelerator.</p>
+  <div class='card blue'><h4 class='mini'>First step</h4><p style='margin:0'>Record one clinic live for the first cohort of 10. Sell the replay plus the audit template afterwards at the same price.</p></div>
+
+  <h3 class='sub'>Offer three · 12-Month Financial Independence Blueprint — €2,400</h3>
+  <p><strong>What it is.</strong> A private mastermind for seasoned expats planning permanent residency or long-term wealth in Germany, running over twelve months.</p>
+  <p><strong>The difference.</strong> Higher touch and longer horizon: asset allocation, property versus renting, and the residency decisions high earners keep asking about in your city and pension comments.</p>
+  <p class='small'><strong>Revenue estimate:</strong> 3–6 members, 0.6%–1.2% of the engaged 500 = €7,200–€14,400. Build this only from Accelerator graduates — do not launch it cold.</p>
+  <div class='card'><h4 class='mini'>First step</h4><p style='margin:0'>Hold the place. Mention at the close of the Accelerator that a small twelve-month group follows, and take names only.</p></div>
+</section>
+
+<!-- 9. LAUNCH 1-3 -->
+<section class='page'>
+  <div class='rh'><span>Monetisation Audit · @wealthywisejim</span><span>09</span></div>
+  <span class='eyebrow'>Section five</span>
+  <h2 class='sec'>The launch, phases one to three</h2>
+  <div class='rule'></div>
+  <p class='lede'>Six phases. The first three build the room; nothing is sold yet.</p>
+
+  <div class='phase'><div class='pn'>01</div><div><h4>Build up</h4><p>Engage your community and tease that something big is coming. Interactive stories — polls, question boxes, DMs — on the pain points your comments already name: the tax hit, the balance that will not move, the missing plan. High interaction is the goal, not clicks. Keep posting your emergency fund day count; it is your proof.</p></div></div>
+
+  <div class='phase'><div class='pn'>02</div><div><h4>Invitation</h4><p>Announce it is on the way and invite your audience into a private group — WhatsApp or Telegram — where all the details will be revealed first. Tease the time-limited exclusive bonus. Every DM reply from the carousel on page 11 gets a personal invite to that group.</p></div></div>
+
+  <div class='phase'><div class='pn'>03</div><div><h4>Anticipation</h4><p>Build curiosity inside the group. Tease what is coming, share the results people can achieve, and make the timeline crystal clear, so everyone is ready to act the moment doors open. This is where you answer the tax class and pay slip questions in front of everybody, not one by one.</p></div></div>
+
+  <div class='card' style='margin-top:18px'>
+    <h4 class='mini'>Why the private group matters to the number</h4>
+    <p style='margin:0'>The conservative case needs 8 buyers. Finding 8 people at €1,500 from a feed post is hard; finding them from a self-selected group of people who raised their hand is normal. The group is the difference between the €12,000 estimate and no launch at all.</p>
+  </div>
+</section>
+
+<!-- 10. LAUNCH 4-6 -->
+<section class='page'>
+  <div class='rh'><span>Monetisation Audit · @wealthywisejim</span><span>10</span></div>
+  <span class='eyebrow'>Section five, continued</span>
+  <h2 class='sec'>The launch, phases four to six</h2>
+  <div class='rule'></div>
+  <p class='lede'>The last three phases are where the 20 seats are sold — or are not.</p>
+
+  <div class='phase'><div class='pn'>04</div><div><h4>Reveal</h4><p>Deliver the full breakdown inside the group: what is included week by week, the exclusive bonus, the price, and the open and close dates. Leave no doubt about what is on offer. State the 20-seat cap plainly and explain why it exists — direct access to you does not scale past it.</p></div></div>
+
+  <div class='phase'><div class='pn'>05</div><div><h4>Conversion</h4><p>Send the application link for one of the limited spots. Run a poll to see who is in and who has questions, then follow up one-to-one in the DMs with everyone who raised a hand. That is where most of the conversions happen — expect the people paying €1,500 to want a short conversation first.</p></div></div>
+
+  <div class='phase'><div class='pn'>06</div><div><h4>Urgency</h4><p>Countdown messages at 24h, 12h, 6h, 2h and closed, each one making them picture exactly what they lose by staying out: another year of the same pay slip. The close must be real. Reopening destroys your credibility for the next launch, and the next launch is where the ladder pays.</p></div></div>
+
+  <div class='grid2' style='margin-top:18px'>
+    <div class='card'><h4 class='mini'>Content during launch</h4><p style='margin:0'>Salary breakdowns and budgeting systems only. Those two pillars carry your buying intent. Save the UPI and city ranking formats for after the cart closes.</p></div>
+    <div class='card blue'><h4 class='mini'>Keep the disclaimer</h4><p style='margin:0'>You already run an educational disclaimer on tax content. Keep the same wording on every sales asset — it costs nothing and protects the whole ladder.</p></div>
+  </div>
+</section>
+
+<!-- 11. FIRST POST -->
+<section class='page'>
+  <div class='rh'><span>Monetisation Audit · @wealthywisejim</span><span>11</span></div>
+  <span class='eyebrow'>Section six</span>
+  <h2 class='sec'>The first post</h2>
+  <div class='rule'></div>
+  <p class='lede'>Post this before you build anything. Black background, white text, three slides, in your own explainer voice. It tests whether the demand is real at no cost.</p>
+
+  <div class='slide'><div class='sn'>Slide 1 · the hook</div><p>You earn €60k+ in Germany.</p><p>So why does your bank balance barely move each month?</p></div>
+
+  <div class='slide'><div class='sn'>Slide 2 · the agitation</div><p>It is not that you do not earn enough.</p><p>It is the 40% tax hit, sneaky deductions, and no clear system for your money.</p><p>Working hard in a foreign country without a local wealth plan is exhausting.</p></div>
+
+  <div class='slide'><div class='sn'>Slide 3 · the call to action</div><p>I built a private system to optimise your take-home pay, stop the leaks, and invest properly in Germany.</p><p>Reply &lsquo;I WANT&rsquo; if this resonates with you.</p></div>
+
+  <div class='grid2'>
+    <div class='card'><h4 class='mini'>How to read the result</h4><p style='margin:0'>You need 8 buyers for the conservative case. As a working guide, aim for 40 or more &lsquo;I WANT&rsquo; replies before you open the cart — that gives you a DM list deep enough to convert 8 at €1,500. Fewer than 20 means run the Clinic at €149 first and come back to the Accelerator.</p></div>
+    <div class='card blue'><h4 class='mini'>What to do with every reply</h4><p style='margin:0'>Answer each one, ask which part hurts most — the tax, the budget or the investing — and invite them straight into the private group from phase two. Their words become your sales page.</p></div>
+  </div>
+</section>
+
+<!-- 12. CLOSING -->
+<section class='page'>
+  <div class='rh'><span>Monetisation Audit · @wealthywisejim</span><span>12</span></div>
+  <span class='eyebrow'>Close</span>
+  <h2 class='sec'>What to do next</h2>
+  <div class='rule'></div>
+
+  <div class='mathrow'><div class='lab'><strong>1. Post the carousel on page 11 this week</strong><em>Nothing gets built until the replies come in</em></div><div class='val gold'>Day 1</div></div>
+  <div class='mathrow'><div class='lab'><strong>2. Write the eight week titles of the Accelerator</strong><em>One page, no design, no platform</em></div><div class='val gold'>Day 3</div></div>
+  <div class='mathrow'><div class='lab'><strong>3. Open the private group and invite every reply</strong><em>Phase two starts the moment you have 20 hands up</em></div><div class='val gold'>Day 7</div></div>
+  <div class='mathrow'><div class='lab'><strong>4. Set the open and close dates and hold them</strong><em>8 seats at €1,500 is the target you are working to</em></div><div class='val gold'>Week 3</div></div>
+
+  <div class='bubble' style='margin-top:26px;font-size:18px'>Reply to this DM and I'll walk you through the numbers and what to build first.</div>
+
+  <div style='margin-top:30px;border-top:1px solid var(--line);padding-top:16px'>
+    <p class='small'>Prepared by Euan Grant · Autora AI Automation · September 2026</p>
+    <p class='small'>All revenue figures in this document are estimates based on public profile data and the audit, with the assumption behind each one stated next to it. They are not a guarantee of earnings.</p>
+    <p class='small'>How this was made: I build automations for a living. I used AI to do the content and engagement analysis behind these numbers, which is why this took an evening rather than a fortnight.</p>
+  </div>
+</section>
+
+</body>
+</html>
