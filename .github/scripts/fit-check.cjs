@@ -2,12 +2,13 @@
 // A4 fit check for an audit page, run by the "Audit page writer" routine before it pushes.
 // Renders the page the way .github/workflows/pdf.yml does (puppeteer, print media, A4, no margins), measures every
 // <section class="page"> and lists any that is taller than one A4 sheet, which would spill onto an extra PDF page.
-// Heights depend on the web fonts. Where fonts.googleapis.com is blocked (the routine's cloud sandbox), the same Google
-// Fonts families are installed from npm (Fontsource) and served in its place, so the measurement still uses the real fonts.
+// Heights depend on the web fonts. The routine's cloud sandbox can't reach fonts.googleapis.com (and a reachability
+// test there is unreliable), so the page's Google Fonts families are always installed from npm (Fontsource) and served
+// in place of Google's stylesheet: same fonts, identical heights. Only if that fails does the page load Google's itself.
 // Exit 0: every page fits. Exit 2: at least one page runs over. Exit 1: the check itself failed.
 // Usage (from the repo root): NODE_PATH=/tmp/fit/node_modules node .github/scripts/fit-check.cjs <folder>/index.html [out.pdf]
 // Needs puppeteer (npm i puppeteer@23 in /tmp/fit), or puppeteer-core plus CHROME_PATH. FIT_DIR (default /tmp/fit) is
-// where font packages get installed; FIT_FONTS=fontsource forces the npm fonts (for testing).
+// where font packages get installed; FIT_FONTS=google skips the npm fonts (for comparing).
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
@@ -26,15 +27,6 @@ function googleFamilies(html) {
     }
   }
   return [...out].filter(Boolean);
-}
-
-async function googleReachable(html) {
-  const m = html.match(/https:\/\/fonts\.googleapis\.com\/css2?\?[^"'\s>]+/);
-  if (!m) return true;
-  try {
-    const r = await fetch(m[0].replace(/&amp;/g, '&'), { signal: AbortSignal.timeout(8000) });
-    return r.ok;
-  } catch (e) { return false; }
 }
 
 // @font-face rules with the font files inlined, from @fontsource-variable/<slug> or else @fontsource/<slug> (latin subset).
@@ -79,9 +71,9 @@ function fontsourceCss(families) {
   const html = fs.readFileSync(file, 'utf8');
   const families = googleFamilies(html);
   let fonts = 'google', missing = [], localCss = '';
-  if (families.length && (process.env.FIT_FONTS === 'fontsource' || !(await googleReachable(html)))) {
+  if (families.length && process.env.FIT_FONTS !== 'google') {
     ({ css: localCss, missing } = fontsourceCss(families));
-    fonts = localCss ? 'fontsource' : 'none';
+    if (localCss) fonts = 'fontsource';
   }
   const opts = { args: ['--no-sandbox', '--disable-setuid-sandbox'] };
   if (process.env.CHROME_PATH) opts.executablePath = process.env.CHROME_PATH;
