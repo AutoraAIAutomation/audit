@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monetisation Audit · @zz.routine.test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FBF3E7;
+  --surface: #FFFFFF;
+  --ink: #3B2A1E;
+  --muted: #A9967F;
+  --muted-ink: #6E5A48;
+  --accent: #C86B3C;
+  --accent2: #7C9473;
+  --line: #E6D8C3;
+  --flour: #F4E8D6;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Karla", "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+body { font-family: var(--body); font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; margin: 0; line-height: 1.1; color: var(--ink); }
+p { margin: 0 0 12px; }
+em { font-family: var(--display); font-style: italic; }
+
+.dl { position: fixed; top: 14px; right: 14px; z-index: 50; background: var(--ink); color: var(--bg); text-decoration: none; font-weight: 700; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; padding: 10px 16px; border-radius: 999px; box-shadow: 0 6px 18px rgba(59,42,30,.18); }
+.dl:hover { background: var(--accent); }
+
+.page { position: relative; background: var(--bg); }
+.page + .page { border-top: 1px dashed var(--line); }
+.runhead { display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted-ink); border-bottom: 1px solid var(--line); padding-bottom: 10px; margin-bottom: 30px; }
+.runhead .pn { font-family: var(--display); font-size: 14px; letter-spacing: 0; color: var(--accent); font-weight: 600; }
+.kicker { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
+.title { font-size: 38px; margin-bottom: 14px; }
+.lede { font-size: 17px; color: var(--muted-ink); max-width: 640px; margin-bottom: 24px; }
+.small { font-size: 13px; color: var(--muted-ink); }
+.rule { height: 3px; width: 64px; background: var(--accent); border-radius: 2px; margin: 0 0 22px; }
+
+/* Cover */
+.cover { overflow: hidden; }
+.cover .top { display: flex; justify-content: space-between; align-items: flex-start; }
+.brandtag { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted-ink); font-weight: 700; }
+.mono { width: 86px; height: 86px; flex: none; }
+.cover .label { font-size: 14px; letter-spacing: .34em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin: 34px 0 12px; }
+.cover h1 { font-size: 64px; font-weight: 800; letter-spacing: -.01em; }
+.cover .handle { font-family: var(--display); font-style: italic; font-size: 24px; color: var(--accent2); margin-top: 6px; }
+.cover .pos { font-size: 18px; max-width: 560px; margin: 18px 0 0; }
+.cover .stats { display: flex; gap: 26px; margin-top: 16px; font-size: 14px; color: var(--muted-ink); }
+.cover .stats b { font-family: var(--display); font-size: 22px; color: var(--ink); display: block; font-weight: 600; }
+.hero { margin-top: 30px; background: var(--surface); border-radius: 22px; padding: 26px 30px 24px; position: relative; box-shadow: 0 1px 0 var(--line); border: 1px solid var(--line); }
+.hero .est { display: inline-block; background: var(--accent2); color: #fff; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; padding: 5px 11px; border-radius: 999px; }
+.hero .big { font-family: var(--display); font-weight: 800; font-size: 112px; line-height: 1; color: var(--accent); letter-spacing: -.03em; margin: 12px 0 4px; }
+.hero .big small { font-size: 26px; font-weight: 600; color: var(--muted-ink); letter-spacing: 0; margin-left: 8px; }
+.hero .why { font-size: 16px; max-width: 580px; margin: 0; }
+.inside { margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 26px; font-size: 14px; }
+.inside div { border-top: 1px solid var(--line); padding-top: 6px; }
+.inside span { font-family: var(--display); color: var(--accent); font-weight: 600; margin-right: 8px; }
+.loaf { position: absolute; right: -40px; bottom: -40px; width: 260px; opacity: .9; pointer-events: none; }
+
+/* Cards and grids */
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; }
+.card h3 { font-size: 21px; margin-bottom: 8px; }
+.card p { font-size: 15px; margin-bottom: 8px; }
+.stat .n { font-family: var(--display); font-size: 40px; font-weight: 700; color: var(--ink); line-height: 1; }
+.stat .l { font-size: 13px; color: var(--muted-ink); margin-top: 6px; }
+.tag { display: inline-block; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+.tag.hi { background: var(--accent); color: #fff; }
+.tag.md { background: var(--flour); color: var(--muted-ink); }
+.theme { display: grid; grid-template-columns: 54px 1fr; gap: 14px; padding: 14px 0; border-top: 1px solid var(--line); }
+.theme .num { font-family: var(--display); font-size: 42px; color: var(--accent); line-height: .9; font-weight: 800; }
+.theme h3 { font-size: 20px; margin-bottom: 4px; }
+.theme p { font-size: 15px; margin: 0 0 6px; }
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 12px; }
+.pillar { border-left: 3px solid var(--accent2); padding: 4px 0 4px 12px; font-size: 15px; }
+.pillar b { font-family: var(--display); font-weight: 600; display: block; font-size: 17px; }
+
+/* Maths */
+.chain { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; align-items: stretch; margin: 6px 0 20px; }
+.link { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 14px 12px; position: relative; }
+.link .v { font-family: var(--display); font-size: 32px; font-weight: 700; line-height: 1; }
+.link .k { font-size: 13px; color: var(--muted-ink); margin-top: 6px; }
+.link.res { background: var(--accent); border-color: var(--accent); color: #fff; }
+.link.res .k { color: #FBE6D8; }
+.sum { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 6px 20px; }
+.sum .row { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 16px; }
+.sum .row:last-child { border-bottom: 0; }
+.sum .row .r { font-variant-numeric: tabular-nums; text-align: right; font-weight: 700; }
+.sum .row.total .r { color: var(--accent); font-family: var(--display); font-size: 22px; }
+.sum .row.ceiling { color: var(--muted-ink); }
+.note { font-size: 14px; color: var(--muted-ink); border-left: 3px solid var(--accent2); padding: 2px 0 2px 12px; margin-top: 16px; }
+
+/* Table */
+table { width: 100%; border-collapse: collapse; font-size: 15px; background: var(--surface); border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+th { text-align: left; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted-ink); background: var(--flour); padding: 10px 12px; font-weight: 700; }
+td { padding: 11px 12px; border-top: 1px solid var(--line); vertical-align: top; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td b { font-family: var(--display); font-weight: 600; font-size: 16px; }
+
+/* Ladder steps */
+.ladder { display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 20px; }
+.step { display: grid; grid-template-columns: 90px 1fr; gap: 16px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; }
+.step .price { font-family: var(--display); font-size: 28px; font-weight: 800; color: var(--accent); line-height: 1; }
+.step .price small { font-size: 13px; color: var(--muted-ink); font-weight: 400; display: block; margin-top: 3px; }
+.step h3 { font-size: 19px; margin-bottom: 2px; }
+.step p { margin: 0; font-size: 15px; }
+.step.lead { border: 2px solid var(--accent); }
+
+/* Offer detail */
+.offer-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; border-bottom: 2px solid var(--ink); padding-bottom: 12px; margin-bottom: 18px; }
+.offer-head h2 { font-size: 34px; }
+.offer-head .p { font-family: var(--display); font-size: 44px; font-weight: 800; color: var(--accent); line-height: 1; white-space: nowrap; }
+.promise { font-family: var(--display); font-style: italic; font-size: 22px; line-height: 1.3; margin: 0 0 18px; color: var(--ink); }
+ul.tick { list-style: none; padding: 0; margin: 0 0 10px; }
+ul.tick li { position: relative; padding-left: 24px; margin-bottom: 8px; font-size: 15px; }
+ul.tick li::before { content: ""; position: absolute; left: 0; top: 7px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent2); }
+.first { background: var(--ink); color: var(--bg); border-radius: 16px; padding: 16px 20px; margin-top: 14px; }
+.first .kicker { color: #E9B592; margin-bottom: 4px; }
+.first p { margin: 0; font-size: 15px; }
+.mini { margin-top: 22px; }
+.mini h3 { font-size: 24px; margin-bottom: 4px; }
+.mini .pp { font-family: var(--display); color: var(--accent); font-weight: 700; font-size: 20px; }
+
+/* Launch */
+.phase { display: grid; grid-template-columns: 110px 1fr; gap: 18px; padding: 16px 0; border-top: 1px solid var(--line); }
+.phase .ph { font-family: var(--display); font-size: 15px; color: var(--accent); font-weight: 700; letter-spacing: .04em; }
+.phase .ph b { display: block; font-size: 48px; line-height: 1; font-weight: 800; }
+.phase h3 { font-size: 21px; margin-bottom: 6px; }
+.phase p { font-size: 15px; margin-bottom: 6px; }
+.phase .when { font-size: 13px; color: var(--accent2); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+
+/* Post */
+.slides { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 8px 0 20px; }
+.slide { aspect-ratio: 4 / 5; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+.slide .sn { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; opacity: .75; }
+.slide .st { font-family: var(--display); font-size: 23px; line-height: 1.15; font-weight: 600; }
+.slide.s1 { background: var(--accent); color: #fff; }
+.slide.s2 { background: var(--surface); border: 1px solid var(--line); }
+.slide.s3 { background: var(--accent2); color: #fff; }
+.caption { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 20px; font-size: 15px; }
+.caption p { margin-bottom: 8px; }
+
+/* Closing */
+.next { counter-reset: n; list-style: none; padding: 0; margin: 0 0 24px; }
+.next li { counter-increment: n; position: relative; padding: 12px 0 12px 52px; border-top: 1px solid var(--line); font-size: 16px; }
+.next li::before { content: counter(n); position: absolute; left: 0; top: 8px; font-family: var(--display); font-size: 30px; color: var(--accent); font-weight: 800; }
+.cta { background: var(--accent); color: #fff; border-radius: 20px; padding: 26px 28px; }
+.cta p { font-family: var(--display); font-size: 25px; line-height: 1.25; margin: 0; font-weight: 600; }
+.sign { margin-top: 26px; font-size: 15px; }
+.sign b { font-family: var(--display); font-size: 18px; }
+.fine { font-size: 13px; color: var(--muted-ink); margin-top: 14px; }
+
+@page { size: A4; margin: 0; }
+@media print {
+  html, body { background: var(--bg); }
+  .page { width: 210mm; min-height: 297mm; break-after: page; page-break-after: always; padding: 16mm 16mm 18mm; box-sizing: border-box; position: relative; overflow: hidden; }
+  .page:last-child { break-after: auto; page-break-after: auto; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .no-print { display: none !important; }
+  .page + .page { border-top: 0; }
+}
+@media screen {
+  .page { max-width: 900px; margin: 0 auto; padding: 48px 28px; }
+}
+@media screen and (max-width: 640px) {
+  .cover h1 { font-size: 44px; }
+  .hero .big { font-size: 72px; }
+  .grid3, .grid2, .pillars, .slides, .inside { grid-template-columns: 1fr; }
+  .chain { grid-template-columns: 1fr 1fr; }
+  .title { font-size: 30px; }
+  .offer-head { flex-direction: column; align-items: flex-start; }
+  .phase { grid-template-columns: 1fr; gap: 6px; }
+  .step { grid-template-columns: 76px 1fr; }
+  .loaf { width: 170px; }
+  table { font-size: 13px; }
+  th, td { padding: 8px 7px; }
+  .dl { font-size: 11px; padding: 8px 12px; }
+}
+</style>
+</head>
+<body>
+<a class="dl no-print" href="zzroutinetest-test-monetisation-audit.pdf">Download the PDF</a>
+
+<!-- 1. COVER -->
+<section class="page cover">
+  <div class="top">
+    <div class="brandtag">Autora AI Automation · October 2026</div>
+    <svg class="mono" viewBox="0 0 100 100" aria-label="TC monogram">
+      <circle cx="50" cy="50" r="46" fill="none" stroke="#C86B3C" stroke-width="2.5"/>
+      <circle cx="50" cy="50" r="39" fill="none" stroke="#7C9473" stroke-width="1" stroke-dasharray="2 4"/>
+      <text x="50" y="61" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="32" font-weight="700" fill="#3B2A1E">TC</text>
+    </svg>
+  </div>
+
+  <div class="label">Monetisation Audit</div>
+  <h1>Test Creator</h1>
+  <div class="handle">@zz.routine.test</div>
+  <p class="pos">Home sourdough for busy parents: turning flat, dense loaves and wasted flour into a reliable weekly bake that fits around the school run.</p>
+  <div class="stats">
+    <div><b>18,400</b>followers</div>
+    <div><b>920</b>engaged audience (5%)</div>
+    <div><b>£39</b>first product</div>
+  </div>
+
+  <div class="hero">
+    <span class="est">Estimate · conservative case</span>
+    <div class="big">£1,076<small>from one launch</small></div>
+    <p class="why">Estimate: a single £39 bake system bought by 3% of the 920 followers who already engage with your starter and schedule posts.</p>
+  </div>
+
+  <div class="inside">
+    <div><span>02</span>What your numbers say</div>
+    <div><span>05</span>Offer detail</div>
+    <div><span>03</span>Where the number comes from</div>
+    <div><span>07</span>Launch plan</div>
+    <div><span>04</span>The product ladder</div>
+    <div><span>08</span>Your first post</div>
+  </div>
+
+  <svg class="loaf" viewBox="0 0 260 260" aria-hidden="true">
+    <ellipse cx="140" cy="160" rx="120" ry="78" fill="#E3B98E"/>
+    <ellipse cx="140" cy="150" rx="112" ry="70" fill="#D9A36F"/>
+    <path d="M60 130 Q110 100 150 118" stroke="#FBF3E7" stroke-width="6" fill="none" stroke-linecap="round" opacity=".85"/>
+    <path d="M80 165 Q130 130 185 145" stroke="#FBF3E7" stroke-width="6" fill="none" stroke-linecap="round" opacity=".85"/>
+    <path d="M110 195 Q155 170 210 178" stroke="#FBF3E7" stroke-width="6" fill="none" stroke-linecap="round" opacity=".85"/>
+    <circle cx="70" cy="95" r="2" fill="#FFFFFF"/><circle cx="92" cy="80" r="1.6" fill="#FFFFFF"/><circle cx="205" cy="110" r="2.2" fill="#FFFFFF"/><circle cx="180" cy="92" r="1.4" fill="#FFFFFF"/>
+  </svg>
+</section>
+
+<!-- 2. SNAPSHOT -->
+<section class="page">
+  <div class="runhead"><span>Monetisation Audit · @zz.routine.test</span><span class="pn">02</span></div>
+  <div class="kicker">What your numbers say</div>
+  <h2 class="title">Your followers aren't asking for more loaves. They're asking what went wrong with theirs.</h2>
+  <div class="rule"></div>
+
+  <div class="grid3" style="margin-bottom:22px">
+    <div class="card stat"><div class="n">18,400</div><div class="l">Followers (from the audit)</div></div>
+    <div class="card stat"><div class="n">4,210</div><div class="l">Likes on the "my starter died" reel, your strongest post</div></div>
+    <div class="card stat"><div class="n">312</div><div class="l">Comments on that reel, most describing their own starter</div></div>
+  </div>
+
+  <div class="theme">
+    <div class="num">1</div>
+    <div>
+      <h3>Starter rescue <span class="tag hi">High potential</span></h3>
+      <p>4,210 likes and 312 comments on the "my starter died" reel. Most comments ask what went wrong with <em>their</em> starter: that is a problem people want solved, not just content they enjoy.</p>
+    </div>
+  </div>
+  <div class="theme">
+    <div class="num">2</div>
+    <div>
+      <h3>The weeknight bake schedule <span class="tag hi">High potential</span></h3>
+      <p>1,980 likes and 146 comments on the 20-minutes-hands-on timetable carousel, with repeated requests for a printable version. People are asking you for the product by name.</p>
+    </div>
+  </div>
+  <div class="theme">
+    <div class="num">3</div>
+    <div>
+      <h3>Kids in the kitchen <span class="tag md">Medium potential</span></h3>
+      <p>870 likes and 41 comments. It builds warmth and trust, with less buying intent. Keep it as the reason people stay, not the thing you sell first.</p>
+    </div>
+  </div>
+
+  <div class="kicker" style="margin-top:18px">Your three content pillars</div>
+  <div class="pillars">
+    <div class="pillar"><b>Rescue</b>Fixing the starter and the flat loaf.</div>
+    <div class="pillar"><b>Routine</b>A bake that fits around the school run.</div>
+    <div class="pillar"><b>Family</b>Small hands helping, weekend bakes together.</div>
+  </div>
+</section>
+
+<!-- 3. WHERE THE NUMBER COMES FROM -->
+<section class="page">
+  <div class="runhead"><span>Monetisation Audit · @zz.routine.test</span><span class="pn">03</span></div>
+  <div class="kicker">Where the number comes from</div>
+  <h2 class="title">Four numbers, multiplied. Nothing hidden.</h2>
+  <p class="lede">The cover figure is built from your follower count, a cautious share of people who actually engage, a modest conversion rate and one price. Here is each step, so you can check it yourself.</p>
+
+  <div class="chain">
+    <div class="link"><div class="v">18,400</div><div class="k">Followers</div></div>
+    <div class="link"><div class="v">× 5%</div><div class="k">Engaged audience: 920 people</div></div>
+    <div class="link"><div class="v">× 3%</div><div class="k">Buy, conservative case: about 28 people</div></div>
+    <div class="link res"><div class="v">× £39</div><div class="k">The Weeknight Sourdough System</div></div>
+  </div>
+
+  <div class="sum">
+    <div class="row"><span>Followers</span><span class="r">18,400</span></div>
+    <div class="row"><span>Engaged audience: 18,400 × 5% (the audit's market premise)</span><span class="r">920</span></div>
+    <div class="row"><span>Buyers, conservative: 920 × 3% = 27.6</span><span class="r">≈ 28</span></div>
+    <div class="row total"><span>Conservative estimate: 920 × 3% × £39 = £1,076.40</span><span class="r">£1,076</span></div>
+    <div class="row ceiling"><span>Buyers, optimistic: 920 × 6% = 55.2</span><span class="r">≈ 55</span></div>
+    <div class="row ceiling"><span>Optimistic ceiling: 920 × 6% × £39 = £2,152.80</span><span class="r">£2,153</span></div>
+  </div>
+
+  <p class="note"><b>The assumptions.</b> Only 5% of your 18,400 followers are treated as your real market, the people who like, comment and save. Of those, 3% buy in the conservative case and 6% in the optimistic case. Both figures are estimates for a single launch of one £39 product, before any repeat sales or new followers. Revenue uses unrounded buyer numbers, so £1,076 is 27.6 buyers at £39.</p>
+  <p class="note">Why 3% is believable here: 312 people commented on one reel asking about their own starter, and the schedule carousel drew repeated requests for a printable version. 28 buyers is fewer than one in ten of those commenters.</p>
+</section>
+
+<!-- 4. PRODUCT LADDER -->
+<section class="page">
+  <div class="runhead"><span>Monetisation Audit · @zz.routine.test</span><span class="pn">04</span></div>
+  <div class="kicker">The product ladder</div>
+  <h2 class="title">One lead product, two ways to go further.</h2>
+  <p class="lede">Start with the system people are already asking for. The clinic and the club come later, for the people who want more of you.</p>
+
+  <div class="ladder">
+    <div class="step lead"><div class="price">£39<small>one-off</small></div><div><h3>The Weeknight Sourdough System</h3><p>Printable bake schedule, starter rescue guide and 12 recipes with 20 minutes hands-on. For parents who bake at weekends and want a weekday loaf.</p></div></div>
+    <div class="step"><div class="price">£15<small>one-off</small></div><div><h3>Starter Rescue Clinic</h3><p>A short video course on reviving a neglected starter. For the people in the comments whose starter has gone quiet.</p></div></div>
+    <div class="step"><div class="price">£9<small>a month</small></div><div><h3>Family Bake Club</h3><p>A monthly recipe and a live bake-along with the kids. For families who already love your kitchen posts.</p></div></div>
+  </div>
+
+  <table>
+    <thead><tr><th>Product</th><th class="num">Price</th><th class="num">Buyers (3–6%)</th><th class="num">Revenue estimate</th></tr></thead>
+    <tbody>
+      <tr><td><b>Weeknight Sourdough System</b></td><td class="num">£39</td><td class="num">28–55</td><td class="num">£1,076–£2,153</td></tr>
+      <tr><td><b>Starter Rescue Clinic</b></td><td class="num">£15</td><td class="num">28–55</td><td class="num">£414–£828</td></tr>
+      <tr><td><b>Family Bake Club</b></td><td class="num">£9 / month</td><td class="num">28–55</td><td class="num">£248–£497 / month</td></tr>
+    </tbody>
+  </table>
+  <p class="note">The System's range is the audit's own figure. The audit prices the Clinic and the Club but does not project them, so their rows apply the same premise (920 engaged × 3% to 6% × price) as an illustration only. They are not added to the cover figure, and the people buying them would largely be the same 28–55.</p>
+</section>
+
+<!-- 5. OFFER DETAIL: LEAD -->
+<section class="page">
+  <div class="runhead"><span>Monetisation Audit · @zz.routine.test</span><span class="pn">05</span></div>
+  <div class="kicker">Offer detail · Lead product</div>
+  <div class="offer-head"><h2>The Weeknight Sourdough System</h2><div class="p">£39</div></div>
+  <p class="promise">"A real loaf on a school night, with 20 minutes of hands-on time, even if your starter has been sulking."</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>What's inside</h3>
+      <ul class="tick">
+        <li>The printable weeknight bake schedule, the version of your timetable carousel people keep asking for.</li>
+        <li>A starter rescue guide: what went wrong and how to bring it back.</li>
+        <li>12 recipes, each needing 20 minutes of hands-on time.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Who it's for</h3>
+      <p>Parents who already bake at weekends and want a loaf on a weekday, without the bake taking over the evening.</p>
+      <h3 style="margin-top:12px">Why it will sell</h3>
+      <p>It answers the most-asked question under your starter reel, and it is the printable version your carousel commenters requested.</p>
+    </div>
+  </div>
+
+  <div class="first">
+    <div class="kicker">First step to build it</div>
+    <p>Turn the timetable from your 20-minutes-hands-on carousel into a one-page printable. That page is the heart of the product, and two pages of it become your Phase 2 preview.</p>
+  </div>
+</section>
+
+<!-- 6. OFFER DETAIL: CLINIC AND CLUB -->
+<section class="page">
+  <div class="runhead"><span>Monetisation Audit · @zz.routine.test</span><span class="pn">06</span></div>
+  <div class="kicker">Offer detail · Next steps up</div>
+  <h2 class="title">For the people who want more.</h2>
+  <div class="rule"></div>
+
+  <div class="mini">
+    <div class="offer-head"><h2 style="font-size:28px">Starter Rescue Clinic</h2><div class="p" style="font-size:34px">£15</div></div>
+    <p class="promise" style="font-size:19px">"Your starter isn't dead. Here's how to bring it back."</p>
+    <ul class="tick">
+      <li><b>What it is:</b> a short video course on reviving a neglected starter.</li>
+      <li><b>Who it's for:</b> the commenters under your "my starter died" reel describing their own starter.</li>
+      <li><b>First step:</b> film the rescue you already know works, broken into short lessons that follow the rescue guide in the System.</li>
+    </ul>
+  </div>
+
+  <div class="mini">
+    <div class="offer-head"><h2 style="font-size:28px">Family Bake Club</h2><div class="p" style="font-size:34px">£9<span style="font-size:18px"> / month</span></div></div>
+    <p class="promise" style="font-size:19px">"One recipe a month, baked together, small hands included."</p>
+    <ul class="tick">
+      <li><b>What it is:</b> a monthly recipe and a live bake-along with the kids.</li>
+      <li><b>Who it's for:</b> families who love your kids-in-the-kitchen posts. The audit rates this demand as medium, so it comes after the System.</li>
+      <li><b>First step:</b> once the System has launched, invite its buyers to one free live bake-along and see who turns up.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 7. LAUNCH PLAN -->
+<section class="page">
+  <div class="runhead"><span>Monetisation Audit · @zz.routine.test</span><span class="pn">07</span></div>
+  <div class="kicker">Launch plan</div>
+  <h2 class="title">Three phases. Ask, show, then sell.</h2>
+  <p class="lede">Each phase uses content you already make, and each one tells you whether to keep going before you've built much.</p>
+
+  <div class="phase">
+    <div class="ph"><b>1</b>Ask</div>
+    <div>
+      <div class="when">Start here</div>
+      <h3>Post the starter-rescue checklist as a carousel</h3>
+      <p>Lead with the topic behind your strongest reel. Collect questions in the comments: every "mine does this too" is a future buyer and a line for the rescue guide.</p>
+    </div>
+  </div>
+  <div class="phase">
+    <div class="ph"><b>2</b>Show</div>
+    <div>
+      <div class="when">Once the questions come in</div>
+      <h3>Open a waitlist for the printable schedule</h3>
+      <p>Share two pages from it, so people can see exactly what they are getting. This is the version your carousel commenters asked for.</p>
+    </div>
+  </div>
+  <div class="phase">
+    <div class="ph"><b>3</b>Sell</div>
+    <div>
+      <div class="when">Launch week</div>
+      <h3>Launch to the waitlist with a 72-hour early price</h3>
+      <p>Give the waitlist first access for 72 hours, then open the System to everyone.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8. FIRST POST -->
+<section class="page">
+  <div class="runhead"><span>Monetisation Audit · @zz.routine.test</span><span class="pn">08</span></div>
+  <div class="kicker">Your first post</div>
+  <h2 class="title">Test the demand before you build anything.</h2>
+  <p class="lede">A three-slide carousel from the audit. Replies to slide three tell you how many people want the schedule, and give you your waitlist.</p>
+
+  <div class="slides">
+    <div class="slide s1"><div class="sn">Slide 1</div><div class="st">Your starter isn't dead. It's hungry.</div></div>
+    <div class="slide s2"><div class="sn">Slide 2</div><div class="st">Three signs it can be saved tonight.</div></div>
+    <div class="slide s3"><div class="sn">Slide 3</div><div class="st">Reply SCHEDULE and I'll send you my 20-minute weeknight bake plan.</div></div>
+  </div>
+
+  <div class="caption">
+    <p><b>How to read the result.</b> Count the SCHEDULE replies. Each one is a person asking for the weeknight plan by name, which is exactly what the £39 System sells.</p>
+    <p style="margin:0">The conservative estimate needs about 28 buyers. If the replies comfortably pass that, you have your waitlist before the product exists.</p>
+  </div>
+</section>
+
+<!-- 9. CLOSING -->
+<section class="page">
+  <div class="runhead"><span>Monetisation Audit · @zz.routine.test</span><span class="pn">09</span></div>
+  <div class="kicker">What to do next</div>
+  <h2 class="title">Three moves, in this order.</h2>
+  <div class="rule"></div>
+
+  <ol class="next">
+    <li>Post the three-slide starter carousel and count the SCHEDULE replies.</li>
+    <li>Turn your 20-minute timetable into the printable schedule and open the waitlist.</li>
+    <li>Launch the £39 Weeknight Sourdough System to the waitlist with a 72-hour early price.</li>
+  </ol>
+
+  <div class="cta"><p>Reply to this DM and I'll walk you through the numbers and what to build first.</p></div>
+
+  <div class="sign">
+    <p>Prepared by <b>Euan Grant</b> · Autora AI Automation · October 2026</p>
+  </div>
+  <p class="fine">All figures are estimates based on the audit and your public profile data, not guarantees of future sales.</p>
+  <p class="fine">How this was made: I build automations, and used AI for the analysis, which is why this took an evening rather than a fortnight.</p>
+</section>
+
+</body>
+</html>
