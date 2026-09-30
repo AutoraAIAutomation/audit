@@ -104,8 +104,8 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
 td b { font-family: var(--display); font-weight: 600; font-size: 16px; }
 
 /* Ladder steps */
-.ladder { display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 20px; }
-.step { display: grid; grid-template-columns: 90px 1fr; gap: 16px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; }
+.ladder { display: grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: 16px; }
+.step { display: grid; grid-template-columns: 90px 1fr; gap: 16px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 9px 16px; }
 .step .price { font-family: var(--display); font-size: 28px; font-weight: 800; color: var(--accent); line-height: 1; }
 .step .price small { font-size: 13px; color: var(--muted-ink); font-weight: 400; display: block; margin-top: 3px; }
 .step h3 { font-size: 19px; margin-bottom: 2px; }
@@ -218,9 +218,9 @@ ul.tick li::before { content: ""; position: absolute; left: 0; top: 7px; width: 
     <div><span>02</span>What your numbers say</div>
     <div><span>05</span>Offer detail</div>
     <div><span>03</span>Where the number comes from</div>
-    <div><span>07</span>Launch plan</div>
+    <div><span>08</span>Launch plan</div>
     <div><span>04</span>The product ladder</div>
-    <div><span>08</span>Your first post</div>
+    <div><span>09</span>Your first post</div>
   </div>
 
   <svg class="loaf" viewBox="0 0 260 260" aria-hidden="true">
@@ -299,7 +299,7 @@ ul.tick li::before { content: ""; position: absolute; left: 0; top: 7px; width: 
     <div class="row ceiling"><span>Optimistic ceiling: 920 × 6% × £39 = £2,152.80</span><span class="r">£2,153</span></div>
   </div>
 
-  <p class="note"><b>The assumptions.</b> Only 5% of your 18,400 followers are treated as your real market, the people who like, comment and save. Of those, 3% buy in the conservative case and 6% in the optimistic case. Both figures are estimates for a single launch of one £39 product, before any repeat sales or new followers. Revenue uses unrounded buyer numbers, so £1,076 is 27.6 buyers at £39.</p>
+  <p class="note"><b>The assumptions.</b> Only 5% of your 18,400 followers are treated as your real market, the people who like, comment and save. Of those, 3% buy in the conservative case and 6% in the optimistic case. Both figures are estimates for a single launch of one £39 product, before any repeat sales or new followers. Revenue uses unrounded buyer numbers, so £1,076 is 27.6 buyers at £39. The ebook is an added estimate: 920 × 1.5% to 3% × £19 = £262 to £524 (page 06), a lower share than the System because it is sold on its own, after launch; it is not part of the cover figure.</p>
   <p class="note">Why 3% is believable here: 312 people commented on one reel asking about their own starter, and the schedule carousel drew repeated requests for a printable version. 28 buyers is fewer than one in ten of those commenters.</p>
 </section>
 
@@ -307,11 +307,12 @@ ul.tick li::before { content: ""; position: absolute; left: 0; top: 7px; width: 
 <section class="page">
   <div class="runhead"><span>Monetisation Audit · @zz.routine.test</span><span class="pn">04</span></div>
   <div class="kicker">The product ladder</div>
-  <h2 class="title">One lead product, two ways to go further.</h2>
-  <p class="lede">Start with the system people are already asking for. The clinic and the club come later, for the people who want more of you.</p>
+  <h2 class="title">One lead product, three ways in and further.</h2>
+  <p class="lede" style="margin-bottom:18px">Start with the system people are already asking for. The ebook is the low-cost way in; the clinic and the club come later, for the people who want more of you.</p>
 
   <div class="ladder">
     <div class="step lead"><div class="price">£39<small>one-off</small></div><div><h3>The Weeknight Sourdough System</h3><p>Printable bake schedule, starter rescue guide and 12 recipes with 20 minutes hands-on. For parents who bake at weekends and want a weekday loaf.</p></div></div>
+    <div class="step"><div class="price">£19<small>ebook</small></div><div><h3>Flat Loaf Fixes</h3><p>A troubleshooting ebook for flat, dense loaves and wasted flour. For the parent not ready for the full System.</p></div></div>
     <div class="step"><div class="price">£15<small>one-off</small></div><div><h3>Starter Rescue Clinic</h3><p>A short video course on reviving a neglected starter. For the people in the comments whose starter has gone quiet.</p></div></div>
     <div class="step"><div class="price">£9<small>a month</small></div><div><h3>Family Bake Club</h3><p>A monthly recipe and a live bake-along with the kids. For families who already love your kitchen posts.</p></div></div>
   </div>
@@ -320,11 +321,12 @@ ul.tick li::before { content: ""; position: absolute; left: 0; top: 7px; width: 
     <thead><tr><th>Product</th><th class="num">Price</th><th class="num">Buyers (3–6%)</th><th class="num">Revenue estimate</th></tr></thead>
     <tbody>
       <tr><td><b>Weeknight Sourdough System</b></td><td class="num">£39</td><td class="num">28–55</td><td class="num">£1,076–£2,153</td></tr>
+      <tr><td><b>Flat Loaf Fixes (ebook)</b></td><td class="num">£19</td><td class="num">14–28*</td><td class="num">£262–£524</td></tr>
       <tr><td><b>Starter Rescue Clinic</b></td><td class="num">£15</td><td class="num">28–55</td><td class="num">£414–£828</td></tr>
       <tr><td><b>Family Bake Club</b></td><td class="num">£9 / month</td><td class="num">28–55</td><td class="num">£248–£497 / month</td></tr>
     </tbody>
   </table>
-  <p class="note">The System's range is the audit's own figure. The audit prices the Clinic and the Club but does not project them, so their rows apply the same premise (920 engaged × 3% to 6% × price) as an illustration only. They are not added to the cover figure, and the people buying them would largely be the same 28–55.</p>
+  <p class="note">The System's range is the audit's own figure. The Clinic and Club rows apply the same premise (920 engaged × 3% to 6% × price) as an illustration; the ebook* uses 1.5% to 3% (page 03). None are added to the cover figure: the buyers would largely be the same people.</p>
 </section>
 
 <!-- 5. OFFER DETAIL: LEAD -->
@@ -357,9 +359,45 @@ ul.tick li::before { content: ""; position: absolute; left: 0; top: 7px; width: 
   </div>
 </section>
 
-<!-- 6. OFFER DETAIL: CLINIC AND CLUB -->
+<!-- 6. OFFER DETAIL: EBOOK -->
 <section class="page">
   <div class="runhead"><span>Monetisation Audit · @zz.routine.test</span><span class="pn">06</span></div>
+  <div class="kicker">Offer detail · The ebook</div>
+  <div class="offer-head"><h2>Flat Loaf Fixes</h2><div class="p">£19</div></div>
+  <p class="promise">"Why your loaf came out flat, and what to change on the next bake, so no more flour goes in the bin."</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>What's inside</h3>
+      <ul class="tick">
+        <li>A diagnosis section for flat and dense loaves: what each result tells you went wrong.</li>
+        <li>The fix for each one, written for a kitchen that also runs a school run.</li>
+        <li>The answers to the questions left under your "my starter died" reel and your Phase 1 checklist carousel.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Who it's for</h3>
+      <p>Parents who have tried sourdough, ended up with a flat loaf and wasted flour, and want to know why before committing to a weekly bake.</p>
+      <h3 style="margin-top:12px">How it fits</h3>
+      <p>At £19 it sits below the £39 System as the low-cost way in. It sells best after the System launch, to the people who didn't buy.</p>
+    </div>
+  </div>
+
+  <div class="sum" style="margin-top:16px">
+    <div class="row"><span>Estimate, low: 920 engaged × 1.5% = 13.8 buyers × £19</span><span class="r">£262</span></div>
+    <div class="row ceiling"><span>Estimate, high: 920 engaged × 3% = 27.6 buyers × £19</span><span class="r">£524</span></div>
+  </div>
+  <p class="note">Assumption: a lower share than the System, because the ebook is sold on its own and many of the most keen buyers will already have the System. These buyers are largely the same people, so the figures are not added to the cover.</p>
+
+  <div class="first">
+    <div class="kicker">First step to build it</div>
+    <p>Go through the 312 comments on your "my starter died" reel and the questions from the Phase 1 carousel, and turn the most repeated ones into the chapter list.</p>
+  </div>
+</section>
+
+<!-- 7. OFFER DETAIL: CLINIC AND CLUB -->
+<section class="page">
+  <div class="runhead"><span>Monetisation Audit · @zz.routine.test</span><span class="pn">07</span></div>
   <div class="kicker">Offer detail · Next steps up</div>
   <h2 class="title">For the people who want more.</h2>
   <div class="rule"></div>
@@ -385,9 +423,9 @@ ul.tick li::before { content: ""; position: absolute; left: 0; top: 7px; width: 
   </div>
 </section>
 
-<!-- 7. LAUNCH PLAN -->
+<!-- 8. LAUNCH PLAN -->
 <section class="page">
-  <div class="runhead"><span>Monetisation Audit · @zz.routine.test</span><span class="pn">07</span></div>
+  <div class="runhead"><span>Monetisation Audit · @zz.routine.test</span><span class="pn">08</span></div>
   <div class="kicker">Launch plan</div>
   <h2 class="title">Three phases. Ask, show, then sell.</h2>
   <p class="lede">Each phase uses content you already make, and each one tells you whether to keep going before you've built much.</p>
@@ -418,9 +456,9 @@ ul.tick li::before { content: ""; position: absolute; left: 0; top: 7px; width: 
   </div>
 </section>
 
-<!-- 8. FIRST POST -->
+<!-- 9. FIRST POST -->
 <section class="page">
-  <div class="runhead"><span>Monetisation Audit · @zz.routine.test</span><span class="pn">08</span></div>
+  <div class="runhead"><span>Monetisation Audit · @zz.routine.test</span><span class="pn">09</span></div>
   <div class="kicker">Your first post</div>
   <h2 class="title">Test the demand before you build anything.</h2>
   <p class="lede">A three-slide carousel from the audit. Replies to slide three tell you how many people want the schedule, and give you your waitlist.</p>
@@ -437,9 +475,9 @@ ul.tick li::before { content: ""; position: absolute; left: 0; top: 7px; width: 
   </div>
 </section>
 
-<!-- 9. CLOSING -->
+<!-- 10. CLOSING -->
 <section class="page">
-  <div class="runhead"><span>Monetisation Audit · @zz.routine.test</span><span class="pn">09</span></div>
+  <div class="runhead"><span>Monetisation Audit · @zz.routine.test</span><span class="pn">10</span></div>
   <div class="kicker">What to do next</div>
   <h2 class="title">Three moves, in this order.</h2>
   <div class="rule"></div>
