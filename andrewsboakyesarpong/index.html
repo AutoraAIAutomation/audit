@@ -121,6 +121,12 @@ tr.hi td{background:rgba(244,196,48,.08)}
 .avg .stat .n{font-size:21px}
 .chart svg{width:100%;height:auto;display:block}
 .chart.big{background:var(--surface);border-radius:16px;padding:16px 18px;margin:14px 0}
+.who{display:inline-block;margin:0 0 12px;font-size:15px;font-weight:700;color:var(--ink);background:var(--surface);border-left:4px solid var(--accent2);border-radius:10px;padding:8px 14px}
+.split{display:grid;grid-template-columns:150px 1fr 1fr;gap:0;font-size:14px;margin:8px 0 14px}
+.split>div{padding:11px 12px 11px 0;border-bottom:1px solid var(--line)}
+.split .hd{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.split .pr{font-weight:700}
+.yp{color:var(--accent);font-weight:700}
 .coverfoot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:12px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);letter-spacing:.06em}
 
 @page { size: A4; margin: 0; }
@@ -131,6 +137,11 @@ tr.hi td{background:rgba(244,196,48,.08)}
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .no-print { display: none !important; }
   body{font-size:14.5px}
+  .scene{aspect-ratio:16/6.6;margin-bottom:14px}
+  .cover .range{margin-bottom:10px}
+  .cover .range .big{margin:8px 0 6px}
+  .cover .who{margin-bottom:10px}
+  .coverfoot{margin-top:12px}
 }
 @media screen {
   .page { max-width: 900px; margin: 0 auto; padding: 48px 28px; }
@@ -147,6 +158,9 @@ tr.hi td{background:rgba(244,196,48,.08)}
   .scene .h1{font-size:30px}
   .scene .sub{font-size:14px}
   .ladder{grid-template-columns:1fr 1fr}
+  .split{grid-template-columns:1fr 1fr}
+  .split .pr{grid-column:1/-1;padding-bottom:0;border-bottom:0}
+  .split .hd0{display:none}
   .rung{height:auto !important}
   .total .val{font-size:32px}
   table{font-size:13px}
@@ -185,6 +199,7 @@ tr.hi td{background:rgba(244,196,48,.08)}
     <div class="big">$8,033<span class="to">to</span>$415,500</div>
     <p class="assume">Assumption: 5% of your 110,970 followers are engaged (5,548 people) and 5% of those buy (277 people). The range runs from all 277 buying the $29 ebook to all 277 buying the $1,500 one-to-one programme.</p>
   </div>
+  <p class="who">You shoot the content and send us the footage. We host and run everything else.</p>
 
   <div class="hero">
     <div>
@@ -193,7 +208,7 @@ tr.hi td{background:rgba(244,196,48,.08)}
         <div class="stat"><div class="n">$154,358.25</div><div class="k">Mean (estimate)</div></div>
         <div class="stat" style="grid-column:1/-1"><div class="n">$211,766.50</div><div class="k">Mid-range (estimate)</div></div>
       </div>
-      <div class="inside" style="margin-top:10px"><div class="tag2" style="margin:0 0 4px">What is inside</div>Your numbers · where the gap sits · where the number comes from · the product ladder · offer detail · launch plan · the first post · what to do next</div>
+      <div class="inside" style="margin-top:10px"><div class="tag2" style="margin:0 0 4px">What is inside</div>Your numbers · where the gap sits · where the number comes from · the product ladder · who does what · offer detail · launch plan · the first post · what to do next</div>
     </div>
     <div class="chart">
 <svg viewBox="0 0 420 172" role="img" aria-label="Revenue estimate per product on a shared scale, with the median and mean marked" font-family="Inter,Arial,sans-serif">
@@ -227,7 +242,7 @@ tr.hi td{background:rgba(244,196,48,.08)}
 
 <!-- 2. NUMBERS -->
 <section class="page">
-  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">02 / 11</span></div>
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">02 / 12</span></div>
   <span class="eyebrow">What your numbers say</span>
   <h2 class="sec">A big room that already trusts your method</h2>
   <p class="lede">Your reels are not generic tips. You told us they come straight from the framework you teach paying clients, picked from the problems that come up most.</p>
@@ -260,7 +275,7 @@ tr.hi td{background:rgba(244,196,48,.08)}
 
 <!-- 3. PILLARS + GAP -->
 <section class="page">
-  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">03 / 11</span></div>
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">03 / 12</span></div>
   <span class="eyebrow">Your three content pillars</span>
   <h2 class="sec">What you teach, in your own captions</h2>
   <div class="grid3" style="margin:16px 0 22px">
@@ -288,7 +303,7 @@ tr.hi td{background:rgba(244,196,48,.08)}
 
 <!-- 4. MATHS -->
 <section class="page">
-  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">04 / 11</span></div>
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">04 / 12</span></div>
   <span class="eyebrow">Where the number comes from</span>
   <h2 class="sec">Two assumptions, shown so you can check them</h2>
   <p class="lede">These are estimates, not promises. Every figure below is either public data or one of the two stated assumptions, and each step uses the rounded number from the step before.</p>
@@ -312,7 +327,7 @@ tr.hi td{background:rgba(244,196,48,.08)}
 
 <!-- 4b. MATHS CONTINUED -->
 <section class="page">
-  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">05 / 11</span></div>
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">05 / 12</span></div>
   <span class="eyebrow">Where the number comes from · continued</span>
   <h2 class="sec">The range and the averages</h2>
 
@@ -348,13 +363,13 @@ tr.hi td{background:rgba(244,196,48,.08)}
   <h3 class="sub">How to read it</h3>
   <ul>
     <li><strong>It scales in a straight line.</strong> Every 10 extra buyers adds $290 on the ebook and $15,000 on one-to-one. Change the 5% and the rest follows.</li>
-    <li><strong>It is checkable before you build.</strong> The “FRAMEWORK” comment test on page 10 tells you whether interest is anywhere near 277 people.</li>
+    <li><strong>It is checkable before you build.</strong> The “FRAMEWORK” comment test on page 11 tells you whether interest is anywhere near 277 people.</li>
   </ul>
 </section>
 
 <!-- 5. LADDER -->
 <section class="page">
-  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">06 / 11</span></div>
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">06 / 12</span></div>
   <span class="eyebrow">The product ladder</span>
   <h2 class="sec">Four rungs, one framework</h2>
   <p class="lede">Every product teaches the same thing: what to say when you don’t know what to say. Each rung adds more of you.</p>
@@ -369,7 +384,7 @@ tr.hi td{background:rgba(244,196,48,.08)}
   <table>
     <thead><tr><th>Product</th><th>What it is</th><th>For whom</th><th class="num">Price</th><th class="num">Revenue (estimate)</th></tr></thead>
     <tbody>
-      <tr><td><strong>Ebook</strong></td><td>The framework in writing, written for you; you only cross-check it</td><td>Followers who want the method to keep and reread</td><td class="num">$29</td><td class="num">$8,033</td></tr>
+      <tr><td><strong>Ebook</strong></td><td>The framework in writing; Autora writes it, you only confirm it can go out</td><td>Followers who want the method to keep and reread</td><td class="num">$29</td><td class="num">$8,033</td></tr>
       <tr class="hi"><td><strong>Online course</strong></td><td>Self-paced lessons: steps, worked examples, practice prompts</td><td>Followers using the reels, not ready for coaching</td><td class="num">$200</td><td class="num">$55,400</td></tr>
       <tr><td><strong>Group coaching</strong></td><td>Live online practice on the framework, group size your choice</td><td>People who want feedback, in a group</td><td class="num">$500</td><td class="num">$138,500</td></tr>
       <tr><td><strong>One-to-one</strong></td><td>8-week programme applying it to their own situations</td><td>Professionals who want personal feedback</td><td class="num">$1,500</td><td class="num">$415,500</td></tr>
@@ -383,25 +398,49 @@ tr.hi td{background:rgba(244,196,48,.08)}
   </div>
 </section>
 
+<!-- 5b. WHO DOES WHAT -->
+<section class="page">
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">07 / 12</span></div>
+  <span class="eyebrow">Who does what</span>
+  <h2 class="sec">You coach and film. Autora runs the rest.</h2>
+  <p class="lede">Autora hosts and runs everything: the format, the build, the platform and hosting, the checkout and payments, delivery, the marketing and the backend. Your part stays close to what you already do on camera and with clients.</p>
+
+  <div class="split">
+    <div class="hd hd0">Product</div><div class="hd">Your part</div><div class="hd">What Autora does</div>
+    <div class="pr">1 · Ebook <span class="muted">$29</span></div><div><span class="yp">Confirm you are happy for it to go out.</span> Next to no work.</div><div>Writes it from your reels and coaching material, then formats, hosts, sells and delivers it.</div>
+    <div class="pr">2 · Online course <span class="muted">$200</span></div><div><span class="yp">Shoot the lessons and send the footage.</span></div><div>Turns the footage into the course, hosts it, sells it and delivers it.</div>
+    <div class="pr">3 · Group coaching <span class="muted">$500</span></div><div><span class="yp">Run the sessions.</span></div><div>The sales page, booking, payments, onboarding and marketing around them.</div>
+    <div class="pr">4 · One-to-one, 8 weeks <span class="muted">$1,500</span></div><div><span class="yp">Run the sessions.</span></div><div>The sales page, booking, payments, onboarding and marketing around them.</div>
+  </div>
+
+  <div class="total" style="margin-top:6px">
+    <div class="lab">Nothing to pay upfront.<br><span style="font-weight:500">Autora is paid from a share of what the products make.</span></div>
+    <div class="val" style="font-size:30px">$0 upfront</div>
+  </div>
+  <p style="margin-top:16px">You never have to build, host, market or sell anything yourself. The framework, the footage and the sessions are yours; everything around them is Autora’s job.</p>
+</section>
+
 <!-- 6. OFFERS 1-2 -->
 <section class="page">
-  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">07 / 11</span></div>
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">08 / 12</span></div>
   <span class="eyebrow">Offer detail · products 1 and 2</span>
   <h2 class="sec">“When You Don’t Know What to Say”</h2>
   <p class="lede" style="margin-top:8px">The full method behind your reel “Do this when you don’t know what to say”, taught properly instead of in 60 seconds.</p>
 
   <div class="card">
     <h3>1 · The ebook <span class="chip" style="margin-left:6px">$29</span> <span class="chip ghost">Estimate $8,033</span></h3>
-    <p style="margin:0 0 6px"><strong>Inside:</strong> the steps of the framework you teach in your programmes, worked examples from the client situations you see most, and practice prompts. It is written for you from your reels and coaching material; you only cross-check it and write none of it yourself.</p>
+    <p style="margin:0 0 6px"><strong>Inside:</strong> the steps of the framework you teach in your programmes, worked examples from the client situations you see most, and practice prompts. Autora writes it from your reels and coaching material.</p>
     <p style="margin:0 0 6px"><strong>The promise:</strong> when your mind goes blank, you have the steps to fall back on, not talent.</p>
-    <p style="margin:0"><strong>First step:</strong> share the framework outline and your thinking-on-your-feet reels so the first draft can be written for you to check.</p>
+    <p style="margin:0 0 6px"><strong class="y">Your part:</strong> confirm you are happy for it to go out. Next to no work.</p>
+    <p style="margin:0"><strong>First step:</strong> point Autora to your thinking-on-your-feet reels and the framework outline, so the draft can be written for you to approve.</p>
   </div>
 
   <div class="card">
     <h3>2 · The online course <span class="chip" style="margin-left:6px">$200</span> <span class="chip ghost">Estimate $55,400</span></h3>
     <p style="margin:0 0 6px"><strong>Inside:</strong> short self-paced lessons on the one framework: <strong>the steps</strong>, <strong>worked examples</strong> drawn from the client situations you see most often, and <strong>practice prompts</strong> to apply it in real conversations, not just watch it.</p>
     <p style="margin:0 0 6px"><strong>The promise:</strong> when someone asks you a question and your mind goes blank, you know exactly what to say next, because you have a repeatable framework rather than relying on talent.</p>
-    <p style="margin:0"><strong>First step:</strong> run the story question box first (page 9). Then write the lesson list around the framework, shaped by what followers say they get stuck on.</p>
+    <p style="margin:0 0 6px"><strong class="y">Your part:</strong> film the lessons and send Autora the footage. Autora turns it into the course, hosts it, sells it and delivers it.</p>
+    <p style="margin:0"><strong>First step:</strong> run the story question box first (page 10), so the lesson list follows what followers say they get stuck on.</p>
   </div>
 
   <h3 class="sub">Why it fits you</h3>
@@ -410,7 +449,7 @@ tr.hi td{background:rgba(244,196,48,.08)}
 
 <!-- 7. OFFERS 3-4 -->
 <section class="page">
-  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">08 / 11</span></div>
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">09 / 12</span></div>
   <span class="eyebrow">Offer detail · products 3 and 4</span>
   <h2 class="sec">The framework, with you in the room</h2>
   <p class="lede" style="margin-top:8px">The top two rungs are coaching, which you already run. They take the same framework and add your feedback.</p>
@@ -419,13 +458,15 @@ tr.hi td{background:rgba(244,196,48,.08)}
     <h3>3 · One-to-many group coaching <span class="chip blue" style="margin-left:6px">$500</span> <span class="chip ghost">Estimate $138,500</span></h3>
     <p style="margin:0 0 6px"><strong>Inside:</strong> live online sessions where members learn the framework and practise answering put-on-the-spot questions, with your feedback in front of the group. You choose how many people join.</p>
     <p style="margin:0 0 6px"><strong>The promise:</strong> practise the moment your mind goes blank until the framework is automatic.</p>
-    <p style="margin:0"><strong>First step:</strong> invite the “FRAMEWORK” waitlist to one group run, so you learn what group practice needs before you set it up for good.</p>
+    <p style="margin:0 0 6px"><strong class="b">Your part:</strong> run the sessions. Autora handles the sales page, booking, payments, onboarding and marketing.</p>
+    <p style="margin:0"><strong>First step:</strong> invite the “FRAMEWORK” waitlist to one group run, so you learn what group practice needs before it is set up for good.</p>
   </div>
 
   <div class="card blue">
     <h3>4 · One-to-one coaching, 8 weeks <span class="chip blue" style="margin-left:6px">$1,500</span> <span class="chip ghost">Estimate $415,500</span></h3>
     <p style="margin:0 0 6px"><strong>Inside:</strong> eight weeks applying the framework to the client’s own conversations, with your personal feedback each week.</p>
     <p style="margin:0 0 6px"><strong>The promise:</strong> your communication matches the quality of your thinking and expertise, in the situations that matter to you.</p>
+    <p style="margin:0 0 6px"><strong class="b">Your part:</strong> run the sessions. Autora handles the sales page, booking, payments, onboarding and marketing.</p>
     <p style="margin:0"><strong>First step:</strong> route it through your existing consultation page. The audit doesn’t know your current coaching fees; the model prices this rung at $1,500.</p>
   </div>
 
@@ -437,14 +478,14 @@ tr.hi td{background:rgba(244,196,48,.08)}
 
 <!-- 8. LAUNCH -->
 <section class="page">
-  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">09 / 11</span></div>
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">10 / 12</span></div>
   <span class="eyebrow">Launch plan</span>
   <h2 class="sec">Four steps, in this order</h2>
   <p class="lede">Ask before you build, and measure what happens after. Nothing here needs a new platform or a bigger following.</p>
 
   <div class="step"><div class="k">1</div><div><h3>Ask first</h3><p>Post a story question box: <strong>“Where do you get stuck most when you don’t know what to say?”</strong> Their answers shape the lessons, in their own words. Alongside it, post the test carousel on the next page.</p></div></div>
-  <div class="step"><div class="k">2</div><div><h3>Build around the one framework</h3><p>Write the programme around the framework behind your reel, using the client situations you already see most often, matched against what the question box surfaced.</p></div></div>
-  <div class="step"><div class="k">3</div><div><h3>Open a waitlist, then launch to it</h3><p>Everyone who commented “FRAMEWORK” gets the waitlist link. Launch to that list with a clear date and a real close, so there is a reason to decide.</p></div></div>
+  <div class="step"><div class="k">2</div><div><h3>Build around the one framework</h3><p>Autora builds the programme around the framework behind your reel, using the client situations you already see most often, matched against what the question box surfaced.</p></div></div>
+  <div class="step"><div class="k">3</div><div><h3>Open a waitlist, then launch to it</h3><p>Autora sets up the waitlist, and everyone who commented “FRAMEWORK” gets the link. Launch to that list with a clear date and a real close, so there is a reason to decide.</p></div></div>
   <div class="step"><div class="k">4</div><div><h3>Track who books</h3><p>Count how many buyers go on to book a consultation. That number tells you whether a second framework (voice and delivery, say, where your biggest reels sit) is worth packaging next.</p></div></div>
 
   <div class="card" style="margin-top:16px">
@@ -455,7 +496,7 @@ tr.hi td{background:rgba(244,196,48,.08)}
 
 <!-- 9. FIRST POST -->
 <section class="page">
-  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">10 / 11</span></div>
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">11 / 12</span></div>
   <span class="eyebrow">The first post · test before you build</span>
   <h2 class="sec">Post this before you build anything</h2>
   <p class="lede">A carousel, or the same lines as caption overlays on a reel in your usual style. The number of “FRAMEWORK” comments is the demand test.</p>
@@ -476,13 +517,13 @@ tr.hi td{background:rgba(244,196,48,.08)}
 
 <!-- 10. CLOSE -->
 <section class="page" style="display:flex;flex-direction:column">
-  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">11 / 11</span></div>
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">12 / 12</span></div>
   <span class="eyebrow">What to do next</span>
   <h2 class="sec" style="font-size:44px">Make the course match the quality of your coaching.</h2>
   <p class="lede" style="margin-top:8px">You already have the framework, the audience and the coaching to send people on to. The next move is small.</p>
 
   <div class="step"><div class="k">1</div><div><h3>This week</h3><p>Post the question box and the “FRAMEWORK” carousel.</p></div></div>
-  <div class="step"><div class="k">2</div><div><h3>When the comments are in</h3><p>Count them against the 277-buyer assumption, then outline the lessons.</p></div></div>
+  <div class="step"><div class="k">2</div><div><h3>When the comments are in</h3><p>Count them against the 277-buyer assumption, then agree the lesson outline with Autora.</p></div></div>
   <div class="step"><div class="k">3</div><div><h3>After launch</h3><p>Track how many buyers book a consultation before packaging a second framework.</p></div></div>
 
   <div style="margin-top:22px">
