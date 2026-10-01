@@ -1,0 +1,3 @@
+# Audits are shared by private link. Each page carries noindex; PDFs can't, so crawlers are kept off them.
+User-agent: *
+Disallow: /*.pdf$
