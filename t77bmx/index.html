@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monetisation Audit · T77 BMX (@t77bmx)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#141014; --surface:#231B22; --ink:#FBEFE6; --muted:#B8A9A8; --accent:#FF4E1E; --accent2:#8B2FD6;
+  --line:rgba(251,239,230,.14);
+  --display:'Archivo Black','Arial Black',Impact,sans-serif;
+  --body:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}
+body{font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;margin:0;line-height:1.02;letter-spacing:-.01em}
+p{margin:0 0 12px}
+strong{color:var(--ink);font-weight:700}
+.page{position:relative}
+.page + .page{border-top:1px solid var(--line)}
+.rh{display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--accent);padding-bottom:8px;margin-bottom:26px;font-weight:600}
+.rh .pn{font-family:var(--display);color:var(--accent);letter-spacing:.06em;font-size:13px}
+.kicker{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:10px}
+.title{font-size:38px;text-transform:uppercase;margin-bottom:14px}
+.lede{font-size:17px;color:var(--ink);max-width:680px;margin-bottom:22px}
+.muted{color:var(--muted)}
+.small{font-size:13px;line-height:1.5}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:3px;background:var(--accent);color:var(--bg)}
+.tag.p{background:var(--accent2);color:var(--ink)}
+.tag.o{background:transparent;border:1px solid var(--muted);color:var(--muted)}
+.stripe{height:12px;background:repeating-linear-gradient(-45deg,var(--accent) 0 14px,var(--bg) 14px 28px);border-radius:2px}
+.stripe.p{background:repeating-linear-gradient(-45deg,var(--accent2) 0 14px,var(--bg) 14px 28px)}
+.card{background:var(--surface);border-radius:8px;padding:18px 20px;border:1px solid var(--line)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.stat .n{font-family:var(--display);font-size:34px;line-height:1;color:var(--ink)}
+.stat .l{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:8px;font-weight:600}
+ul.clean{list-style:none;margin:0;padding:0}
+ul.clean li{position:relative;padding-left:20px;margin-bottom:8px}
+ul.clean li:before{content:"";position:absolute;left:0;top:.6em;width:9px;height:9px;background:var(--accent);transform:rotate(45deg)}
+ul.clean.p li:before{background:var(--accent2)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:700;padding:9px 10px;border-bottom:2px solid var(--accent)}
+td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.dl{position:fixed;top:14px;right:14px;z-index:10;background:var(--accent);color:var(--bg);font-weight:700;font-size:13px;text-decoration:none;padding:9px 14px;border-radius:4px;letter-spacing:.04em;box-shadow:0 4px 18px rgba(0,0,0,.4)}
+.dl:hover{background:var(--ink)}
+
+/* Cover */
+.cover{overflow:hidden}
+.cover .top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.mono{width:86px;height:86px;flex:none}
+.cover .label{font-family:var(--display);font-size:15px;letter-spacing:.3em;color:var(--accent);margin-bottom:6px}
+.cover h1{font-size:76px;text-transform:uppercase;line-height:.92;margin:26px 0 10px}
+.cover h1 span{color:var(--accent)}
+.cover .who{font-size:18px;color:var(--muted);margin-bottom:6px}
+.cover .who b{color:var(--ink)}
+.cover .pos{font-size:20px;max-width:640px;margin:16px 0 26px;line-height:1.4}
+.hero{position:relative;background:var(--surface);border-radius:10px;padding:24px 26px 22px;border-left:8px solid var(--accent);overflow:hidden}
+.hero .est{display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--bg);background:var(--accent);padding:4px 10px;border-radius:3px}
+.hero .big{font-family:var(--display);font-size:118px;line-height:.95;margin:12px 0 8px;color:var(--ink);letter-spacing:-.03em}
+.hero .big small{font-size:.36em;color:var(--accent);letter-spacing:0;margin-left:6px}
+.hero .what{font-size:16px;margin:0 0 4px}
+.hero .ass{font-size:14px;color:var(--muted);margin:0}
+.hero svg.spoke{position:absolute;right:-60px;top:-50px;width:250px;height:250px;opacity:.16}
+.inside{margin-top:24px}
+.inside ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 22px;font-size:14px}
+.inside li{display:flex;gap:10px;border-bottom:1px solid var(--line);padding:5px 0}
+.inside li b{font-family:var(--display);color:var(--accent);font-weight:400;min-width:24px}
+
+/* Maths */
+.eq{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1.2fr;align-items:stretch;gap:8px;margin:8px 0 20px}
+.eq .op{font-family:var(--display);font-size:30px;color:var(--accent);align-self:center}
+.eq .box{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 12px;text-align:center}
+.eq .box .n{font-family:var(--display);font-size:28px;line-height:1.05}
+.eq .box .l{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px;font-weight:600}
+.eq .box.res{background:var(--accent);border-color:var(--accent)}
+.eq .box.res .n,.eq .box.res .l{color:var(--bg)}
+.calc td{font-size:15px}
+.calc tr.tot td{border-top:2px solid var(--accent);border-bottom:none;font-weight:700;font-size:16px}
+
+/* Ladder / offers */
+.rung{display:grid;grid-template-columns:70px 1fr auto;gap:16px;align-items:start;padding:16px 0;border-bottom:1px solid var(--line)}
+.rung .num{font-family:var(--display);font-size:52px;line-height:.9;color:var(--accent)}
+.rung .num.p{color:var(--accent2)}
+.rung h3{font-size:22px;text-transform:uppercase;margin-bottom:6px}
+.rung .price{font-family:var(--display);font-size:26px;text-align:right;white-space:nowrap}
+.rung .price span{display:block;font-family:var(--body);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.offer h3{font-size:28px;text-transform:uppercase;margin:6px 0 10px}
+.lesson{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.lesson b.i{font-family:var(--display);font-weight:400;font-size:22px;color:var(--accent);line-height:1}
+.promise{border-left:6px solid var(--accent2);padding:12px 16px;background:var(--surface);border-radius:0 8px 8px 0;font-size:17px;margin:16px 0}
+
+/* Launch */
+.step{display:grid;grid-template-columns:64px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step .s{font-family:var(--display);font-size:46px;line-height:.9;color:var(--accent)}
+.step h3{font-size:20px;text-transform:uppercase;margin-bottom:6px}
+
+/* Post */
+.slides{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.slide{aspect-ratio:6/5;background:var(--surface);border-radius:8px;border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.slide .sn{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.slide .t{font-family:var(--display);font-size:20px;line-height:1.12;text-transform:uppercase}
+.slide.s1{background:var(--accent);border-color:var(--accent)}
+.slide.s1 .t,.slide.s1 .sn{color:var(--bg)}
+.slide.s4{background:var(--accent2);border-color:var(--accent2)}
+.slide .bar{background:var(--bg);color:var(--ink);font-family:var(--body);font-weight:700;font-size:13px;padding:4px 8px;display:inline-block;align-self:flex-start}
+
+/* Close */
+.cta{background:var(--accent);color:var(--bg);border-radius:10px;padding:26px 28px;margin:20px 0}
+.cta h2{font-size:34px;text-transform:uppercase;margin-bottom:10px}
+.cta p{font-size:18px;margin:0;font-weight:600}
+
+@page { size: A4; margin: 0; }
+@media print {
+  html, body { background: var(--bg); }
+  .page { width: 210mm; min-height: 297mm; break-after: page; page-break-after: always; padding: 16mm 16mm 18mm; box-sizing: border-box; position: relative; overflow: hidden; }
+  .page:last-child { break-after: auto; page-break-after: auto; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .no-print { display: none !important; }
+  .page + .page{border-top:none}
+}
+@media screen {
+  .page { max-width: 900px; margin: 0 auto; padding: 48px 28px; }
+}
+@media screen and (max-width:640px){
+  .page{padding:36px 16px}
+  .cover h1{font-size:48px}
+  .hero .big{font-size:64px}
+  .title{font-size:28px}
+  .grid2,.grid3,.slides,.inside ol{grid-template-columns:1fr}
+  .grid4{grid-template-columns:1fr 1fr}
+  .eq{grid-template-columns:1fr}
+  .eq .op{text-align:center}
+  .rung{grid-template-columns:48px 1fr}
+  .rung .price{grid-column:2;text-align:left}
+  .rung .num{font-size:38px}
+  .dl{top:auto;bottom:14px}
+  table{font-size:13px}
+}
+</style>
+</head>
+<body>
+<a class="dl no-print" href="t77bmx-monetisation-audit.pdf">Download the PDF</a>
+
+<!-- 1. COVER -->
+<section class="page cover">
+  <div class="top">
+    <div>
+      <div class="label">MONETISATION AUDIT</div>
+      <div class="muted small">Prepared for Tyler Sale · October 2026</div>
+    </div>
+    <svg class="mono" viewBox="0 0 100 100" aria-hidden="true">
+      <rect x="3" y="3" width="94" height="94" rx="8" fill="none" stroke="#FF4E1E" stroke-width="4"/>
+      <rect x="11" y="11" width="78" height="78" rx="4" fill="#231B22"/>
+      <text x="50" y="63" text-anchor="middle" font-family="Archivo Black, Arial Black, sans-serif" font-size="34" fill="#FBEFE6">T77</text>
+      <rect x="11" y="74" width="78" height="6" fill="#8B2FD6"/>
+    </svg>
+  </div>
+  <h1>T77<br><span>BMX</span></h1>
+  <div class="who"><b>Tyler Sale</b> · @t77bmx · 116,849 followers</div>
+  <p class="pos">BMX repairs, restorations and custom builds, filmed from a working UK workshop and taken out to skateparks and Amsterdam canals.</p>
+  <div class="stripe"></div>
+  <div class="hero" style="margin-top:22px">
+    <svg class="spoke" viewBox="0 0 200 200" aria-hidden="true">
+      <circle cx="100" cy="100" r="92" fill="none" stroke="#FBEFE6" stroke-width="6"/>
+      <circle cx="100" cy="100" r="78" fill="none" stroke="#FBEFE6" stroke-width="2"/>
+      <circle cx="100" cy="100" r="14" fill="#FBEFE6"/>
+      <g stroke="#FBEFE6" stroke-width="2">
+        <line x1="100" y1="8" x2="100" y2="192"/><line x1="8" y1="100" x2="192" y2="100"/>
+        <line x1="35" y1="35" x2="165" y2="165"/><line x1="165" y1="35" x2="35" y2="165"/>
+        <line x1="65" y1="15" x2="135" y2="185"/><line x1="135" y1="15" x2="65" y2="185"/>
+        <line x1="15" y1="65" x2="185" y2="135"/><line x1="15" y1="135" x2="185" y2="65"/>
+      </g>
+    </svg>
+    <span class="est">Estimate · conservative case</span>
+    <div class="big">£11,300<small>est.</small></div>
+    <p class="what"><strong>Estimate: about £11,300 from one launch of one paid restoration series</strong>, before any affiliate tool income.</p>
+    <p class="ass">Assumption: 0.25% of your followers (about 290 riders) buy one £39 series in its first launch.</p>
+  </div>
+  <div class="inside">
+    <div class="kicker">Inside</div>
+    <ol>
+      <li><b>02</b>What your numbers say</li>
+      <li><b>03</b>The gap in what you offer</li>
+      <li><b>04</b>Where the number comes from</li>
+      <li><b>05</b>The product ladder</li>
+      <li><b>06</b>Offer detail</li>
+      <li><b>07</b>Launch plan</li>
+      <li><b>08</b>The first post</li>
+      <li><b>09</b>What to do next</li>
+    </ol>
+  </div>
+</section>
+
+<!-- 2. NUMBERS -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @t77bmx</span><span class="pn">02</span></div>
+  <div class="kicker">Audience snapshot</div>
+  <h2 class="title">What your numbers say</h2>
+  <p class="lede">You have built a workshop audience at scale: riders who watch you strip, fix and rebuild bikes, and who come back for the next one. Figures below are public profile data from your latest posts.</p>
+  <div class="grid4" style="margin-bottom:22px">
+    <div class="card stat"><div class="n">116,849</div><div class="l">Followers</div></div>
+    <div class="card stat"><div class="n">1,344</div><div class="l">Avg likes</div></div>
+    <div class="card stat"><div class="n">1.16%</div><div class="l">Engagement</div></div>
+    <div class="card stat"><div class="n">522</div><div class="l">Posts</div></div>
+  </div>
+  <div class="kicker">The content that works (latest 12 posts, public views)</div>
+  <table style="margin-bottom:22px">
+    <thead><tr><th>Post</th><th class="num">Views</th><th class="num">Likes</th></tr></thead>
+    <tbody>
+      <tr><td>Profile Racing rear wheel rebuild, Amsterdam</td><td class="num">286,019</td><td class="num">8,584</td></tr>
+      <tr><td>Customising the rare Grape Soda BMX at the skatepark</td><td class="num">189,917</td><td class="num">2,798</td></tr>
+      <tr><td>Sunday Bikes 'Burn Slow' stem upgrade, inside the skatepark</td><td class="num">69,996</td><td class="num">1,059</td></tr>
+      <tr><td>S&amp;M headset repair</td><td class="num">38,273</td><td class="num">1,555</td></tr>
+    </tbody>
+  </table>
+  <div class="kicker">Your three content pillars</div>
+  <div class="grid3">
+    <div class="card"><span class="tag">01</span><h3 style="font-size:18px;margin:10px 0 6px;text-transform:uppercase">Custom builds on location</h3><p class="small muted" style="margin:0">Rare bikes rebuilt at the skatepark, in Amsterdam, in a secret spot. Your four biggest recent posts are all here.</p></div>
+    <div class="card"><span class="tag p">02</span><h3 style="font-size:18px;margin:10px 0 6px;text-transform:uppercase">Workshop repairs</h3><p class="small muted" style="margin:0">Headsets, wheels, stems and full restorations, the paid work your workshop already does.</p></div>
+    <div class="card"><span class="tag o">03</span><h3 style="font-size:18px;margin:10px 0 6px;text-transform:uppercase">Tools and how-tos</h3><p class="small muted" style="margin:0">The grip-install hack with @gt85spray and the 6mil Allen key set: method given away free.</p></div>
+  </div>
+</section>
+
+<!-- 3. OPPORTUNITY -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @t77bmx</span><span class="pn">03</span></div>
+  <div class="kicker">The opportunity</div>
+  <h2 class="title">The gap in what you offer</h2>
+  <p class="lede">Your paid help only reaches bikes that physically get to your workshop. Your method reaches everyone who watches. Nothing sits in between.</p>
+  <div class="grid2" style="margin-bottom:20px">
+    <div class="card">
+      <span class="tag">Observed</span>
+      <ul class="clean" style="margin-top:14px">
+        <li>About 117,000 followers watching detailed repair videos: grips, wheel rebuilds, tool reviews.</li>
+        <li>A paid workshop service already exists, alongside your tool partnerships (@6miltools, @gt85spray) and the independent shop, @shifta.bike.</li>
+        <li>There is no teaching product. The method is free in the videos; paid help needs the bike on your bench.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="tag p">Inferred, not yet confirmed</span>
+      <ul class="clean p" style="margin-top:14px">
+        <li>Some viewers can't use the workshop because of distance or your capacity.</li>
+        <li>You haven't said how many. This audit treats it as the question to test, not a fact.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card" style="border-left:6px solid var(--accent);margin-bottom:18px">
+    <div class="kicker" style="margin-bottom:6px">In your words (DM, 24/09)</div>
+    <p style="font-size:16px;margin-bottom:8px">You pick each job by "what the bike actually needs, what will make the biggest difference to the rider, and what will make an interesting transformation to film", and you try "to keep it genuine rather than forcing a repair purely for content".</p>
+    <p class="small muted" style="margin:0">You already take on "paid BMX repairs, restorations and custom builds through my workshop".</p>
+  </div>
+  <div class="kicker">The transformation you could sell</div>
+  <p style="font-size:17px">Riders who can't get their bike to you become riders who can <strong>diagnose, repair and upgrade their own bikes</strong> with workshop-grade technique and the right tools.</p>
+  <p class="muted" style="margin:0"><strong style="color:var(--accent)">Verdict:</strong> the free videos already show the method. The gap is a structured, paid version for riders who want to do the job themselves, step by step, on their own bike. It sits next to the workshop rather than competing with it.</p>
+</section>
+
+<!-- 4. MATHS -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @t77bmx</span><span class="pn">04</span></div>
+  <div class="kicker">The working</div>
+  <h2 class="title">Where the number comes from</h2>
+  <p class="lede">This is a conservative estimate, not a promise. There is one assumption in it, and it is stated so you can check it against your own sense of your audience.</p>
+  <div class="eq">
+    <div class="box"><div class="n">117,000</div><div class="l">Followers (about)</div></div>
+    <div class="op">×</div>
+    <div class="box"><div class="n">0.25%</div><div class="l">Buy (estimate)</div></div>
+    <div class="op">×</div>
+    <div class="box"><div class="n">£39</div><div class="l">Series price</div></div>
+    <div class="op">=</div>
+    <div class="box res"><div class="n">£11,310</div><div class="l">One launch (estimate)</div></div>
+  </div>
+  <table class="calc" style="margin-bottom:22px">
+    <thead><tr><th>Step</th><th>Basis</th><th class="num">Figure</th></tr></thead>
+    <tbody>
+      <tr><td>Follower base</td><td class="muted">Public data: 116,849, rounded</td><td class="num">about 117,000</td></tr>
+      <tr><td>Share who buy in the first launch</td><td class="muted">Assumption, to be tested</td><td class="num">0.25%</td></tr>
+      <tr><td>Buyers</td><td class="muted">117,000 × 0.25%, rounded down</td><td class="num">about 290</td></tr>
+      <tr><td>Price per series</td><td class="muted">One paid restoration series</td><td class="num">£39</td></tr>
+      <tr class="tot"><td>Revenue, one launch</td><td>290 × £39</td><td class="num">£11,310</td></tr>
+    </tbody>
+  </table>
+  <div class="grid2">
+    <div class="card">
+      <div class="kicker">Why 0.25% is cautious</div>
+      <p class="small" style="margin:0">290 buyers is about one in five of the people who like a typical post of yours (1,344 average likes, public data), and a fraction of the 8,584 who liked the Amsterdam wheel rebuild. The estimate does not need a viral launch to land.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">What is not counted</div>
+      <p class="small" style="margin:0">Affiliate income from the tool list inside the series, any second series, and workshop bookings the series might bring in. None of these are estimated here; the £11,310 stands on the series alone.</p>
+    </div>
+  </div>
+  <p class="small muted" style="margin-top:18px">The cover rounds £11,310 to about £11,300. The real test of the 0.25% is the "BUILD" comment count on page 08.</p>
+</section>
+
+<!-- 5. LADDER -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @t77bmx</span><span class="pn">05</span></div>
+  <div class="kicker">What to sell</div>
+  <h2 class="title">The product ladder</h2>
+  <p class="lede">One new product, built on the work you already film, plus a way to fold the tool partnerships you already have into it. It sits beside the workshop, not on top of it.</p>
+  <div class="rung" style="border-top:1px solid var(--line)">
+    <div class="num">00</div>
+    <div><h3>Your workshop service</h3><p class="small muted" style="margin:0">Already running. Paid repairs, restorations and custom builds for riders who can bring their bike to you. Unchanged by this plan.</p></div>
+    <div class="price">Existing<span>Not estimated</span></div>
+  </div>
+  <div class="rung">
+    <div class="num">01</div>
+    <div><h3>The Workshop-at-Home Series</h3><p class="small muted" style="margin:0"><strong>The main idea.</strong> One full restoration, stripped frame to finished bike, filmed the way you already film and broken into steps. For riders who watch the free videos and want to do the whole job themselves, but can't get their bike to you.</p></div>
+    <div class="price">£39<span>Per series</span></div>
+  </div>
+  <div class="rung">
+    <div class="num p">02</div>
+    <div><h3>The tool list inside the series</h3><p class="small muted" style="margin:0">Each lesson lists the exact tools used, linked through the affiliate partnerships you already have. It turns those relationships into part of the product rather than a separate link in bio.</p></div>
+    <div class="price">Included<span>Affiliate</span></div>
+  </div>
+  <div class="kicker" style="margin-top:24px">At a glance</div>
+  <table>
+    <thead><tr><th>Product</th><th>For whom</th><th class="num">Price</th><th class="num">Revenue (estimate)</th></tr></thead>
+    <tbody>
+      <tr><td>Workshop-at-Home Series</td><td class="muted">Riders who can't reach the workshop</td><td class="num">£39</td><td class="num">£11,310, one launch</td></tr>
+      <tr><td>Tool list inside the series</td><td class="muted">Every series buyer</td><td class="num">In series</td><td class="num">Not estimated</td></tr>
+      <tr><td>Workshop service</td><td class="muted">Riders who can bring their bike</td><td class="num">Existing</td><td class="num">Not estimated</td></tr>
+    </tbody>
+  </table>
+  <p class="small muted" style="margin-top:12px">Series estimate assumes 0.25% of about 117,000 followers buy (about 290 riders) in the first launch.</p>
+</section>
+
+<!-- 6. OFFER DETAIL -->
+<section class="page offer">
+  <div class="rh"><span>Monetisation Audit · @t77bmx</span><span class="pn">06</span></div>
+  <div class="kicker">Offer detail</div>
+  <span class="tag">Product 01 · £39</span>
+  <h3>The Workshop-at-Home Series</h3>
+  <p>A paid video series that follows one full restoration from stripped frame to finished bike. It is the same work you already film, sequenced and finished properly, with each step broken out:</p>
+  <div style="margin-bottom:6px">
+    <div class="lesson"><b class="i">1</b><div><strong>Diagnosis.</strong> <span class="muted">What the bike actually needs, the first question you already ask on every job.</span></div></div>
+    <div class="lesson"><b class="i">2</b><div><strong>What to replace and why.</strong> <span class="muted">The decisions that make the biggest difference to the rider.</span></div></div>
+    <div class="lesson"><b class="i">3</b><div><strong>Tools.</strong> <span class="muted">The exact kit for each step, with the tool list below.</span></div></div>
+    <div class="lesson"><b class="i">4</b><div><strong>The order of work.</strong> <span class="muted">Strip, repair, rebuild, in the sequence a workshop uses.</span></div></div>
+  </div>
+  <div class="promise">The promise: do the whole job yourself, step by step, on your own bike.</div>
+  <p class="small"><strong>Why it fits you:</strong> it keeps your own rule of choosing work that genuinely matters to the bike, rather than forcing a repair for content. <strong>First step:</strong> pick one restoration you are already planning to film, and film it with the series in mind.</p>
+  <div class="stripe p" style="margin:18px 0 16px"></div>
+  <span class="tag p">Product 02 · included</span>
+  <h3>The tool list inside the series</h3>
+  <p style="margin-bottom:8px">Each lesson ends with the exact tools used, linked through the affiliate partnerships you already have, such as the @6miltools Allen keys and @gt85spray you already feature.</p>
+  <p class="small" style="margin:0"><strong>The difference:</strong> the links sit at the moment a rider needs the tool, inside the lesson, not as a separate link in bio. <strong>First step:</strong> note every tool as you film the series restoration.</p>
+</section>
+
+<!-- 7. LAUNCH -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @t77bmx</span><span class="pn">07</span></div>
+  <div class="kicker">The sequence</div>
+  <h2 class="title">Launch plan</h2>
+  <p class="lede">Four steps, in this order. Nothing gets built until your riders have told you they want it.</p>
+  <div class="step" style="border-top:1px solid var(--line)">
+    <div class="s">01</div>
+    <div><h3>Ask first</h3><p style="margin:0">Run a story poll or question box asking riders whether they would rather send their bike in or learn to do the job themselves. Then post the test carousel on the next page. This tests demand before anything is built.</p></div>
+  </div>
+  <div class="step">
+    <div class="s">02</div>
+    <div><h3>Film one restoration for the series</h3><p style="margin:0">Pick one restoration project you are already planning to film, and film it with the series in mind: diagnosis, parts, tools and order of work captured as separate steps.</p></div>
+  </div>
+  <div class="step">
+    <div class="s">03</div>
+    <div><h3>Waitlist, then a real launch</h3><p style="margin:0">Invite interested riders, starting with everyone who commented "BUILD", to a waitlist. Open the series to them first, with a clear launch date and a real close.</p></div>
+  </div>
+  <div class="step">
+    <div class="s">04</div>
+    <div><h3>Decide on a second series</h3><p style="margin:0">Use the replies and waitlist numbers to decide whether a second series is worth making.</p></div>
+  </div>
+  <div class="card" style="margin-top:22px">
+    <div class="kicker">What to watch</div>
+    <p class="small" style="margin:0">The estimate needs about 290 buyers. Your poll replies, "BUILD" comments and waitlist sign-ups are the first real evidence for or against that 0.25%, so count them before you film.</p>
+  </div>
+</section>
+
+<!-- 8. FIRST POST -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @t77bmx</span><span class="pn">08</span></div>
+  <div class="kicker">Immediate validation</div>
+  <h2 class="title">The first post</h2>
+  <p class="lede">Post this as a carousel, or use it as a short reel caption over workshop footage, before building anything.</p>
+  <div class="slides" style="margin-bottom:18px">
+    <div class="slide s1"><span class="sn">Slide 1</span><div class="t">Can't get your BMX to a workshop?</div><span class="bar">t77bmx</span></div>
+    <div class="slide"><span class="sn">Slide 2</span><div class="t" style="font-size:17px">Every week I strip, fix and rebuild bikes like this one. Most of you watch from too far away to send yours in.</div><span class="bar">Workshop</span></div>
+    <div class="slide"><span class="sn">Slide 3</span><div class="t" style="font-size:18px">I'm thinking of filming one full restoration, every step, so you can do it on your own bike.</div><span class="bar">Every step</span></div>
+    <div class="slide s4"><span class="sn">Slide 4</span><div class="t" style="font-size:26px">Comment "BUILD" if you'd want it.</div><span class="bar">BUILD</span></div>
+  </div>
+  <div class="card">
+    <div class="kicker">How to read it</div>
+    <p class="small" style="margin:0">The number of "BUILD" comments is the demand test. Put a restoration you have just finished behind slide 1, so the post looks like the rest of your feed.</p>
+  </div>
+</section>
+
+<!-- 9. CLOSE -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @t77bmx</span><span class="pn">09</span></div>
+  <div class="kicker">Next</div>
+  <h2 class="title">What to do next</h2>
+  <ul class="clean" style="font-size:17px;margin-bottom:8px">
+    <li><strong>This week:</strong> run the story poll and post the "BUILD" carousel.</li>
+    <li><strong>Count:</strong> poll replies and "BUILD" comments. That is your demand test.</li>
+    <li><strong>Then:</strong> choose the restoration you were already going to film, and film it as the series.</li>
+  </ul>
+  <div class="cta">
+    <h2>Let's talk it through</h2>
+    <p>Reply to this DM and I'll walk you through the numbers and what to build first.</p>
+  </div>
+  <div class="stripe" style="margin:28px 0 22px"></div>
+  <p style="font-size:16px;margin-bottom:6px">Prepared by <strong>Euan Grant</strong> · Autora AI Automation · October 2026</p>
+  <p class="small muted">All figures are estimates based on public profile data and this audit. Each one shows the assumption behind it; none is a promise of results.</p>
+  <p class="small muted">How this was made: Euan builds automations and used AI for the analysis, which is why this took an evening rather than a fortnight.</p>
+  <svg viewBox="0 0 600 70" style="width:100%;margin-top:40px;opacity:.85" aria-hidden="true">
+    <text x="0" y="56" font-family="Archivo Black, Arial Black, sans-serif" font-size="64" fill="#231B22">T77 BMX</text>
+    <rect x="310" y="22" width="290" height="8" fill="#FF4E1E"/>
+    <rect x="310" y="38" width="200" height="8" fill="#8B2FD6"/>
+  </svg>
+</section>
+</body>
+</html>
