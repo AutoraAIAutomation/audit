@@ -99,20 +99,28 @@ tr.hi td{background:rgba(244,196,48,.08)}
 
 /* cover */
 .cover{display:flex;flex-direction:column;padding-top:0}
-.scene{position:relative;border-radius:22px;overflow:hidden;background:linear-gradient(180deg,#3E8EF0 0%,#7DB7F5 46%,#CFE6FA 62%,#7FB35A 62.2%,#4E8A3A 100%);aspect-ratio:16/10.4;margin-bottom:22px}
+.scene{position:relative;border-radius:22px;overflow:hidden;background:linear-gradient(180deg,#3E8EF0 0%,#7DB7F5 46%,#CFE6FA 62%,#7FB35A 62.2%,#4E8A3A 100%);aspect-ratio:16/8;margin-bottom:18px}
 .scene svg{position:absolute;inset:0;width:100%;height:100%;display:block}
 .scene .inner{position:absolute;inset:0;padding:22px 24px;display:flex;flex-direction:column;justify-content:space-between}
 .scene .top{display:flex;justify-content:space-between;align-items:flex-start}
 .scene .title{font-size:13px;padding:8px 14px 9px;border-radius:12px;letter-spacing:.14em}
 .scene .h1{font-size:48px;padding:14px 22px 17px;border-radius:22px;line-height:1.02;align-self:flex-start;max-width:92%}
 .scene .sub{margin-top:8px;font-size:17px;padding:8px 14px 10px;border-radius:12px;align-self:flex-start;background:var(--accent);color:var(--badge)}
-.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:22px;align-items:end}
+.hero{display:grid;grid-template-columns:1fr 1.35fr;gap:18px;align-items:center}
 .hero .big{font-family:'Archivo Black','Arial Black',sans-serif;font-size:104px;line-height:.9;color:var(--accent);letter-spacing:-.03em;white-space:nowrap}
 .hero .est{display:inline-block;margin-bottom:10px}
 .hero .what{font-size:15px;color:#C9CED6;margin-top:12px;max-width:40ch}
 .inside{background:var(--surface);border-radius:16px;padding:14px 16px;font-size:13.5px}
 .inside ol{margin:6px 0 0;padding-left:18px}
 .inside li{margin-bottom:3px}
+.range{margin-bottom:14px}
+.range .big{font-family:'Archivo Black','Arial Black',sans-serif;font-size:70px;line-height:.95;color:var(--accent);letter-spacing:-.03em;white-space:nowrap;margin:10px 0 8px}
+.range .big .to{font-size:.5em;color:var(--ink);vertical-align:.25em;margin:0 6px}
+.range .assume{font-size:14px;color:#C9CED6;margin:0}
+.avg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.avg .stat .n{font-size:21px}
+.chart svg{width:100%;height:auto;display:block}
+.chart.big{background:var(--surface);border-radius:16px;padding:16px 18px;margin:14px 0}
 .coverfoot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:12px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);letter-spacing:.06em}
 
 @page { size: A4; margin: 0; }
@@ -134,7 +142,7 @@ tr.hi td{background:rgba(244,196,48,.08)}
   .grid2,.grid3{grid-template-columns:1fr}
   .grid4{grid-template-columns:1fr 1fr}
   .hero{grid-template-columns:1fr}
-  .hero .big{font-size:72px}
+  .range .big{font-size:38px;white-space:normal}
   .scene{aspect-ratio:auto;min-height:360px}
   .scene .h1{font-size:30px}
   .scene .sub{font-size:14px}
@@ -170,26 +178,43 @@ tr.hi td{background:rgba(244,196,48,.08)}
     </div>
   </div>
 
-  <p class="lede" style="font-size:18px;color:var(--ink);margin-bottom:22px"><strong>The coach who teaches professionals what to say when their mind goes blank, and why one framework from your coaching can become a short course.</strong></p>
+  <p class="lede" style="font-size:18px;color:var(--ink);margin-bottom:22px"><strong>The coach who teaches professionals what to say when their mind goes blank, and why one framework from your coaching can become four paid products.</strong></p>
+
+  <div class="range">
+    <span class="chip est">Estimate · revenue range</span>
+    <div class="big">$8,033<span class="to">to</span>$415,500</div>
+    <p class="assume">Assumption: 5% of your 110,970 followers are engaged (5,548 people) and 5% of those buy (277 people). The range runs from all 277 buying the $29 ebook to all 277 buying the $1,500 one-to-one programme.</p>
+  </div>
 
   <div class="hero">
     <div>
-      <span class="chip est">Estimate · conservative case</span>
-      <div class="big"><span style="font-size:.55em;vertical-align:.32em;margin-right:4px">≈</span>$12,900</div>
-      <p class="what">One launch of one self-paced framework at $47, if 0.25% of your followers buy it (about 275 people). Before any buyer moves on to coaching.</p>
+      <div class="avg">
+        <div class="stat"><div class="n y">$96,950</div><div class="k">Median (estimate)</div></div>
+        <div class="stat"><div class="n">$154,358.25</div><div class="k">Mean (estimate)</div></div>
+      </div>
+      <div class="inside" style="margin-top:10px"><div class="tag2" style="margin:0 0 4px">What is inside</div>Your numbers · where the gap sits · where the number comes from · the product ladder · offer detail · launch plan · the first post · what to do next</div>
     </div>
-    <div class="inside">
-      <div class="tag2" style="margin:0">What is inside</div>
-      <ol>
-        <li>What your numbers say</li>
-        <li>Where the gap sits</li>
-        <li>Where the number comes from</li>
-        <li>The product ladder</li>
-        <li>Offer detail</li>
-        <li>Launch plan</li>
-        <li>The first post</li>
-        <li>What to do next</li>
-      </ol>
+    <div class="chart">
+<svg viewBox="0 0 420 172" role="img" aria-label="Revenue estimate per product on a shared scale, with the median and mean marked" font-family="Inter,Arial,sans-serif">
+<line x1="134" y1="20" x2="134" y2="160" stroke="#8A93A3" stroke-opacity=".5"/>
+<text x="0" y="41" font-size="11" font-weight="600" fill="#F5F6F7">Ebook · $29</text>
+<rect x="134" y="26" width="3.8700000000000045" height="22" rx="4" fill="#8A93A3"/>
+<text x="420" y="41" font-size="12" font-weight="800" fill="#F5F6F7" text-anchor="end">$8,033</text>
+<text x="0" y="75" font-size="11" font-weight="600" fill="#F5F6F7">Course · $200</text>
+<rect x="134" y="60" width="26.669999999999987" height="22" rx="4" fill="#F4C430"/>
+<text x="420" y="75" font-size="12" font-weight="800" fill="#F5F6F7" text-anchor="end">$55,400</text>
+<text x="0" y="109" font-size="11" font-weight="600" fill="#F5F6F7">Group coaching · $500</text>
+<rect x="134" y="94" width="66.66999999999999" height="22" rx="4" fill="#5B7BB8"/>
+<text x="420" y="109" font-size="12" font-weight="800" fill="#F5F6F7" text-anchor="end">$138,500</text>
+<text x="0" y="143" font-size="11" font-weight="600" fill="#F5F6F7">One-to-one · $1,500</text>
+<rect x="134" y="128" width="200.0" height="22" rx="4" fill="#2F6FED"/>
+<text x="420" y="143" font-size="12" font-weight="800" fill="#F5F6F7" text-anchor="end">$415,500</text>
+<line x1="180.67" y1="18" x2="180.67" y2="160" stroke="#F4C430" stroke-width="1.6" stroke-dasharray="4 3"/>
+<text x="177.67" y="13" font-size="10" font-weight="800" fill="#F4C430" text-anchor="end">Median $96,950</text>
+<line x1="208.3" y1="18" x2="208.3" y2="160" stroke="#F5F6F7" stroke-width="1.6" stroke-dasharray="2 3"/>
+<text x="211.3" y="13" font-size="10" font-weight="800" fill="#F5F6F7">Mean $154,358.25</text>
+<text x="134" y="171" font-size="9" fill="#8A93A3">$0</text><text x="334" y="171" font-size="9" fill="#8A93A3" text-anchor="middle">$415,500</text>
+</svg>
     </div>
   </div>
 
@@ -201,7 +226,7 @@ tr.hi td{background:rgba(244,196,48,.08)}
 
 <!-- 2. NUMBERS -->
 <section class="page">
-  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">02 / 10</span></div>
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">02 / 11</span></div>
   <span class="eyebrow">What your numbers say</span>
   <h2 class="sec">A big room that already trusts your method</h2>
   <p class="lede">Your reels are not generic tips. You told us they come straight from the framework you teach paying clients, picked from the problems that come up most.</p>
@@ -234,7 +259,7 @@ tr.hi td{background:rgba(244,196,48,.08)}
 
 <!-- 3. PILLARS + GAP -->
 <section class="page">
-  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">03 / 10</span></div>
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">03 / 11</span></div>
   <span class="eyebrow">Your three content pillars</span>
   <h2 class="sec">What you teach, in your own captions</h2>
   <div class="grid3" style="margin:16px 0 22px">
@@ -262,121 +287,156 @@ tr.hi td{background:rgba(244,196,48,.08)}
 
 <!-- 4. MATHS -->
 <section class="page">
-  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">04 / 10</span></div>
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">04 / 11</span></div>
   <span class="eyebrow">Where the number comes from</span>
-  <h2 class="sec">One assumption, shown so you can check it</h2>
-  <p class="lede">This is a conservative estimate, not a promise. Every figure below is either public data or a stated assumption.</p>
+  <h2 class="sec">Two assumptions, shown so you can check them</h2>
+  <p class="lede">These are estimates, not promises. Every figure below is either public data or one of the two stated assumptions, and each step uses the rounded number from the step before.</p>
 
-  <div class="mrow"><div class="lab">Follower base<em>Public data: 110,970, rounded</em></div><div class="val">≈ 111,000</div></div>
-  <div class="mrow"><div class="lab">Share who buy in the first launch<em>Assumption: 0.25% of followers, one in every 400</em></div><div class="val">× 0.25%</div></div>
-  <div class="mrow"><div class="lab">Buyers<em>111,000 × 0.25% = 277.5, rounded down</em></div><div class="val">≈ 275</div></div>
-  <div class="mrow"><div class="lab">Price of the self-paced framework<em>Assumption: a short course, priced for followers not ready for coaching</em></div><div class="val">× $47</div></div>
-  <div class="mrow"><div class="lab">275 buyers × $47<em>Exact product of the line above</em></div><div class="val">$12,925</div></div>
+  <div class="mrow"><div class="lab">F · Followers<em>Public data</em></div><div class="val">110,970</div></div>
+  <div class="mrow"><div class="lab">E · Engaged audience<em>Assumption: 5% of followers. 110,970 × 5% = 5,548.5, rounded down</em></div><div class="val">5,548</div></div>
+  <div class="mrow"><div class="lab">B · Buyers<em>Assumption: 5% of the engaged audience. 5,548 × 5% = 277.4, rounded down (0.25% of followers)</em></div><div class="val">277</div></div>
 
-  <div class="total">
-    <div class="lab">Estimate: one launch of one framework,<br>before any buyer moves on to coaching</div>
-    <div class="val">≈ $12,900</div>
+  <h3 class="sub" style="margin-top:24px">If all 277 buyers bought one product</h3>
+  <table>
+    <thead><tr><th>Product</th><th class="num">Price</th><th class="num">Buyers</th><th class="num">Revenue (estimate)</th></tr></thead>
+    <tbody>
+      <tr><td>1. Ebook</td><td class="num">$29</td><td class="num">277</td><td class="num">$8,033</td></tr>
+      <tr class="hi"><td>2. Online course</td><td class="num">$200</td><td class="num">277</td><td class="num">$55,400</td></tr>
+      <tr><td>3. One-to-many group coaching</td><td class="num">$500</td><td class="num">277</td><td class="num">$138,500</td></tr>
+      <tr><td>4. One-to-one coaching, 8 weeks</td><td class="num">$1,500</td><td class="num">277</td><td class="num">$415,500</td></tr>
+    </tbody>
+  </table>
+  <p class="small">Each row is the same 277 buyers × that product’s price (277 × $29 = $8,033; 277 × $200 = $55,400; 277 × $500 = $138,500; 277 × $1,500 = $415,500). The rows are alternatives, not added together. Figures are in US dollars; platform and payment fees are not deducted.</p>
+</section>
+
+<!-- 4b. MATHS CONTINUED -->
+<section class="page">
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">05 / 11</span></div>
+  <span class="eyebrow">Where the number comes from · continued</span>
+  <h2 class="sec">The range and the averages</h2>
+
+  <div class="mrow"><div class="lab">Minimum<em>277 buyers × $29 ebook</em></div><div class="val">$8,033</div></div>
+  <div class="mrow"><div class="lab">Maximum<em>277 buyers × $1,500 one-to-one programme</em></div><div class="val">$415,500</div></div>
+  <div class="mrow"><div class="lab">Median<em>Mean of the two middle figures: ($55,400 + $138,500) ÷ 2</em></div><div class="val y">$96,950</div></div>
+  <div class="mrow"><div class="lab">Mean<em>All four figures ÷ 4: ($8,033 + $55,400 + $138,500 + $415,500) ÷ 4 = $617,433 ÷ 4</em></div><div class="val">$154,358.25</div></div>
+  <div class="mrow"><div class="lab">Mid-range<em>Average of minimum and maximum: ($8,033 + $415,500) ÷ 2</em></div><div class="val">$211,766.50</div></div>
+
+  <div class="chart big">
+<svg viewBox="0 0 420 172" role="img" aria-label="Revenue estimate per product on a shared scale, with the median and mean marked" font-family="Inter,Arial,sans-serif">
+<line x1="134" y1="20" x2="134" y2="160" stroke="#8A93A3" stroke-opacity=".5"/>
+<text x="0" y="41" font-size="11" font-weight="600" fill="#F5F6F7">Ebook · $29</text>
+<rect x="134" y="26" width="3.8700000000000045" height="22" rx="4" fill="#8A93A3"/>
+<text x="420" y="41" font-size="12" font-weight="800" fill="#F5F6F7" text-anchor="end">$8,033</text>
+<text x="0" y="75" font-size="11" font-weight="600" fill="#F5F6F7">Course · $200</text>
+<rect x="134" y="60" width="26.669999999999987" height="22" rx="4" fill="#F4C430"/>
+<text x="420" y="75" font-size="12" font-weight="800" fill="#F5F6F7" text-anchor="end">$55,400</text>
+<text x="0" y="109" font-size="11" font-weight="600" fill="#F5F6F7">Group coaching · $500</text>
+<rect x="134" y="94" width="66.66999999999999" height="22" rx="4" fill="#5B7BB8"/>
+<text x="420" y="109" font-size="12" font-weight="800" fill="#F5F6F7" text-anchor="end">$138,500</text>
+<text x="0" y="143" font-size="11" font-weight="600" fill="#F5F6F7">One-to-one · $1,500</text>
+<rect x="134" y="128" width="200.0" height="22" rx="4" fill="#2F6FED"/>
+<text x="420" y="143" font-size="12" font-weight="800" fill="#F5F6F7" text-anchor="end">$415,500</text>
+<line x1="180.67" y1="18" x2="180.67" y2="160" stroke="#F4C430" stroke-width="1.6" stroke-dasharray="4 3"/>
+<text x="177.67" y="13" font-size="10" font-weight="800" fill="#F4C430" text-anchor="end">Median $96,950</text>
+<line x1="208.3" y1="18" x2="208.3" y2="160" stroke="#F5F6F7" stroke-width="1.6" stroke-dasharray="2 3"/>
+<text x="211.3" y="13" font-size="10" font-weight="800" fill="#F5F6F7">Mean $154,358.25</text>
+<text x="134" y="171" font-size="9" fill="#8A93A3">$0</text><text x="334" y="171" font-size="9" fill="#8A93A3" text-anchor="middle">$415,500</text>
+</svg>
   </div>
 
-  <h3 class="sub" style="margin-top:26px">How to read it</h3>
+  <h3 class="sub">How to read it</h3>
   <ul>
-    <li><strong>It scales in a straight line.</strong> Every 100 buyers at $47 is $4,700. If you want to stress-test it, change the 0.25% and the rest follows.</li>
-    <li><strong>It counts one product, once.</strong> No second framework, no relaunch, and nothing from coaching bookings is added in.</li>
-    <li><strong>It is checkable before you build.</strong> The “FRAMEWORK” comment test on page 9 tells you whether interest is anywhere near 275 people.</li>
+    <li><strong>It scales in a straight line.</strong> Every 10 extra buyers adds $290 on the ebook and $15,000 on one-to-one. Change the 5% and the rest follows.</li>
+    <li><strong>It is checkable before you build.</strong> The “FRAMEWORK” comment test on page 10 tells you whether interest is anywhere near 277 people.</li>
   </ul>
-  <p class="small">Figures are in US dollars, as in the audit. Platform and payment fees are not deducted.</p>
 </section>
 
 <!-- 5. LADDER -->
 <section class="page">
-  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">05 / 10</span></div>
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">06 / 11</span></div>
   <span class="eyebrow">The product ladder</span>
-  <h2 class="sec">One new rung, between the reel and the coaching</h2>
-  <p class="lede">Everything here already exists except the yellow rung. That is the only thing to build.</p>
+  <h2 class="sec">Four rungs, one framework</h2>
+  <p class="lede">Every product teaches the same thing: what to say when you don’t know what to say. Each rung adds more of you.</p>
 
   <div class="ladder">
-    <div class="rung r1"><div class="p">Free</div><div class="t">Your reels</div></div>
-    <div class="rung r2"><div class="p">$47</div><div class="t">“When You Don’t Know What to Say” course</div></div>
-    <div class="rung r3"><div class="p">Book</div><div class="t">Consultation page</div></div>
-    <div class="rung r4"><div class="p">Your fee</div><div class="t">Coaching programmes</div></div>
+    <div class="rung r1"><div class="p">$29</div><div class="t">Ebook</div></div>
+    <div class="rung r2"><div class="p">$200</div><div class="t">Online course</div></div>
+    <div class="rung r3"><div class="p">$500</div><div class="t">Group coaching</div></div>
+    <div class="rung r4"><div class="p">$1,500</div><div class="t">One-to-one, 8 weeks</div></div>
   </div>
 
   <table>
     <thead><tr><th>Product</th><th>What it is</th><th>For whom</th><th class="num">Price</th><th class="num">Revenue (estimate)</th></tr></thead>
     <tbody>
-      <tr class="hi"><td><strong>Option 1</strong><br>When You Don’t Know What to Say</td><td>Short self-paced programme on one framework</td><td>Followers using the reels who aren’t ready for one-to-one coaching</td><td class="num">$47</td><td class="num">≈ $12,900<br><span class="small">275 buyers</span></td></tr>
-      <tr><td><strong>Option 2</strong><br>The path into coaching</td><td>Final lesson invites buyers to book a consultation</td><td>Buyers who want personal feedback</td><td class="num">Existing</td><td class="num">Not estimated<br><span class="small">tracked, not assumed</span></td></tr>
+      <tr><td><strong>Ebook</strong></td><td>The framework in writing, written for you; you only cross-check it</td><td>Followers who want the method to keep and reread</td><td class="num">$29</td><td class="num">$8,033</td></tr>
+      <tr class="hi"><td><strong>Online course</strong></td><td>Self-paced lessons: steps, worked examples, practice prompts</td><td>Followers using the reels, not ready for coaching</td><td class="num">$200</td><td class="num">$55,400</td></tr>
+      <tr><td><strong>Group coaching</strong></td><td>Live online practice on the framework, group size your choice</td><td>People who want feedback, in a group</td><td class="num">$500</td><td class="num">$138,500</td></tr>
+      <tr><td><strong>One-to-one</strong></td><td>8-week programme applying it to their own situations</td><td>Professionals who want personal feedback</td><td class="num">$1,500</td><td class="num">$415,500</td></tr>
     </tbody>
   </table>
-  <p class="small">Option 2 has no figure on purpose: the audit doesn’t know your coaching fees or how many buyers will book. The launch plan measures it instead, and that measurement decides whether a second framework is worth packaging.</p>
+  <p class="small">Each revenue figure is 277 buyers × the price, shown as an alternative, not a total.</p>
+
+  <div class="card blue">
+    <h3>Also from the audit: the path into coaching</h3>
+    <p style="margin:0">The last lesson of the ebook and the course invites buyers who want personal feedback to book through sarpongandrews.com/consultation. First step: add “Did you take the course?” to the booking form so you can count them. No revenue figure: the audit doesn’t know how many will book.</p>
+  </div>
 </section>
 
-<!-- 6. OFFER 1 -->
+<!-- 6. OFFERS 1-2 -->
 <section class="page">
-  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">06 / 10</span></div>
-  <span class="eyebrow">Offer detail · Option 1 · The main idea</span>
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">07 / 11</span></div>
+  <span class="eyebrow">Offer detail · products 1 and 2</span>
   <h2 class="sec">“When You Don’t Know What to Say”</h2>
-  <p><span class="chip">$47</span> <span class="chip ghost">Self-paced</span> <span class="chip ghost">One framework</span></p>
-  <p class="lede" style="margin-top:12px">The full method behind your reel “Do this when you don’t know what to say”, taught properly instead of in 60 seconds.</p>
+  <p class="lede" style="margin-top:8px">The full method behind your reel “Do this when you don’t know what to say”, taught properly instead of in 60 seconds.</p>
 
   <div class="card">
-    <h3>The promise</h3>
-    <p style="margin:0">When someone asks you a question and your mind goes blank, you know exactly what to say next, because you have a repeatable framework rather than relying on talent.</p>
+    <h3>1 · The ebook <span class="chip" style="margin-left:6px">$29</span> <span class="chip ghost">Estimate $8,033</span></h3>
+    <p style="margin:0 0 6px"><strong>Inside:</strong> the steps of the framework you teach in your programmes, worked examples from the client situations you see most, and practice prompts. It is written for you from your reels and coaching material; you only cross-check it and write none of it yourself.</p>
+    <p style="margin:0 0 6px"><strong>The promise:</strong> when your mind goes blank, you have the steps to fall back on, not talent.</p>
+    <p style="margin:0"><strong>First step:</strong> share the framework outline and your thinking-on-your-feet reels so the first draft can be written for you to check.</p>
   </div>
 
-  <h3 class="sub">What is inside</h3>
-  <div class="grid3">
-    <div class="stat"><div class="n y">01</div><p style="margin:10px 0 0"><strong>The steps</strong><br><span class="muted">The one framework you teach in your programmes, broken down step by step.</span></p></div>
-    <div class="stat"><div class="n y">02</div><p style="margin:10px 0 0"><strong>Worked examples</strong><br><span class="muted">Drawn from the client situations you see most often.</span></p></div>
-    <div class="stat"><div class="n y">03</div><p style="margin:10px 0 0"><strong>Practice prompts</strong><br><span class="muted">To apply it in real conversations, not just watch it.</span></p></div>
+  <div class="card">
+    <h3>2 · The online course <span class="chip" style="margin-left:6px">$200</span> <span class="chip ghost">Estimate $55,400</span></h3>
+    <p style="margin:0 0 6px"><strong>Inside:</strong> short self-paced lessons on the one framework: <strong>the steps</strong>, <strong>worked examples</strong> drawn from the client situations you see most often, and <strong>practice prompts</strong> to apply it in real conversations, not just watch it.</p>
+    <p style="margin:0 0 6px"><strong>The promise:</strong> when someone asks you a question and your mind goes blank, you know exactly what to say next, because you have a repeatable framework rather than relying on talent.</p>
+    <p style="margin:0"><strong>First step:</strong> run the story question box first (page 9). Then write the lesson list around the framework, shaped by what followers say they get stuck on.</p>
   </div>
 
   <h3 class="sub">Why it fits you</h3>
-  <p>You said the reels come from problems “common among my clients”. This packages that same solution in full. Your thinking-on-your-feet reels (“Do this to get your thoughts out every time”, “When You Know What To Say But Can’t Say It”) already point at it.</p>
-
-  <div class="card blue">
-    <h3>First step to build it</h3>
-    <p style="margin:0">Run the story question box first (page 8). Then write the lesson list around the one framework and the client situations you already see most, shaped by what followers say they get stuck on.</p>
-  </div>
+  <p>You said the reels come from problems “common among my clients”. These package that same solution in full. Your thinking-on-your-feet reels (“Do this to get your thoughts out every time”, “When You Know What To Say But Can’t Say It”) already point at it.</p>
 </section>
 
-<!-- 7. OFFER 2 -->
+<!-- 7. OFFERS 3-4 -->
 <section class="page">
-  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">07 / 10</span></div>
-  <span class="eyebrow">Offer detail · Option 2</span>
-  <h2 class="sec">The path into coaching</h2>
-  <p><span class="chip blue">Uses your existing page</span> <span class="chip ghost">No new build</span></p>
-  <p class="lede" style="margin-top:12px">The course is a first step towards the coaching you already run, not a replacement for it.</p>
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">08 / 11</span></div>
+  <span class="eyebrow">Offer detail · products 3 and 4</span>
+  <h2 class="sec">The framework, with you in the room</h2>
+  <p class="lede" style="margin-top:8px">The top two rungs are coaching, which you already run. They take the same framework and add your feedback.</p>
 
   <div class="card blue">
-    <h3>What it is</h3>
-    <p style="margin:0">The last lesson of the course invites buyers who want personal feedback to book a consultation through sarpongandrews.com/consultation.</p>
-  </div>
-  <div class="card">
-    <h3>The promise</h3>
-    <p style="margin:0">Buyers who have learned the framework on their own and want it applied to their own situation have a clear, natural next step: you.</p>
-  </div>
-  <div class="card plain">
-    <h3>What is inside</h3>
-    <ul style="margin:0">
-      <li>A closing lesson on where self-study stops and personal feedback starts.</li>
-      <li>A direct invitation and link to your consultation page.</li>
-      <li>A simple way to see which bookings came from course buyers.</li>
-    </ul>
+    <h3>3 · One-to-many group coaching <span class="chip blue" style="margin-left:6px">$500</span> <span class="chip ghost">Estimate $138,500</span></h3>
+    <p style="margin:0 0 6px"><strong>Inside:</strong> live online sessions where members learn the framework and practise answering put-on-the-spot questions, with your feedback in front of the group. You choose how many people join.</p>
+    <p style="margin:0 0 6px"><strong>The promise:</strong> practise the moment your mind goes blank until the framework is automatic.</p>
+    <p style="margin:0"><strong>First step:</strong> invite the “FRAMEWORK” waitlist to one group run, so you learn what group practice needs before you set it up for good.</p>
   </div>
 
-  <h3 class="sub">First step to build it</h3>
-  <p>Add one source question to your consultation booking (“Did you take the course?”) before launch, so you can count course buyers who book. That count is what tells you whether a second framework is worth packaging.</p>
+  <div class="card blue">
+    <h3>4 · One-to-one coaching, 8 weeks <span class="chip blue" style="margin-left:6px">$1,500</span> <span class="chip ghost">Estimate $415,500</span></h3>
+    <p style="margin:0 0 6px"><strong>Inside:</strong> eight weeks applying the framework to the client’s own conversations, with your personal feedback each week.</p>
+    <p style="margin:0 0 6px"><strong>The promise:</strong> your communication matches the quality of your thinking and expertise, in the situations that matter to you.</p>
+    <p style="margin:0"><strong>First step:</strong> route it through your existing consultation page. The audit doesn’t know your current coaching fees; the model prices this rung at $1,500.</p>
+  </div>
 
-  <div class="grid2" style="margin-top:18px">
-    <div class="stat"><div class="tag2">Without the course</div><p style="margin:0">Reel <span class="y">→</span> consultation. One big jump.</p></div>
-    <div class="stat"><div class="tag2">With the course</div><p style="margin:0">Reel <span class="y">→</span> $47 framework <span class="y">→</span> consultation.</p></div>
+  <div class="grid2" style="margin-top:14px">
+    <div class="stat"><div class="tag2">Today</div><p style="margin:0">Reel <span class="y">→</span> consultation. One big jump.</p></div>
+    <div class="stat"><div class="tag2">With the ladder</div><p style="margin:0">Reel <span class="y">→</span> $29 <span class="y">→</span> $200 <span class="y">→</span> $500 <span class="y">→</span> $1,500.</p></div>
   </div>
 </section>
 
 <!-- 8. LAUNCH -->
 <section class="page">
-  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">08 / 10</span></div>
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">09 / 11</span></div>
   <span class="eyebrow">Launch plan</span>
   <h2 class="sec">Four steps, in this order</h2>
   <p class="lede">Ask before you build, and measure what happens after. Nothing here needs a new platform or a bigger following.</p>
@@ -394,7 +454,7 @@ tr.hi td{background:rgba(244,196,48,.08)}
 
 <!-- 9. FIRST POST -->
 <section class="page">
-  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">09 / 10</span></div>
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">10 / 11</span></div>
   <span class="eyebrow">The first post · test before you build</span>
   <h2 class="sec">Post this before you build anything</h2>
   <p class="lede">A carousel, or the same lines as caption overlays on a reel in your usual style. The number of “FRAMEWORK” comments is the demand test.</p>
@@ -410,18 +470,18 @@ tr.hi td{background:rgba(244,196,48,.08)}
   <div class="card plain" style="font-size:15px">
     When you know what to say but can’t say it, it isn’t talent you’re missing. It’s a framework. I teach one in my coaching programmes for exactly this moment, and I’m thinking of turning it into a short course. Comment “FRAMEWORK” if you’d want it.<br><span class="muted">#publicspeaking #communication #confidence #voice</span>
   </div>
-  <p class="small">How to read it: the estimate needs about 275 buyers. Every person who comments is a name for the waitlist; compare the count with that figure before you decide how much to build.</p>
+  <p class="small">How to read it: the model assumes 277 buyers (5% of 5% of your followers). Every person who comments is a name for the waitlist; compare the count with that figure before you decide how much to build.</p>
 </section>
 
 <!-- 10. CLOSE -->
 <section class="page" style="display:flex;flex-direction:column">
-  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">10 / 10</span></div>
+  <div class="rh"><span>Monetisation audit · @andrewsboakyesarpong</span><span class="pn">11 / 11</span></div>
   <span class="eyebrow">What to do next</span>
   <h2 class="sec" style="font-size:44px">Make the course match the quality of your coaching.</h2>
   <p class="lede" style="margin-top:8px">You already have the framework, the audience and the coaching to send people on to. The next move is small.</p>
 
   <div class="step"><div class="k">1</div><div><h3>This week</h3><p>Post the question box and the “FRAMEWORK” carousel.</p></div></div>
-  <div class="step"><div class="k">2</div><div><h3>When the comments are in</h3><p>Count them against the 275-buyer estimate, then outline the lessons.</p></div></div>
+  <div class="step"><div class="k">2</div><div><h3>When the comments are in</h3><p>Count them against the 277-buyer assumption, then outline the lessons.</p></div></div>
   <div class="step"><div class="k">3</div><div><h3>After launch</h3><p>Track how many buyers book a consultation before packaging a second framework.</p></div></div>
 
   <div style="margin-top:22px">
