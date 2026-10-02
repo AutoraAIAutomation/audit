@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monetisation Audit · @buzzingwithmsb</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F1EA;
+  --surface:#FFFFFF;
+  --ink:#1F3A5F;
+  --muted:#7C8B8F;
+  --accent:#F5A623;
+  --accent2:#6FCF97;
+  --honey:#FDE7B8;
+  --honey-soft:#FEF3DA;
+  --mint:#DDF4E7;
+  --mint-deep:#2F8F5B;
+  --teal:#3E8E8A;
+  --line:rgba(31,58,95,.14);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}
+body{font-family:'Nunito Sans',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:15.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.disp{font-family:'Baloo 2','Trebuchet MS',Arial,sans-serif;margin:0;font-weight:700;letter-spacing:-.005em}
+p{margin:0 0 10px}
+ul{margin:0 0 10px;padding-left:18px}
+li{margin-bottom:5px}
+strong{font-weight:800}
+.small{font-size:13px;color:var(--muted);line-height:1.5}
+.muted{color:var(--muted)}
+
+/* page shell */
+.page{background:var(--bg);position:relative}
+.rh{display:flex;justify-content:space-between;align-items:center;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);border-bottom:2px dotted var(--line);padding-bottom:8px;margin-bottom:22px;font-weight:800}
+.rh .pg{display:inline-flex;align-items:center;gap:6px;font-family:'Baloo 2',sans-serif;font-size:14px;letter-spacing:0;color:var(--ink)}
+.rh .pg svg{width:16px;height:16px}
+
+/* type */
+.eyebrow{display:inline-block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);font-weight:800;margin-bottom:8px;background:var(--honey);border-radius:999px;padding:3px 11px}
+h2.sec{font-size:36px;line-height:1.05;margin-bottom:6px}
+h2.sec span{color:var(--accent)}
+h3.sub{font-size:20px;line-height:1.2;margin:18px 0 8px}
+h4.mini{font-family:'Nunito Sans',sans-serif;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--mint-deep);font-weight:800;margin:0 0 6px}
+.lede{font-size:16px;color:var(--muted);max-width:64ch;margin-bottom:16px}
+
+/* components */
+.card{background:var(--surface);border-radius:16px;padding:14px 18px;margin-bottom:12px;border:1px solid var(--line)}
+.card.honey{border-left:5px solid var(--accent)}
+.card.mint{border-left:5px solid var(--accent2)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.stat{background:var(--surface);border-radius:16px;padding:13px 15px;border:1px solid var(--line)}
+.stat .n{font-family:'Baloo 2',sans-serif;font-size:30px;line-height:1;font-weight:800}
+.stat .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px;font-weight:800}
+.stat .s{font-size:13px;color:var(--muted);margin-top:3px}
+.quote{font-family:'Baloo 2',sans-serif;font-size:19px;line-height:1.35;font-weight:500;background:var(--honey-soft);border-radius:16px;padding:12px 18px;margin:0 0 10px;position:relative}
+.quote .by{display:block;font-family:'Nunito Sans',sans-serif;font-size:12.5px;color:var(--muted);font-weight:700;margin-top:5px}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:3px 10px;font-weight:800;background:var(--honey);color:var(--ink)}
+.tag.mint{background:var(--mint);color:var(--mint-deep)}
+
+table{width:100%;border-collapse:collapse;margin:10px 0 10px;font-size:14px;background:var(--surface);border-radius:14px;overflow:hidden}
+th{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);text-align:left;padding:10px 12px 8px;background:var(--honey);font-weight:800}
+td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.hi td{background:var(--mint);font-weight:800}
+
+.mathrow{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px dotted var(--line);padding:8px 0;gap:14px}
+.mathrow .lab{font-size:14.5px}
+.mathrow .lab em{display:block;font-style:normal;font-size:13px;color:var(--muted);margin-top:1px}
+.mathrow .val{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:21px;white-space:nowrap;font-variant-numeric:tabular-nums}
+
+.step{display:flex;gap:16px;padding:12px 0;border-bottom:1px dotted var(--line)}
+.hexn{flex:none;width:44px;height:48px;position:relative}
+.hexn svg{position:absolute;inset:0;width:44px;height:48px}
+.hexn b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',sans-serif;font-size:20px;color:var(--ink);font-weight:800}
+.step h4{font-family:'Baloo 2',sans-serif;font-size:19px;margin:0 0 3px;font-weight:700}
+.step p{margin:0;font-size:14.5px}
+
+.slide{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin-bottom:10px;display:flex;gap:16px;align-items:flex-start}
+.slide .no{font-family:'Baloo 2',sans-serif;font-size:14px;color:var(--ink);background:var(--accent);border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;flex:none;font-weight:800}
+.slide p{font-family:'Baloo 2',sans-serif;font-size:20px;line-height:1.3;margin:0;font-weight:600}
+.slide .note{display:block;font-family:'Nunito Sans',sans-serif;font-size:13px;color:var(--muted);font-weight:600;margin-top:4px;line-height:1.45}
+
+.prod{display:grid;grid-template-columns:112px 1fr;gap:16px;padding:8px 0;border-bottom:1px dotted var(--line)}
+.prod .price{font-family:'Baloo 2',sans-serif;font-size:34px;line-height:1;color:var(--ink);font-weight:800}
+.prod .price i{display:block;height:6px;width:52px;background:var(--accent);border-radius:4px;margin-top:6px}
+.prod .price small{display:block;font-family:'Nunito Sans',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px;font-weight:800}
+.prod h3{font-size:20px;margin:0 0 3px;font-weight:700}
+.prod p{font-size:14.5px;margin:0 0 4px}
+.prod .rev{font-size:13.5px;color:var(--mint-deep);font-weight:800}
+
+.offer{background:var(--surface);border-radius:18px;border:1px solid var(--line);padding:16px 20px;margin-bottom:14px}
+.offer .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:2px dotted var(--line);padding-bottom:8px;margin-bottom:10px}
+.offer .top h3{font-size:22px;font-weight:700}
+.offer .top .p{font-family:'Baloo 2',sans-serif;font-size:22px;white-space:nowrap;font-weight:800;background:var(--accent);border-radius:999px;padding:0 14px}
+.offer dl{display:grid;grid-template-columns:120px 1fr;gap:7px 14px;margin:0;font-size:14.5px}
+.offer dt{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--mint-deep);font-weight:800;padding-top:3px}
+.offer dd{margin:0}
+
+.split{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface)}
+.split .col{padding:16px 18px}
+.split .col + .col{background:var(--mint);border-left:1px solid var(--line)}
+.split .col:first-child{background:var(--honey-soft)}
+.split h3{font-size:22px;margin-bottom:8px;font-weight:800}
+.split .row{padding:9px 0;border-top:1px dotted var(--line);font-size:14.5px}
+.split .row b{display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+
+/* cover */
+.cover-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.mono{width:66px;height:72px;position:relative;flex:none}
+.mono svg{position:absolute;inset:0;width:66px;height:72px}
+.mono b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',sans-serif;font-size:25px;font-weight:800;color:var(--ink);letter-spacing:.02em;padding-top:3px}
+.kicker{font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:800;color:var(--ink)}
+.kicker span{color:var(--teal)}
+.cover h1{font-size:50px;line-height:1;font-weight:800;margin-bottom:4px}
+.cover .handle{font-size:15px;color:var(--muted);margin-bottom:12px;font-weight:600}
+.cover .handle b{color:var(--ink)}
+.cover .pos{font-family:'Baloo 2',sans-serif;font-size:21px;line-height:1.3;font-weight:500;max-width:40ch;margin-bottom:12px}
+.focal{background:var(--accent);border-radius:22px;padding:18px 22px 16px;position:relative;overflow:hidden;margin-bottom:12px}
+.focal .lbl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--ink)}
+.bignum{font-family:'Baloo 2',sans-serif;font-size:68px;line-height:1;font-weight:800;letter-spacing:-.02em;color:var(--ink);white-space:nowrap;margin:6px 0 2px}
+.bignum .to{font-size:30px;font-weight:600;margin:0 6px;letter-spacing:0}
+.est{display:inline-block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--ink);background:var(--surface);border-radius:999px;padding:3px 11px}
+.focal .ends{font-size:13.5px;margin-top:8px;max-width:52ch;font-weight:600}
+.focal .comb{position:absolute;right:-14px;top:-10px;width:150px;opacity:.28}
+.avgs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px}
+.avg{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:9px 14px}
+.avg .n{font-family:'Baloo 2',sans-serif;font-size:24px;font-weight:800;line-height:1.1}
+.avg .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-top:3px}
+.assume{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:8px}
+.youline{font-family:'Baloo 2',sans-serif;font-size:17px;font-weight:600;background:var(--mint);border-radius:14px;padding:8px 14px;margin-bottom:10px}
+.inside{font-size:13px;color:var(--muted);border-top:2px dotted var(--line);padding-top:8px}
+.inside b{color:var(--ink)}
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px 12px 6px;margin-bottom:10px}
+.chart svg{display:block;width:100%;height:auto}
+.chart text{font-family:'Nunito Sans',sans-serif}
+
+.dl{position:fixed;top:14px;right:14px;z-index:10;background:var(--ink);color:var(--surface);text-decoration:none;font-weight:800;font-size:13px;padding:8px 14px;border-radius:999px;box-shadow:0 4px 14px rgba(31,58,95,.2)}
+.dl:hover{background:var(--accent);color:var(--ink)}
+
+.close-hero{background:var(--ink);color:var(--bg);border-radius:22px;padding:24px 24px;margin:6px 0 16px}
+.close-hero h3{font-size:30px;line-height:1.15;color:var(--surface);margin-bottom:8px}
+.close-hero p{font-size:16px;margin:0;color:#E9EEF4}
+
+@page { size: A4; margin: 0; }
+@media print { html, body { background: var(--bg); } .page { width: 210mm; min-height: 297mm; break-after: page; page-break-after: always; padding: 16mm 16mm 18mm; box-sizing: border-box; position: relative; overflow: hidden; } .page:last-child { break-after: auto; page-break-after: auto; } * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .no-print { display: none !important; } }
+@media screen { .page { max-width: 900px; margin: 0 auto; padding: 48px 28px; } .page + .page{border-top:2px dotted var(--line)} }
+@media screen and (max-width:640px){
+  .page{padding:36px 16px}
+  .grid2,.grid3,.grid4,.avgs,.split{grid-template-columns:1fr}
+  .split .col + .col{border-left:0;border-top:1px solid var(--line)}
+  .bignum{font-size:44px;white-space:normal}
+  .bignum .to{font-size:22px}
+  .cover h1{font-size:38px}
+  h2.sec{font-size:30px}
+  .prod{grid-template-columns:1fr;gap:6px}
+  .offer dl{grid-template-columns:1fr;gap:2px}
+  .offer dd{margin-bottom:8px}
+  table{font-size:13px}
+  th,td{padding-left:8px;padding-right:8px}
+}
+</style>
+</head>
+<body>
+<a class="dl no-print" href="buzzingwithmsb-monetisation-audit.pdf" download>Download the PDF</a>
+
+<!-- 1 · COVER -->
+<section class="page cover">
+  <div class="cover-top">
+    <div class="kicker">Monetisation <span>Audit</span></div>
+    <div class="mono" aria-label="CB monogram">
+      <svg viewBox="0 0 66 72" aria-hidden="true"><polygon points="33,2 63,19 63,53 33,70 3,53 3,19" fill="#F5A623" stroke="#1F3A5F" stroke-width="2.5"/></svg>
+      <b>CB</b>
+    </div>
+  </div>
+  <h1>Chrissy, Buzzing with Ms.&nbsp;B</h1>
+  <div class="handle"><b>@buzzingwithmsb</b> · 13,170 followers (public data) · Instructional coaching</div>
+  <p class="pos">You help instructional coaches always have a next move for every teacher, even when their go-to strategy flops.</p>
+
+  <div class="focal">
+    <svg class="comb" viewBox="0 0 150 130" aria-hidden="true"><g fill="none" stroke="#1F3A5F" stroke-width="3"><polygon points="40,5 65,19 65,48 40,62 15,48 15,19"/><polygon points="90,5 115,19 115,48 90,62 65,48 65,19"/><polygon points="65,48 90,62 90,91 65,105 40,91 40,62"/><polygon points="115,48 140,62 140,91 115,105 90,91 90,62"/></g></svg>
+    <div class="lbl">Estimated revenue range</div>
+    <div class="bignum">$928<span class="to">to</span>$48,000</div>
+    <span class="est">Estimate</span>
+    <div class="ends">The bottom of the range is the ebook sales; the top is a year of one-to-one coaching, capped at your 32 estimated buyers (32 x $1,500).</div>
+  </div>
+
+  <div class="avgs">
+    <div class="avg"><div class="n">$4,450</div><div class="k">Median · estimate</div></div>
+    <div class="avg"><div class="n">$6,394.50</div><div class="k">Mean · estimate</div></div>
+    <div class="avg"><div class="n">$24,464</div><div class="k">Mid-range · estimate</div></div>
+  </div>
+  <p class="assume">Assumptions: 5% of followers are engaged and 5% of those buy; group coaching is 2 to 8 people per 8-week cohort; one-to-one is 1 to 20 hours a week; the maximum is a full year of six 8-week blocks, capped at the number of buyers. Median and mean count each coaching product at the middle of its 8-week range.</p>
+
+  <div class="chart">
+    <svg viewBox="0 0 560 168" role="img" aria-label="Revenue by product on a shared scale from $0 to $48,000">
+      <g stroke="#1F3A5F" stroke-opacity=".12" stroke-width="1"><line x1="150" y1="18" x2="150" y2="146"/><line x1="247.5" y1="18" x2="247.5" y2="146"/><line x1="345" y1="18" x2="345" y2="146"/><line x1="442.5" y1="18" x2="442.5" y2="146"/><line x1="540" y1="18" x2="540" y2="146"/></g>
+      <g font-size="11" font-weight="700" fill="#1F3A5F">
+        <text x="0" y="35">Ebook $29</text>
+        <text x="0" y="67">Course $200</text>
+        <text x="0" y="99">Group coaching</text>
+        <text x="0" y="131">One-to-one</text>
+      </g>
+      <rect x="150" y="24" width="7.5" height="14" rx="3" fill="#F5A623"/>
+      <text x="208" y="35" font-size="11" fill="#1F3A5F" font-weight="700">$928</text>
+      <rect x="150" y="56" width="52" height="14" rx="3" fill="#F5A623"/>
+      <text x="210" y="67" font-size="11" fill="#1F3A5F" font-weight="700">$6,400</text>
+      <rect x="182.5" y="88" width="97.5" height="14" rx="3" fill="#6FCF97" fill-opacity=".35"/>
+      <rect x="158.1" y="88" width="24.4" height="14" rx="3" fill="#6FCF97"/>
+      <text x="231" y="99" font-size="10" fill="#2F8F5B" font-weight="800" text-anchor="middle">a year</text>
+      <text x="287" y="99" font-size="11" fill="#1F3A5F" font-weight="700">$1,000–$4,000 per cohort · $16,000 a year</text>
+      <rect x="393.75" y="120" width="146.25" height="14" rx="3" fill="#3E8E8A" fill-opacity=".3"/>
+      <rect x="162.2" y="120" width="231.55" height="14" rx="3" fill="#3E8E8A"/>
+      <text x="210" y="131" font-size="10.5" fill="#FFFFFF" font-weight="800">$1,500–$30,000 per 8 weeks</text>
+      <text x="467" y="131" font-size="10.5" fill="#1F3A5F" font-weight="800" text-anchor="middle">a year: $48,000</text>
+      <line x1="186.2" y1="16" x2="186.2" y2="146" stroke="#1F3A5F" stroke-width="1.5" stroke-dasharray="3 3"/>
+      <line x1="202" y1="16" x2="202" y2="146" stroke="#E0533D" stroke-width="1.5"/>
+      <text x="183" y="12" font-size="10" fill="#1F3A5F" font-weight="800" text-anchor="end">median $4,450</text>
+      <text x="205" y="12" font-size="10" fill="#E0533D" font-weight="800">mean $6,394.50</text>
+      <g font-size="9.5" fill="#7C8B8F" text-anchor="middle"><text x="150" y="160">$0</text><text x="247.5" y="160">$12k</text><text x="345" y="160">$24k</text><text x="442.5" y="160">$36k</text><text x="540" y="160" text-anchor="end">$48k</text></g>
+    </svg>
+  </div>
+
+  <div class="youline">You film the lessons and run the sessions. We host and run everything else, with nothing to pay upfront.</div>
+  <p class="inside"><b>Inside:</b> what your numbers say · where the number comes from · the product ladder · who does what · offer detail · launch plan · your first post · next steps</p>
+</section>
+
+<!-- 2 · WHAT YOUR NUMBERS SAY -->
+<section class="page">
+  <div class="rh"><span>Monetisation audit · @buzzingwithmsb</span><span class="pg"><svg viewBox="0 0 16 16" aria-hidden="true"><polygon points="8,1 14,4.5 14,11.5 8,15 2,11.5 2,4.5" fill="#F5A623"/></svg>02</span></div>
+  <span class="eyebrow">What your numbers say</span>
+  <h2 class="sec">A room full of coaches <span>who want a next move</span></h2>
+  <p class="lede">Your niche is instructional coaching: strategies for the coaches who support teachers. The change you create is turning coaches who run out of ideas when an approach flops into coaches who always have a next option for each teacher.</p>
+
+  <div class="grid4">
+    <div class="stat"><div class="n">13,170</div><div class="k">Followers</div><div class="s">Mostly instructional coaches and educators</div></div>
+    <div class="stat"><div class="n">3,216</div><div class="k">Posts</div><div class="s">A deep back catalogue to draw from</div></div>
+    <div class="stat"><div class="n">31 / 36</div><div class="k">Avg likes / comments</div><div class="s">Comments outrun likes</div></div>
+    <div class="stat"><div class="n">0.51%</div><div class="k">Engagement rate</div><div class="s">Public data</div></div>
+  </div>
+  <p class="small" style="margin-top:6px">All figures on this page are public profile data, except where your own messages are quoted.</p>
+
+  <h3 class="sub">The content that works</h3>
+  <div class="grid2">
+    <div class="card honey"><h4 class="mini">Comment-to-get posts</h4><p style="margin:0">Your coaching menu post ("Comment STARTUP for the link") drew 124 comments and 116 likes. The Instructional Coaching Planner video drew 143 comments, and your back-to-school post 97. When you give coaches a word to comment, they comment.</p></div>
+    <div class="card mint"><h4 class="mini">Honest questions about the role</h4><p style="margin:0">Your 17/09 video asking what coaches were taught that doesn't actually work reached 1,330 views and 28 likes, your most-viewed recent video. "Have you ever hidden in the bathroom?" reached 536 views.</p></div>
+  </div>
+
+  <h3 class="sub">Your three content pillars</h3>
+  <div class="grid3">
+    <div class="card"><h4 class="mini">1 · Strategy and systems</h4><p style="margin:0;font-size:14.5px">Coaching menus, needs assessments, the planner and the back-to-school checklist.</p></div>
+    <div class="card"><h4 class="mini">2 · The real job</h4><p style="margin:0;font-size:14.5px">Venting, hiding in the bathroom, leaving your coffee behind, and teachers not knowing what your role is.</p></div>
+    <div class="card"><h4 class="mini">3 · Reading the teacher</h4><p style="margin:0;font-size:14.5px">Feedback conversations, podcast episodes, and refusing to use the same approach with every teacher.</p></div>
+  </div>
+
+</section>
+
+<!-- 3 · THE OPPORTUNITY -->
+<section class="page">
+  <div class="rh"><span>Monetisation audit · @buzzingwithmsb</span><span class="pg"><svg viewBox="0 0 16 16" aria-hidden="true"><polygon points="8,1 14,4.5 14,11.5 8,15 2,11.5 2,4.5" fill="#F5A623"/></svg>03</span></div>
+  <span class="eyebrow">The opportunity</span>
+  <h2 class="sec">Your products teach the strategies. <span>The next step is applying them.</span></h2>
+  <p class="lede">You already sell a book, a Start-Up course and a toolbox. Each of them teaches the strategies. The step after them is choosing the right strategy for a specific teacher, and that is where the four products in this audit sit, next to what you already sell.</p>
+
+  <div class="quote">"My book, Expand Your Coaching Toolbox. It includes 20 strategies so if something doesn't work with one teacher, you have other options to try!"<span class="by">You, in a DM on 30/09</span></div>
+
+  <div class="grid2">
+    <div class="card mint">
+      <h4 class="mini">Observed</h4>
+      <ul style="margin:0;font-size:14.5px">
+        <li>About 13,200 followers, mostly instructional coaches and educators.</li>
+        <li>You already sell <strong>Expand Your Coaching Toolbox</strong>, the Start-Up course and the Coaching Strategy Toolbox.</li>
+        <li>Your 17/09 video asking what coaches were taught that doesn't work is your most-viewed recent video (public data).</li>
+      </ul>
+    </div>
+    <div class="card honey">
+      <h4 class="mini">Inferred, still to test</h4>
+      <ul style="margin:0;font-size:14.5px">
+        <li>Readers of the book want help matching the right strategy to their own teachers.</li>
+        <li>You haven't said whether readers ask to work with you directly. That is the question the first post tests, before anything is built.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sub">How the four products line up with what you sell now</h3>
+  <table>
+    <thead><tr><th>What exists</th><th>What it does</th><th>The next step it opens</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Expand Your Coaching Toolbox</strong></td><td>20 strategies, so you have options when one doesn't work</td><td>Ebook: When a Strategy Flops</td></tr>
+      <tr><td><strong>Start-Up course</strong></td><td>Choosing your strategies and building a coaching menu</td><td>Course: Matching the Strategy to the Teacher</td></tr>
+      <tr><td><strong>Your teachers, live</strong></td><td>Not yet offered</td><td>Group programme and one-to-one mentoring, on the coach's own cases</td></tr>
+    </tbody>
+  </table>
+  <p class="small">None of this replaces the book, the course or the toolbox. Each new product points back to them.</p>
+</section>
+
+<!-- 4 · WHERE THE NUMBER COMES FROM -->
+<section class="page">
+  <div class="rh"><span>Monetisation audit · @buzzingwithmsb</span><span class="pg"><svg viewBox="0 0 16 16" aria-hidden="true"><polygon points="8,1 14,4.5 14,11.5 8,15 2,11.5 2,4.5" fill="#F5A623"/></svg>04</span></div>
+  <span class="eyebrow">Where the number comes from</span>
+  <h2 class="sec">From 13,170 followers <span>to 32 buyers</span></h2>
+  <p class="lede">Every figure in this audit is an estimate built from one fixed model, so you can check each step yourself.</p>
+
+  <div class="card">
+    <div class="mathrow"><div class="lab"><strong>F · Followers</strong><em>Your public follower count (public data)</em></div><div class="val">13,170</div></div>
+    <div class="mathrow"><div class="lab"><strong>E · Engaged audience</strong><em>5% of F: 13,170 x 5% = 658.5, rounded down</em></div><div class="val">658</div></div>
+    <div class="mathrow" style="border-bottom:0"><div class="lab"><strong>B · Buyers</strong><em>5% of E: 658 x 5% = 32.9, rounded down (about 0.25% of F)</em></div><div class="val">32</div></div>
+  </div>
+
+  <h3 class="sub">The four products</h3>
+  <table>
+    <thead><tr><th>Product</th><th class="num">Price</th><th>What the figure rests on</th><th class="num">Revenue (estimate)</th></tr></thead>
+    <tbody>
+      <tr><td>Ebook</td><td class="num">$29</td><td>32 buyers x $29</td><td class="num">$928</td></tr>
+      <tr><td>Online course</td><td class="num">$200</td><td>32 buyers x $200</td><td class="num">$6,400</td></tr>
+      <tr><td>Group coaching (8 weeks)</td><td class="num">$500</td><td>2 to 8 people per cohort; a year capped at 32 buyers</td><td class="num">$1,000–$4,000 per cohort<br>$16,000 a year</td></tr>
+      <tr><td>One-to-one (8 weeks)</td><td class="num">$1,500</td><td>1 to 20 hours a week; a year capped at 32 buyers</td><td class="num">$1,500–$30,000 per 8 weeks<br>$48,000 a year</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid2">
+    <div class="card mint">
+      <h4 class="mini">Group coaching, worked out</h4>
+      <p style="font-size:14.5px;margin:0">Per 8-week cohort: 2 to 8 people x $500 = <strong>$1,000 to $4,000</strong>. Six cohorts a year hold up to 48 places (8 x 6), but you have 32 estimated buyers, so with 32 buyers the group programme could make you 32 x $500 = <strong>$16,000 a year</strong>.</p>
+    </div>
+    <div class="card honey">
+      <h4 class="mini">One-to-one, worked out</h4>
+      <p style="font-size:14.5px;margin:0">Per 8 weeks: 1 to 20 hours a week (1 to 20 clients at a time) x $1,500 = <strong>$1,500 to $30,000</strong>. Six blocks a year hold up to 120 programmes (20 x 6), but with 32 buyers, one-to-one could make you 32 x $1,500 = <strong>$48,000 a year</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · WHERE THE NUMBER COMES FROM (CONTINUED) -->
+<section class="page">
+  <div class="rh"><span>Monetisation audit · @buzzingwithmsb</span><span class="pg"><svg viewBox="0 0 16 16" aria-hidden="true"><polygon points="8,1 14,4.5 14,11.5 8,15 2,11.5 2,4.5" fill="#F5A623"/></svg>05</span></div>
+  <span class="eyebrow">Where the number comes from, continued</span>
+  <h2 class="sec">The range <span>and the averages</span></h2>
+  <p class="lede">The minimum is always the ebook. The maximum is the largest year figure across the four products, which for you is one-to-one coaching.</p>
+
+  <div class="card">
+    <div class="mathrow"><div class="lab"><strong>Minimum</strong><em>Ebook sales: 32 x $29</em></div><div class="val">$928</div></div>
+    <div class="mathrow"><div class="lab"><strong>Maximum</strong><em>One-to-one year figure: 32 x $1,500 (larger than group at $16,000 and course at $6,400)</em></div><div class="val">$48,000</div></div>
+    <div class="mathrow"><div class="lab"><strong>Median</strong><em>Figures in order: $928, $2,500, $6,400, $15,750. Middle two: ($2,500 + $6,400) / 2</em></div><div class="val">$4,450</div></div>
+    <div class="mathrow"><div class="lab"><strong>Mean</strong><em>($928 + $6,400 + $2,500 + $15,750) / 4 = $25,578 / 4</em></div><div class="val">$6,394.50</div></div>
+    <div class="mathrow" style="border-bottom:0"><div class="lab"><strong>Mid-range</strong><em>(minimum + maximum) / 2 = ($928 + $48,000) / 2</em></div><div class="val">$24,464</div></div>
+  </div>
+  <p class="small">For the median and mean, the coaching products are counted at the middle of their 8-week ranges: group coaching at $2,500 (the middle of $1,000 to $4,000) and one-to-one at $15,750 (the middle of $1,500 to $30,000). The mid-range uses the year maximum. All figures are estimates.</p>
+
+  <h3 class="sub">The same numbers on one scale</h3>
+  <div class="chart">
+    <svg viewBox="0 0 560 168" role="img" aria-label="Revenue by product on a shared scale from $0 to $48,000">
+      <g stroke="#1F3A5F" stroke-opacity=".12" stroke-width="1"><line x1="150" y1="18" x2="150" y2="146"/><line x1="247.5" y1="18" x2="247.5" y2="146"/><line x1="345" y1="18" x2="345" y2="146"/><line x1="442.5" y1="18" x2="442.5" y2="146"/><line x1="540" y1="18" x2="540" y2="146"/></g>
+      <g font-size="11" font-weight="700" fill="#1F3A5F">
+        <text x="0" y="35">Ebook $29</text>
+        <text x="0" y="67">Course $200</text>
+        <text x="0" y="99">Group coaching</text>
+        <text x="0" y="131">One-to-one</text>
+      </g>
+      <rect x="150" y="24" width="7.5" height="14" rx="3" fill="#F5A623"/>
+      <text x="208" y="35" font-size="11" fill="#1F3A5F" font-weight="700">$928</text>
+      <rect x="150" y="56" width="52" height="14" rx="3" fill="#F5A623"/>
+      <text x="210" y="67" font-size="11" fill="#1F3A5F" font-weight="700">$6,400</text>
+      <rect x="182.5" y="88" width="97.5" height="14" rx="3" fill="#6FCF97" fill-opacity=".35"/>
+      <rect x="158.1" y="88" width="24.4" height="14" rx="3" fill="#6FCF97"/>
+      <text x="231" y="99" font-size="10" fill="#2F8F5B" font-weight="800" text-anchor="middle">a year</text>
+      <text x="287" y="99" font-size="11" fill="#1F3A5F" font-weight="700">$1,000–$4,000 per cohort · $16,000 a year</text>
+      <rect x="393.75" y="120" width="146.25" height="14" rx="3" fill="#3E8E8A" fill-opacity=".3"/>
+      <rect x="162.2" y="120" width="231.55" height="14" rx="3" fill="#3E8E8A"/>
+      <text x="210" y="131" font-size="10.5" fill="#FFFFFF" font-weight="800">$1,500–$30,000 per 8 weeks</text>
+      <text x="467" y="131" font-size="10.5" fill="#1F3A5F" font-weight="800" text-anchor="middle">a year: $48,000</text>
+      <line x1="186.2" y1="16" x2="186.2" y2="146" stroke="#1F3A5F" stroke-width="1.5" stroke-dasharray="3 3"/>
+      <line x1="202" y1="16" x2="202" y2="146" stroke="#E0533D" stroke-width="1.5"/>
+      <text x="183" y="12" font-size="10" fill="#1F3A5F" font-weight="800" text-anchor="end">median $4,450</text>
+      <text x="205" y="12" font-size="10" fill="#E0533D" font-weight="800">mean $6,394.50</text>
+      <g font-size="9.5" fill="#7C8B8F" text-anchor="middle"><text x="150" y="160">$0</text><text x="247.5" y="160">$12k</text><text x="345" y="160">$24k</text><text x="442.5" y="160">$36k</text><text x="540" y="160" text-anchor="end">$48k</text></g>
+    </svg>
+  </div>
+  <p class="small">Solid bars are single figures or the 8-week range; the lighter part runs on to the year figure. Dashed line: median. Red line: mean.</p>
+</section>
+
+<!-- 6 · PRODUCT LADDER -->
+<section class="page">
+  <div class="rh"><span>Monetisation audit · @buzzingwithmsb</span><span class="pg"><svg viewBox="0 0 16 16" aria-hidden="true"><polygon points="8,1 14,4.5 14,11.5 8,15 2,11.5 2,4.5" fill="#F5A623"/></svg>06</span></div>
+  <span class="eyebrow">The product ladder</span>
+  <h2 class="sec">Four steps, <span>from a quick reference to your own mentoring</span></h2>
+
+  <div class="prod">
+    <div class="price">$29<i></i><small>Ebook</small></div>
+    <div><h3>When a Strategy Flops</h3><p>A quick-reference companion on reading teacher motivation and choosing the next move, drawn from your posts and set alongside the book. For coaches who have the strategies but freeze when one doesn't land.</p><div class="rev">32 x $29 = $928 (estimate)</div></div>
+  </div>
+  <div class="prod">
+    <div class="price">$200<i></i><small>Online course</small></div>
+    <div><h3>Matching the Strategy to the Teacher</h3><p>Applying the book's 20 strategies to real coaching scenarios, as the follow-on to the Start-Up course. For coaches who have built their menu and now need to choose from it, teacher by teacher.</p><div class="rev">32 x $200 = $6,400 (estimate)</div></div>
+  </div>
+  <div class="prod">
+    <div class="price">$500<i></i><small>Group, 8 weeks</small></div>
+    <div><h3>Your Teachers, One Case at a Time</h3><p>An online group programme for instructional coaches in 8-week cohorts of 2 to 8 people, bringing their own teacher cases to live sessions. For coaches who want to talk through a real teacher with you and with peers.</p><div class="rev">$1,000–$4,000 per cohort; with 32 buyers, $16,000 a year (estimate)</div></div>
+  </div>
+  <div class="prod" style="border-bottom:0">
+    <div class="price">$1,500<i></i><small>One-to-one, 8 weeks</small></div>
+    <div><h3>Caseload Mentoring</h3><p>Eight weeks of mentoring for one coach working through their own caseload, one hour a week. For coaches who want your eyes on every teacher they support.</p><div class="rev">$1,500–$30,000 per 8 weeks; with 32 buyers, $48,000 a year (estimate)</div></div>
+  </div>
+
+  <table>
+    <thead><tr><th>Product</th><th class="num">Price</th><th>Format</th><th class="num">Estimate</th></tr></thead>
+    <tbody>
+      <tr><td>When a Strategy Flops</td><td class="num">$29</td><td>Ebook</td><td class="num">$928</td></tr>
+      <tr><td>Matching the Strategy to the Teacher</td><td class="num">$200</td><td>Online course</td><td class="num">$6,400</td></tr>
+      <tr><td>Your Teachers, One Case at a Time</td><td class="num">$500</td><td>Group, 2–8 people</td><td class="num">$1,000–$4,000 / cohort</td></tr>
+      <tr><td>Caseload Mentoring</td><td class="num">$1,500</td><td>One-to-one, 1 hr a week</td><td class="num">$1,500–$30,000 / 8 wks</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 7 · WHO DOES WHAT -->
+<section class="page">
+  <div class="rh"><span>Monetisation audit · @buzzingwithmsb</span><span class="pg"><svg viewBox="0 0 16 16" aria-hidden="true"><polygon points="8,1 14,4.5 14,11.5 8,15 2,11.5 2,4.5" fill="#F5A623"/></svg>07</span></div>
+  <span class="eyebrow">Who does what</span>
+  <h2 class="sec">You coach. <span>We run the hive.</span></h2>
+  <p class="lede">Autora hosts and runs everything: the format, the build, the platform and hosting, the checkout and payments, delivery, the marketing and the backend. There is nothing to pay upfront. Autora is paid from a share of what the products make.</p>
+
+  <div class="split">
+    <div class="col">
+      <h3>Your part</h3>
+      <div class="row"><b>Ebook</b>Confirm you're happy for it to go out. Next to no work.</div>
+      <div class="row"><b>Online course</b>Film the lessons and send us the footage.</div>
+      <div class="row"><b>Group coaching</b>Run the live sessions with each cohort.</div>
+      <div class="row"><b>One-to-one</b>Run the weekly one-hour sessions with each client.</div>
+    </div>
+    <div class="col">
+      <h3>What Autora does</h3>
+      <div class="row"><b>Ebook</b>Writes it from your posts, designs it, hosts it, sells it and delivers it.</div>
+      <div class="row"><b>Online course</b>Turns your footage into the course, hosts it, sells it and delivers it.</div>
+      <div class="row"><b>Group coaching</b>The sales page, booking, payments, onboarding and marketing.</div>
+      <div class="row"><b>One-to-one</b>The sales page, booking, payments, onboarding and marketing.</div>
+    </div>
+  </div>
+
+  <div class="grid3" style="margin-top:16px">
+    <div class="stat"><div class="n">$0</div><div class="k">Upfront cost</div><div class="s">Autora is paid from a share of what it makes</div></div>
+    <div class="stat"><div class="n">1</div><div class="k">Thing to film</div><div class="s">The course lessons</div></div>
+    <div class="stat"><div class="n">0</div><div class="k">Things to build</div><div class="s">No platform, checkout or marketing on your side</div></div>
+  </div>
+  <p class="small" style="margin-top:10px">You never have to build, host, market or sell anything yourself. Your time goes into the parts only you can do: your teaching on camera and your coaching in the room.</p>
+</section>
+
+<!-- 8 · OFFER DETAIL -->
+<section class="page">
+  <div class="rh"><span>Monetisation audit · @buzzingwithmsb</span><span class="pg"><svg viewBox="0 0 16 16" aria-hidden="true"><polygon points="8,1 14,4.5 14,11.5 8,15 2,11.5 2,4.5" fill="#F5A623"/></svg>08</span></div>
+  <span class="eyebrow">Offer detail</span>
+  <h2 class="sec">The two products <span>coaches can buy today</span></h2>
+
+  <div class="offer">
+    <div class="top"><h3>When a Strategy Flops · ebook</h3><span class="p">$29</span></div>
+    <dl>
+      <dt>What's inside</dt><dd>A quick-reference companion on reading teacher motivation and choosing the next move, drawn from your posts and set alongside Expand Your Coaching Toolbox.</dd>
+      <dt>The promise</dt><dd>When your go-to strategy flops with a teacher, you know what to look for and what to try next.</dd>
+      <dt>Your part</dt><dd>Autora writes it from your own content. All you do is confirm you're happy for it to go out.</dd>
+      <dt>First step</dt><dd>Autora pulls together your posts on teacher motivation and next moves into a first draft for you to read.</dd>
+      <dt>Estimate</dt><dd>32 buyers x $29 = $928</dd>
+    </dl>
+  </div>
+
+  <div class="offer">
+    <div class="top"><h3>Matching the Strategy to the Teacher · course</h3><span class="p">$200</span></div>
+    <dl>
+      <dt>What's inside</dt><dd>Lessons applying the book's 20 strategies to real coaching scenarios, as the follow-on to the Start-Up course.</dd>
+      <dt>The promise</dt><dd>You can look at a teacher, read what they need from you, and pick the strategy that fits them.</dd>
+      <dt>Your part</dt><dd>You film the lessons and send Autora the footage. Autora turns it into the course, hosts it, sells it and delivers it.</dd>
+      <dt>First step</dt><dd>Plan the lessons from the most common answers to your story question about which teacher coaches are stuck with.</dd>
+      <dt>Estimate</dt><dd>32 buyers x $200 = $6,400</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- 9 · OFFER DETAIL CONTINUED -->
+<section class="page">
+  <div class="rh"><span>Monetisation audit · @buzzingwithmsb</span><span class="pg"><svg viewBox="0 0 16 16" aria-hidden="true"><polygon points="8,1 14,4.5 14,11.5 8,15 2,11.5 2,4.5" fill="#F5A623"/></svg>09</span></div>
+  <span class="eyebrow">Offer detail, continued</span>
+  <h2 class="sec">The two ways <span>to coach with you</span></h2>
+
+  <div class="offer">
+    <div class="top"><h3>Your Teachers, One Case at a Time · group</h3><span class="p">$500</span></div>
+    <dl>
+      <dt>What's inside</dt><dd>An 8-week online group programme for instructional coaches, 2 to 8 people per cohort, each bringing their own teacher cases to live sessions.</dd>
+      <dt>The promise</dt><dd>Eight weeks of working through real teachers with you and with other coaches, one case at a time.</dd>
+      <dt>Your part</dt><dd>You run the sessions. Autora handles the sales page, booking, payments, onboarding and marketing.</dd>
+      <dt>First step</dt><dd>Open a waitlist and invite readers of the book first.</dd>
+      <dt>Estimate</dt><dd>2 to 8 people x $500 = $1,000 to $4,000 per cohort; with 32 buyers, 32 x $500 = $16,000 a year</dd>
+    </dl>
+  </div>
+
+  <div class="offer">
+    <div class="top"><h3>Caseload Mentoring · one-to-one</h3><span class="p">$1,500</span></div>
+    <dl>
+      <dt>What's inside</dt><dd>Eight weeks of mentoring for one coach working through their own caseload, one hour a week.</dd>
+      <dt>The promise</dt><dd>Every teacher on the coach's caseload gets a considered next move, worked out with you.</dd>
+      <dt>Your part</dt><dd>You run the sessions. Autora handles the sales page, booking, payments, onboarding and marketing.</dd>
+      <dt>First step</dt><dd>Offer places to the coaches who comment on the first post and join the waitlist.</dd>
+      <dt>Estimate</dt><dd>1 to 20 hours a week x $1,500 = $1,500 to $30,000 per 8 weeks; with 32 buyers, 32 x $1,500 = $48,000 a year</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- 10 · LAUNCH PLAN + FIRST POST -->
+<section class="page">
+  <div class="rh"><span>Monetisation audit · @buzzingwithmsb</span><span class="pg"><svg viewBox="0 0 16 16" aria-hidden="true"><polygon points="8,1 14,4.5 14,11.5 8,15 2,11.5 2,4.5" fill="#F5A623"/></svg>10</span></div>
+  <span class="eyebrow">Launch plan</span>
+  <h2 class="sec">Ask first, <span>then build</span></h2>
+
+  <div class="step">
+    <div class="hexn"><svg viewBox="0 0 44 48" aria-hidden="true"><polygon points="22,2 42,13 42,35 22,46 2,35 2,13" fill="#F5A623"/></svg><b>1</b></div>
+    <div><h4>Ask first</h4><p>Post a story question asking coaches which teacher they're stuck with right now, and why. Their answers tell you which cases the course and the coaching should start with.</p></div>
+  </div>
+  <div class="step">
+    <div class="hexn"><svg viewBox="0 0 44 48" aria-hidden="true"><polygon points="22,2 42,13 42,35 22,46 2,35 2,13" fill="#6FCF97"/></svg><b>2</b></div>
+    <div><h4>Film the course from the most common answers</h4><p>Pick the teacher situations that come up most and film Matching the Strategy to the Teacher around them. You send the footage; Autora builds the rest.</p></div>
+  </div>
+  <div class="step" style="border-bottom:0">
+    <div class="hexn"><svg viewBox="0 0 44 48" aria-hidden="true"><polygon points="22,2 42,13 42,35 22,46 2,35 2,13" fill="#3E8E8A"/></svg><b>3</b></div>
+    <div><h4>Waitlist, readers first, then a real launch</h4><p>Open a waitlist and invite readers of Expand Your Coaching Toolbox first. Then launch with a clear date and a real close.</p></div>
+  </div>
+
+  <div class="quote" style="margin-top:14px">"We really have to work hard to understand teacher motivations, because the way they interact with us can give us clues about what they need from us and how to proceed next!"<span class="by">You, in a DM on 30/09. Slide 2 of your first post is built on this.</span></div>
+
+  <div class="card honey">
+    <h4 class="mini">Two things to avoid</h4>
+    <ul style="margin:0;font-size:14.5px">
+      <li>Don't imply the book, the Start-Up course or the toolbox falls short. The new products are the next step after them.</li>
+      <li>Don't invent demand or sales. Let the comments and the waitlist show what is there.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 11 · THE FIRST POST -->
+<section class="page">
+  <div class="rh"><span>Monetisation audit · @buzzingwithmsb</span><span class="pg"><svg viewBox="0 0 16 16" aria-hidden="true"><polygon points="8,1 14,4.5 14,11.5 8,15 2,11.5 2,4.5" fill="#F5A623"/></svg>11</span></div>
+  <span class="eyebrow">The first post</span>
+  <h2 class="sec">A carousel that tests <span>the demand before anything is built</span></h2>
+  <p class="lede">It uses the format that already works for you: a carousel with a word to comment, like STARTUP on your coaching menu post.</p>
+
+  <div class="slide"><span class="no">1</span><p>What do you do when your go-to strategy flops with a teacher?</p></div>
+  <div class="slide"><span class="no">2</span><p>The way a teacher interacts with you is a clue to what they need next.</p></div>
+  <div class="slide"><span class="no">3</span><p>I'm thinking of a programme where we work through your own teachers, one case at a time.</p></div>
+  <div class="slide"><span class="no">4</span><p>Comment "TOOLBOX" if you'd want in.</p></div>
+
+  <div class="card mint" style="margin-top:12px">
+    <h4 class="mini">Caption</h4>
+    <p style="margin:0">Hey coach! What do you do when your go-to strategy flops with a teacher? I refuse to use the same approach with every teacher. I'm thinking of a programme where we work through your own teachers, one case at a time. Comment TOOLBOX if you'd want in.</p>
+  </div>
+  <p class="small">What it measures: how many coaches comment TOOLBOX. That count, and the story answers from step 1, are the demand signal. Nothing is built until you've seen them.</p>
+</section>
+
+<!-- 12 · CLOSING -->
+<section class="page">
+  <div class="rh"><span>Monetisation audit · @buzzingwithmsb</span><span class="pg"><svg viewBox="0 0 16 16" aria-hidden="true"><polygon points="8,1 14,4.5 14,11.5 8,15 2,11.5 2,4.5" fill="#F5A623"/></svg>12</span></div>
+  <span class="eyebrow">What to do next</span>
+  <h2 class="sec">Three small moves <span>this week</span></h2>
+
+  <div class="step">
+    <div class="hexn"><svg viewBox="0 0 44 48" aria-hidden="true"><polygon points="22,2 42,13 42,35 22,46 2,35 2,13" fill="#F5A623"/></svg><b>1</b></div>
+    <div><h4>Post the story question</h4><p>Which teacher are you stuck with right now, and why?</p></div>
+  </div>
+  <div class="step">
+    <div class="hexn"><svg viewBox="0 0 44 48" aria-hidden="true"><polygon points="22,2 42,13 42,35 22,46 2,35 2,13" fill="#6FCF97"/></svg><b>2</b></div>
+    <div><h4>Publish the TOOLBOX carousel</h4><p>Four slides, ready to go, on page 11.</p></div>
+  </div>
+  <div class="step" style="border-bottom:0">
+    <div class="hexn"><svg viewBox="0 0 44 48" aria-hidden="true"><polygon points="22,2 42,13 42,35 22,46 2,35 2,13" fill="#3E8E8A"/></svg><b>3</b></div>
+    <div><h4>Say yes to the ebook draft</h4><p>Autora writes When a Strategy Flops from your posts; you read it and confirm.</p></div>
+  </div>
+
+  <div class="close-hero">
+    <h3>Reply to this DM and I'll walk you through the numbers and what to build first.</h3>
+    <p>Prepared by Euan Grant · Autora AI Automation · October 2026</p>
+  </div>
+
+  <p class="small">All figures are estimates based on your public profile data and this audit, using a fixed model: 5% of followers engaged, 5% of those buying.</p>
+  <p class="small">How this was made: I build automations, and I used AI for the analysis, which is why this took an evening rather than a fortnight.</p>
+
+  <svg viewBox="0 0 300 60" style="width:180px;margin-top:10px" aria-hidden="true"><g fill="none" stroke="#F5A623" stroke-width="3"><polygon points="20,4 38,14 38,34 20,44 2,34 2,14"/><polygon points="56,4 74,14 74,34 56,44 38,34 38,14"/><polygon points="92,4 110,14 110,34 92,44 74,34 74,14"/></g><g fill="#6FCF97"><circle cx="130" cy="24" r="4"/></g></svg>
+</section>
+
+</body>
+</html>
