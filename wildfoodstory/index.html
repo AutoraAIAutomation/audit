@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monetisation Audit · @wildfoodstory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#1F2A1A;
+  --surface:#F5EFE1;
+  --ink:#2A2118;
+  --muted:#8A7F6B;
+  --accent:#C9622A;
+  --accent2:#D4A72C;
+  --moss:#3A4A2E;
+  --paper:#FBF7EE;
+  --line:rgba(42,33,24,.15);
+  --cream-soft:rgba(245,239,225,.72);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}
+body{font-family:'Karla',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:15.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.serif{font-family:'Fraunces',Georgia,'Times New Roman',serif;margin:0;font-weight:500;letter-spacing:-.01em}
+p{margin:0 0 11px}
+ul{margin:0 0 11px;padding-left:18px}
+li{margin-bottom:6px}
+strong{font-weight:700}
+.small{font-size:13px;color:var(--muted);line-height:1.5}
+.muted{color:var(--muted)}
+.rust{color:var(--accent)}
+
+/* page shell */
+.page{background:var(--surface);position:relative}
+.page.dark{background:var(--bg);color:var(--surface)}
+.rh{display:flex;justify-content:space-between;align-items:center;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:22px;font-weight:700}
+.rh .pg{font-family:'Fraunces',Georgia,serif;font-size:13px;letter-spacing:0;color:var(--accent);font-weight:600}
+.dark .rh{border-color:rgba(245,239,225,.2);color:var(--cream-soft)}
+
+/* type */
+.eyebrow{display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px}
+h2.sec{font-size:36px;line-height:1.08;margin-bottom:8px}
+h2.sec em{color:var(--accent);font-style:italic}
+h3.sub{font-size:20px;line-height:1.2;margin:18px 0 8px}
+h4.mini{font-family:'Karla',sans-serif;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--moss);font-weight:700;margin:0 0 6px}
+.lede{font-size:16.5px;color:#5E5444;max-width:64ch;margin-bottom:18px}
+.rule{height:3px;width:56px;background:var(--accent);border-radius:3px;margin:12px 0 18px}
+
+/* components */
+.card{background:var(--paper);border-radius:12px;padding:14px 18px;margin-bottom:12px;border:1px solid var(--line)}
+.card.rust{border-left:4px solid var(--accent);color:var(--ink)}
+.card.gold{border-left:4px solid var(--accent2)}
+.card.moss{background:var(--moss);color:var(--surface);border:none}
+.card.moss .small{color:var(--cream-soft)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.stat{background:var(--paper);border-radius:12px;padding:13px 15px;border:1px solid var(--line)}
+.stat .n{font-family:'Fraunces',Georgia,serif;font-size:30px;line-height:1;font-weight:600;color:var(--ink)}
+.stat .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:7px;font-weight:700}
+.stat .s{font-size:13px;color:var(--muted);margin-top:4px}
+.quote{font-family:'Fraunces',Georgia,serif;font-size:19px;line-height:1.42;font-style:italic;border-left:3px solid var(--accent);padding:4px 0 4px 18px;margin:6px 0 14px}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:3px 10px;font-weight:700;background:rgba(201,98,42,.12);color:var(--accent)}
+
+table{width:100%;border-collapse:collapse;margin:10px 0 10px;font-size:14px}
+th{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 10px 8px 0;border-bottom:1.5px solid var(--ink);font-weight:700}
+td{padding:8px 10px 8px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+th.num{text-align:right}
+tr.hi td{background:rgba(201,98,42,.08);font-weight:700}
+
+.mathrow{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding:8px 0;gap:14px}
+.mathrow .lab{font-size:14.5px}
+.mathrow .lab em{display:block;font-style:normal;font-size:13px;color:var(--muted);margin-top:2px}
+.mathrow .val{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:20px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.mathrow.big .val{font-size:26px;color:var(--accent)}
+
+.step{display:flex;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
+.step .sn{font-family:'Fraunces',Georgia,serif;font-size:36px;line-height:1;color:var(--accent);min-width:40px;font-weight:500}
+.step h4{font-family:'Fraunces',Georgia,serif;font-size:19px;margin:0 0 5px;font-weight:600}
+.step p{margin:0 0 6px;font-size:14.5px}
+.step .when{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--moss);font-weight:700}
+
+.slide{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:15px 20px;margin-bottom:10px;display:flex;gap:16px;align-items:flex-start}
+.slide .no{font-family:'Fraunces',Georgia,serif;font-size:13px;color:var(--surface);background:var(--moss);border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;flex:none;font-weight:600}
+.slide p{font-family:'Fraunces',Georgia,serif;font-size:19px;line-height:1.38;margin:0}
+
+.prod{display:grid;grid-template-columns:104px 1fr;gap:16px;padding:10px 0;border-bottom:1px solid var(--line)}
+.prod .price{font-family:'Fraunces',Georgia,serif;font-size:30px;line-height:1;color:var(--accent);font-weight:600}
+.prod .price small{display:block;font-family:'Karla',sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px;font-weight:700}
+.prod h3{font-size:19px;margin:0 0 4px;font-weight:600}
+.prod p{font-size:14.5px;margin:0 0 4px}
+.prod .rev{font-size:13.5px;color:var(--moss);font-weight:700}
+
+.offer{background:var(--paper);border-radius:14px;border:1px solid var(--line);padding:17px 20px;margin-bottom:14px}
+.offer .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:11px}
+.offer .top h3{font-size:22px;font-weight:600}
+.offer .top .p{font-family:'Fraunces',Georgia,serif;font-size:22px;color:var(--accent);white-space:nowrap;font-weight:600}
+.offer dl{display:grid;grid-template-columns:112px 1fr;gap:7px 14px;margin:0;font-size:14.5px}
+.offer dt{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--moss);font-weight:700;padding-top:3px}
+.offer dd{margin:0}
+
+.split{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper)}
+.split .col{padding:16px 18px}
+.split .col + .col{background:var(--moss);color:var(--surface)}
+.split h3{font-size:21px;margin-bottom:10px;font-weight:600}
+.split .row{padding:9px 0;border-top:1px solid var(--line);font-size:14.5px}
+.split .col + .col .row{border-color:rgba(245,239,225,.18)}
+.split .row b{display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:3px}
+.split .col + .col .row b{color:var(--accent2)}
+
+/* cover */
+.cover{display:flex;flex-direction:column}
+.cover .top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.mono{width:66px;height:66px;flex:none}
+.cover .kicker{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent2);font-weight:700}
+.cover h1{font-size:50px;line-height:1.02;margin:10px 0 4px;font-weight:500}
+.cover .handle{font-size:15px;color:var(--cream-soft);letter-spacing:.04em}
+.cover .handle b{color:var(--surface)}
+.cover .pos{font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:20px;line-height:1.35;color:var(--surface);max-width:34ch;margin:18px 0 18px;border-left:3px solid var(--accent);padding-left:14px}
+.range-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent2);font-weight:700}
+.range{font-family:'Fraunces',Georgia,serif;font-size:66px;line-height:1;font-weight:600;color:var(--surface);margin:6px 0 6px;letter-spacing:-.02em;white-space:nowrap}
+.range .to{font-size:30px;font-style:italic;font-weight:400;color:var(--accent2);margin:0 8px}
+.range .est{font-family:'Karla',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;vertical-align:top;color:var(--accent);margin-left:8px;font-weight:700}
+.ends{font-size:13.5px;color:var(--cream-soft);margin:0 0 12px;max-width:72ch}
+.avgs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.avg{border:1px solid rgba(245,239,225,.2);border-radius:10px;padding:9px 12px}
+.avg .n{font-family:'Fraunces',Georgia,serif;font-size:24px;font-weight:600;color:var(--surface);line-height:1.05}
+.avg .k{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);font-weight:700;margin-top:4px}
+.avg .s{font-size:12.5px;color:var(--cream-soft)}
+.assume{font-size:13px;color:var(--cream-soft);margin:0 0 10px}
+.wdw{background:var(--accent);color:var(--paper);border-radius:10px;padding:9px 14px;font-size:14.5px;font-weight:600;margin:0 0 12px}
+.inside{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--cream-soft);border-top:1px solid rgba(245,239,225,.2);padding-top:10px;margin-top:auto}
+.inside b{color:var(--accent2);letter-spacing:.14em;text-transform:uppercase;font-size:10.5px}
+svg text{font-family:'Karla',Helvetica,Arial,sans-serif}
+
+.close-cta{font-family:'Fraunces',Georgia,serif;font-size:30px;line-height:1.25;color:var(--surface);margin:18px 0 22px;max-width:28ch}
+.close-cta em{color:var(--accent2)}
+
+.dl{position:fixed;top:14px;right:14px;z-index:20;background:var(--accent);color:var(--paper);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;padding:9px 14px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.dl:hover{background:#B4551F}
+
+@page { size: A4; margin: 0; }
+@media print { html, body { background: var(--bg); } .page { width: 210mm; min-height: 297mm; break-after: page; page-break-after: always; padding: 16mm 16mm 18mm; box-sizing: border-box; position: relative; overflow: hidden; } .page:last-child { break-after: auto; page-break-after: auto; } * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .no-print { display: none !important; } }
+@media screen { .page { max-width: 900px; margin: 0 auto; padding: 48px 28px; } }
+@media screen and (max-width:640px){
+  .grid2,.grid3,.grid4,.avgs,.split{grid-template-columns:1fr}
+  .range{font-size:40px;white-space:normal}
+  .range .to{font-size:22px}
+  .cover h1{font-size:38px}
+  h2.sec{font-size:29px}
+  .prod{grid-template-columns:1fr;gap:6px}
+  .offer dl{grid-template-columns:1fr}
+  table{font-size:13px}
+}
+</style>
+</head>
+<body>
+<a class="dl no-print" href="wildfoodstory-monetisation-audit.pdf">Download the PDF</a>
+
+<!-- 1. COVER -->
+<section class="page dark cover">
+  <div class="top">
+    <div>
+      <div class="kicker">Monetisation Audit</div>
+      <h1>Leanne Townsend</h1>
+      <div class="handle"><b>@wildfoodstory</b> &nbsp;·&nbsp; 20,450 followers (public data) &nbsp;·&nbsp; North East Scotland</div>
+    </div>
+    <svg class="mono" viewBox="0 0 66 66" aria-hidden="true">
+      <circle cx="33" cy="33" r="31" fill="none" stroke="#D4A72C" stroke-width="1.5"/>
+      <path d="M14 30 Q33 6 52 30 Z" fill="#C9622A"/>
+      <circle cx="25" cy="22" r="2.2" fill="#F5EFE1"/><circle cx="36" cy="18" r="1.8" fill="#F5EFE1"/><circle cx="43" cy="25" r="2" fill="#F5EFE1"/>
+      <text x="33" y="50" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="15" font-style="italic" fill="#F5EFE1">LT</text>
+    </svg>
+  </div>
+
+  <p class="pos">A forager and food writer in North East Scotland who reads the habitat and the weather to know where to look, then cooks what turns up.</p>
+
+  <div class="range-label">What your audience could be worth · estimate</div>
+  <div class="range">$1,479<span class="to">to</span>$76,500<span class="est">estimate</span></div>
+  <p class="ends">The bottom of the range is the ebook sales; the top is a full year of one-to-one coaching, capped at your 51 estimated buyers (51 × $1,500).</p>
+
+  <div class="avgs">
+    <div class="avg"><div class="n">$6,350</div><div class="k">Median · estimate</div><div class="s">middle two products averaged</div></div>
+    <div class="avg"><div class="n">$7,482</div><div class="k">Mean · estimate</div><div class="s">four products ÷ 4</div></div>
+    <div class="avg"><div class="n">$38,990</div><div class="k">Mid-range · estimate</div><div class="s">(minimum + maximum) ÷ 2</div></div>
+  </div>
+
+  <svg viewBox="0 0 560 206" width="100%" role="img" aria-label="Revenue by product on a shared scale">
+    <g font-size="10" fill="#F5EFE1">
+      <!-- axis -->
+      <line x1="170" y1="182" x2="530" y2="182" stroke="rgba(245,239,225,.35)"/>
+      <g fill="rgba(245,239,225,.6)" text-anchor="middle" font-size="9">
+        <text x="170" y="196">$0</text><text x="260" y="196">$20k</text><text x="350" y="196">$40k</text><text x="440" y="196">$60k</text><text x="530" y="196">$80k</text>
+      </g>
+      <!-- names -->
+      <g font-size="11" font-weight="700">
+        <text x="0" y="49">Ebook</text>
+        <text x="0" y="89">Online course</text>
+        <text x="0" y="129">Group coaching</text>
+        <text x="0" y="169">One-to-one coaching</text>
+      </g>
+      <!-- bars -->
+      <rect x="170" y="39" width="6.7" height="13" fill="#D4A72C"/>
+      <text x="210" y="50" font-size="10" fill="rgba(245,239,225,.85)">$1,479</text>
+      <rect x="170" y="79" width="45.9" height="13" fill="#D4A72C"/>
+      <text x="222" y="90" font-size="10" fill="rgba(245,239,225,.85)">$10,200</text>
+      <rect x="188" y="119" width="90" height="13" fill="#C9622A" opacity=".5"/>
+      <text x="243" y="129" font-size="9" text-anchor="middle" fill="#F5EFE1">a year</text>
+      <rect x="174.5" y="119" width="13.5" height="13" fill="#C9622A"/>
+      <text x="282" y="130" font-size="10" fill="rgba(245,239,225,.85)">$1,000–$4,000 per cohort · $24,000 a year</text>
+      <rect x="305" y="159" width="209.25" height="13" fill="#C9622A" opacity=".5"/>
+      <rect x="176.75" y="159" width="128.25" height="13" fill="#C9622A"/>
+      <text x="176" y="154" font-size="10" fill="rgba(245,239,225,.85)">$1,500–$30,000 per 8 weeks</text>
+      <text x="410" y="169" font-size="10" text-anchor="middle" fill="#F5EFE1" font-weight="700">a year: $76,500</text>
+      <!-- median / mean -->
+      <line x1="198.6" y1="18" x2="198.6" y2="180" stroke="#F5EFE1" stroke-width="1" stroke-dasharray="3 2"/>
+      <line x1="203.7" y1="18" x2="203.7" y2="180" stroke="#D4A72C" stroke-width="1"/>
+      <text x="195.6" y="14" text-anchor="end" font-size="9.5" fill="#F5EFE1">median $6,350</text>
+      <text x="206.7" y="14" font-size="9.5" fill="#D4A72C">mean $7,482</text>
+    </g>
+  </svg>
+
+  <p class="assume">Assumptions: 5% of followers are engaged and 5% of those buy; group coaching is 2 to 8 people per 8-week cohort; one-to-one is 1 to 20 hours a week; the maximum is a full year of six 8-week blocks. Lighter bars show the rest of a year.</p>
+  <p class="wdw">You film the forays and run the sessions. We host and run everything else, with nothing to pay upfront.</p>
+
+  <div class="inside"><b>Inside</b> <span>What your numbers say</span><span>Where the number comes from</span><span>The product ladder</span><span>Who does what</span><span>Offer detail</span><span>Launch plan</span><span>The first post</span></div>
+</section>
+
+<!-- 2. WHAT YOUR NUMBERS SAY -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @wildfoodstory</span><span class="pg">02</span></div>
+  <span class="eyebrow">What your numbers say</span>
+  <h2 class="sec">People come for the <em>why</em> and the <em>where</em>.</h2>
+  <div class="rule"></div>
+  <p class="lede">You already advertise private and group events in your bio. Those teach in person, a few people at a time. Your account shows the same skill on screen, to a much wider audience.</p>
+
+  <div class="grid4" style="margin-bottom:16px">
+    <div class="stat"><div class="n">20,450</div><div class="k">Followers</div><div class="s">public data</div></div>
+    <div class="stat"><div class="n">378</div><div class="k">Avg likes</div><div class="s">public data</div></div>
+    <div class="stat"><div class="n">30</div><div class="k">Avg comments</div><div class="s">public data</div></div>
+    <div class="stat"><div class="n">2%</div><div class="k">Engagement</div><div class="s">public data</div></div>
+  </div>
+
+  <h3 class="sub">The content that works (public data, recent posts)</h3>
+  <table>
+    <thead><tr><th>Post</th><th class="num">Likes</th><th class="num">Comments</th><th class="num">Views</th></tr></thead>
+    <tbody>
+      <tr class="hi"><td>Why you are a lifelong forager (carousel)</td><td class="num">1,946</td><td class="num">109</td><td class="num">–</td></tr>
+      <tr><td>First ceps of the year in spruce, plus the odd one out (reel)</td><td class="num">1,050</td><td class="num">68</td><td class="num">14,302</td></tr>
+      <tr><td>Fly agarics in North East Scotland conifer forest (reel)</td><td class="num">320</td><td class="num">13</td><td class="num">2,336</td></tr>
+      <tr><td>Your research into foraging and wellbeing (carousel)</td><td class="num">270</td><td class="num">64</td><td class="num">–</td></tr>
+    </tbody>
+  </table>
+  <p class="small">The ceps reel reached about 14,300 views, around ten times your other recent reels. The research post drew 64 comments on 270 likes: people want to talk about this, not just look at it.</p>
+
+  <h3 class="sub">Three content pillars</h3>
+  <div class="grid3">
+    <div class="card rust"><h4 class="mini">1 · Reading the habitat</h4><p class="small" style="color:var(--ink);margin:0">Species and where they grow: ceps in spruce, fly agarics in conifers, fenugreek milk caps where pine meets bog myrtle.</p></div>
+    <div class="card gold"><h4 class="mini">2 · Why you forage</h4><p class="small" style="color:var(--ink);margin:0">Sustainability, nature connection and your research into foraging and wellbeing, for people and for whole ecosystems.</p></div>
+    <div class="card rust"><h4 class="mini">3 · The seasonal kitchen</h4><p class="small" style="color:var(--ink);margin:0">Mushrooms on toast with thyme, marrows and crown prince squash from the garden, slow weekends at home.</p></div>
+  </div>
+</section>
+
+<!-- 3. WHERE THE NUMBER COMES FROM -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @wildfoodstory</span><span class="pg">03</span></div>
+  <span class="eyebrow">Where the number comes from</span>
+  <h2 class="sec">From followers to <em>buyers</em>, step by step.</h2>
+  <div class="rule"></div>
+  <p class="lede">Every figure here is an estimate built on one fixed model, the same one we use for every audit. Nothing rests on numbers you haven't published.</p>
+
+  <div class="mathrow"><div class="lab"><strong>F · Followers</strong><em>Public follower count</em></div><div class="val">20,450</div></div>
+  <div class="mathrow"><div class="lab"><strong>E · Engaged audience</strong><em>5% of 20,450 = 1,022.5, rounded down to whole people</em></div><div class="val">1,022</div></div>
+  <div class="mathrow big"><div class="lab"><strong>B · Buyers</strong><em>5% of 1,022 = 51.1, rounded down (about 0.25% of followers)</em></div><div class="val">51</div></div>
+
+  <h3 class="sub">The four products</h3>
+  <table>
+    <thead><tr><th>Product</th><th class="num">Price</th><th>What the figure rests on</th><th class="num">Revenue (estimate)</th></tr></thead>
+    <tbody>
+      <tr><td>Ebook</td><td class="num">$29</td><td>51 buyers × $29</td><td class="num">$1,479</td></tr>
+      <tr><td>Online course</td><td class="num">$200</td><td>51 buyers × $200</td><td class="num">$10,200</td></tr>
+      <tr><td>Group coaching (8 weeks)</td><td class="num">$500</td><td>2 to 8 people per cohort; 48 places a year</td><td class="num">$1,000–$4,000 per cohort<br>$24,000 a year</td></tr>
+      <tr><td>One-to-one coaching (8 weeks)</td><td class="num">$1,500</td><td>1 to 20 hours a week; capped at 51 buyers a year</td><td class="num">$1,500–$30,000 per 8 weeks<br>$76,500 a year</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid2" style="margin-top:14px">
+    <div class="card gold">
+      <h4 class="mini">Group coaching, worked out</h4>
+      <p class="small" style="color:var(--ink);margin:0">Per 8-week cohort: 2 × $500 = $1,000, up to 8 × $500 = $4,000.<br>Per year: six cohorts hold up to 48 places (8 × 6). With 51 buyers you can fill all 48, so 48 × $500 = <strong>$24,000 a year</strong>.</p>
+    </div>
+    <div class="card rust">
+      <h4 class="mini">One-to-one, worked out</h4>
+      <p class="small" style="color:var(--ink);margin:0">Per 8 weeks: 1 client × $1,500 = $1,500, up to 20 × $1,500 = $30,000.<br>Per year: six blocks hold up to 120 programmes (20 × 6), but you have 51 buyers, so with 51 buyers, one-to-one could make you 51 × $1,500 = <strong>$76,500 a year</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. RANGE AND AVERAGES -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @wildfoodstory</span><span class="pg">04</span></div>
+  <span class="eyebrow">Where the number comes from · continued</span>
+  <h2 class="sec">The range, and the <em>middle</em> of it.</h2>
+  <div class="rule"></div>
+
+  <div class="mathrow"><div class="lab"><strong>Minimum</strong><em>Always the ebook sales: 51 × $29</em></div><div class="val">$1,479</div></div>
+  <div class="mathrow"><div class="lab"><strong>Maximum</strong><em>The largest year figure: one-to-one $76,500 beats group $24,000 and the course $10,200</em></div><div class="val">$76,500</div></div>
+  <div class="mathrow"><div class="lab"><strong>Median · estimate</strong><em>Figures in order: $1,479, $2,500, $10,200, $15,750. Middle two: ($2,500 + $10,200) ÷ 2</em></div><div class="val">$6,350</div></div>
+  <div class="mathrow"><div class="lab"><strong>Mean · estimate</strong><em>($1,479 + $10,200 + $2,500 + $15,750) ÷ 4 = $29,929 ÷ 4 = $7,482.25</em></div><div class="val">$7,482</div></div>
+  <div class="mathrow"><div class="lab"><strong>Mid-range · estimate</strong><em>($1,479 + $76,500) ÷ 2 = $77,979 ÷ 2 = $38,989.50</em></div><div class="val">$38,990</div></div>
+  <p class="small" style="margin-top:8px">For the median and mean, each coaching product is counted at the middle of its 8-week range: group coaching ($1,000 + $4,000) ÷ 2 = $2,500; one-to-one ($1,500 + $30,000) ÷ 2 = $15,750. The mid-range uses the year maximum. Mean and mid-range are rounded to the nearest dollar.</p>
+
+  <h3 class="sub">All four on one scale</h3>
+  <svg viewBox="0 0 760 300" width="100%" role="img" aria-label="Revenue by product on a shared scale, larger">
+    <g font-size="12" fill="#2A2118">
+      <line x1="200" y1="262" x2="720" y2="262" stroke="rgba(42,33,24,.35)"/>
+      <g fill="#8A7F6B" text-anchor="middle" font-size="11">
+        <line x1="330" y1="40" x2="330" y2="262" stroke="rgba(42,33,24,.08)"/><line x1="460" y1="40" x2="460" y2="262" stroke="rgba(42,33,24,.08)"/><line x1="590" y1="40" x2="590" y2="262" stroke="rgba(42,33,24,.08)"/><line x1="720" y1="40" x2="720" y2="262" stroke="rgba(42,33,24,.08)"/>
+        <text x="200" y="280">$0</text><text x="330" y="280">$20,000</text><text x="460" y="280">$40,000</text><text x="590" y="280">$60,000</text><text x="720" y="280">$80,000</text>
+      </g>
+      <g font-weight="700" font-size="13">
+        <text x="0" y="74">Ebook · $29</text>
+        <text x="0" y="129">Online course · $200</text>
+        <text x="0" y="184">Group coaching · $500</text>
+        <text x="0" y="239">One-to-one · $1,500</text>
+      </g>
+      <rect x="200" y="60" width="9.6" height="20" fill="#D4A72C"/>
+      <text x="256" y="75" fill="#2A2118">$1,479 (51 × $29)</text>
+      <rect x="200" y="115" width="66.3" height="20" fill="#D4A72C"/>
+      <text x="273" y="130">$10,200 (51 × $200)</text>
+      <rect x="226" y="170" width="130" height="20" fill="#C9622A" opacity=".35"/>
+      <rect x="206.5" y="170" width="19.5" height="20" fill="#C9622A"/>
+      <text x="291" y="185" text-anchor="middle" font-size="11" fill="#2A2118">a year</text>
+      <text x="362" y="185">$1,000–$4,000 per cohort · $24,000 a year</text>
+      <rect x="395" y="225" width="302.25" height="20" fill="#C9622A" opacity=".35"/>
+      <rect x="209.75" y="225" width="185.25" height="20" fill="#C9622A"/>
+      <text x="210" y="219" font-size="11.5">$1,500–$30,000 per 8 weeks</text>
+      <text x="546" y="240" text-anchor="middle" font-weight="700">a year: $76,500 (51 × $1,500)</text>
+      <line x1="241.3" y1="36" x2="241.3" y2="260" stroke="#2A2118" stroke-width="1.2" stroke-dasharray="4 3"/>
+      <line x1="248.6" y1="36" x2="248.6" y2="260" stroke="#C9622A" stroke-width="1.2"/>
+      <text x="237" y="30" text-anchor="end" font-size="11.5">median $6,350</text>
+      <text x="253" y="30" font-size="11.5" fill="#C9622A">mean $7,482</text>
+    </g>
+  </svg>
+  <p class="small">Darker bars are one 8-week block; lighter bars show the rest of a year (six blocks), capped at your 51 estimated buyers. All figures are estimates.</p>
+</section>
+
+<!-- 5. PRODUCT LADDER -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @wildfoodstory</span><span class="pg">05</span></div>
+  <span class="eyebrow">The product ladder</span>
+  <h2 class="sec">Four ways to teach <em>reading the habitat</em>.</h2>
+  <div class="rule"></div>
+
+  <div class="prod">
+    <div class="price">$29<small>Ebook</small></div>
+    <div><h3>A seasonal guide to reading habitats and weather for wild food in Scotland</h3>
+    <p>With your recipes. For followers who want to start reading the ground themselves, at their own pace. Autora writes it from your posts; all you do is confirm it's ready to go out, checking every identification detail.</p>
+    <div class="rev">51 × $29 = $1,479 (estimate)</div></div>
+  </div>
+  <div class="prod">
+    <div class="price">$200<small>Online course</small></div>
+    <div><h3>Read the Habitat</h3>
+    <p>Filmed forays showing how you decide where to look, what to check and how to cook it. For people who can't get to one of your events in person.</p>
+    <div class="rev">51 × $200 = $10,200 (estimate)</div></div>
+  </div>
+  <div class="prod">
+    <div class="price">$500<small>Group coaching</small></div>
+    <div><h3>The seasonal foraging group</h3>
+    <p>An online group in 8-week cohorts of 2 to 8 people, with live sessions each season where members plan forays and share what they found. For people who want to keep going, with company.</p>
+    <div class="rev">$1,000–$4,000 per cohort · $24,000 a year (48 × $500), estimate</div></div>
+  </div>
+  <div class="prod" style="border-bottom:none">
+    <div class="price">$1,500<small>One-to-one</small></div>
+    <div><h3>Eight weeks of foraging mentoring</h3>
+    <p>One hour a week with one person building their own foraging practice: planning forays, reading habitats and reviewing finds.</p>
+    <div class="rev">$1,500–$30,000 per 8 weeks · $76,500 a year (51 × $1,500), estimate</div></div>
+  </div>
+
+  <table style="margin-top:8px">
+    <thead><tr><th>Product</th><th class="num">Price</th><th>Format</th><th class="num">Estimate</th></tr></thead>
+    <tbody>
+      <tr><td>Ebook</td><td class="num">$29</td><td>Download</td><td class="num">$1,479</td></tr>
+      <tr><td>Online course</td><td class="num">$200</td><td>Filmed forays, self-paced</td><td class="num">$10,200</td></tr>
+      <tr><td>Group coaching</td><td class="num">$500</td><td>8 weeks, 2–8 people</td><td class="num">$24,000 a year</td></tr>
+      <tr><td>One-to-one</td><td class="num">$1,500</td><td>8 weeks, 1 hour a week</td><td class="num">$76,500 a year</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 6. WHO DOES WHAT -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @wildfoodstory</span><span class="pg">06</span></div>
+  <span class="eyebrow">Who does what</span>
+  <h2 class="sec">You forage and teach. <em>We run the rest.</em></h2>
+  <div class="rule"></div>
+  <p class="lede">Autora hosts and runs everything: the format, the build, the platform and hosting, the checkout and payments, delivery, the marketing and the backend. There is nothing to pay upfront. Autora is paid from a share of what it makes.</p>
+
+  <div class="split">
+    <div class="col">
+      <h3>Your part</h3>
+      <div class="row"><b>Ebook</b>Confirm it's ready to go out, checking every identification detail. Next to no work.</div>
+      <div class="row"><b>Online course</b>Film your forays and send us the footage.</div>
+      <div class="row"><b>Group coaching</b>Run the live sessions each season.</div>
+      <div class="row"><b>One-to-one</b>Run the weekly hour with each client.</div>
+    </div>
+    <div class="col">
+      <h3>What Autora does</h3>
+      <div class="row"><b>Ebook</b>Writes it from your posts, designs it, sells it and delivers it.</div>
+      <div class="row"><b>Online course</b>Turns your footage into the course, hosts it, sells it and delivers it.</div>
+      <div class="row"><b>Group coaching</b>Sales page, booking, payments, onboarding and marketing.</div>
+      <div class="row"><b>One-to-one</b>Sales page, booking, payments, onboarding and marketing.</div>
+    </div>
+  </div>
+
+  <div class="card moss" style="margin-top:18px">
+    <h4 class="mini" style="color:var(--accent2)">What you never have to do</h4>
+    <p style="margin:0">Build a website, set up a checkout, host video, chase payments or write sales emails. Your time goes on the forest and on the people you teach.</p>
+  </div>
+</section>
+
+<!-- 7. OFFER DETAIL -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @wildfoodstory</span><span class="pg">07</span></div>
+  <span class="eyebrow">Offer detail</span>
+  <h2 class="sec">What goes <em>inside</em> each one.</h2>
+  <div class="rule"></div>
+
+  <div class="offer">
+    <div class="top"><h3>The seasonal habitat guide</h3><span class="p">$29 ebook</span></div>
+    <dl>
+      <dt>Inside</dt><dd>Habitats and weather season by season in Scotland: where moisture holds after a dry spell, what grows in spruce, pine and bog myrtle edges, with your recipes alongside.</dd>
+      <dt>Promise</dt><dd>You'll start to see why a place might yield something, not just what to look for.</dd>
+      <dt>Your part</dt><dd>Autora writes it from your posts. You confirm it's ready to go out, checking every identification detail.</dd>
+      <dt>First step</dt><dd>We gather your habitat posts and draft the first season.</dd>
+    </dl>
+  </div>
+
+  <div class="offer">
+    <div class="top"><h3>Read the Habitat</h3><span class="p">$200 course</span></div>
+    <dl>
+      <dt>Inside</dt><dd>Filmed forays: how you decide where to look, what you check on the ground, and how you cook it at home. Identification is framed as learning, to be checked in person before anything is eaten.</dd>
+      <dt>Promise</dt><dd>Learn to read a habitat the way you do, season by season, from wherever you live.</dd>
+      <dt>Your part</dt><dd>Film the forays and send us the footage. Autora turns it into the course, hosts it, sells it and delivers it.</dd>
+      <dt>First step</dt><dd>Film your next foray with the course in mind.</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @wildfoodstory</span><span class="pg">08</span></div>
+  <span class="eyebrow">Offer detail · continued</span>
+  <h2 class="sec">The two <em>coaching</em> offers.</h2>
+  <div class="rule"></div>
+
+  <div class="offer">
+    <div class="top"><h3>The seasonal foraging group</h3><span class="p">$500 · 8 weeks</span></div>
+    <dl>
+      <dt>Inside</dt><dd>An online cohort of 2 to 8 people. Live sessions each season where members plan forays and share what they found.</dd>
+      <dt>Promise</dt><dd>A season of foraging planned and reviewed with you and a small group, not alone.</dd>
+      <dt>Your part</dt><dd>Run the sessions. Autora handles the sales page, booking, payments, onboarding and marketing.</dd>
+      <dt>First step</dt><dd>Pick the season for the first cohort once the waitlist is open.</dd>
+    </dl>
+  </div>
+
+  <div class="offer">
+    <div class="top"><h3>Foraging mentoring, one to one</h3><span class="p">$1,500 · 8 weeks</span></div>
+    <dl>
+      <dt>Inside</dt><dd>One hour a week for eight weeks with one person building their own foraging practice: planning forays, reading habitats and reviewing finds.</dd>
+      <dt>Promise</dt><dd>Eight weeks of your eye on their ground, until they can read it for themselves.</dd>
+      <dt>Your part</dt><dd>Run the sessions. Autora handles the sales page, booking, payments, onboarding and marketing.</dd>
+      <dt>First step</dt><dd>Decide how many hours a week you want to give it, between 1 and 20.</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- 9. LAUNCH PLAN -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @wildfoodstory</span><span class="pg">09</span></div>
+  <span class="eyebrow">Launch plan</span>
+  <h2 class="sec">Ask first. <em>Then</em> build.</h2>
+  <div class="rule"></div>
+  <p class="lede">The audit infers that some followers can't get to an event in person. You haven't said how many, so that is the first thing to test.</p>
+
+  <div class="step"><div class="sn">1</div><div><span class="when">Now, while it's mushroom season</span><h4>Ask in your story</h4><p>Ask followers who can't make an event whether they'd learn online, season by season. Then post the four-slide test on the next page.</p></div></div>
+  <div class="step"><div class="sn">2</div><div><span class="when">Your next forays</span><h4>Film with the course in mind</h4><p>Keep the camera on the decision, as you did after the dry spell: why the boggy edges, what you checked, and what you cooked from it. Send the footage to us.</p></div></div>
+  <div class="step" style="border-bottom:none"><div class="sn">3</div><div><span class="when">Once people have said yes</span><h4>Open a waitlist, then launch</h4><p>Everyone who commented "FORAGE" goes on the waitlist. Launch with a clear date and a real close.</p></div></div>
+
+  <div class="card rust" style="margin-top:14px">
+    <h4 class="mini">The skill you're selling, in your words</h4>
+    <p class="quote" style="margin:4px 0 0">"It had been dry so I figured going to the edges where the bog myrtle was (and there was still pine) could yield some interesting results. And it did! Bog myrtles grow where its boggy so more moisture"</p>
+    <p class="small" style="margin:0">Leanne, in a DM on 01/10, on the fenugreek milk cap foray.</p>
+  </div>
+</section>
+
+<!-- 10. FIRST POST -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @wildfoodstory</span><span class="pg">10</span></div>
+  <span class="eyebrow">The first post</span>
+  <h2 class="sec">A four-slide test, <em>in your voice</em>.</h2>
+  <div class="rule"></div>
+  <p class="lede">Built from your own foray. It tests one thing: whether people want to learn to read a habitat online.</p>
+
+  <div class="slide"><div class="no">1</div><p>Why did I check the boggy edges after a dry spell?</p></div>
+  <div class="slide"><div class="no">2</div><p>Bog myrtle grows where it's wet, so the moisture holds there when everything else dries out.</p></div>
+  <div class="slide"><div class="no">3</div><p>I'm thinking of filming my forays, so you can learn to read a habitat, season by season.</p></div>
+  <div class="slide"><div class="no">4</div><p>Comment "FORAGE" if you'd want it.</p></div>
+
+  <div class="grid2" style="margin-top:12px">
+    <div class="card gold"><h4 class="mini">Pair it with</h4><p class="small" style="color:var(--ink);margin:0">Photos from the pine and bog myrtle foray, so slide 2 shows the edge itself.</p></div>
+    <div class="card rust"><h4 class="mini">Don't</h4><p class="small" style="color:var(--ink);margin:0">Ever suggest anyone can safely eat a wild mushroom identified from a video or photo: it's about reading habitats, with identification checked in person. And don't invent demand.</p></div>
+  </div>
+</section>
+
+<!-- 11. CLOSING -->
+<section class="page dark">
+  <div class="rh"><span>Monetisation Audit · @wildfoodstory</span><span class="pg">11</span></div>
+  <span class="eyebrow" style="color:var(--accent2)">What to do next</span>
+  <p class="close-cta">Post the four slides. Count the "FORAGE" comments. <em>Then we decide what to build first.</em></p>
+
+  <div class="card moss" style="max-width:640px">
+    <p style="margin:0 0 6px;font-size:17px;font-weight:600">Reply to this DM and I'll walk you through the numbers and what to build first.</p>
+    <p class="small" style="margin:0">Nothing to pay upfront. You film and teach; Autora hosts and runs everything else.</p>
+  </div>
+
+  <div style="margin-top:34px;border-top:1px solid rgba(245,239,225,.2);padding-top:16px;color:var(--cream-soft);font-size:14px">
+    <p style="color:var(--surface);font-weight:600">Prepared by Euan Grant · Autora AI Automation · October 2026</p>
+    <p>All figures are estimates based on public profile data and the audit, using a fixed model: 5% of followers engaged, 5% of those buying.</p>
+    <p>I build automations, and I used AI for the analysis, which is why this took an evening rather than a fortnight.</p>
+  </div>
+
+  <svg viewBox="0 0 600 120" width="100%" aria-hidden="true" style="margin-top:30px;opacity:.9">
+    <path d="M0 110 Q150 90 300 104 T600 98 L600 120 L0 120 Z" fill="#3A4A2E"/>
+    <g fill="#C9622A"><path d="M70 104 Q90 70 110 104 Z"/><path d="M430 100 Q455 58 480 100 Z"/></g>
+    <g fill="#D4A72C"><path d="M150 106 Q162 86 174 106 Z"/><path d="M510 100 Q520 84 530 100 Z"/></g>
+    <g fill="#F5EFE1"><rect x="87" y="104" width="6" height="12"/><rect x="452" y="100" width="7" height="14"/><rect x="159" y="106" width="5" height="9"/><rect x="518" y="100" width="4" height="10"/>
+    <circle cx="84" cy="90" r="2.5"/><circle cx="98" cy="86" r="2"/><circle cx="446" cy="82" r="2.6"/><circle cx="465" cy="76" r="2.2"/></g>
+  </svg>
+</section>
+</body>
+</html>
