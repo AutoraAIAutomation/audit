@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monetisation Audit · @cindymaccormackcoaching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3C98B;
+  --surface:#3F2E42;
+  --ink:#2C1F30;
+  --muted:#7A6A74;
+  --accent:#C96E5B;
+  --accent2:#E8A33D;
+  --paper:#FCF1E1;
+  --card:#FFF8EE;
+  --peach-soft:#F8DDB5;
+  --line:rgba(44,31,48,.14);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}
+body{font-family:'Poppins',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:'Playfair Display',Georgia,'Times New Roman',serif;margin:0;font-weight:600;letter-spacing:-.005em}
+p{margin:0 0 10px}
+ul{margin:0 0 10px;padding-left:18px}
+li{margin-bottom:5px}
+strong{font-weight:600}
+.small{font-size:13px;color:var(--muted);line-height:1.5}
+.muted{color:var(--muted)}
+.rust{color:var(--accent)}
+
+/* page shell */
+.page{background:var(--paper);position:relative}
+.page.cover{background:linear-gradient(160deg,#4A3350 0%,var(--surface) 46%,#2C1F30 100%);color:var(--paper)}
+.rh{display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:22px;font-weight:600}
+.rh .pg{font-family:'Playfair Display',Georgia,serif;font-size:14px;letter-spacing:0;color:var(--accent);font-style:italic;font-weight:600}
+
+/* type */
+.eyebrow{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:6px}
+h2.sec{font-size:34px;line-height:1.1;margin-bottom:6px}
+h2.sec em{color:var(--accent);font-style:italic;font-weight:500}
+h3.sub{font-size:19px;line-height:1.25;margin:16px 0 8px}
+.lede{font-size:15px;color:var(--muted);max-width:64ch;margin-bottom:16px}
+.rule{height:3px;width:54px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:3px;margin:10px 0 16px}
+.script{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500}
+
+/* components */
+.card{background:var(--card);border-radius:14px;padding:14px 17px;margin-bottom:11px;border:1px solid var(--line)}
+.card.rust{border-left:4px solid var(--accent);color:var(--ink)}
+.card.amber{border-left:4px solid var(--accent2)}
+.card.plum{background:var(--surface);color:var(--paper);border:none}
+.card.plum .small{color:#D9C6CF}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.stat{background:var(--card);border-radius:14px;padding:13px 15px;border:1px solid var(--line)}
+.stat .n{font-family:'Playfair Display',Georgia,serif;font-size:28px;line-height:1;font-weight:700}
+.stat .k{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:7px;font-weight:600}
+.stat .s{font-size:13px;color:var(--muted);margin-top:3px}
+.quote{font-family:'Playfair Display',Georgia,serif;font-size:18px;line-height:1.42;font-style:italic;border-left:3px solid var(--accent);padding:2px 0 2px 16px;margin:4px 0 12px}
+.tag{display:inline-block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:3px 10px;font-weight:600;background:var(--peach-soft);color:#8A4434}
+.pill-num{font-family:'Playfair Display',Georgia,serif;font-size:30px;line-height:1;color:var(--accent);font-weight:600;font-style:italic}
+
+table{width:100%;border-collapse:collapse;margin:10px 0 8px;font-size:13.5px}
+th{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 10px 7px 0;border-bottom:1.5px solid var(--ink);font-weight:600}
+td{padding:8px 10px 8px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.hi td{background:rgba(232,163,61,.16);font-weight:600}
+
+.mathrow{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding:8px 0;gap:14px}
+.mathrow .lab{font-size:14px}
+.mathrow .lab em{display:block;font-style:normal;font-size:13px;color:var(--muted);margin-top:1px}
+.mathrow .val{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:20px;white-space:nowrap;font-variant-numeric:tabular-nums}
+
+.step{display:flex;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
+.step .sn{font-family:'Playfair Display',Georgia,serif;font-size:36px;line-height:1;color:var(--accent);min-width:40px;font-style:italic;font-weight:500}
+.step h3{font-size:18px;margin:0 0 4px}
+.step p{margin:0 0 5px;font-size:14px}
+.step .when{font-size:13px;color:var(--muted)}
+
+.slide{background:var(--surface);color:var(--paper);border-radius:16px;padding:16px 20px;margin-bottom:10px;display:flex;gap:16px;align-items:flex-start}
+.slide .no{font-family:'Playfair Display',Georgia,serif;font-size:13px;color:var(--ink);background:var(--accent2);border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;flex:none;font-weight:700}
+.slide p{font-family:'Playfair Display',Georgia,serif;font-size:19px;line-height:1.38;margin:0}
+
+.prod{display:grid;grid-template-columns:112px 1fr;gap:16px;padding:7px 0;border-bottom:1px solid var(--line)}
+.prod .price{font-family:'Playfair Display',Georgia,serif;font-size:32px;line-height:1;color:var(--accent);font-weight:700}
+.prod .price small{display:block;font-family:'Poppins',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px;font-weight:600}
+.prod h3{font-size:18px;margin:0 0 3px}
+.prod p{font-size:13.5px;margin:0 0 4px}
+.prod .rev{font-size:13px;color:#8A4434;font-weight:600}
+
+.offer{background:var(--card);border-radius:16px;border:1px solid var(--line);padding:16px 19px;margin-bottom:13px}
+.offer .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:10px}
+.offer .top h3{font-size:21px}
+.offer .top .p{font-family:'Playfair Display',Georgia,serif;font-size:21px;color:var(--accent);white-space:nowrap;font-weight:700}
+.offer dl{display:grid;grid-template-columns:112px 1fr;gap:6px 14px;margin:0;font-size:13.5px}
+.offer dt{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#8A4434;font-weight:600;padding-top:3px}
+.offer dd{margin:0}
+
+.split{display:grid;grid-template-columns:1fr 1fr;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+.split .col{padding:16px 18px;background:var(--card)}
+.split .col + .col{background:var(--surface);color:var(--paper)}
+.split h3{font-size:21px;margin-bottom:8px}
+.split .row{padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
+.split .col + .col .row{border-top-color:rgba(252,241,225,.18)}
+.split .row b{display:block;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;font-weight:600}
+.split .col + .col .row b{color:var(--accent2)}
+
+/* cover */
+.cover-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}
+.mono{width:60px;height:60px;border-radius:50%;border:1.5px solid var(--accent2);color:var(--accent2);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',Georgia,serif;font-size:23px;font-style:italic;font-weight:500}
+.kicker{font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;font-weight:600;color:var(--bg)}
+.cover h1{font-size:46px;line-height:1.04;font-weight:600;margin-bottom:6px;color:var(--paper)}
+.cover .handle{font-size:14px;color:#D9C6CF;margin-bottom:14px}
+.cover .handle b{color:var(--bg);font-weight:600}
+.cover .pos{font-family:'Playfair Display',Georgia,serif;font-size:19px;line-height:1.4;font-style:italic;max-width:40ch;margin-bottom:18px;color:var(--bg)}
+.bignum{font-family:'Playfair Display',Georgia,serif;font-size:62px;line-height:1;font-weight:700;letter-spacing:-.02em;color:var(--accent2);white-space:nowrap}
+.bignum .to{font-size:28px;color:var(--paper);font-style:italic;font-weight:400;margin:0 8px;letter-spacing:0}
+.est{display:inline-block;margin:10px 0 12px;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--bg);border:1px solid rgba(243,201,139,.6);border-radius:999px;padding:4px 12px}
+.ends{font-size:13px;color:#E6D6DC;margin-bottom:12px;max-width:72ch}
+.avgs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.avg{background:rgba(252,241,225,.08);border:1px solid rgba(252,241,225,.18);border-radius:12px;padding:10px 13px}
+.avg .n{font-family:'Playfair Display',Georgia,serif;font-size:23px;font-weight:700;line-height:1;color:var(--paper)}
+.avg .k{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--bg);font-weight:600;margin-top:5px}
+.avg .w{font-size:11.5px;color:#D9C6CF;margin-top:3px}
+.assume{font-size:13px;color:#D9C6CF;line-height:1.5;margin-bottom:10px}
+.youline{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:17px;color:var(--paper);border-top:1px solid rgba(252,241,225,.2);border-bottom:1px solid rgba(252,241,225,.2);padding:9px 0;margin:4px 0 12px}
+.youline b{color:var(--accent2);font-weight:600}
+.inside{font-size:12.5px;color:#D9C6CF;line-height:1.55}
+.inside b{color:var(--bg);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:10px;margin-right:6px}
+
+/* chart */
+.chart{width:100%;height:auto;display:block}
+.chart .lab{font-family:'Poppins',sans-serif;font-size:11px;font-weight:600}
+.chart .fig{font-family:'Poppins',sans-serif;font-size:10px}
+.chart .tick{font-family:'Poppins',sans-serif;font-size:9.5px}
+.chart .yr{font-family:'Poppins',sans-serif;font-size:10px;font-weight:600}
+.chart .ml{font-family:'Poppins',sans-serif;font-size:9.5px;font-weight:600}
+.cover .chart .lab{fill:var(--paper)}
+.cover .chart .fig,.cover .chart .tick{fill:#D9C6CF}
+.cover .chart .bar{fill:var(--accent2)}
+.cover .chart .barlt{fill:var(--accent2);fill-opacity:.32}
+.cover .chart .yr{fill:var(--paper)}
+.cover .chart .axis{stroke:rgba(252,241,225,.3)}
+.cover .chart .med{stroke:var(--bg)}
+.cover .chart .mean{stroke:var(--accent)}
+.cover .chart .medt{fill:var(--bg)}
+.cover .chart .meant{fill:#F0A493}
+.light .chart .lab{fill:var(--ink)}
+.light .chart .fig,.light .chart .tick{fill:var(--muted)}
+.light .chart .bar{fill:var(--accent)}
+.light .chart .barlt{fill:var(--accent);fill-opacity:.28}
+.light .chart .yr{fill:var(--ink)}
+.light .chart .axis{stroke:var(--line)}
+.light .chart .med{stroke:var(--surface)}
+.light .chart .mean{stroke:var(--accent2)}
+.light .chart .medt{fill:var(--surface)}
+.light .chart .meant{fill:#A86A12}
+.chartbox{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px 8px}
+
+.dl{position:fixed;top:14px;right:14px;z-index:20;background:var(--surface);color:var(--bg);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:9px 15px;border-radius:999px;box-shadow:0 4px 14px rgba(44,31,48,.25)}
+.dl:hover{background:var(--accent);color:var(--paper)}
+
+.close-band{background:var(--surface);color:var(--paper);border-radius:18px;padding:22px 24px;margin:16px 0}
+.close-band .serif{font-size:24px;line-height:1.3;font-style:italic;color:var(--bg)}
+
+@page { size: A4; margin: 0; }
+@media print { html, body { background: var(--bg); } .page { width: 210mm; min-height: 297mm; break-after: page; page-break-after: always; padding: 16mm 16mm 18mm; box-sizing: border-box; position: relative; overflow: hidden; } .page:last-child { break-after: auto; page-break-after: auto; } * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .no-print { display: none !important; } }
+@media screen { .page { max-width: 900px; margin: 0 auto; padding: 48px 28px; } .page + .page{border-top:6px solid var(--bg)} }
+@media screen and (max-width:640px){
+  .grid2,.grid3,.grid4,.avgs,.split{grid-template-columns:1fr}
+  .split .col + .col{border-left:none}
+  .bignum{font-size:40px;white-space:normal}
+  .bignum .to{font-size:22px}
+  .cover h1{font-size:34px}
+  h2.sec{font-size:28px}
+  .prod,.offer dl{grid-template-columns:1fr}
+  .page{padding:40px 16px}
+  table{font-size:12.5px}
+}
+</style>
+</head>
+<body>
+<a class="dl no-print" href="cindymaccormackcoaching-monetisation-audit.pdf">Download the PDF</a>
+
+<!-- PAGE 1: COVER -->
+<section class="page cover">
+  <div class="cover-top">
+    <div class="kicker">Monetisation Audit</div>
+    <div class="mono">CM</div>
+  </div>
+  <h1>Cindy MacCormack</h1>
+  <div class="handle"><b>@cindymaccormackcoaching</b> &nbsp;·&nbsp; 19,383 followers (public data) &nbsp;·&nbsp; Teen &amp; parent coaching</div>
+  <p class="pos">You coach parents of teens past &ldquo;fine&rdquo;: the right setting and the right timing for the talks that matter.</p>
+
+  <div class="bignum">$1,392<span class="to">to</span>$72,000</div>
+  <div class="est">Estimate &middot; from four products</div>
+  <p class="ends">The bottom of the range is the ebook sales; the top is a full year of one-to-one coaching for your 48 estimated buyers (48 x $1,500), since 48 buyers is fewer than the 120 places a year at 20 hours a week.</p>
+
+  <div class="avgs">
+    <div class="avg"><div class="n">$6,050</div><div class="k">Median &middot; estimate</div><div class="w">($2,500 + $9,600) / 2</div></div>
+    <div class="avg"><div class="n">$7,310.50</div><div class="k">Mean &middot; estimate</div><div class="w">$29,242 / 4</div></div>
+    <div class="avg"><div class="n">$36,696</div><div class="k">Mid-range &middot; estimate</div><div class="w">($1,392 + $72,000) / 2</div></div>
+  </div>
+  <p class="assume">Assumptions: 5% of followers are engaged and 5% of those buy (48 buyers); group coaching is 2 to 8 people per 8-week cohort; one-to-one is 1 to 20 hours a week; the maximum is a full year of six 8-week blocks, capped at your 48 buyers. Median and mean count each coaching product at the middle of its 8-week range.</p>
+
+  <svg class="chart" viewBox="0 0 600 196" role="img" aria-label="Revenue by product on a shared scale from $0 to $72,000">
+    <line class="axis" x1="150" y1="20" x2="150" y2="172" stroke-width="1"/>
+    <line class="axis" x1="150" y1="172" x2="550" y2="172" stroke-width="1"/>
+    <text class="lab" x="0" y="38">Ebook</text><text class="fig" x="0" y="51">48 x $29 = $1,392</text>
+    <rect class="bar" x="150" y="32" width="7.7" height="16" rx="2"/>
+    <text class="lab" x="0" y="74">Online course</text><text class="fig" x="0" y="87">48 x $200 = $9,600</text>
+    <rect class="bar" x="150" y="68" width="53.3" height="16" rx="2"/>
+    <text class="lab" x="0" y="110">Group coaching</text><text class="fig" x="0" y="123">$1,000&ndash;$4,000 / cohort</text>
+    <rect class="barlt" x="172.2" y="104" width="111.1" height="16"/>
+    <rect class="bar" x="155.6" y="104" width="16.6" height="16"/>
+    <text class="yr" x="218" y="116">a year: $24,000</text>
+    <text class="lab" x="0" y="146">One-to-one</text><text class="fig" x="0" y="159">$1,500&ndash;$30,000 / 8 wks</text>
+    <rect class="barlt" x="316.7" y="140" width="233.3" height="16"/>
+    <rect class="bar" x="158.3" y="140" width="158.4" height="16"/>
+    <text class="yr" x="326" y="152">a year: $72,000 (48 buyers)</text>
+    <line class="med" x1="183.6" y1="22" x2="183.6" y2="166" stroke-width="1.5" stroke-dasharray="3 2"/>
+    <line class="mean" x1="190.6" y1="22" x2="190.6" y2="166" stroke-width="1.5"/>
+    <text class="ml medt" x="180" y="16" text-anchor="end">median $6,050</text>
+    <text class="ml meant" x="195" y="16">mean $7,310.50</text>
+    <text class="tick" x="150" y="186" text-anchor="middle">$0</text>
+    <text class="tick" x="283.3" y="186" text-anchor="middle">$24k</text>
+    <text class="tick" x="416.7" y="186" text-anchor="middle">$48k</text>
+    <text class="tick" x="550" y="186" text-anchor="middle">$72k</text>
+  </svg>
+
+  <div class="youline">You film the lessons and run the sessions. <b>We host and run everything else</b>, with nothing to pay upfront.</div>
+  <div class="inside"><b>Inside</b> What your numbers say &middot; Where the number comes from &middot; The product ladder &middot; Who does what &middot; Offer detail &middot; Launch plan &middot; The first post &middot; Next steps</div>
+</section>
+
+<!-- PAGE 2: WHAT YOUR NUMBERS SAY -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit &middot; @cindymaccormackcoaching</span><span class="pg">02</span></div>
+  <span class="eyebrow">Audience snapshot</span>
+  <h2 class="sec">What your numbers <em>say</em></h2>
+  <div class="rule"></div>
+  <div class="grid4">
+    <div class="stat"><div class="n">19,383</div><div class="k">Followers</div><div class="s">Verified account</div></div>
+    <div class="stat"><div class="n">654</div><div class="k">Avg likes</div><div class="s">Recent posts</div></div>
+    <div class="stat"><div class="n">9</div><div class="k">Avg comments</div><div class="s">Recent posts</div></div>
+    <div class="stat"><div class="n">3.42%</div><div class="k">Engagement</div><div class="s">308 posts</div></div>
+  </div>
+  <p class="small" style="margin-top:6px">All four figures are public data from your profile.</p>
+
+  <h3 class="sub">The content that works</h3>
+  <p>Your biggest recent post is the 10 PM &ldquo;Are you asleep?&rdquo; carousel: 6,457 likes and 83 comments (public data). It names a moment every parent of a teen recognises: the house is finally quiet, you have just sat down, and that is when they want to talk. The backpack-note post (936 likes) works the same way. The posts that travel are about <strong>when and where</strong> teens open up, which is exactly the subject of your coaching.</p>
+
+  <div class="quote">&ldquo;Some settings definitely make certain conversations feel easier&mdash;like in the car, during a walk, or even side-by-side doing something together rather than sitting face-to-face. Timing and how the conversation is approached can matter just as much.&rdquo;</div>
+  <p class="small" style="margin-top:-6px">You, in a message to Autora (26 September).</p>
+
+  <h3 class="sub">Three content pillars</h3>
+  <div class="grid3">
+    <div class="card rust"><span class="pill-num">1</span><h3 style="font-size:16.5px;margin:6px 0 4px">The moment they talk</h3><p class="small" style="margin:0">&ldquo;Are you asleep?&rdquo; at 10 PM, the &ldquo;Fine&rdquo; on the couch after school, the car, the walk.</p></div>
+    <div class="card amber"><span class="pill-num">2</span><h3 style="font-size:16.5px;margin:6px 0 4px">Holding back the fixer</h3><p class="small" style="margin:0">Your inner fixer, the grades conversation, not swooping in with a list of what to change.</p></div>
+    <div class="card rust"><span class="pill-num">3</span><h3 style="font-size:16.5px;margin:6px 0 4px">Notes to your teen</h3><p class="small" style="margin:0">The backpack note and the quiet reminders you wish you could slip them on hard days.</p></div>
+  </div>
+
+  <div class="card plum" style="margin-top:4px">
+    <p style="margin:0 0 4px"><strong>Observed:</strong> a live one-to-one offer behind your TidyCal coffee-chat link, and rounds of free one-to-one coaching for parents and teens.</p>
+    <p class="small" style="margin:0"><strong style="color:var(--bg)">Inferred, not yet confirmed by you:</strong> each free round reaches a few families. A product on the same approach would reach the parents who don&rsquo;t get a spot. You haven&rsquo;t stated a capacity limit, so that is the question to test.</p>
+  </div>
+</section>
+
+<!-- PAGE 3: WHERE THE NUMBER COMES FROM -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit &middot; @cindymaccormackcoaching</span><span class="pg">03</span></div>
+  <span class="eyebrow">The working</span>
+  <h2 class="sec">Where the number <em>comes from</em></h2>
+  <div class="rule"></div>
+  <p class="lede">Every figure in this audit is an estimate built from one public number, your follower count, and the same fixed model Autora uses for every creator. Here it is step by step.</p>
+
+  <div class="mathrow"><div class="lab"><strong>F &middot; Followers</strong><em>Public data from your profile</em></div><div class="val">19,383</div></div>
+  <div class="mathrow"><div class="lab"><strong>E &middot; Engaged audience</strong><em>5% of F: 19,383 x 0.05 = 969.15, rounded down</em></div><div class="val">969</div></div>
+  <div class="mathrow"><div class="lab"><strong>B &middot; Buyers</strong><em>5% of E: 969 x 0.05 = 48.45, rounded down</em></div><div class="val">48</div></div>
+
+  <h3 class="sub">The four products</h3>
+  <table>
+    <thead><tr><th>Product</th><th class="num">Price</th><th>Rests on</th><th class="num">Revenue (estimate)</th></tr></thead>
+    <tbody>
+      <tr><td>Ebook</td><td class="num">$29</td><td>48 buyers</td><td class="num">48 x $29 = $1,392</td></tr>
+      <tr><td>Online course</td><td class="num">$200</td><td>48 buyers</td><td class="num">48 x $200 = $9,600</td></tr>
+      <tr><td>Group coaching (8 weeks)</td><td class="num">$500</td><td>2 to 8 people per cohort</td><td class="num">$1,000 to $4,000 per cohort</td></tr>
+      <tr><td>One-to-one (8 weeks)</td><td class="num">$1,500</td><td>1 to 20 hours a week</td><td class="num">$1,500 to $30,000 per 8 weeks</td></tr>
+    </tbody>
+  </table>
+  <p class="small">With 48 buyers, there are enough people to fill a full cohort of 8 and a full one-to-one week of 20 clients, so neither 8-week range needs capping.</p>
+
+  <h3 class="sub">The coaching ranges, per 8 weeks and per year</h3>
+  <div class="grid2">
+    <div class="card amber">
+      <strong>Group coaching</strong>
+      <p class="small" style="margin:4px 0 0">Per cohort: 2 x $500 = $1,000 up to 8 x $500 = $4,000.<br>A year: six 8-week cohorts hold up to 48 places (8 x 6). You have 48 buyers, which fills them exactly: 48 x $500 = <strong style="color:var(--ink)">$24,000 a year</strong>.</p>
+    </div>
+    <div class="card rust">
+      <strong>One-to-one coaching</strong>
+      <p class="small" style="margin:4px 0 0">Per 8 weeks: 1 x $1,500 = $1,500 up to 20 x $1,500 = $30,000.<br>A year: six blocks at 20 hours a week hold up to 120 places. With 48 buyers, one-to-one could make you 48 x $1,500 = <strong style="color:var(--ink)">$72,000 a year</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 4: WHERE THE NUMBER COMES FROM, CONTINUED -->
+<section class="page light">
+  <div class="rh"><span>Monetisation Audit &middot; @cindymaccormackcoaching</span><span class="pg">04</span></div>
+  <span class="eyebrow">The working, continued</span>
+  <h2 class="sec">The range and the <em>averages</em></h2>
+  <div class="rule"></div>
+
+  <div class="mathrow"><div class="lab"><strong>Minimum</strong><em>Always the ebook sales: 48 x $29</em></div><div class="val">$1,392</div></div>
+  <div class="mathrow"><div class="lab"><strong>Maximum</strong><em>The biggest year figure: one-to-one, 48 x $1,500 (bigger than group at $24,000 and the course at $9,600)</em></div><div class="val">$72,000</div></div>
+  <div class="mathrow"><div class="lab"><strong>Median</strong><em>Figures in order: $1,392, $2,500, $9,600, $15,750. Mean of the two middle ones: ($2,500 + $9,600) / 2</em></div><div class="val">$6,050</div></div>
+  <div class="mathrow"><div class="lab"><strong>Mean</strong><em>($1,392 + $9,600 + $2,500 + $15,750) / 4 = $29,242 / 4</em></div><div class="val">$7,310.50</div></div>
+  <div class="mathrow"><div class="lab"><strong>Mid-range</strong><em>(minimum + maximum) / 2 = ($1,392 + $72,000) / 2</em></div><div class="val">$36,696</div></div>
+  <p class="small" style="margin-top:8px">For the median and mean, each coaching product is counted at the middle of its 8-week range: group coaching at ($1,000 + $4,000) / 2 = $2,500, one-to-one at ($1,500 + $30,000) / 2 = $15,750. The mid-range uses the year maximum. All five are estimates.</p>
+
+  <h3 class="sub">On one scale</h3>
+  <div class="chartbox">
+  <svg class="chart" viewBox="0 0 600 196" role="img" aria-label="Revenue by product on a shared scale from $0 to $72,000">
+    <line class="axis" x1="150" y1="20" x2="150" y2="172" stroke-width="1"/>
+    <line class="axis" x1="150" y1="172" x2="550" y2="172" stroke-width="1"/>
+    <text class="lab" x="0" y="38">Ebook</text><text class="fig" x="0" y="51">48 x $29 = $1,392</text>
+    <rect class="bar" x="150" y="32" width="7.7" height="16" rx="2"/>
+    <text class="lab" x="0" y="74">Online course</text><text class="fig" x="0" y="87">48 x $200 = $9,600</text>
+    <rect class="bar" x="150" y="68" width="53.3" height="16" rx="2"/>
+    <text class="lab" x="0" y="110">Group coaching</text><text class="fig" x="0" y="123">$1,000&ndash;$4,000 / cohort</text>
+    <rect class="barlt" x="172.2" y="104" width="111.1" height="16"/>
+    <rect class="bar" x="155.6" y="104" width="16.6" height="16"/>
+    <text class="yr" x="218" y="116">a year: $24,000</text>
+    <text class="lab" x="0" y="146">One-to-one</text><text class="fig" x="0" y="159">$1,500&ndash;$30,000 / 8 wks</text>
+    <rect class="barlt" x="316.7" y="140" width="233.3" height="16"/>
+    <rect class="bar" x="158.3" y="140" width="158.4" height="16"/>
+    <text class="yr" x="326" y="152">a year: $72,000 (48 buyers)</text>
+    <line class="med" x1="183.6" y1="22" x2="183.6" y2="166" stroke-width="1.5" stroke-dasharray="3 2"/>
+    <line class="mean" x1="190.6" y1="22" x2="190.6" y2="166" stroke-width="1.5"/>
+    <text class="ml medt" x="180" y="16" text-anchor="end">median $6,050</text>
+    <text class="ml meant" x="195" y="16">mean $7,310.50</text>
+    <text class="tick" x="150" y="186" text-anchor="middle">$0</text>
+    <text class="tick" x="283.3" y="186" text-anchor="middle">$24k</text>
+    <text class="tick" x="416.7" y="186" text-anchor="middle">$48k</text>
+    <text class="tick" x="550" y="186" text-anchor="middle">$72k</text>
+  </svg>
+  <p class="small" style="margin:4px 0 6px">Solid bars: the ebook and course totals, and each coaching product&rsquo;s 8-week range. Lighter shading: what a full year of six 8-week blocks adds.</p>
+  </div>
+</section>
+
+<!-- PAGE 5: PRODUCT LADDER -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit &middot; @cindymaccormackcoaching</span><span class="pg">05</span></div>
+  <span class="eyebrow">What to sell</span>
+  <h2 class="sec">The product <em>ladder</em></h2>
+  <div class="rule"></div>
+  <p class="lede">You already teach one family at a time. The first two steps carry the same idea, the right setting and the right timing, to more parents without more of your hours; the coaching steps are for parents who want you with them.</p>
+
+  <div class="prod"><div class="price">$29<small>Ebook</small></div><div><h3>Beyond &ldquo;Fine&rdquo;</h3><p>The settings and timing that get teens talking (the car, the walk, side by side), with openers for each. For the parent getting one-word answers who wants something to try tonight.</p><div class="rev">48 x $29 = $1,392 (estimate)</div></div></div>
+  <div class="prod"><div class="price">$200<small>Online course</small></div><div><h3>The right place, the right moment</h3><p>A self-paced course on choosing the setting and the moment for the talks that matter. For parents who want to understand the approach, not just borrow a line.</p><div class="rev">48 x $200 = $9,600 (estimate)</div></div></div>
+  <div class="prod"><div class="price">$500<small>Group coaching</small></div><div><h3>Parents of teens, 8 weeks together</h3><p>An online group programme in 8-week cohorts of 2 to 8 parents, with live sessions on their own conversations. For parents who want you in the room while they try it.</p><div class="rev">$1,000 to $4,000 per cohort; $24,000 a year (48 x $500) (estimate)</div></div></div>
+  <div class="prod"><div class="price">$1,500<small>One-to-one</small></div><div><h3>Your one-to-one work, paid</h3><p>The paid, 8-week version of the one-to-one work you already do with parents and teens: one hour a week per client. For the families who want you on their situation alone.</p><div class="rev">$1,500 to $30,000 per 8 weeks; $72,000 a year with 48 buyers (estimate)</div></div></div>
+
+  <table style="margin-top:10px">
+    <thead><tr><th>Product</th><th class="num">Price</th><th>Format</th><th>Your time</th><th class="num">Figure (estimate)</th></tr></thead>
+    <tbody>
+      <tr><td>Ebook</td><td class="num">$29</td><td>Download</td><td>Confirm it</td><td class="num">$1,392</td></tr>
+      <tr><td>Course</td><td class="num">$200</td><td>Self-paced video</td><td>Film once</td><td class="num">$9,600</td></tr>
+      <tr><td>Group</td><td class="num">$500</td><td>8-week cohort</td><td>Live sessions</td><td class="num">$24,000 / yr</td></tr>
+      <tr><td>One-to-one</td><td class="num">$1,500</td><td>8 weeks, 1 hr/wk</td><td>Live sessions</td><td class="num">$72,000 / yr</td></tr>
+    </tbody>
+  </table>
+  <p class="small">Your TidyCal coffee chat stays where it is, as the front door to the coaching steps. It carries no revenue figure here.</p>
+</section>
+
+<!-- PAGE 6: WHO DOES WHAT -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit &middot; @cindymaccormackcoaching</span><span class="pg">06</span></div>
+  <span class="eyebrow">The split</span>
+  <h2 class="sec">Who does <em>what</em></h2>
+  <div class="rule"></div>
+  <p class="lede">Autora hosts and runs everything: the format, the build, the platform and hosting, the checkout and payments, delivery, the marketing and the backend. There is nothing to pay upfront; Autora is paid from a share of what the products make.</p>
+
+  <div class="split">
+    <div class="col">
+      <h3>Your part</h3>
+      <div class="row"><b>Ebook</b>Confirm you&rsquo;re happy for it to go out. Next to no work.</div>
+      <div class="row"><b>Online course</b>Film the lessons on the right setting and the right moment, and send Autora the footage.</div>
+      <div class="row"><b>Group coaching</b>Run the live sessions with each cohort of 2 to 8 parents.</div>
+      <div class="row"><b>One-to-one</b>Run the weekly hour with each client, as you do now.</div>
+    </div>
+    <div class="col">
+      <h3 style="color:var(--bg)">What Autora does</h3>
+      <div class="row"><b>Ebook</b>Writes it from your posts, designs it, hosts it, sells it and delivers it.</div>
+      <div class="row"><b>Online course</b>Turns your footage into the course, hosts it, sells it and delivers it.</div>
+      <div class="row"><b>Group coaching</b>The sales page, booking, payments, onboarding and marketing around your sessions.</div>
+      <div class="row"><b>One-to-one</b>The sales page, booking, payments, onboarding and marketing around your sessions.</div>
+    </div>
+  </div>
+
+  <div class="card plum" style="margin-top:16px">
+    <p class="serif" style="font-size:20px;font-style:italic;margin:0 0 6px;color:var(--bg)">You never build, host, market or sell anything yourself.</p>
+    <p class="small" style="margin:0">Your hours go into the two things only you can do: what you say on camera and what you say in the sessions.</p>
+  </div>
+</section>
+
+<!-- PAGE 7: OFFER DETAIL -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit &middot; @cindymaccormackcoaching</span><span class="pg">07</span></div>
+  <span class="eyebrow">Offer detail</span>
+  <h2 class="sec">What each offer <em>holds</em></h2>
+  <div class="rule"></div>
+
+  <div class="offer">
+    <div class="top"><h3>Beyond &ldquo;Fine&rdquo; &middot; ebook</h3><span class="p">$29</span></div>
+    <dl>
+      <dt>Inside</dt><dd>The settings and timing that get teens talking: the car, the walk, side by side doing something together. For each, when it tends to work and openers to use.</dd>
+      <dt>The promise</dt><dd>Fewer one-word answers, because you pick the moment instead of asking face-to-face as the bag hits the floor.</dd>
+      <dt>Your part</dt><dd>Autora writes it from your posts; all you do is confirm you&rsquo;re happy for it to go out.</dd>
+      <dt>First step</dt><dd>Run the story question (page 9) so the openers follow where your parents say their teens talk most.</dd>
+    </dl>
+  </div>
+
+  <div class="offer">
+    <div class="top"><h3>The right place, the right moment &middot; course</h3><span class="p">$200</span></div>
+    <dl>
+      <dt>Inside</dt><dd>Self-paced video lessons on choosing the setting and the moment for the talks that matter, built around the answers to your story question.</dd>
+      <dt>The promise</dt><dd>A parent who knows when and where to start the conversation, not just what to say.</dd>
+      <dt>Your part</dt><dd>You film the lessons and send Autora the footage. Autora turns it into the course, hosts it, sells it and delivers it.</dd>
+      <dt>First step</dt><dd>Post the test (page 10). If parents comment &ldquo;TALK&rdquo;, film the lessons around what they asked for.</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- PAGE 8: OFFER DETAIL CONTINUED -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit &middot; @cindymaccormackcoaching</span><span class="pg">08</span></div>
+  <span class="eyebrow">Offer detail, continued</span>
+  <h2 class="sec">The coaching <em>offers</em></h2>
+  <div class="rule"></div>
+
+  <div class="offer">
+    <div class="top"><h3>Parents of teens &middot; 8-week group</h3><span class="p">$500</span></div>
+    <dl>
+      <dt>Inside</dt><dd>An online programme for parents of teens in cohorts of 2 to 8, with live sessions working on their own conversations at home.</dd>
+      <dt>The promise</dt><dd>Eight weeks of trying the approach with their own teen, and bringing back what happened.</dd>
+      <dt>Your part</dt><dd>You run the sessions. Autora handles the sales page, booking, payments, onboarding and marketing.</dd>
+      <dt>First step</dt><dd>Open the waitlist with parents who applied for a free round, then set a start date.</dd>
+      <dt>Estimate</dt><dd>$1,000 to $4,000 per cohort; $24,000 a year across six cohorts (48 x $500).</dd>
+    </dl>
+  </div>
+
+  <div class="offer">
+    <div class="top"><h3>One-to-one &middot; 8 weeks</h3><span class="p">$1,500</span></div>
+    <dl>
+      <dt>Inside</dt><dd>The paid, 8-week version of the one-to-one work you already do with parents and teens: one hour a week per client.</dd>
+      <dt>The promise</dt><dd>Your full attention on one family&rsquo;s conversations for eight weeks.</dd>
+      <dt>Your part</dt><dd>You run the sessions. Autora handles the sales page, booking, payments, onboarding and marketing.</dd>
+      <dt>First step</dt><dd>Keep the coffee chat as the way in, with the paid programme as the next step after it.</dd>
+      <dt>Estimate</dt><dd>$1,500 to $30,000 per 8 weeks; with 48 buyers, one-to-one could make you 48 x $1,500 = $72,000 a year.</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- PAGE 9: LAUNCH PLAN -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit &middot; @cindymaccormackcoaching</span><span class="pg">09</span></div>
+  <span class="eyebrow">Launch plan</span>
+  <h2 class="sec">Three steps, <em>in order</em></h2>
+  <div class="rule"></div>
+  <p class="lede">Nothing gets built before your parents tell you what they want. Each step uses what the one before it found.</p>
+
+  <div class="step"><div class="sn">1</div><div><h3>Ask first</h3><p>A story question asking parents where their teen talks most: the car, a walk or side by side.</p><p class="when">Post it alongside the test post on page 10. The answers decide which setting the ebook and course lead with.</p></div></div>
+  <div class="step"><div class="sn">2</div><div><h3>Film the course around the answers</h3><p>Film one lesson per setting your parents named, in the order they ranked them, then send Autora the footage.</p><p class="when">After the story answers and the &ldquo;TALK&rdquo; comments are in. Autora turns it into the course and writes the ebook alongside it.</p></div></div>
+  <div class="step"><div class="sn">3</div><div><h3>Waitlist, then launch with a real close</h3><p>Open a waitlist, starting with parents who applied for a free round, then launch with a clear date and a real close.</p><p class="when">The group cohort and the paid one-to-one sit behind the same waitlist, for parents who want you with them.</p></div></div>
+
+  <div class="card amber" style="margin-top:16px">
+    <strong>What not to do</strong>
+    <p class="small" style="margin:4px 0 0">Don&rsquo;t invent demand: &ldquo;a few spots&rdquo; is your own framing for the free rounds, not a waiting list. And no clinical claims about teens; this is coaching on conversations, in your voice.</p>
+  </div>
+</section>
+
+<!-- PAGE 10: FIRST POST -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit &middot; @cindymaccormackcoaching</span><span class="pg">10</span></div>
+  <span class="eyebrow">Test before you build</span>
+  <h2 class="sec">The first <em>post</em></h2>
+  <div class="rule"></div>
+  <p class="lede">A four-slide carousel in your voice. It tests one thing: whether parents want a short course on the right setting and timing.</p>
+
+  <div class="slide"><div class="no">1</div><p>&ldquo;Fine.&rdquo; The one-word answer every parent of a teen knows.</p></div>
+  <div class="slide"><div class="no">2</div><p>Some conversations go better in the car, on a walk, or side by side doing something together.</p></div>
+  <div class="slide"><div class="no">3</div><p>I&rsquo;m thinking of a short course on the right setting and timing for the talks that matter.</p></div>
+  <div class="slide"><div class="no">4</div><p>Comment &ldquo;TALK&rdquo; if you&rsquo;d want it.</p></div>
+
+  <h3 class="sub">Caption</h3>
+  <div class="card">
+    <p style="margin:0 0 8px">They dump their backpack, slump into the couch, and stare at their phone.<br>Me: &ldquo;How was your day?&rdquo;<br>Them: &ldquo;Fine.&rdquo;</p>
+    <p style="margin:0 0 8px">And yet... sometimes it just comes out. In the car. On a walk. Side by side, doing something together. Timing and how we approach it can matter just as much as what we say.</p>
+    <p style="margin:0">I&rsquo;m thinking of putting what I&rsquo;ve learned into a short course. If that&rsquo;s something you&rsquo;d want, comment TALK and I&rsquo;ll keep you posted.</p>
+  </div>
+  <p class="small">The opening lines are from your own post about getting your teen to talk. Count the &ldquo;TALK&rdquo; comments and the story answers before anything is filmed.</p>
+</section>
+
+<!-- PAGE 11: CLOSING -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit &middot; @cindymaccormackcoaching</span><span class="pg">11</span></div>
+  <span class="eyebrow">Next steps</span>
+  <h2 class="sec">From &ldquo;what is happening?!&rdquo; to <em>&ldquo;we&rsquo;ve got this&rdquo;</em></h2>
+  <div class="rule"></div>
+  <p class="lede">You already help parents get there, one family at a time. This is how more of them get there without more of your hours.</p>
+
+  <div class="step"><div class="sn">1</div><div><h3>Post the story question and the test carousel</h3><p>Where does your teen talk most? Then the four slides, with the &ldquo;TALK&rdquo; comment.</p></div></div>
+  <div class="step"><div class="sn">2</div><div><h3>Read the answers with Autora</h3><p>We look at the comments together and agree what the ebook and course lead with.</p></div></div>
+  <div class="step"><div class="sn">3</div><div><h3>Confirm the ebook, film the course</h3><p>Autora writes and runs the rest; you open the waitlist to the parents who applied for a free round.</p></div></div>
+
+  <div class="close-band">
+    <p class="serif" style="margin:0 0 10px">Reply to this DM and I&rsquo;ll walk you through the numbers and what to build first.</p>
+    <p style="margin:0;font-size:13.5px;color:#D9C6CF">Prepared by Euan Grant &middot; Autora AI Automation &middot; October 2026</p>
+  </div>
+
+  <p class="small">All figures are estimates based on your public profile data and this audit, using a fixed model: 5% of followers engaged, 5% of those buying, fixed prices for each product.</p>
+  <p class="small">How it was made: Euan builds automations and used AI for the analysis, which is why this took an evening rather than a fortnight.</p>
+</section>
+</body>
+</html>
