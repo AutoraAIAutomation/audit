@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monetisation Audit · @marissamakes__</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#2b1c14;
+  --surface:#4a3222;
+  --ink:#f4e9dd;
+  --muted:#b89a7f;
+  --accent:#c0532d;
+  --accent2:#8a9b5e;
+  --deep:#22160f;
+  --card:#3a271b;
+  --line:rgba(244,233,221,.14);
+  --line2:rgba(244,233,221,.28);
+  --soft:rgba(244,233,221,.78);
+  --amber:#d9a066;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}
+body{font-family:'Karla',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.serif{font-family:'Fraunces',Georgia,'Times New Roman',serif;margin:0;font-weight:500;letter-spacing:-.01em}
+p{margin:0 0 10px}
+ul{margin:0 0 10px;padding-left:18px}
+li{margin-bottom:5px}
+strong{font-weight:700;color:var(--ink)}
+.small{font-size:13px;color:var(--muted);line-height:1.5}
+.muted{color:var(--muted)}
+.rust{color:var(--accent)}
+.sage{color:var(--accent2)}
+
+/* page shell */
+.page{background:var(--bg);position:relative}
+.page.warm{background:var(--surface)}
+.rh{display:flex;justify-content:space-between;align-items:center;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:22px;font-weight:700}
+.rh .pg{font-family:'Fraunces',Georgia,serif;font-size:13px;letter-spacing:0;color:var(--amber);font-weight:600}
+
+/* type */
+.eyebrow{display:block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent2);font-weight:700;margin-bottom:8px}
+h2.sec{font-size:36px;line-height:1.08;margin-bottom:6px}
+h2.sec em{color:var(--amber);font-style:italic;font-weight:400}
+h3.sub{font-size:20px;line-height:1.2;margin:16px 0 8px}
+h4.mini{font-family:'Karla',sans-serif;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);font-weight:700;margin:0 0 6px}
+.lede{font-size:16px;color:var(--soft);max-width:64ch;margin-bottom:16px}
+.rule{height:2px;width:56px;background:var(--accent);margin:12px 0 18px}
+.sprig{display:inline-block;vertical-align:middle;margin-right:6px}
+
+/* components */
+.card{background:var(--card);border-radius:10px;padding:14px 18px;margin-bottom:12px;border:1px solid var(--line)}
+.card.rust{border-left:3px solid var(--accent)}
+.card.sage{border-left:3px solid var(--accent2)}
+.card.paper{background:var(--ink);color:#3a271b;border:none}
+.card.paper strong{color:#2b1c14}
+.card.paper .small{color:#7a5d45}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.stat{background:var(--card);border-radius:10px;padding:13px 15px;border:1px solid var(--line)}
+.stat .n{font-family:'Fraunces',Georgia,serif;font-size:30px;line-height:1;font-weight:600;color:var(--ink)}
+.stat .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-top:7px;font-weight:700}
+.stat .s{font-size:13px;color:var(--muted);margin-top:4px}
+.quote{font-family:'Fraunces',Georgia,serif;font-size:19px;line-height:1.42;font-style:italic;border-left:3px solid var(--accent);padding:4px 0 4px 18px;margin:6px 0 14px;color:var(--ink)}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:3px 10px;font-weight:700;background:rgba(192,83,45,.2);color:var(--amber)}
+
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+th{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 10px 8px 0;border-bottom:1.5px solid var(--line2);font-weight:700}
+td{padding:8px 10px 8px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+th.num{text-align:right}
+tr.hi td{background:rgba(192,83,45,.14);font-weight:700}
+
+.mathrow{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding:8px 0;gap:14px}
+.mathrow .lab{font-size:14.5px}
+.mathrow .lab em{display:block;font-style:normal;font-size:13px;color:var(--muted);margin-top:2px}
+.mathrow .val{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:20px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.mathrow.big .val{font-size:26px;color:var(--amber)}
+
+.step{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.step .sn{font-family:'Fraunces',Georgia,serif;font-size:40px;line-height:1;color:var(--accent);min-width:42px;font-weight:500;font-style:italic}
+.step h4{font-family:'Fraunces',Georgia,serif;font-size:20px;margin:0 0 5px;font-weight:600}
+.step p{margin:0 0 6px;font-size:14.5px}
+.step .when{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);font-weight:700}
+
+.slide{background:var(--ink);color:#2b1c14;border-radius:12px;padding:14px 20px;margin-bottom:10px;display:flex;gap:16px;align-items:flex-start}
+.slide .no{font-family:'Fraunces',Georgia,serif;font-size:13px;color:var(--ink);background:var(--accent);border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;flex:none;font-weight:600}
+.slide p{font-family:'Fraunces',Georgia,serif;font-size:19px;line-height:1.38;margin:0}
+
+.prod{display:grid;grid-template-columns:100px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.prod .price{font-family:'Fraunces',Georgia,serif;font-size:30px;line-height:1;color:var(--amber);font-weight:600}
+.prod .price small{display:block;font-family:'Karla',sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px;font-weight:700}
+.prod h3{font-size:19px;margin:0 0 4px;font-weight:600}
+.prod p{font-size:14.5px;margin:0 0 4px}
+.prod .rev{font-size:13.5px;color:var(--accent2);font-weight:700}
+
+.offer{background:var(--card);border-radius:12px;border:1px solid var(--line);padding:16px 20px;margin-bottom:14px}
+.offer .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:11px}
+.offer .top h3{font-size:22px;font-weight:600}
+.offer .top .p{font-family:'Fraunces',Georgia,serif;font-size:22px;color:var(--amber);white-space:nowrap;font-weight:600}
+.offer dl{display:grid;grid-template-columns:112px 1fr;gap:7px 14px;margin:0;font-size:14.5px}
+.offer dt{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent2);font-weight:700;padding-top:3px}
+.offer dd{margin:0}
+
+.split{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.split .col{padding:16px 18px;background:var(--card)}
+.split .col + .col{background:var(--ink);color:#3a271b}
+.split h3{font-size:21px;margin-bottom:10px;font-weight:600}
+.split .row{padding:9px 0;border-top:1px solid var(--line);font-size:14.5px}
+.split .col + .col .row{border-color:rgba(43,28,20,.15)}
+.split .row b{display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--amber);margin-bottom:3px}
+.split .col + .col .row b{color:var(--accent)}
+.split .col + .col h3{color:#2b1c14}
+
+/* cover */
+.cover{display:flex;flex-direction:column;background:var(--deep)}
+.cover .top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.mono{width:70px;height:70px;flex:none}
+.cover .kicker{font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--amber);font-weight:700}
+.cover h1{font-size:52px;line-height:1.02;margin:10px 0 4px;font-weight:500}
+.cover .handle{font-size:15px;color:var(--muted);letter-spacing:.04em}
+.cover .handle b{color:var(--ink)}
+.cover .pos{font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:20px;line-height:1.35;color:var(--ink);max-width:38ch;margin:16px 0 16px;border-left:3px solid var(--accent);padding-left:14px}
+.range-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent2);font-weight:700}
+.range{font-family:'Fraunces',Georgia,serif;font-size:64px;line-height:1;font-weight:600;color:var(--ink);margin:6px 0 6px;letter-spacing:-.02em;white-space:nowrap}
+.range .to{font-size:28px;font-style:italic;font-weight:400;color:var(--amber);margin:0 8px}
+.range .est{font-family:'Karla',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;vertical-align:top;color:var(--accent);margin-left:8px;font-weight:700}
+.ends{font-size:13.5px;color:var(--soft);margin:0 0 12px;max-width:74ch}
+.avgs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 12px}
+.avg{border:1px solid var(--line2);border-radius:10px;padding:9px 12px}
+.avg .n{font-family:'Fraunces',Georgia,serif;font-size:22px;font-weight:600;line-height:1.1}
+.avg .k{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:700;margin-top:3px}
+.avg .s{font-size:12px;color:var(--muted);margin-top:2px}
+.assume{font-size:13px;color:var(--muted);margin:0 0 12px}
+.who-line{background:var(--accent);color:var(--ink);border-radius:8px;padding:9px 14px;font-weight:600;font-size:14.5px;margin:0 0 12px}
+.inside{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;margin-top:auto}
+.inside b{color:var(--amber);letter-spacing:.14em;text-transform:uppercase;font-size:10.5px}
+.chart{width:100%;height:auto;display:block}
+.chart text{font-family:'Karla',sans-serif}
+.chartbox{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:0 0 12px}
+
+.dl{position:fixed;top:14px;right:14px;z-index:10;background:var(--accent);color:var(--ink);text-decoration:none;font-weight:700;font-size:13px;letter-spacing:.06em;padding:9px 14px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.dl:hover{background:var(--amber);color:var(--bg)}
+
+.close-big{font-family:'Fraunces',Georgia,serif;font-size:40px;line-height:1.12;font-weight:500;margin:6px 0 16px}
+.close-big em{color:var(--amber)}
+.sig{border-top:1px solid var(--line2);padding-top:14px;margin-top:20px;font-size:14px;color:var(--soft)}
+
+@page { size: A4; margin: 0; }
+@media print {
+  html, body { background: var(--bg); }
+  .page { width: 210mm; min-height: 297mm; break-after: page; page-break-after: always; padding: 16mm 16mm 18mm; box-sizing: border-box; position: relative; overflow: hidden; }
+  .page:last-child { break-after: auto; page-break-after: auto; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .no-print { display: none !important; }
+  .cover { min-height: 297mm; }
+}
+@media screen {
+  .page { max-width: 900px; margin: 0 auto; padding: 48px 28px; }
+  .page + .page { border-top: 1px solid var(--line); }
+}
+@media screen and (max-width:640px){
+  .page{padding:36px 16px}
+  .grid2,.grid3,.split,.avgs{grid-template-columns:1fr}
+  .grid4{grid-template-columns:1fr 1fr}
+  .range{font-size:40px;white-space:normal}
+  .range .to{font-size:22px}
+  .cover h1{font-size:38px}
+  h2.sec{font-size:29px}
+  .offer dl{grid-template-columns:1fr}
+  .prod{grid-template-columns:1fr;gap:6px}
+  table{font-size:13px}
+  .tblwrap{overflow-x:auto}
+}
+</style>
+</head>
+<body>
+<a class="dl no-print" href="marissamakes-monetisation-audit.pdf" download>Download the PDF</a>
+
+<!-- 1. COVER -->
+<section class="page cover">
+  <div class="top">
+    <div>
+      <div class="kicker">Monetisation Audit</div>
+      <h1>Marissa Feldman</h1>
+      <div class="handle"><b>@marissamakes__</b> &nbsp;·&nbsp; 49,267 followers (public data) &nbsp;·&nbsp; Los Angeles</div>
+    </div>
+    <svg class="mono" viewBox="0 0 70 70" aria-hidden="true">
+      <circle cx="35" cy="35" r="33" fill="none" stroke="#c0532d" stroke-width="1.5"/>
+      <circle cx="35" cy="35" r="28" fill="none" stroke="#8a9b5e" stroke-width=".8" stroke-dasharray="2 3"/>
+      <text x="35" y="43" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="24" font-style="italic" fill="#f4e9dd">MF</text>
+      <path d="M35 8 q4 4 0 9 q-4 -5 0 -9z" fill="#8a9b5e"/>
+    </svg>
+  </div>
+
+  <p class="pos">A seasonal recipe developer and food stylist who decides what each herb is for before it goes in the dish.</p>
+
+  <div class="range-label">Estimated revenue range</div>
+  <div class="range">$3,567<span class="to">to</span>$180,000<span class="est">Estimate</span></div>
+  <p class="ends">The bottom of the range is the ebook sales (123 buyers x $29); the top is a full year of one-to-one coaching at 20 hours a week (120 client programmes x $1,500).</p>
+
+  <div class="avgs">
+    <div class="avg"><div class="n">$9,658.50</div><div class="k">Median · estimate</div><div class="s">Middle two of the four products</div></div>
+    <div class="avg"><div class="n">$11,604.25</div><div class="k">Mean · estimate</div><div class="s">Four products divided by 4</div></div>
+    <div class="avg"><div class="n">$91,783.50</div><div class="k">Mid-range · estimate</div><div class="s">(Minimum + maximum) / 2</div></div>
+  </div>
+
+  <div class="chartbox">
+    <svg class="chart" viewBox="0 0 560 176" role="img" aria-label="Revenue by product on a shared scale from $0 to $180,000">
+      <g stroke="rgba(244,233,221,.12)" stroke-width="1">
+        <line x1="160" y1="8" x2="160" y2="152"/><line x1="223.3" y1="8" x2="223.3" y2="152"/><line x1="286.7" y1="8" x2="286.7" y2="152"/><line x1="350" y1="8" x2="350" y2="152"/><line x1="413.3" y1="8" x2="413.3" y2="152"/><line x1="476.7" y1="8" x2="476.7" y2="152"/><line x1="540" y1="8" x2="540" y2="152"/>
+      </g>
+      <g font-size="11" fill="#f4e9dd">
+        <text x="0" y="22" font-weight="700">Ebook</text><text x="0" y="35" fill="#b89a7f" font-size="10.5">$3,567 (123 x $29)</text>
+        <text x="0" y="57" font-weight="700">Online course</text><text x="0" y="70" fill="#b89a7f" font-size="10.5">$24,600 (123 x $200)</text>
+        <text x="0" y="92" font-weight="700">Group coaching</text><text x="0" y="105" fill="#b89a7f" font-size="10.5">$1,000–$4,000 · $24,000 a year</text>
+        <text x="0" y="127" font-weight="700">One-to-one</text><text x="0" y="140" fill="#b89a7f" font-size="10.5">$1,500–$30,000 · $180,000 a year</text>
+      </g>
+      <rect x="160" y="16" width="7.5" height="16" rx="2" fill="#c0532d"/>
+      <rect x="160" y="51" width="51.9" height="16" rx="2" fill="#c0532d"/>
+      <rect x="162.1" y="86" width="48.6" height="16" rx="2" fill="#8a9b5e" opacity=".35"/>
+      <rect x="162.1" y="86" width="6.3" height="16" rx="2" fill="#8a9b5e"/>
+      <text x="216" y="98" font-size="10" fill="#b89a7f">a year</text>
+      <rect x="163.2" y="121" width="376.8" height="16" rx="2" fill="#d9a066" opacity=".35"/>
+      <rect x="163.2" y="121" width="60.2" height="16" rx="2" fill="#d9a066"/>
+      <text x="229" y="133" font-size="10" fill="#f4e9dd">8 weeks</text>
+      <text x="534" y="133" font-size="10" fill="#f4e9dd" text-anchor="end">a year</text>
+      <line x1="180.4" y1="10" x2="180.4" y2="150" stroke="#f4e9dd" stroke-width="1.4" stroke-dasharray="3 2"/>
+      <line x1="184.5" y1="10" x2="184.5" y2="150" stroke="#d9a066" stroke-width="1.4"/>
+      <g font-size="10" fill="#b89a7f">
+        <text x="160" y="166" text-anchor="middle">$0</text><text x="286.7" y="166" text-anchor="middle">$60k</text><text x="413.3" y="166" text-anchor="middle">$120k</text><text x="540" y="166" text-anchor="end">$180k</text>
+        <text x="300" y="22" fill="#f4e9dd">┆ median $9,658.50</text>
+        <text x="300" y="36" fill="#d9a066">│ mean $11,604.25</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="assume">Assumptions: 5% of followers are engaged and 5% of those buy; group coaching is 2 to 8 people per 8-week cohort; one-to-one is 1 to 20 hours a week; the maximum is a full year of six 8-week blocks. All figures are estimates.</p>
+  <div class="who-line">You film the lessons and run the sessions. Autora hosts and runs everything else, with nothing to pay upfront.</div>
+
+  <div class="inside"><b>Inside</b><span>What your numbers say</span><span>Where the number comes from</span><span>The product ladder</span><span>Who does what</span><span>Offer detail</span><span>Launch plan</span><span>The first post</span><span>Next steps</span></div>
+</section>
+
+<!-- 2. WHAT YOUR NUMBERS SAY -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @marissamakes__</span><span class="pg">02</span></div>
+  <span class="eyebrow">Audience snapshot</span>
+  <h2 class="sec">What your <em>numbers</em> say</h2>
+  <div class="rule"></div>
+  <p class="lede">You share original seasonal recipes from the kitchen counter, styled and photographed by you. Your followers come for the season you are cooking in, and there is no paid offer for them to buy yet.</p>
+
+  <div class="grid4" style="margin-bottom:14px">
+    <div class="stat"><div class="n">49,267</div><div class="k">Followers</div><div class="s">Public data</div></div>
+    <div class="stat"><div class="n">517</div><div class="k">Avg likes</div><div class="s">Public data</div></div>
+    <div class="stat"><div class="n">19</div><div class="k">Avg comments</div><div class="s">Public data</div></div>
+    <div class="stat"><div class="n">1.09%</div><div class="k">Engagement</div><div class="s">Public data</div></div>
+  </div>
+
+  <h3 class="sub">The content that works</h3>
+  <p>Across your twelve latest posts, the three strongest were all cosy autumn baking:</p>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Post</th><th>Date</th><th class="num">Likes</th><th class="num">Comments</th></tr></thead>
+    <tbody>
+      <tr><td>Sourdough, now the heatwave is over</td><td>14/09</td><td class="num">752</td><td class="num">30</td></tr>
+      <tr><td>Apple spice cake with brown butter buttercream and caramel</td><td>10/09</td><td class="num">744</td><td class="num">28</td></tr>
+      <tr><td>Dreaming up apple desserts: what should I bake first?</td><td>17/09</td><td class="num">698</td><td class="num">17</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">Your summer sourdough loaf (13/08) and the honeynut Bundt cake with walnut praline (17/08) also passed 590 likes. Figures are public data.</p>
+
+  <h3 class="sub">Three content pillars</h3>
+  <div class="grid3">
+    <div class="card rust"><h4 class="mini">Seasonal baking</h4><p style="margin:0;font-size:14px">Sourdough, apple spice cake, caramelised banana cake, honeynut Bundt, pumpkin buns. Your highest-liked posts.</p></div>
+    <div class="card sage"><h4 class="mini">Herbs and produce</h4><p style="margin:0;font-size:14px">Chicken salad with tarragon and grapes, herby cream cheese tarts, heirloom tomatoes. Where your herb thinking shows.</p></div>
+    <div class="card"><h4 class="mini">The kitchen counter</h4><p style="margin:0;font-size:14px">LA heatwaves, rainstorms, the new horse routine, and "Happy Monday, my dear friends". The voice people come back for.</p></div>
+  </div>
+</section>
+
+<!-- 3. THE OPPORTUNITY -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @marissamakes__</span><span class="pg">03</span></div>
+  <span class="eyebrow">The opportunity</span>
+  <h2 class="sec">A way of thinking <em>worth teaching</em></h2>
+  <div class="rule"></div>
+  <p class="lede">Your niche is seasonal recipe development and food styling. The thing you can teach sits underneath the recipes: how you decide what a herb is there to do.</p>
+
+  <div class="quote">"I try and think about seasonality, and what I want the herbs to accomplish within the dish, ie. be a dominant flavor, or one that complements the rest of the ingredients"</div>
+  <p class="small" style="margin-top:-6px">Marissa, in a message to Autora, 01/10</p>
+
+  <h3 class="sub">The transformation</h3>
+  <p>From home cooks who follow your recipes, to cooks who know why flavours and herbs work and can build their own dishes. Season first, then the herb's job: lead or support.</p>
+
+  <div class="grid2" style="margin-top:14px">
+    <div class="card">
+      <h4 class="mini">Observed</h4>
+      <ul style="margin:0;font-size:14.5px">
+        <li>About 49,300 followers for original seasonal recipes, such as the 28/09 chicken salad with tarragon and grapes.</li>
+        <li>No paid offer is visible.</li>
+        <li>Your main focus today is styling and photography work.</li>
+      </ul>
+    </div>
+    <div class="card rust">
+      <h4 class="mini">Not yet confirmed</h4>
+      <p style="margin:0;font-size:14.5px">That your followers want to cook without a recipe, using your way of thinking. It is not confirmed, so it is the question to test first, before anything is built (page 11).</p>
+    </div>
+  </div>
+
+  <div class="card paper" style="margin-top:6px">
+    <h4 class="mini" style="color:#c0532d">Verdict</h4>
+    <p style="margin:0;font-size:15.5px">You have a clear, teachable way of thinking about flavour: season first, then the herb's job. That turns into products at every price point, from a $29 guide to one-to-one mentoring.</p>
+  </div>
+</section>
+
+<!-- 4. WHERE THE NUMBER COMES FROM -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @marissamakes__</span><span class="pg">04</span></div>
+  <span class="eyebrow">The working</span>
+  <h2 class="sec">Where the number <em>comes from</em></h2>
+  <div class="rule"></div>
+  <p class="lede">One fixed model, the same for every audit. Every figure below is an estimate, worked out from your public follower count.</p>
+
+  <div class="mathrow"><div class="lab"><strong>F</strong> · Followers<em>Public data</em></div><div class="val">49,267</div></div>
+  <div class="mathrow"><div class="lab"><strong>E</strong> · Engaged audience = 5% of F<em>49,267 x 0.05 = 2,463.35, rounded down</em></div><div class="val">2,463</div></div>
+  <div class="mathrow big"><div class="lab"><strong>B</strong> · Buyers = 5% of E<em>2,463 x 0.05 = 123.15, rounded down</em></div><div class="val">123</div></div>
+
+  <h3 class="sub">The four products</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Product</th><th class="num">Price</th><th>Rests on</th><th class="num">Revenue (estimate)</th></tr></thead>
+    <tbody>
+      <tr><td>Ebook</td><td class="num">$29</td><td>123 buyers</td><td class="num">$3,567</td></tr>
+      <tr><td>Online course</td><td class="num">$200</td><td>123 buyers</td><td class="num">$24,600</td></tr>
+      <tr><td>Group coaching</td><td class="num">$500</td><td>2 to 8 people per 8-week cohort</td><td class="num">$1,000–$4,000 per cohort<br>$24,000 a year</td></tr>
+      <tr><td>One-to-one coaching</td><td class="num">$1,500</td><td>1 to 20 hours a week</td><td class="num">$1,500–$30,000 per 8 weeks<br>$180,000 a year</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">Ebook: 123 x $29 = $3,567. Course: 123 x $200 = $24,600. The coaching figures are worked out on the next page.</p>
+  <div class="chartbox" style="margin-top:12px">
+    <svg class="chart" viewBox="0 0 560 176" role="img" aria-label="Revenue by product on a shared scale from $0 to $180,000">
+      <g stroke="rgba(244,233,221,.12)" stroke-width="1">
+        <line x1="160" y1="8" x2="160" y2="152"/><line x1="223.3" y1="8" x2="223.3" y2="152"/><line x1="286.7" y1="8" x2="286.7" y2="152"/><line x1="350" y1="8" x2="350" y2="152"/><line x1="413.3" y1="8" x2="413.3" y2="152"/><line x1="476.7" y1="8" x2="476.7" y2="152"/><line x1="540" y1="8" x2="540" y2="152"/>
+      </g>
+      <g font-size="11" fill="#f4e9dd">
+        <text x="0" y="22" font-weight="700">Ebook</text><text x="0" y="35" fill="#b89a7f" font-size="10.5">$3,567 (123 x $29)</text>
+        <text x="0" y="57" font-weight="700">Online course</text><text x="0" y="70" fill="#b89a7f" font-size="10.5">$24,600 (123 x $200)</text>
+        <text x="0" y="92" font-weight="700">Group coaching</text><text x="0" y="105" fill="#b89a7f" font-size="10.5">$1,000–$4,000 · $24,000 a year</text>
+        <text x="0" y="127" font-weight="700">One-to-one</text><text x="0" y="140" fill="#b89a7f" font-size="10.5">$1,500–$30,000 · $180,000 a year</text>
+      </g>
+      <rect x="160" y="16" width="7.5" height="16" rx="2" fill="#c0532d"/>
+      <rect x="160" y="51" width="51.9" height="16" rx="2" fill="#c0532d"/>
+      <rect x="162.1" y="86" width="48.6" height="16" rx="2" fill="#8a9b5e" opacity=".35"/>
+      <rect x="162.1" y="86" width="6.3" height="16" rx="2" fill="#8a9b5e"/>
+      <text x="216" y="98" font-size="10" fill="#b89a7f">a year</text>
+      <rect x="163.2" y="121" width="376.8" height="16" rx="2" fill="#d9a066" opacity=".35"/>
+      <rect x="163.2" y="121" width="60.2" height="16" rx="2" fill="#d9a066"/>
+      <text x="229" y="133" font-size="10" fill="#f4e9dd">8 weeks</text>
+      <text x="534" y="133" font-size="10" fill="#f4e9dd" text-anchor="end">a year</text>
+      <line x1="180.4" y1="10" x2="180.4" y2="150" stroke="#f4e9dd" stroke-width="1.4" stroke-dasharray="3 2"/>
+      <line x1="184.5" y1="10" x2="184.5" y2="150" stroke="#d9a066" stroke-width="1.4"/>
+      <g font-size="10" fill="#b89a7f">
+        <text x="160" y="166" text-anchor="middle">$0</text><text x="286.7" y="166" text-anchor="middle">$60k</text><text x="413.3" y="166" text-anchor="middle">$120k</text><text x="540" y="166" text-anchor="end">$180k</text>
+        <text x="300" y="22" fill="#f4e9dd">┆ median $9,658.50</text>
+        <text x="300" y="36" fill="#d9a066">│ mean $11,604.25</text>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- 5. WHERE THE NUMBER COMES FROM (CONTINUED) -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @marissamakes__</span><span class="pg">05</span></div>
+  <span class="eyebrow">The working, continued</span>
+  <h2 class="sec">Coaching, and the <em>averages</em></h2>
+  <div class="rule"></div>
+
+  <div class="grid2">
+    <div class="card sage">
+      <h4 class="mini">Group coaching · $500</h4>
+      <p style="margin:0 0 6px;font-size:14.5px">Per 8-week cohort: 2 x $500 = <strong>$1,000</strong> to 8 x $500 = <strong>$4,000</strong>.</p>
+      <p style="margin:0;font-size:14.5px">Per year: six cohorts x 8 places = 48 places. 123 buyers fill all 48, so 48 x $500 = <strong>$24,000</strong>.</p>
+    </div>
+    <div class="card rust">
+      <h4 class="mini">One-to-one · $1,500</h4>
+      <p style="margin:0 0 6px;font-size:14.5px">Per 8 weeks: 1 x $1,500 = <strong>$1,500</strong> to 20 x $1,500 = <strong>$30,000</strong> (1 to 20 hours a week).</p>
+      <p style="margin:0;font-size:14.5px">Per year: six blocks x 20 clients = 120 programmes. 123 buyers fill all 120, so 120 x $1,500 = <strong>$180,000</strong>.</p>
+    </div>
+  </div>
+
+  <h3 class="sub" style="margin-top:8px">The range and the averages</h3>
+  <div class="mathrow"><div class="lab">Minimum · the ebook sales<em>123 x $29</em></div><div class="val">$3,567</div></div>
+  <div class="mathrow"><div class="lab">Maximum · a full year of one-to-one<em>120 x $1,500 (bigger than the group year, $24,000, and the course, $24,600)</em></div><div class="val">$180,000</div></div>
+  <div class="mathrow"><div class="lab">Median<em>Figures in order: $2,500, $3,567, $15,750, $24,600. ($3,567 + $15,750) / 2</em></div><div class="val">$9,658.50</div></div>
+  <div class="mathrow"><div class="lab">Mean<em>($3,567 + $24,600 + $2,500 + $15,750) / 4 = $46,417 / 4</em></div><div class="val">$11,604.25</div></div>
+  <div class="mathrow big"><div class="lab">Mid-range<em>($3,567 + $180,000) / 2</em></div><div class="val">$91,783.50</div></div>
+  <p class="small" style="margin-top:8px">For the median and mean, each coaching product is counted at the middle of its 8-week range: group ($1,000 + $4,000) / 2 = $2,500; one-to-one ($1,500 + $30,000) / 2 = $15,750. The mid-range uses the year maximum. All figures are estimates.</p>
+
+</section>
+
+<!-- 6. PRODUCT LADDER -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @marissamakes__</span><span class="pg">06</span></div>
+  <span class="eyebrow">What to sell</span>
+  <h2 class="sec">The product <em>ladder</em></h2>
+  <div class="rule"></div>
+  <p class="lede">Four products built on one idea, season first and then the herb's job, in price order.</p>
+
+  <div class="prod">
+    <div class="price">$29<small>Ebook</small></div>
+    <div><h3>The seasonal herb-pairing guide</h3><p>Your recipes, organised by season, showing which herbs lead and which support. For followers who cook your recipes and want to know why they work.</p><div class="rev">123 x $29 = $3,567 (estimate)</div></div>
+  </div>
+  <div class="prod">
+    <div class="price">$200<small>Course</small></div>
+    <div><h3>Cook by Season</h3><p>Building flavour with herbs, dish by dish, in filmed lessons from your kitchen counter. For home cooks who want to stop needing a recipe for every meal.</p><div class="rev">123 x $200 = $24,600 (estimate)</div></div>
+  </div>
+  <div class="prod">
+    <div class="price">$500<small>Group</small></div>
+    <div><h3>The 8-week seasonal cooking group</h3><p>An online cohort of 2 to 8 home cooks, cooking and refining their own dishes with you in live sessions. For people who want feedback, not just lessons.</p><div class="rev">$1,000–$4,000 per cohort · $24,000 a year (estimate)</div></div>
+  </div>
+  <div class="prod">
+    <div class="price">$1,500<small>One-to-one</small></div>
+    <div><h3>Recipe development and food styling mentoring</h3><p>Eight weeks, one hour a week, one to one with you on developing recipes and styling them. For people who want to do what you do.</p><div class="rev">$1,500–$30,000 per 8 weeks · $180,000 a year (estimate)</div></div>
+  </div>
+
+  <div class="tblwrap"><table style="margin-top:14px">
+    <thead><tr><th>Product</th><th>Format</th><th>Your time</th><th class="num">Revenue (estimate)</th></tr></thead>
+    <tbody>
+      <tr><td>Herb-pairing guide</td><td>Ebook</td><td>Confirm it's ready</td><td class="num">$3,567</td></tr>
+      <tr><td>Cook by Season</td><td>Filmed course</td><td>Film the lessons</td><td class="num">$24,600</td></tr>
+      <tr><td>Seasonal cooking group</td><td>8-week cohort</td><td>Run the sessions</td><td class="num">$1,000–$4,000</td></tr>
+      <tr><td>One-to-one mentoring</td><td>8 weeks, 1 hr/week</td><td>Run the sessions</td><td class="num">$1,500–$30,000</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 7. WHO DOES WHAT -->
+<section class="page warm">
+  <div class="rh"><span>Monetisation Audit · @marissamakes__</span><span class="pg">07</span></div>
+  <span class="eyebrow">How it runs</span>
+  <h2 class="sec">Who does <em>what</em></h2>
+  <div class="rule"></div>
+  <p class="lede">Autora hosts and runs everything: the format, the build, the platform and hosting, checkout and payments, delivery, the marketing and the backend. There is nothing to pay upfront; Autora is paid from a share of what the products make.</p>
+
+  <div class="split">
+    <div class="col">
+      <h3>Your part</h3>
+      <div class="row"><b>Ebook</b>Confirm you're happy for the guide to go out. Next to no work.</div>
+      <div class="row"><b>Online course</b>Film the Cook by Season lessons in your kitchen and send us the footage.</div>
+      <div class="row"><b>Group coaching</b>Run the live sessions with each cohort of 2 to 8 cooks.</div>
+      <div class="row"><b>One-to-one</b>Run the weekly hour with each client for eight weeks.</div>
+    </div>
+    <div class="col">
+      <h3>What Autora does</h3>
+      <div class="row"><b>Ebook</b>Writes it from your posts and recipes, designs it, hosts it, sells it and delivers it.</div>
+      <div class="row"><b>Online course</b>Turns your footage into the course, hosts it, sells it and delivers it.</div>
+      <div class="row"><b>Group coaching</b>Sales page, booking, payments, onboarding and marketing for every cohort.</div>
+      <div class="row"><b>One-to-one</b>Sales page, booking, payments, onboarding and marketing for every client.</div>
+    </div>
+  </div>
+
+  <div class="card paper" style="margin-top:16px">
+    <p style="margin:0;font-size:15.5px"><strong>You never build, host, market or sell anything yourself.</strong> Your work stays in the kitchen: filming lessons and running sessions. Everything else is ours.</p>
+  </div>
+</section>
+
+<!-- 8. OFFER DETAIL 1 -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @marissamakes__</span><span class="pg">08</span></div>
+  <span class="eyebrow">Offer detail</span>
+  <h2 class="sec">The guide and <em>the course</em></h2>
+  <div class="rule"></div>
+
+  <div class="offer">
+    <div class="top"><h3>The seasonal herb-pairing guide</h3><span class="p">$29 · ebook</span></div>
+    <dl>
+      <dt>Inside</dt><dd>Your recipes grouped by season, each with its herbs marked as leading or supporting, and the reasoning behind the choice, written from your posts, such as the chicken salad with tarragon and grapes and the herby cream cheese tarts.</dd>
+      <dt>Promise</dt><dd>Know which herb to reach for, and what it is there to do, whatever is in season.</dd>
+      <dt>Your part</dt><dd>Autora writes it from your posts. All you do is confirm you're happy for it to go out.</dd>
+      <dt>First step</dt><dd>Run the test post on page 11. If people comment "HERBS", Autora drafts the guide for you to read.</dd>
+    </dl>
+  </div>
+
+  <div class="offer">
+    <div class="top"><h3>Cook by Season</h3><span class="p">$200 · online course</span></div>
+    <dl>
+      <dt>Inside</dt><dd>Filmed lessons building flavour with herbs, dish by dish: choosing for the season, deciding the herb's job, and building a dish without a recipe. The dishes come from what followers say they never know how to pair.</dd>
+      <dt>Promise</dt><dd>Cook a seasonal dish of your own, and know why it works.</dd>
+      <dt>Your part</dt><dd>You film the lessons and send Autora the footage. Autora turns it into the course, hosts it, sells it and delivers it.</dd>
+      <dt>First step</dt><dd>Post the story question about ingredients, then plan the lessons around the answers.</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- 9. OFFER DETAIL 2 -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @marissamakes__</span><span class="pg">09</span></div>
+  <span class="eyebrow">Offer detail, continued</span>
+  <h2 class="sec">The two <em>coaching</em> offers</h2>
+  <div class="rule"></div>
+
+  <div class="offer">
+    <div class="top"><h3>The 8-week seasonal cooking group</h3><span class="p">$500 · group</span></div>
+    <dl>
+      <dt>Inside</dt><dd>An online group programme for home cooks: eight weeks, 2 to 8 people per cohort, cooking and refining their own dishes with you in live sessions. Up to six cohorts a year.</dd>
+      <dt>Promise</dt><dd>Leave with dishes of your own, built and refined with your feedback.</dd>
+      <dt>Your part</dt><dd>You run the sessions. Autora handles the sales page, booking, payments, onboarding and marketing.</dd>
+      <dt>First step</dt><dd>Open it to the course waitlist once Cook by Season is live.</dd>
+      <dt>Figures</dt><dd>$1,000–$4,000 per cohort; 48 places x $500 = $24,000 a year (estimate).</dd>
+    </dl>
+  </div>
+
+  <div class="offer">
+    <div class="top"><h3>Recipe development and food styling mentoring</h3><span class="p">$1,500 · one-to-one</span></div>
+    <dl>
+      <dt>Inside</dt><dd>Eight weeks of one-to-one mentoring, one hour a week, in recipe development and food styling: the work you do as a stylist, photographer and recipe developer.</dd>
+      <dt>Promise</dt><dd>Develop and style recipes with the guidance of someone who does it professionally.</dd>
+      <dt>Your part</dt><dd>You run the sessions. Autora handles the sales page, booking, payments, onboarding and marketing.</dd>
+      <dt>First step</dt><dd>Decide how many hours a week you want to give it, from 1 to 20.</dd>
+      <dt>Figures</dt><dd>$1,500–$30,000 per 8 weeks; 120 programmes x $1,500 = $180,000 a year (estimate).</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- 10. LAUNCH PLAN -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @marissamakes__</span><span class="pg">10</span></div>
+  <span class="eyebrow">Launch plan</span>
+  <h2 class="sec">Ask first, <em>then build</em></h2>
+  <div class="rule"></div>
+  <p class="lede">Three steps, in this order. Nothing is built until your followers have told you what they need.</p>
+
+  <div class="step"><div class="sn">1</div><div><div class="when">First · stories</div><h4>Ask the question</h4><p>Post a story question: which ingredient do you never know what to pair with? Run the test post on the next page alongside it. Fall produce is already on your mind and theirs: apples, pumpkin, grapes, honeynut squash.</p></div></div>
+  <div class="step"><div class="sn">2</div><div><div class="when">Next · your kitchen</div><h4>Film the course around the answers</h4><p>Take the ingredients people name most and build the Cook by Season lessons around them. You film; Autora turns the footage into the course. The herb-pairing guide is written from your posts at the same time.</p></div></div>
+  <div class="step"><div class="sn">3</div><div><div class="when">Then · feed and stories</div><h4>Waitlist, then a dated launch</h4><p>Open a waitlist, then launch with a clear date and a real close. Everyone who commented "HERBS" or answered the story question hears first.</p></div></div>
+
+  <div class="card sage" style="margin-top:18px">
+    <h4 class="mini">Why this order</h4>
+    <p style="margin:0;font-size:14.5px">The demand for cooking without a recipe is not yet confirmed. The question and the test post confirm it, and tell you which dishes to teach, before you spend a day filming.</p>
+  </div>
+</section>
+
+<!-- 11. FIRST POST -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @marissamakes__</span><span class="pg">11</span></div>
+  <span class="eyebrow">The first post</span>
+  <h2 class="sec">Lead or <em>support?</em></h2>
+  <div class="rule"></div>
+  <p class="lede">A four-slide carousel that tests the demand before anything is built. Shoot it the way you shoot every post: a herb on the counter, warm light.</p>
+
+  <div class="slide"><div class="no">1</div><p>Lead or support?</p></div>
+  <div class="slide"><div class="no">2</div><p>Before I add a herb, I decide its job: the dominant flavour, or one that complements everything else.</p></div>
+  <div class="slide"><div class="no">3</div><p>I'm thinking of a short guide to pairing herbs with the season, so you can cook without a recipe.</p></div>
+  <div class="slide"><div class="no">4</div><p>Comment "HERBS" if you'd want it.</p></div>
+
+  <div class="card" style="margin-top:12px">
+    <h4 class="mini">Caption, in your voice</h4>
+    <p style="margin:0;font-size:14.5px">Every herb in my recipes, like the tarragon in my chicken salad with grapes, has a job before it goes in. I think about the season first, then what I want the herb to accomplish: be the dominant flavour, or complement the rest of the ingredients. I'm thinking of putting that into a little guide so you can cook without a recipe. Comment "HERBS" if you'd want it. Happy Friday, my dear friends.</p>
+  </div>
+  <p class="small">Read the result: count the "HERBS" comments and the story answers. That is the demand signal, and it shapes the guide and the course.</p>
+</section>
+
+<!-- 12. CLOSING -->
+<section class="page warm">
+  <div class="rh"><span>Monetisation Audit · @marissamakes__</span><span class="pg">12</span></div>
+  <span class="eyebrow">What to do next</span>
+  <p class="close-big">Post the question. Count the <em>HERBS</em>. Then we build.</p>
+
+  <div class="grid3">
+    <div class="card"><h4 class="mini">This week</h4><p style="margin:0;font-size:14.5px">Run the story question and the four-slide test post.</p></div>
+    <div class="card"><h4 class="mini">With the answers</h4><p style="margin:0;font-size:14.5px">Autora drafts the herb-pairing guide; you plan the lessons.</p></div>
+    <div class="card"><h4 class="mini">Then</h4><p style="margin:0;font-size:14.5px">Film, open the waitlist, launch on a date with a real close.</p></div>
+  </div>
+
+  <div class="card paper" style="margin-top:8px">
+    <p style="margin:0;font-family:'Fraunces',Georgia,serif;font-size:21px;line-height:1.35;color:#2b1c14">Reply to this DM and I'll walk you through the numbers and what to build first.</p>
+  </div>
+
+  <div class="sig">
+    <p style="margin:0 0 8px"><strong>Prepared by Euan Grant · Autora AI Automation · October 2026</strong></p>
+    <p class="small" style="margin:0 0 6px">All figures are estimates based on public profile data and this audit, using a fixed model: 5% of followers engaged, 5% of those buy.</p>
+    <p class="small" style="margin:0">How this was made: I build automations, and used AI for the analysis, which is why this took an evening rather than a fortnight.</p>
+  </div>
+
+  <svg viewBox="0 0 200 40" width="200" height="40" style="margin-top:24px;opacity:.8" aria-hidden="true">
+    <path d="M10 30 Q60 6 110 22 T190 14" fill="none" stroke="#8a9b5e" stroke-width="1.5"/>
+    <path d="M40 22 q6 -10 14 -4 q-6 8 -14 4z M80 18 q4 -11 13 -7 q-5 9 -13 7z M130 20 q7 -9 14 -2 q-7 7 -14 2z" fill="#8a9b5e"/>
+    <circle cx="190" cy="14" r="3" fill="#c0532d"/>
+  </svg>
+</section>
+</body>
+</html>
