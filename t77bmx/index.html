@@ -3,471 +3,433 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Monetisation Audit · Tyler Sale (@t77bmx)</title>
+<title>Monetisation Audit · Tyler Sale · @t77bmx</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#17120E; --surface:#241B15; --ink:#F5EDE3; --muted:#A89A8B; --accent:#E8491D; --accent2:#7A2BD9;
-  --line:rgba(245,237,227,.14);
-  --display:'Anton',Impact,'Arial Narrow Bold','Helvetica Neue',sans-serif;
-  --body:'Barlow',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  --bg:#1b1b1d; --surface:#2a2a2c; --ink:#f5f2ea; --muted:#9a9a9e; --accent:#ff4e1f; --accent2:#7a2bd1;
+  --line:#3a3a3d; --display:'Anton','Impact','Arial Narrow',sans-serif; --body:'Barlow','Helvetica Neue',Arial,sans-serif;
 }
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}
-body{font-family:var(--body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-family:var(--display);font-weight:400;margin:0;line-height:1.02;letter-spacing:.01em;text-transform:uppercase}
-p{margin:0 0 11px}
+html,body{margin:0;background:var(--bg);color:var(--ink)}
+body{font-family:var(--body);font-size:15.5px;line-height:1.5;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.disp{font-family:var(--display);font-weight:400;letter-spacing:.01em;line-height:1.02;margin:0}
+h2{font-size:38px;text-transform:uppercase;margin:6px 0 14px}
+h3{font-size:21px;text-transform:uppercase;letter-spacing:.03em;margin:0 0 6px}
+p{margin:0 0 10px}
+ul,ol{margin:0 0 10px;padding-left:20px}
+li{margin:0 0 5px}
 strong{font-weight:700;color:var(--ink)}
-.page{position:relative}
-.page + .page{border-top:1px solid var(--line)}
-.rh{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--accent);padding-bottom:7px;margin-bottom:24px;font-weight:600}
-.rh .pn{font-family:var(--display);color:var(--accent);letter-spacing:.08em;font-size:15px}
-.kicker{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px}
-.title{font-size:38px;margin-bottom:14px}
-.lede{font-size:17px;margin-bottom:20px;max-width:700px}
 .muted{color:var(--muted)}
-.small{font-size:13px;line-height:1.45}
-.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:2px;background:var(--accent);color:var(--bg)}
-.tag.p{background:var(--accent2);color:var(--ink)}
-.tag.o{background:transparent;border:1px solid var(--muted);color:var(--muted)}
-.hazard{height:12px;background:repeating-linear-gradient(-45deg,var(--accent) 0 14px,var(--bg) 14px 28px)}
-.hazard.p{background:repeating-linear-gradient(-45deg,var(--accent2) 0 14px,var(--bg) 14px 28px)}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px 18px}
-.card.a{border-left:5px solid var(--accent)}
-.card.p{border-left:5px solid var(--accent2)}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.stat .n{font-family:var(--display);font-size:36px;line-height:1}
-.stat .l{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px;font-weight:600}
-ul.clean{list-style:none;margin:0;padding:0}
-ul.clean li{position:relative;padding-left:20px;margin-bottom:7px}
-ul.clean li::before{content:"";position:absolute;left:0;top:.6em;width:9px;height:9px;background:var(--accent);transform:rotate(45deg)}
-ul.clean.p li::before{background:var(--accent2)}
-table{width:100%;border-collapse:collapse;font-size:15px}
-th,td{padding:8px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-th{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;border-bottom:2px solid var(--accent)}
+.acc{color:var(--accent)}
+.acc2{color:#b07cf0}
+.kicker{font-family:var(--body);font-weight:700;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.page{position:relative;background:var(--bg)}
+.rh{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--line);padding-bottom:8px;margin-bottom:20px}
+.rh .pn{font-family:var(--display);font-size:16px;letter-spacing:.05em;color:var(--ink);background:var(--accent);padding:2px 9px}
+.stamp{display:inline-block;border:2px solid var(--accent);color:var(--accent);font-weight:700;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;padding:3px 9px;transform:rotate(-2deg)}
+.tape{height:10px;background:repeating-linear-gradient(-45deg,var(--accent) 0 12px,var(--bg) 12px 24px);margin:0 0 18px;opacity:.9}
+.card{background:var(--surface);border-left:4px solid var(--accent);padding:14px 16px;margin:0 0 12px}
+.card.p{border-left-color:var(--accent2)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{background:var(--surface);padding:12px 14px}
+.stat .n{font-family:var(--display);font-size:34px;line-height:1;color:var(--ink)}
+.stat .l{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:0 0 12px}
+th{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:700;border-bottom:2px solid var(--accent);padding:7px 8px}
+td{border-bottom:1px solid var(--line);padding:8px 8px;vertical-align:top}
 td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-tr.tot td{font-weight:700;border-bottom:none;color:var(--accent)}
-.work{font-variant-numeric:tabular-nums;font-size:15px}
-.work .row{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px dashed var(--line)}
-.work .row b{font-weight:700}
-.work .row .v{font-family:var(--display);font-size:20px;color:var(--accent);white-space:nowrap}
-.big{font-family:var(--display);line-height:.92;letter-spacing:.005em}
-.mono{width:62px;height:62px;border:3px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:26px;color:var(--ink);transform:rotate(-6deg);background:var(--surface)}
-.step{display:grid;grid-template-columns:54px 1fr;gap:14px;margin-bottom:16px}
-.step .num{font-family:var(--display);font-size:44px;line-height:1;color:var(--accent)}
-.slide{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px;display:grid;grid-template-columns:70px 1fr;gap:12px;align-items:start;margin-bottom:10px}
-.slide .sn{font-family:var(--display);font-size:15px;color:var(--accent);letter-spacing:.08em}
-.slide .st{font-size:18px;font-weight:600;line-height:1.35}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden}
-.split .h{padding:10px 14px;font-family:var(--display);font-size:20px;text-transform:uppercase;letter-spacing:.03em}
-.split .h.y{background:var(--accent);color:var(--bg)}
-.split .h.a{background:var(--accent2);color:var(--ink)}
-.split .c{padding:11px 14px;border-top:1px solid var(--line);font-size:15px}
-.split .c:nth-child(odd){border-right:1px solid var(--line)}
-.split .lab{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:3px}
-.offer h3{font-size:26px;margin-bottom:4px}
-.offer .meta{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px}
-.offer dl{margin:0;display:grid;grid-template-columns:120px 1fr;gap:6px 14px;font-size:15px}
-.offer dt{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;padding-top:3px}
-.offer dd{margin:0}
-.dl{position:fixed;top:14px;right:14px;z-index:20;background:var(--accent);color:var(--bg);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:9px 14px;border-radius:3px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.4)}
-.dl:hover{background:var(--ink)}
-svg text{font-family:var(--body)}
+tr.tot td{border-top:2px solid var(--ink);font-weight:700}
+.calc{font-variant-numeric:tabular-nums;background:var(--surface);padding:10px 14px;margin:0 0 10px;border-left:4px solid var(--accent2)}
+.calc .eq{font-family:var(--display);font-size:22px;letter-spacing:.02em}
+.calc .why{font-size:13.5px;color:var(--muted);margin-top:3px}
+.note{font-size:13.5px;color:var(--muted)}
+.foot{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px;margin-top:10px}
 /* cover */
 .cover{display:flex;flex-direction:column}
 .cover .top{display:flex;justify-content:space-between;align-items:flex-start}
-.cover .label{font-size:13px;letter-spacing:.3em;font-weight:700;text-transform:uppercase;color:var(--accent)}
-.cover h1{font-size:76px;line-height:.9;margin:18px 0 6px}
-.cover .handle{font-size:20px;color:var(--muted);font-weight:600;letter-spacing:.04em}
-.cover .pos{font-size:19px;margin:14px 0 18px;max-width:640px;line-height:1.4}
-.range{font-family:var(--display);font-size:64px;line-height:.95;color:var(--ink)}
-.range em{font-style:normal;color:var(--accent)}
-.avgs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0 10px}
-.avgs>div{background:var(--surface);border-top:3px solid var(--accent2);padding:9px 12px}
-.avgs .n{font-family:var(--display);font-size:26px;line-height:1}
-.avgs .l{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:4px}
-.sticker{display:inline-block;background:var(--accent2);color:var(--ink);font-family:var(--display);font-size:15px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;transform:rotate(-2deg);margin-top:4px}
-@media (max-width:700px){
-  .grid2,.grid3,.grid4,.avgs,.split{grid-template-columns:1fr}
-  .split .c:nth-child(odd){border-right:none}
-  .cover h1{font-size:52px}
-  .range{font-size:42px}
-  .title{font-size:30px}
-  .offer dl{grid-template-columns:1fr}
-  table{font-size:14px}
-  th,td{padding:7px 5px}
-}
+.cover h1{font-size:58px;text-transform:uppercase;line-height:.95}
+.cover h1 span{color:var(--accent)}
+.who{margin-top:8px}
+.who .name{font-family:var(--display);font-size:30px;text-transform:uppercase}
+.who .handle{font-weight:600;color:var(--muted);font-size:15px;letter-spacing:.06em}
+.pos{font-size:17px;max-width:600px;margin:6px 0 8px}
+.big{font-family:var(--display);font-size:68px;line-height:1;color:var(--ink);margin:4px 0 2px}
+.big .to{color:var(--accent);font-size:44px;padding:0 6px}
+.avgs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0}
+.avgs div{background:var(--surface);padding:8px 12px;border-top:3px solid var(--accent2)}
+.avgs .n{font-family:var(--display);font-size:26px}
+.avgs .l{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.chart{background:var(--surface);padding:8px 12px 2px;margin:6px 0}
+.chart svg{width:100%;height:auto;display:block}
+.inside{display:flex;flex-wrap:wrap;gap:6px;font-size:12.5px;margin-top:8px}
+.inside span{border:1px solid var(--line);padding:2px 8px;color:var(--muted)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.split .col{padding:12px 14px}
+.split .col.a{background:var(--surface)}
+.split .col.b{background:#2f2236;}
+.split h3{font-size:17px}
+.split .row{border-bottom:1px solid var(--line);padding:7px 0;font-size:14.5px}
+.split .row:last-child{border-bottom:0}
+.split .row b{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.slide{background:var(--surface);border:2px solid var(--line);padding:12px 16px;margin:0 0 10px;display:grid;grid-template-columns:54px 1fr;gap:10px;align-items:center}
+.slide .no{font-family:var(--display);font-size:36px;color:var(--accent);line-height:1}
+.slide .tx{font-size:17px;font-weight:600}
+.step{display:grid;grid-template-columns:54px 1fr;gap:12px;margin:0 0 14px}
+.step .no{font-family:var(--display);font-size:44px;color:var(--accent);line-height:.9}
+.price{font-family:var(--display);font-size:30px;color:var(--accent);float:right;line-height:1}
+.dl{position:fixed;top:14px;right:14px;z-index:10;background:var(--accent);color:var(--ink);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:9px 14px;box-shadow:0 2px 10px rgba(0,0,0,.4)}
+.dl:hover{background:var(--accent2)}
+.cta{background:var(--accent);color:var(--ink);padding:18px 20px;font-size:19px;font-weight:600;margin:14px 0}
 @page { size: A4; margin: 0; }
-@media print { html, body { background: var(--bg); } .page { width: 210mm; min-height: 297mm; break-after: page; page-break-after: always; padding: 16mm 16mm 18mm; box-sizing: border-box; position: relative; overflow: hidden; } .page:last-child { break-after: auto; page-break-after: auto; } * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .no-print { display: none !important; } .page + .page{border-top:none} }
-@media screen { .page { max-width: 900px; margin: 0 auto; padding: 48px 28px; } }
+@media print { html, body { background: var(--bg); } .page { width: 210mm; min-height: 297mm; break-after: page; page-break-after: always; padding: 16mm 16mm 18mm; box-sizing: border-box; position: relative; overflow: hidden; } .page:last-child { break-after: auto; page-break-after: auto; } * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .no-print { display: none !important; } }
+@media screen { .page { max-width: 900px; margin: 0 auto; padding: 48px 28px; } .page + .page{border-top:6px solid var(--surface)} }
+@media screen and (max-width:640px){
+  body{font-size:15px}
+  .grid2,.grid3,.split,.avgs{grid-template-columns:1fr}
+  .cover h1{font-size:44px}
+  .big{font-size:46px} .big .to{font-size:30px}
+  h2{font-size:30px}
+  table{font-size:13.5px}
+  .dl{top:auto;bottom:12px;right:12px}
+}
 </style>
 </head>
 <body>
-<a class="dl no-print" href="t77bmx-monetisation-audit.pdf">Download the PDF</a>
+<a class="dl no-print" href="t77bmx-monetisation-audit.pdf" download>Download the PDF</a>
 
 <!-- 1 COVER -->
 <section class="page cover">
-  <div class="hazard" style="margin-bottom:22px"></div>
+  <div class="tape"></div>
   <div class="top">
     <div>
-      <div class="label">Monetisation Audit</div>
-      <h1>Tyler Sale<br><span style="color:var(--accent)">T77 BMX</span></h1>
-      <div class="handle">@t77bmx &nbsp;·&nbsp; 116,848 followers (public data)</div>
+      <div class="kicker">Autora AI Automation · October 2026</div>
+      <h1>Monetisation<br><span>Audit</span></h1>
     </div>
-    <div class="mono" aria-hidden="true">TS</div>
+    <svg width="84" height="84" viewBox="0 0 100 100" aria-label="TS monogram">
+      <polygon points="50,3 91,26.5 91,73.5 50,97 9,73.5 9,26.5" fill="var(--surface)" stroke="var(--accent)" stroke-width="4"/>
+      <circle cx="50" cy="50" r="30" fill="none" stroke="var(--line)" stroke-width="2"/>
+      <text x="50" y="62" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="34" fill="var(--ink)">TS</text>
+    </svg>
   </div>
-  <p class="pos">The UK BMX workshop that films every repair, restoration and custom build, and could teach riders who can't get their bike to the bench to do the job themselves.</p>
+  <div class="who">
+    <div class="name">Tyler Sale <span class="acc">· T77BMX</span></div>
+    <div class="handle">@t77bmx · 116,847 followers (public data)</div>
+  </div>
+  <p class="pos"><strong>The UK BMX workshop people watch: repairs, restorations and custom builds, filmed from the bench to the skatepark.</strong></p>
 
-  <div class="kicker" style="margin-bottom:4px">Revenue range across four products · estimate</div>
-  <div class="range">$1,000 <em>to</em> $58,400</div>
+  <div class="kicker">Revenue range · estimate</div>
+  <div class="big">$1,000<span class="to">to</span>$180,000</div>
+  <div class="note">Estimate. The top of the range is a full year of one-to-one coaching at 20 hours a week (six 8-week blocks).</div>
   <div class="avgs">
     <div><div class="n">$12,109</div><div class="l">Median · estimate</div></div>
     <div><div class="n">$21,279.50</div><div class="l">Mean · estimate</div></div>
-    <div><div class="n">$29,700</div><div class="l">Mid-range · estimate</div></div>
+    <div><div class="n">$90,500</div><div class="l">Mid-range · estimate</div></div>
   </div>
-  <p class="small muted" style="margin-bottom:12px">Assumptions: 5% of followers are engaged and 5% of those buy the ebook or course; group coaching is 2 to 8 people per 8-week cohort; one-to-one is 1 to 20 hours a week. Averages count the coaching products at the middle of their ranges.</p>
+  <div class="chart">
+    <svg viewBox="0 0 640 250" role="img" aria-label="Revenue by product on a shared scale from $0 to $180,000">
+      <g font-family="Barlow, Arial, sans-serif" font-size="12" fill="var(--ink)">
+        <!-- gridlines -->
+        <g stroke="var(--line)" stroke-width="1">
+          <line x1="160" y1="22" x2="160" y2="214"/><line x1="270" y1="22" x2="270" y2="214"/><line x1="380" y1="22" x2="380" y2="214"/><line x1="490" y1="22" x2="490" y2="214"/><line x1="600" y1="22" x2="600" y2="214"/>
+        </g>
+        <!-- rows -->
+        <text x="0" y="47" font-weight="700">Ebook · $29</text>
+        <rect x="160" y="32" width="20.7" height="22" fill="var(--accent)"/>
+        <text x="188" y="47">$8,468</text>
 
-  <svg viewBox="0 0 640 196" width="100%" role="img" aria-label="Diagram of the four product figures on a shared scale from $0 to $60,000, with the median and mean marked">
-    <g font-size="13" fill="#F5EDE3">
-      <text x="0" y="30">Ebook</text>
-      <text x="0" y="68">Online course</text>
-      <text x="0" y="106">Group coaching</text>
-      <text x="0" y="144">One-to-one</text>
-    </g>
-    <g>
-      <rect x="150" y="16" width="430" height="20" fill="#241B15"/>
-      <rect x="150" y="54" width="430" height="20" fill="#241B15"/>
-      <rect x="150" y="92" width="430" height="20" fill="#241B15"/>
-      <rect x="150" y="130" width="430" height="20" fill="#241B15"/>
-      <rect x="150" y="16" width="60.7" height="20" fill="#E8491D"/>
-      <rect x="150" y="54" width="418.5" height="20" fill="#E8491D"/>
-      <rect x="157.2" y="92" width="21.5" height="20" fill="#7A2BD9"/>
-      <rect x="160.8" y="130" width="204.2" height="20" fill="#7A2BD9"/>
-    </g>
-    <g font-size="12" fill="#F5EDE3" font-weight="600" stroke="#17120E" stroke-width="3" paint-order="stroke">
-      <text x="216" y="30">$8,468</text>
-      <text x="566" y="68" text-anchor="end" fill="#17120E" stroke="none">$58,400</text>
-      <text x="184" y="106">$1,000 to $4,000</text>
-      <text x="371" y="144">$1,500 to $30,000</text>
-    </g>
-    <line x1="236.8" y1="8" x2="236.8" y2="158" stroke="#F5EDE3" stroke-width="2" stroke-dasharray="4 3"/>
-    <line x1="302.5" y1="8" x2="302.5" y2="158" stroke="#A89A8B" stroke-width="2"/>
-    <g font-size="11" fill="#A89A8B">
-      <line x1="150" y1="164" x2="580" y2="164" stroke="#A89A8B" stroke-width="1"/>
-      <text x="150" y="180" text-anchor="middle">$0</text>
-      <text x="293.3" y="180" text-anchor="middle">$20k</text>
-      <text x="436.7" y="180" text-anchor="middle">$40k</text>
-      <text x="580" y="180" text-anchor="middle">$60k</text>
-      <text x="236.8" y="194" text-anchor="middle" fill="#F5EDE3">median $12,109</text>
-      <text x="318" y="194" text-anchor="start">mean $21,279.50</text>
-    </g>
-  </svg>
+        <text x="0" y="93" font-weight="700">Course · $200</text>
+        <rect x="160" y="78" width="142.8" height="22" fill="var(--accent)"/>
+        <text x="310" y="93">$58,400</text>
 
-  <div style="margin-top:14px;display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap">
-    <div>
-      <div class="sticker">You shoot the content and send us the footage. We host and run everything else.</div>
-      <p class="small muted" style="margin:10px 0 0">Inside: your numbers · where the range comes from · the product ladder · who does what · offer detail · launch plan · your first post</p>
-    </div>
-    <div class="small muted" style="text-align:right">Prepared by Euan Grant<br>Autora AI Automation · October 2026</div>
+        <text x="0" y="139" font-weight="700">Group coaching · $500</text>
+        <rect x="162.4" y="124" width="7.3" height="22" fill="var(--accent2)"/>
+        <rect x="169.8" y="124" width="48.9" height="22" fill="var(--accent2)" opacity=".38"/>
+        <text x="226" y="139">$1,000–$4,000 per cohort · $24,000 a year</text>
+
+        <text x="0" y="185" font-weight="700">One-to-one · $1,500</text>
+        <rect x="163.7" y="170" width="69.6" height="22" fill="var(--accent2)"/>
+        <rect x="233.3" y="170" width="366.7" height="22" fill="var(--accent2)" opacity=".38"/>
+        <text x="242" y="185">a year → $180,000</text>
+        <text x="0" y="203" font-size="11" fill="var(--muted)">$1,500–$30,000 per 8 weeks</text>
+
+        <!-- median & mean -->
+        <line x1="189.6" y1="18" x2="189.6" y2="214" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <line x1="212" y1="18" x2="212" y2="214" stroke="#ffb199" stroke-width="1.5"/>
+        <text x="186" y="14" text-anchor="end" font-size="11" fill="var(--ink)">median $12,109</text>
+        <text x="216" y="14" font-size="11" fill="#ffb199">mean $21,279.50</text>
+        <!-- axis -->
+        <g font-size="10.5" fill="var(--muted)" text-anchor="middle">
+          <text x="160" y="230">$0</text><text x="270" y="230">$45k</text><text x="380" y="230">$90k</text><text x="490" y="230">$135k</text><text x="600" y="230">$180k</text>
+        </g>
+        <text x="160" y="246" font-size="10.5" fill="var(--muted)">Solid: one 8-week run or launch. Lighter: a year (six 8-week blocks). All figures are estimates.</text>
+      </g>
+    </svg>
   </div>
+  <p class="note" style="margin:6px 0">Assumptions: 5% of followers are engaged and 5% of those buy (292 buyers); group coaching is 2 to 8 people per 8-week cohort; one-to-one is 1 to 20 hours a week; the maximum is a full year of six 8-week blocks.</p>
+  <p style="margin:8px 0 0;font-weight:600">You shoot the footage and run the sessions. Autora hosts and runs everything else, with nothing to pay upfront.</p>
+  <div class="inside"><span>Your numbers</span><span>Where the number comes from</span><span>Product ladder</span><span>Who does what</span><span>Offer detail</span><span>Launch plan</span><span>The first post</span></div>
 </section>
 
-<!-- 2 NUMBERS -->
+<!-- 2 SNAPSHOT -->
 <section class="page">
   <div class="rh"><span>Monetisation Audit · @t77bmx</span><span class="pn">02</span></div>
-  <div class="kicker">01 · Snapshot</div>
-  <h2 class="title">What your numbers say</h2>
-  <p class="lede">You run a working BMX workshop and film it: repairs, restorations and custom builds, chosen by what the bike actually needs and what will make the biggest difference to the rider. People already pay you to do that work, but only when their bike can physically reach your bench.</p>
-  <div class="grid4" style="margin-bottom:20px">
-    <div class="card stat"><div class="n">116,848</div><div class="l">Followers</div></div>
-    <div class="card stat"><div class="n">1,344</div><div class="l">Avg likes</div></div>
-    <div class="card stat"><div class="n">13</div><div class="l">Avg comments</div></div>
-    <div class="card stat"><div class="n">1.16%</div><div class="l">Engagement</div></div>
+  <div class="kicker">Section 01</div>
+  <h2>What your numbers say</h2>
+  <div class="grid3" style="margin-bottom:14px">
+    <div class="stat"><div class="n">116,847</div><div class="l">Followers</div></div>
+    <div class="stat"><div class="n">1,345</div><div class="l">Avg likes a post</div></div>
+    <div class="stat"><div class="n">1.16%</div><div class="l">Engagement rate</div></div>
+    <div class="stat"><div class="n">522</div><div class="l">Posts</div></div>
+    <div class="stat"><div class="n">13</div><div class="l">Avg comments a post</div></div>
+    <div class="stat"><div class="n">286,025</div><div class="l">Views, best recent reel</div></div>
   </div>
-  <p class="small muted" style="margin-top:-10px">Public data from your profile, 522 posts. The figures below come from your 12 most recent videos.</p>
-  <h3 style="font-size:22px;margin:16px 0 10px">The content that works</h3>
+  <p class="note">Public profile data, as scraped for this audit.</p>
+  <h3>The content that works</h3>
   <table>
-    <thead><tr><th>Recent video (public data)</th><th class="r">Views</th><th class="r">Likes</th></tr></thead>
+    <thead><tr><th>Recent reel</th><th class="r">Views</th><th class="r">Likes</th></tr></thead>
     <tbody>
-      <tr><td>Custom Profile Racing rear wheel rebuild, Amsterdam</td><td class="r">286,024</td><td class="r">8,584</td></tr>
-      <tr><td>Customising the rare Grape Soda at the skatepark</td><td class="r">190,273</td><td class="r">2,804</td></tr>
-      <tr><td>Sunday "Burn Slow" stem upgrade inside the skatepark</td><td class="r">70,001</td><td class="r">1,059</td></tr>
-      <tr><td>The most satisfying BMX headset repair</td><td class="r">38,280</td><td class="r">1,555</td></tr>
-      <tr><td class="muted">Drone trick shot / tool review / sponsored post</td><td class="r muted">1,595 to 3,905</td><td class="r muted">109 to 162</td></tr>
+      <tr><td>Custom Profile Racing rear wheel rebuild, Amsterdam</td><td class="r">286,025</td><td class="r">8,585</td></tr>
+      <tr><td>Customising the rare Grape Soda BMX at the skatepark</td><td class="r">190,431</td><td class="r">2,808</td></tr>
+      <tr><td>Sunday Bikes "Burn Slow" stem upgrade, inside the skatepark</td><td class="r">70,002</td><td class="r">1,059</td></tr>
+      <tr><td>"The most satisfying BMX headset repair"</td><td class="r">38,281</td><td class="r">1,555</td></tr>
     </tbody>
   </table>
-  <p style="margin-top:12px">The pattern is clear: when a real bike gets taken apart and rebuilt on camera, people watch. The step-by-step repairs are the method, and you already give it away for free.</p>
-  <h3 style="font-size:22px;margin:16px 0 10px">Your three content pillars</h3>
+  <p>The pattern is clear in your own numbers: a real part, a real problem, and a finished bike at the end. When the repair leaves the workshop and happens somewhere people recognise, the views jump. The sponsored post in the same fortnight drew 1,595 views; the work itself is what people come for.</p>
+  <h3>Three content pillars</h3>
   <div class="grid3">
-    <div class="card a"><strong>Restorations and custom builds</strong><p class="small" style="margin:6px 0 0">Rare frames and parts rebuilt on location: Amsterdam, the skatepark, the secret spot.</p></div>
-    <div class="card a"><strong>Repair know-how</strong><p class="small" style="margin:6px 0 0">Headsets, wheels, the grip-fitting hack, the Allen key set that finally fits.</p></div>
-    <div class="card p"><strong>The workshop and shop</strong><p class="small" style="margin:6px 0 0">Paid repairs, @6miltools and @gt85spray partnerships, and @shifta.bike.</p></div>
+    <div class="card"><strong>Custom builds on location</strong><br><span class="note">Amsterdam, the skatepark, the "secret location". The workshop taken out into the world.</span></div>
+    <div class="card"><strong>Workshop repairs and restorations</strong><br><span class="note">Headsets, wheels, full rebuilds. Paid jobs you already take on through the workshop.</span></div>
+    <div class="card p"><strong>Tools and technique</strong><br><span class="note">The Allen key set, the grips hack with GT85. Small fixes riders can do at home.</span></div>
   </div>
 </section>
 
 <!-- 3 WHERE THE NUMBER COMES FROM -->
 <section class="page">
   <div class="rh"><span>Monetisation Audit · @t77bmx</span><span class="pn">03</span></div>
-  <div class="kicker">02 · The working</div>
-  <h2 class="title">Where the number comes from</h2>
-  <p class="lede">Every figure here is an estimate, built from your public follower count and one fixed set of assumptions, so you can check each step yourself.</p>
-  <div class="card" style="margin-bottom:18px">
-    <div class="work">
-      <div class="row"><span><b>F · Followers</b> (public data)</span><span class="v">116,848</span></div>
-      <div class="row"><span><b>E · Engaged audience</b> = 5% of F = 5,842.4, rounded down</span><span class="v">5,842</span></div>
-      <div class="row" style="border-bottom:none"><span><b>B · Buyers</b> = 5% of E = 292.1, rounded down</span><span class="v">292</span></div>
-    </div>
-  </div>
+  <div class="kicker">Section 02</div>
+  <h2>Where the number comes from</h2>
+  <p>Every figure in this audit comes from one chain of arithmetic, starting from your public follower count. All figures are estimates in US dollars, with the assumption shown next to each step.</p>
+  <div class="calc"><div class="eq">F = 116,847 followers</div><div class="why">Your public follower count (public data).</div></div>
+  <div class="calc"><div class="eq">E = 5% × 116,847 = 5,842 engaged</div><div class="why">Assumption: 5% of followers are actively engaged. 5,842.35, rounded down to whole people.</div></div>
+  <div class="calc"><div class="eq">B = 5% × 5,842 = 292 buyers</div><div class="why">Assumption: 5% of engaged followers buy. 292.1, rounded down. That is 0.25% of your followers.</div></div>
+  <h3 style="margin-top:14px">The four products</h3>
   <table>
-    <thead><tr><th>Product</th><th class="r">Price</th><th>What the figure rests on</th><th class="r">Revenue (estimate)</th></tr></thead>
+    <thead><tr><th>Product</th><th class="r">Price</th><th>Rests on</th><th class="r">Revenue (estimate)</th></tr></thead>
     <tbody>
-      <tr><td>Ebook</td><td class="r">$29</td><td>292 buyers × $29</td><td class="r">$8,468</td></tr>
-      <tr><td>Online course</td><td class="r">$200</td><td>292 buyers × $200</td><td class="r">$58,400</td></tr>
-      <tr><td>Group coaching (8 weeks)</td><td class="r">$500</td><td>2 to 8 people per cohort × $500</td><td class="r">$1,000 to $4,000</td></tr>
-      <tr><td>One-to-one coaching (8 weeks)</td><td class="r">$1,500</td><td>1 to 20 hours a week (clients) × $1,500</td><td class="r">$1,500 to $30,000</td></tr>
+      <tr><td>Ebook</td><td class="r">$29</td><td>292 buyers</td><td class="r">$8,468</td></tr>
+      <tr><td>Online course</td><td class="r">$200</td><td>292 buyers</td><td class="r">$58,400</td></tr>
+      <tr><td>Group coaching (8 weeks)</td><td class="r">$500</td><td>2 to 8 people per cohort</td><td class="r">$1,000 to $4,000<br><span class="muted">$24,000 a year</span></td></tr>
+      <tr><td>One-to-one coaching (8 weeks)</td><td class="r">$1,500</td><td>1 to 20 hours a week</td><td class="r">$1,500 to $30,000<br><span class="muted">$180,000 a year</span></td></tr>
     </tbody>
   </table>
-  <h3 style="font-size:22px;margin:20px 0 10px">The two coaching ranges</h3>
-  <div class="grid2">
-    <div class="card p"><strong>Group coaching</strong><p class="small" style="margin:6px 0 0">Low: 2 people × $500 = $1,000. High: 8 people × $500 = $4,000. That is per 8-week cohort. You can run it several times a year, and each cohort earns $1,000 to $4,000 again.</p></div>
-    <div class="card p"><strong>One-to-one coaching</strong><p class="small" style="margin:6px 0 0">One hour a week per client over 8 weeks. Low: 1 client × $1,500 = $1,500. High: 20 hours a week, so 20 clients × $1,500 = $30,000, per 8 weeks.</p></div>
-  </div>
+  <p class="note">Ebook: 292 × $29 = $8,468. Course: 292 × $200 = $58,400. The coaching ranges are worked out on the next page.</p>
 </section>
 
-<!-- 4 WORKING CONTINUED -->
+<!-- 4 CONTINUED -->
 <section class="page">
   <div class="rh"><span>Monetisation Audit · @t77bmx</span><span class="pn">04</span></div>
-  <div class="kicker">02 · The working, continued</div>
-  <h2 class="title">Range and averages</h2>
-  <p>The range runs from the lowest figure across the four products (counting the low end of each coaching range) to the highest (counting the high end). For the averages, each coaching product is counted at the middle of its range: group coaching (1,000 + 4,000) ÷ 2 = $2,500, and one-to-one (1,500 + 30,000) ÷ 2 = $15,750.</p>
-  <div class="card" style="margin:14px 0 18px">
-    <div class="work">
-      <div class="row"><span><b>Minimum</b> · group coaching, 2 people</span><span class="v">$1,000</span></div>
-      <div class="row"><span><b>Maximum</b> · online course, 292 × $200</span><span class="v">$58,400</span></div>
-      <div class="row"><span><b>Four figures in order</b>: $2,500 · $8,468 · $15,750 · $58,400</span><span class="v"></span></div>
-      <div class="row"><span><b>Median</b> = (8,468 + 15,750) ÷ 2 = 24,218 ÷ 2</span><span class="v">$12,109</span></div>
-      <div class="row"><span><b>Mean</b> = (2,500 + 8,468 + 15,750 + 58,400) ÷ 4 = 85,118 ÷ 4</span><span class="v">$21,279.50</span></div>
-      <div class="row" style="border-bottom:none"><span><b>Mid-range</b> = (1,000 + 58,400) ÷ 2 = 59,400 ÷ 2</span><span class="v">$29,700</span></div>
+  <div class="kicker">Section 02 · continued</div>
+  <h2>Where the number comes from, continued</h2>
+  <div class="grid2">
+    <div>
+      <h3>Group coaching</h3>
+      <div class="calc"><div class="eq">2 to 8 × $500 = $1,000 to $4,000</div><div class="why">Per 8-week cohort of 2 to 8 people.</div></div>
+      <div class="calc"><div class="eq">48 × $500 = $24,000 a year</div><div class="why">Six 8-week cohorts a year × 8 places = 48 places. With 292 buyers, there are enough to fill all 48.</div></div>
+    </div>
+    <div>
+      <h3>One-to-one coaching</h3>
+      <div class="calc"><div class="eq">1 to 20 × $1,500 = $1,500 to $30,000</div><div class="why">Per 8 weeks, at 1 to 20 hours a week (one hour per client).</div></div>
+      <div class="calc"><div class="eq">120 × $1,500 = $180,000 a year</div><div class="why">Six 8-week blocks × 20 clients = 120 programmes. With 292 buyers, there are enough to fill all 120.</div></div>
     </div>
   </div>
-  <p class="small muted" style="margin-bottom:8px">All five figures are estimates. Shared scale $0 to $60,000; coaching shown as low-to-high ranges.</p>
-  <svg viewBox="0 0 640 230" width="100%" role="img" aria-label="Larger diagram of the four product figures with median and mean lines">
-    <g font-size="14" fill="#F5EDE3">
-      <text x="0" y="36">Ebook</text>
-      <text x="0" y="82">Online course</text>
-      <text x="0" y="128">Group coaching</text>
-      <text x="0" y="174">One-to-one</text>
-    </g>
-    <rect x="150" y="18" width="430" height="26" fill="#241B15"/>
-    <rect x="150" y="64" width="430" height="26" fill="#241B15"/>
-    <rect x="150" y="110" width="430" height="26" fill="#241B15"/>
-    <rect x="150" y="156" width="430" height="26" fill="#241B15"/>
-    <rect x="150" y="18" width="60.7" height="26" fill="#E8491D"/>
-    <rect x="150" y="64" width="418.5" height="26" fill="#E8491D"/>
-    <rect x="157.2" y="110" width="21.5" height="26" fill="#7A2BD9"/>
-    <rect x="160.8" y="156" width="204.2" height="26" fill="#7A2BD9"/>
-    <g font-size="13" fill="#F5EDE3" font-weight="600" stroke="#17120E" stroke-width="3" paint-order="stroke">
-      <text x="216" y="36">$8,468</text>
-      <text x="562" y="82" text-anchor="end" fill="#17120E" stroke="none">$58,400</text>
-      <text x="184" y="128">$1,000 to $4,000 per cohort</text>
-      <text x="371" y="174">$1,500 to $30,000</text>
-    </g>
-    <line x1="236.8" y1="8" x2="236.8" y2="190" stroke="#F5EDE3" stroke-width="2" stroke-dasharray="4 3"/>
-    <line x1="302.5" y1="8" x2="302.5" y2="190" stroke="#A89A8B" stroke-width="2"/>
-    <g font-size="12" fill="#A89A8B">
-      <line x1="150" y1="196" x2="580" y2="196" stroke="#A89A8B"/>
-      <text x="150" y="211" text-anchor="middle">$0</text>
-      <text x="293.3" y="211" text-anchor="middle">$20k</text>
-      <text x="436.7" y="211" text-anchor="middle">$40k</text>
-      <text x="580" y="211" text-anchor="middle">$60k</text>
-      <text x="232" y="227" text-anchor="end" fill="#F5EDE3">median $12,109</text>
-      <text x="308" y="227">mean $21,279.50</text>
-    </g>
-  </svg>
+  <h3 style="margin-top:6px">The range and the averages</h3>
+  <table>
+    <thead><tr><th>Figure</th><th>Working</th><th class="r">Estimate</th></tr></thead>
+    <tbody>
+      <tr><td>Minimum</td><td>Lowest figure across the four products: one group cohort of 2</td><td class="r">$1,000</td></tr>
+      <tr><td>Maximum</td><td>A full year of one-to-one at 20 hours a week (bigger than the course and the group year)</td><td class="r">$180,000</td></tr>
+      <tr><td>Median</td><td>Figures in order: $2,500, $8,468, $15,750, $58,400. Middle two: ($8,468 + $15,750) ÷ 2</td><td class="r">$12,109</td></tr>
+      <tr><td>Mean</td><td>($2,500 + $8,468 + $15,750 + $58,400) ÷ 4 = $85,118 ÷ 4</td><td class="r">$21,279.50</td></tr>
+      <tr><td style="white-space:nowrap">Mid-range</td><td>($1,000 + $180,000) ÷ 2</td><td class="r">$90,500</td></tr>
+    </tbody>
+  </table>
+  <p class="note">For the median and mean, each coaching product is counted at the middle of its 8-week range: group coaching ($1,000 + $4,000) ÷ 2 = $2,500, one-to-one ($1,500 + $30,000) ÷ 2 = $15,750. The mid-range uses the year maximum. These are estimates built on the stated assumptions, not a forecast or a promise.</p>
 </section>
 
 <!-- 5 LADDER -->
 <section class="page">
   <div class="rh"><span>Monetisation Audit · @t77bmx</span><span class="pn">05</span></div>
-  <div class="kicker">03 · What to sell</div>
-  <h2 class="title">The product ladder</h2>
-  <p class="lede">Your free videos already show the method. The gap is a structured, paid version for riders who want to do the job themselves, on their own bike. Each step up sits next to the workshop rather than competing with it.</p>
-  <div class="card a" style="margin-bottom:14px">
-    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap"><h3 style="font-size:24px">1 · The T77 Workshop Manual</h3><span class="tag">Ebook · $29</span></div>
-    <p style="margin:8px 0 6px"><strong>What it is:</strong> your repair know-how in one written guide: diagnosing what a bike actually needs, what to replace and why, the tools, and the order of work, from headsets and wheels to grips. Autora writes it from your own videos and captions; all you do is confirm you're happy for it to go out.</p>
-    <p style="margin:0 0 6px"><strong>Who it is for:</strong> riders who watch the repairs and want the steps on paper next to the bike.</p>
-    <p style="margin:0"><strong>Revenue (estimate):</strong> 292 buyers × $29 = <strong style="color:var(--accent)">$8,468</strong></p>
-  </div>
-  <div class="card a">
-    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap"><h3 style="font-size:24px">2 · The Workshop-at-Home Series</h3><span class="tag">Online course · $200</span></div>
-    <p style="margin:8px 0 6px"><strong>What it is:</strong> one full restoration, from stripped frame to finished bike, filmed the way you already film, with each step broken out: diagnosis, what to replace and why, tools, and the order of work. It keeps your rule of choosing work that genuinely matters to the bike, not a repair forced for content.</p>
-    <p style="margin:0 0 6px"><strong>Tool list inside:</strong> each lesson lists the exact tools used, linked through the tool partnerships you already have, so they become part of the product rather than a separate link in bio.</p>
-    <p style="margin:0 0 6px"><strong>Who it is for:</strong> riders who want to do the whole job themselves but can't bring their bike to your workshop.</p>
-    <p style="margin:0"><strong>Revenue (estimate):</strong> 292 buyers × $200 = <strong style="color:var(--accent)">$58,400</strong>, before any affiliate tool income.</p>
-  </div>
+  <div class="kicker">Section 03</div>
+  <h2>The product ladder</h2>
+  <p>Your videos already show the method for free, and paid help only reaches bikes that physically get to the workshop. Each step below is for riders who want to do the job themselves, on their own bike. It sits next to the workshop rather than competing with it.</p>
+  <div class="card"><span class="price">$29</span><h3>1 · The T77 Repair Manual (ebook)</h3>
+    <p><strong>What it is:</strong> your repair and restoration method in writing: diagnosis, what to replace and why, the tools, and the order of work. Autora writes it from your own videos and captions; you only confirm you're happy for it to go out.</p>
+    <p class="note" style="margin:0"><strong>For:</strong> riders who watch the reels and want the steps to hand at the bench. <strong>Estimate:</strong> 292 × $29 = $8,468.</p></div>
+  <div class="card"><span class="price">$200</span><h3>2 · Workshop-at-Home (online course)</h3>
+    <p><strong>What it is:</strong> one full restoration from stripped frame to finished bike, filmed the way you already film, with each step broken out. The restoration series from your audit, sequenced and finished properly.</p>
+    <p class="note" style="margin:0"><strong>For:</strong> riders who want to do the whole job themselves but can't bring their bike to you. <strong>Estimate:</strong> 292 × $200 = $58,400.</p></div>
+  <div class="card p"><span class="price">$500</span><h3>3 · The Build Crew (8-week group coaching)</h3>
+    <p><strong>What it is:</strong> 2 to 8 riders each working on their own bike over 8 weeks, with a weekly live session where you look at their progress and answer what they're stuck on.</p>
+    <p class="note" style="margin:0"><strong>For:</strong> riders who want to rebuild alongside others, with you checking the work. <strong>Estimate:</strong> $1,000 to $4,000 per cohort; $24,000 a year.</p></div>
+  <div class="card p"><span class="price">$1,500</span><h3>4 · One-to-One Build (8-week coaching)</h3>
+    <p><strong>What it is:</strong> an hour a week with you, one rider and one bike, from diagnosis to a finished restoration or custom build.</p>
+    <p class="note" style="margin:0"><strong>For:</strong> riders with a bike that matters to them and nobody nearby to help. <strong>Estimate:</strong> $1,500 to $30,000 per 8 weeks; $180,000 a year.</p></div>
 </section>
 
 <!-- 6 LADDER CONTINUED -->
 <section class="page">
   <div class="rh"><span>Monetisation Audit · @t77bmx</span><span class="pn">06</span></div>
-  <div class="kicker">03 · What to sell, continued</div>
-  <h2 class="title">The product ladder, continued</h2>
-  <div class="card p" style="margin-bottom:14px">
-    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap"><h3 style="font-size:24px">3 · The Build-Along Crew</h3><span class="tag p">Group coaching · $500</span></div>
-    <p style="margin:8px 0 6px"><strong>What it is:</strong> an 8-week group programme where 2 to 8 riders each work through a repair or restoration on their own bike, with a live weekly session where you diagnose problems and talk them through the next stage.</p>
-    <p style="margin:0 0 6px"><strong>Who it is for:</strong> riders who want your eye on their bike while they do the work.</p>
-    <p style="margin:0"><strong>Revenue (estimate):</strong> 2 to 8 people × $500 = <strong style="color:var(--accent)">$1,000 to $4,000</strong> per cohort. You can run it several times a year; each cohort earns this again.</p>
-  </div>
-  <div class="card p" style="margin-bottom:18px">
-    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap"><h3 style="font-size:24px">4 · Your Bike, One-to-One</h3><span class="tag p">One-to-one · $1,500</span></div>
-    <p style="margin:8px 0 6px"><strong>What it is:</strong> 8 weeks, one hour a week on video with you, planning and guiding one rider's restoration or custom build from diagnosis to the finished bike.</p>
-    <p style="margin:0 0 6px"><strong>Who it is for:</strong> riders with a rare or special bike who would send it to your workshop if they could.</p>
-    <p style="margin:0"><strong>Revenue (estimate):</strong> 1 to 20 hours a week × $1,500 = <strong style="color:var(--accent)">$1,500 to $30,000</strong> per 8 weeks.</p>
-  </div>
+  <div class="kicker">Section 03 · continued</div>
+  <h2>The ladder side by side</h2>
   <table>
-    <thead><tr><th>Product</th><th class="r">Price</th><th>Your time</th><th class="r">Revenue (estimate)</th></tr></thead>
+    <thead><tr><th>Product</th><th class="r">Price</th><th>Your time</th><th class="r">Estimate</th></tr></thead>
     <tbody>
-      <tr><td>Ebook</td><td class="r">$29</td><td>Confirm it can go out</td><td class="r">$8,468</td></tr>
-      <tr><td>Online course</td><td class="r">$200</td><td>Film one restoration</td><td class="r">$58,400</td></tr>
-      <tr><td>Group coaching</td><td class="r">$500</td><td>1 live session a week</td><td class="r">$1,000 to $4,000</td></tr>
-      <tr><td>One-to-one</td><td class="r">$1,500</td><td>1 hour a week per client</td><td class="r">$1,500 to $30,000</td></tr>
+      <tr><td>T77 Repair Manual</td><td class="r">$29</td><td>Read and approve</td><td class="r">$8,468</td></tr>
+      <tr><td>Workshop-at-Home course</td><td class="r">$200</td><td>Film one restoration</td><td class="r">$58,400</td></tr>
+      <tr><td>The Build Crew</td><td class="r">$500</td><td>One live session a week</td><td class="r">$1,000–$4,000 / cohort<br><span class="muted">$24,000 a year</span></td></tr>
+      <tr><td>One-to-One Build</td><td class="r">$1,500</td><td>1 hour a week per client</td><td class="r">$1,500–$30,000 / 8 wks<br><span class="muted">$180,000 a year</span></td></tr>
     </tbody>
   </table>
-  <p class="small muted" style="margin-top:14px"><strong>Already running, and staying as it is:</strong> your paid workshop repairs, restorations and custom builds. They carry no figure in this audit; the ladder is for riders who can't reach the bench.</p>
+  <p class="note">All revenue figures are estimates built on 292 buyers (0.25% of followers) and the coaching assumptions on pages 3 and 4.</p>
+  <h3 style="margin-top:18px">Alongside the four</h3>
+  <div class="card"><h3 style="font-size:18px">The tool list inside the course</h3>
+    <p style="margin:0">Each lesson lists the exact tools used, linked through the affiliate partnerships you already have. It turns those relationships into part of the product rather than a separate link in bio. No revenue figure is put on this.</p></div>
+  <div class="card"><h3 style="font-size:18px">The workshop stays as it is</h3>
+    <p style="margin:0">Your paid repairs, restorations and custom builds carry on exactly as now, for bikes that can reach you. The ladder is for the riders who can't. No revenue figure is put on the workshop in this audit.</p></div>
+  <div class="card p"><h3 style="font-size:18px">Your rule still applies</h3>
+    <p style="margin:0">You pick each job by "what the bike actually needs, what will make the biggest difference to the rider, and what will make an interesting transformation to film", and keep it "genuine rather than forcing a repair purely for content". The course restoration should be chosen the same way.</p></div>
 </section>
 
 <!-- 7 WHO DOES WHAT -->
 <section class="page">
   <div class="rh"><span>Monetisation Audit · @t77bmx</span><span class="pn">07</span></div>
-  <div class="kicker">04 · The split</div>
-  <h2 class="title">Who does what</h2>
-  <p class="lede">Autora hosts and runs everything: the format, the build, the platform and hosting, the checkout and payments, delivery, the marketing and the backend. There is nothing to pay upfront; Autora is paid from a share of what it makes.</p>
-  <div class="split">
-    <div class="h y">Your part</div>
-    <div class="h a">What Autora does</div>
-    <div class="c"><span class="lab">Ebook</span>Confirm you're happy for it to go out. Next to no work.</div>
-    <div class="c"><span class="lab">Ebook</span>Writes it from your videos and captions, designs it, hosts it, sells it and delivers it.</div>
-    <div class="c"><span class="lab">Online course</span>Shoot the restoration the way you already film, and send us the footage.</div>
-    <div class="c"><span class="lab">Online course</span>Turns the footage into the course, builds the tool lists, hosts it, sells it and delivers it.</div>
-    <div class="c"><span class="lab">Group coaching</span>Run the weekly live sessions with the crew.</div>
-    <div class="c"><span class="lab">Group coaching</span>The sales page, booking, payments, onboarding and marketing for every cohort.</div>
-    <div class="c"><span class="lab">One-to-one</span>Run the one-hour weekly calls.</div>
-    <div class="c"><span class="lab">One-to-one</span>The sales page, booking, payments, onboarding and marketing.</div>
+  <div class="kicker">Section 04</div>
+  <h2>Who does what</h2>
+  <p><strong>Autora hosts and runs everything:</strong> the format, the build, the platform and hosting, the checkout and payments, delivery, the marketing and the backend. There is nothing to pay upfront. Autora is paid from a share of what the products make.</p>
+  <div class="split" style="margin-top:12px">
+    <div class="col a">
+      <h3 class="acc">Your part</h3>
+      <div class="row"><b>Ebook</b>Confirm you're happy for it to go out. Next to no work.</div>
+      <div class="row"><b>Online course</b>Film one full restoration, the way you already film, and send Autora the footage.</div>
+      <div class="row"><b>Group coaching</b>Run the weekly live session for each 8-week cohort.</div>
+      <div class="row"><b>One-to-one</b>Run one hour a week with each client.</div>
+    </div>
+    <div class="col b">
+      <h3 class="acc2">What Autora does</h3>
+      <div class="row"><b>Ebook</b>Writes it from your videos and captions, designs it, hosts it, sells it and delivers it.</div>
+      <div class="row"><b>Online course</b>Edits the footage into lessons, adds the tool lists, hosts it, sells it and delivers it.</div>
+      <div class="row"><b>Group coaching</b>Sales page, booking, payments, onboarding and marketing for every cohort.</div>
+      <div class="row"><b>One-to-one</b>Sales page, booking, payments, onboarding and marketing for every client.</div>
+    </div>
   </div>
-  <div class="card a" style="margin-top:20px">
-    <p style="margin:0;font-size:17px"><strong>In short:</strong> you keep doing what you already do, fixing bikes and filming it. You never have to build, host, market or sell anything yourself.</p>
-  </div>
-  <div class="hazard p" style="margin-top:26px"></div>
+  <p style="margin-top:14px">You never have to build a website, set up a checkout, host a video or write a sales post. Your time goes on the thing people already follow you for: working on bikes.</p>
+  <p class="note">The workshop, the shop and your existing partnerships carry on as they are.</p>
 </section>
 
 <!-- 8 OFFER DETAIL -->
 <section class="page">
   <div class="rh"><span>Monetisation Audit · @t77bmx</span><span class="pn">08</span></div>
-  <div class="kicker">05 · The offers</div>
-  <h2 class="title">Offer detail</h2>
-  <div class="card offer a" style="margin-bottom:16px">
-    <h3>The T77 Workshop Manual</h3>
-    <div class="meta">Ebook · $29 · estimate $8,468</div>
-    <dl>
-      <dt>Inside</dt><dd>How to diagnose what a bike actually needs; headset, wheel, stem and grip jobs written up step by step; the tools for each, and the order of work.</dd>
-      <dt>The promise</dt><dd>Work out what your bike needs and fix it in the right order, the way it's done on the workshop bench.</dd>
-      <dt>Your part</dt><dd>Autora writes it from your content. You only confirm you're happy for it to go out.</dd>
-      <dt>First step</dt><dd>Autora pulls your repair videos and captions into a draft for you to read.</dd>
-    </dl>
-  </div>
-  <div class="card offer a">
-    <h3>The Workshop-at-Home Series</h3>
-    <div class="meta">Online course · $200 · estimate $58,400</div>
-    <dl>
-      <dt>Inside</dt><dd>One full restoration from stripped frame to finished bike: diagnosis, what to replace and why, tools, and the order of work, each its own lesson, with the exact tools linked through your existing partnerships.</dd>
-      <dt>The promise</dt><dd>Do the whole job yourself, on your own bike, without needing to get it to a workshop.</dd>
-      <dt>Your part</dt><dd>Shoot the content and send Autora the footage. Autora turns it into the course, hosts it, sells it and delivers it.</dd>
-      <dt>First step</dt><dd>Pick one restoration you're already planning to film, and film it with the series in mind.</dd>
-    </dl>
-  </div>
+  <div class="kicker">Section 05</div>
+  <h2>Offer detail</h2>
+  <div class="card"><span class="price">$29</span><h3>T77 Repair Manual</h3>
+    <ul>
+      <li><strong>Inside:</strong> how to diagnose a tired BMX, what to replace and why, the tool for each job, and the order of work for headsets, wheels, stems and grips, drawn from the repairs you've already filmed.</li>
+      <li><strong>The promise:</strong> the steps from your reels, in one place, at the bench.</li>
+      <li><strong>Your part:</strong> Autora writes it; you only confirm you're happy for it to go out.</li>
+      <li><strong>First step:</strong> Autora drafts it from your existing videos and sends it to you to check.</li>
+    </ul></div>
+  <div class="card"><span class="price">$200</span><h3>Workshop-at-Home course</h3>
+    <ul>
+      <li><strong>Inside:</strong> one full restoration from stripped frame to finished bike, broken into lessons: diagnosis, what to replace and why, tools, order of work. Each lesson carries its tool list.</li>
+      <li><strong>The promise:</strong> riders do the whole job themselves, on their own bike, step by step.</li>
+      <li><strong>Your part:</strong> film the restoration and send Autora the footage. Autora turns it into the course, hosts it, sells it and delivers it.</li>
+      <li><strong>First step:</strong> pick one restoration you're already planning to film, and film it with the series in mind.</li>
+    </ul></div>
 </section>
 
 <!-- 9 OFFER DETAIL CONTINUED -->
 <section class="page">
   <div class="rh"><span>Monetisation Audit · @t77bmx</span><span class="pn">09</span></div>
-  <div class="kicker">05 · The offers, continued</div>
-  <h2 class="title">Offer detail, continued</h2>
-  <div class="card offer p" style="margin-bottom:16px">
-    <h3>The Build-Along Crew</h3>
-    <div class="meta">Group coaching · $500 · estimate $1,000 to $4,000 per cohort</div>
-    <dl>
-      <dt>Inside</dt><dd>8 weeks, one live group session a week. 2 to 8 riders each work on their own bike, show where they're stuck, and get your diagnosis and next step.</dd>
-      <dt>The promise</dt><dd>Finish your own repair or restoration in 8 weeks with your eye on it.</dd>
-      <dt>Your part</dt><dd>Run the sessions. Autora handles the sales page, booking, payments, onboarding and marketing.</dd>
-      <dt>First step</dt><dd>Open the first cohort to the riders on the course waitlist.</dd>
-    </dl>
-  </div>
-  <div class="card offer p">
-    <h3>Your Bike, One-to-One</h3>
-    <div class="meta">One-to-one coaching · $1,500 · estimate $1,500 to $30,000 per 8 weeks</div>
-    <dl>
-      <dt>Inside</dt><dd>8 weeks, one hour a week on video, working through one rider's restoration or custom build: what to keep, what to replace, and in what order.</dd>
-      <dt>The promise</dt><dd>Workshop-grade guidance on your bike, wherever you live.</dd>
-      <dt>Your part</dt><dd>Run the calls. Autora handles the sales page, booking, payments, onboarding and marketing.</dd>
-      <dt>First step</dt><dd>Decide how many hours a week you can give it next to the workshop, from 1 to 20.</dd>
-    </dl>
-  </div>
+  <div class="kicker">Section 05 · continued</div>
+  <h2>Offer detail, continued</h2>
+  <div class="card p"><span class="price">$500</span><h3>The Build Crew</h3>
+    <ul>
+      <li><strong>Inside:</strong> 8 weeks, 2 to 8 riders, each on their own bike, with one live session a week to review progress and solve what's stuck.</li>
+      <li><strong>The promise:</strong> a finished bike in 8 weeks, with you checking the work.</li>
+      <li><strong>Your part:</strong> run the weekly sessions. Autora handles the sales page, booking, payments, onboarding and marketing.</li>
+      <li><strong>First step:</strong> open the first cohort to the waitlist from the course launch.</li>
+    </ul>
+    <p class="note" style="margin:0">Estimate: $1,000 to $4,000 per cohort; up to six cohorts a year, 48 places, 48 × $500 = $24,000.</p></div>
+  <div class="card p"><span class="price">$1,500</span><h3>One-to-One Build</h3>
+    <ul>
+      <li><strong>Inside:</strong> an hour a week for 8 weeks, one rider and one bike, from diagnosis to a finished restoration or custom build.</li>
+      <li><strong>The promise:</strong> the rider's own bike done properly, with them doing the work and you guiding every step.</li>
+      <li><strong>Your part:</strong> run the weekly hour. Autora handles the sales page, booking, payments, onboarding and marketing.</li>
+      <li><strong>First step:</strong> decide how many hours a week you want to give it, from 1 up to 20.</li>
+    </ul>
+    <p class="note" style="margin:0">Estimate: $1,500 to $30,000 per 8 weeks; six blocks at 20 hours a week, 120 × $1,500 = $180,000 a year.</p></div>
 </section>
 
 <!-- 10 LAUNCH PLAN -->
 <section class="page">
   <div class="rh"><span>Monetisation Audit · @t77bmx</span><span class="pn">10</span></div>
-  <div class="kicker">06 · Order of work</div>
-  <h2 class="title">Launch plan</h2>
-  <p class="lede">Test first, build second. The audit infers that some of your viewers can't use the workshop because of distance or your capacity, but you haven't said how many. So the first job is to find out.</p>
-  <div class="step"><div class="num">1</div><div><h3 style="font-size:22px;margin-bottom:6px">Ask first</h3><p>Post the test carousel on the next page, plus a story poll or question box: would they rather send their bike in, or learn to do the job themselves? This tests demand before anything is built.</p></div></div>
-  <div class="step"><div class="num">2</div><div><h3 style="font-size:22px;margin-bottom:6px">Film one restoration for the series</h3><p>Pick a restoration you're already planning to film, and film it with the series in mind: each stage complete, each tool shown. Send Autora the footage.</p></div></div>
-  <div class="step"><div class="num">3</div><div><h3 style="font-size:22px;margin-bottom:6px">Waitlist, launch date, real close</h3><p>Autora sets up the waitlist for everyone who commented or voted, and opens the series to them first, with a clear launch date and a real close.</p></div></div>
-  <div class="step"><div class="num">4</div><div><h3 style="font-size:22px;margin-bottom:6px">Let the numbers decide</h3><p>Use the replies and waitlist numbers to decide whether a second series, or the first coaching cohort, is worth running.</p></div></div>
+  <div class="kicker">Section 06</div>
+  <h2>Launch plan</h2>
+  <p>Nothing gets built until riders have told you they want it. Four steps, in this order.</p>
+  <div class="step"><div class="no">01</div><div><h3>Ask first</h3><p>Run a story poll or question box: would riders rather send their bike in, or learn to do the job themselves? Then post the test on the next page. This tests demand before anything is built.</p></div></div>
+  <div class="step"><div class="no">02</div><div><h3>Film one restoration with the series in mind</h3><p>Pick a restoration you're already planning to film, chosen by your usual rule: what the bike needs and what makes the biggest difference to the rider. Film each stage fully, then send Autora the footage.</p></div></div>
+  <div class="step"><div class="no">03</div><div><h3>Waitlist, then a real launch</h3><p>Invite interested riders to a waitlist and open the course to them first, with a clear launch date and a real close. Autora builds the waitlist, the sales page and the checkout.</p></div></div>
+  <div class="step"><div class="no">04</div><div><h3>Let the numbers decide</h3><p>Use the replies and waitlist numbers to decide whether a second series is worth making, and when to open the first Build Crew cohort and one-to-one places.</p></div></div>
+  <div class="card p" style="margin-top:8px"><p style="margin:0"><strong>The open question this tests:</strong> how many of the people watching your repairs can't use the workshop because of distance or your capacity. You haven't said, so this audit treats it as the thing to find out, not a fact.</p></div>
 </section>
 
 <!-- 11 FIRST POST -->
 <section class="page">
   <div class="rh"><span>Monetisation Audit · @t77bmx</span><span class="pn">11</span></div>
-  <div class="kicker">07 · Test before you build</div>
-  <h2 class="title">The first post</h2>
-  <p class="lede">Post this as a carousel, or as a short reel caption over your next workshop clip, before anything is built.</p>
-  <div class="slide"><div class="sn">Slide 1</div><div class="st">Can't get your BMX to a workshop?</div></div>
-  <div class="slide"><div class="sn">Slide 2</div><div class="st">Every week I strip, fix and rebuild bikes like this one. Most of you watch from too far away to send yours in.</div></div>
-  <div class="slide"><div class="sn">Slide 3</div><div class="st">I'm thinking of filming one full restoration, every step, so you can do it on your own bike.</div></div>
-  <div class="slide" style="border-color:var(--accent)"><div class="sn">Slide 4</div><div class="st">Comment <span style="color:var(--accent)">"BUILD"</span> if you'd want it.</div></div>
-  <div class="card p" style="margin-top:14px">
-    <strong>Story poll, same week</strong>
-    <p style="margin:6px 0 0">"Your bike, broken. Would you rather&hellip;" &nbsp;<span class="tag o">Send it to T77</span> &nbsp;<span class="tag o">Learn to fix it myself</span></p>
+  <div class="kicker">Section 07</div>
+  <h2>The first post</h2>
+  <p>Post this as a carousel, or as the caption on your next workshop reel, before building anything.</p>
+  <div class="slide"><div class="no">1</div><div class="tx">Can't get your BMX to a workshop?</div></div>
+  <div class="slide"><div class="no">2</div><div class="tx">Every week I strip, fix and rebuild bikes like this one. Most of you watch from too far away to send yours in.</div></div>
+  <div class="slide"><div class="no">3</div><div class="tx">I'm thinking of filming one full restoration, every step, so you can do it on your own bike.</div></div>
+  <div class="slide"><div class="no">4</div><div class="tx">Comment "BUILD" if you'd want it.</div></div>
+  <div class="card" style="margin-top:12px">
+    <h3 style="font-size:17px">Suggested caption</h3>
+    <p style="margin:0">Thinking about something new for the workshop. Watch along as I take one rare bike from stripped frame to finished build, and this time film every single step so you can do the same on yours. Comment BUILD if you'd want it, and DM me if you ever need help with your BMX.</p>
   </div>
-  <p style="margin-top:16px"><strong>What to watch:</strong> the number of "BUILD" comments is the demand test, alongside the poll split. Those riders become the waitlist.</p>
+  <p class="note">The number of "BUILD" comments is the demand test. Compare it with the 13 comments an average post draws (public data).</p>
 </section>
 
 <!-- 12 CLOSING -->
 <section class="page">
   <div class="rh"><span>Monetisation Audit · @t77bmx</span><span class="pn">12</span></div>
-  <div class="hazard" style="margin-bottom:28px"></div>
-  <div class="kicker">08 · Next</div>
-  <h2 style="font-size:64px;line-height:.95;margin-bottom:22px">What to do<br><span style="color:var(--accent)">next</span></h2>
-  <ul class="clean" style="font-size:17px;margin-bottom:24px">
-    <li>Post the "BUILD" carousel and the story poll this week.</li>
-    <li>Choose the restoration you're already planning to film, and film it with the series in mind.</li>
-    <li>Say yes to the ebook draft, and Autora gets the waitlist ready.</li>
-  </ul>
-  <div class="card a" style="margin-bottom:26px">
-    <p style="margin:0;font-size:20px;font-weight:600">Reply to this DM and I'll walk you through the numbers and what to build first.</p>
-  </div>
-  <div style="display:flex;align-items:center;gap:18px;margin-bottom:20px">
-    <div class="mono" aria-hidden="true">TS</div>
-    <div style="font-size:16px">Prepared by Euan Grant · Autora AI Automation · October 2026</div>
-  </div>
-  <p class="small muted">All figures are estimates based on public profile data and the audit, using the assumptions shown on page 3; they are not promises of results.</p>
-  <p class="small muted">How it was made: I build automations, and used AI for the analysis, which is why this took an evening rather than a fortnight.</p>
+  <div class="tape"></div>
+  <div class="kicker">What to do next</div>
+  <h2 style="font-size:52px">Your next move, Tyler</h2>
+  <ol style="font-size:16.5px">
+    <li>Run the story poll and the "BUILD" post this week.</li>
+    <li>Choose the restoration you'll film for the course.</li>
+    <li>Tell us how many hours a week you'd give to one-to-one, if any.</li>
+  </ol>
+  <div class="cta">Reply to this DM and I'll walk you through the numbers and what to build first.</div>
+  <p style="font-size:16px;font-weight:600">Prepared by Euan Grant · Autora AI Automation · October 2026</p>
+  <p class="note">All figures are estimates based on your public profile data and this audit, using the stated assumptions. They are not a forecast or a guarantee.</p>
+  <p class="note">How this was made: I build automations, and used AI for the analysis, which is why this took an evening rather than a fortnight.</p>
+  <svg viewBox="0 0 600 120" style="width:100%;height:auto;margin-top:24px" aria-hidden="true">
+    <g fill="none" stroke="var(--accent)" stroke-width="5">
+      <circle cx="120" cy="70" r="42"/><circle cx="430" cy="70" r="42"/>
+      <polyline points="120,70 220,30 360,30 430,70"/><line x1="220" y1="30" x2="270" y2="70"/><line x1="270" y1="70" x2="360" y2="30"/>
+      <line x1="270" y1="70" x2="120" y2="70"/>
+    </g>
+    <g fill="none" stroke="var(--accent2)" stroke-width="5">
+      <line x1="360" y1="30" x2="380" y2="6"/><line x1="368" y1="6" x2="398" y2="6"/><line x1="210" y1="18" x2="236" y2="18"/>
+    </g>
+  </svg>
 </section>
 </body>
 </html>
