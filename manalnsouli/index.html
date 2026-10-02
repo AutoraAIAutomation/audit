@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monetisation Audit · @manal_nsouli</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F3FB;
+  --surface:#FFFFFF;
+  --ink:#2B1A3E;
+  --muted:#8A7A9A;
+  --body2:#5E4E70;
+  --accent:#6B2FA3;
+  --accent2:#C9A6E0;
+  --lilac:#EDE4F6;
+  --line:rgba(43,26,62,.13);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}
+body{font-family:'Nunito Sans',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:15.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.serif{font-family:'Playfair Display',Georgia,'Times New Roman',serif;margin:0;font-weight:500;letter-spacing:-.005em}
+p{margin:0 0 11px}
+ul{margin:0 0 11px;padding-left:18px}
+li{margin-bottom:6px}
+strong{font-weight:800}
+.small{font-size:13px;color:var(--muted);line-height:1.5}
+.muted{color:var(--muted)}
+.vi{color:var(--accent)}
+
+.page{background:var(--bg);position:relative}
+.rh{display:flex;justify-content:space-between;align-items:center;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:24px;font-weight:700}
+.rh .pg{font-family:'Playfair Display',Georgia,serif;font-size:14px;letter-spacing:0;color:var(--accent);font-weight:600}
+
+.eyebrow{display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:8px}
+h2.sec{font-size:36px;line-height:1.1;margin-bottom:8px}
+h2.sec em{color:var(--accent);font-style:italic}
+h3.sub{font-size:20px;line-height:1.2;margin:20px 0 8px}
+.lede{font-size:16.5px;color:var(--body2);max-width:62ch;margin-bottom:18px}
+.rule{height:3px;width:56px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:3px;margin:12px 0 18px}
+
+.card{background:var(--surface);border-radius:14px;padding:15px 18px;margin-bottom:12px;border:1px solid var(--line)}
+.card.vio{border-left:4px solid var(--accent)}
+.card.lav{border-left:4px solid var(--accent2)}
+.card h4{font-family:'Nunito Sans',sans-serif;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:800;margin:0 0 6px}
+.card p:last-child,.card ul:last-child{margin-bottom:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.stat{background:var(--surface);border-radius:14px;padding:14px 16px;border:1px solid var(--line)}
+.stat .n{font-family:'Playfair Display',Georgia,serif;font-size:30px;line-height:1;font-weight:600;color:var(--ink)}
+.stat .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:7px;font-weight:800}
+.stat .s{font-size:13px;color:var(--muted);margin-top:4px}
+.quote{font-family:'Playfair Display',Georgia,serif;font-size:19px;line-height:1.42;font-style:italic;border-left:3px solid var(--accent);padding:4px 0 4px 18px;margin:6px 0 14px}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:3px 10px;font-weight:800;background:var(--lilac);color:var(--accent)}
+
+table{width:100%;border-collapse:collapse;margin:12px 0 10px;font-size:14px}
+th{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 10px 8px 0;border-bottom:1.5px solid var(--ink);font-weight:800}
+td{padding:9px 10px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.hi td{background:rgba(107,47,163,.07);font-weight:800}
+
+.mathrow{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding:9px 0;gap:14px}
+.mathrow .lab{font-size:14.5px}
+.mathrow .lab em{display:block;font-style:normal;font-size:13px;color:var(--muted);margin-top:2px}
+.mathrow .val{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:21px;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--accent)}
+
+.step{display:flex;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
+.step .sn{font-family:'Playfair Display',Georgia,serif;font-size:36px;line-height:1;color:var(--accent);min-width:38px;font-style:italic}
+.step h4{font-family:'Playfair Display',Georgia,serif;font-size:19px;margin:0 0 4px;font-weight:600}
+.step p{margin:0 0 5px;font-size:14.5px;color:var(--body2)}
+.step p:last-child{margin:0}
+
+.slide{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:15px 20px;margin-bottom:10px;display:flex;gap:16px;align-items:flex-start}
+.slide .no{font-family:'Playfair Display',Georgia,serif;font-size:13px;color:#fff;background:var(--accent);border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;flex:none;font-weight:600}
+.slide p{font-family:'Playfair Display',Georgia,serif;font-size:19px;line-height:1.38;margin:0}
+
+.prod{display:grid;grid-template-columns:112px 1fr;gap:16px;padding:7px 0;border-bottom:1px solid var(--line)}
+.prod .price{font-family:'Playfair Display',Georgia,serif;font-size:32px;line-height:1;color:var(--accent);font-weight:600}
+.prod .price small{display:block;font-family:'Nunito Sans',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px;font-weight:800}
+.prod h3{font-size:19px;margin:0 0 4px;font-weight:600}
+.prod p{font-size:14.5px;margin:0 0 4px}
+.prod .who{font-size:13.5px;color:var(--body2)}
+.prod .rev{font-size:13.5px;color:var(--accent);font-weight:800}
+
+.offer{background:var(--surface);border-radius:16px;border:1px solid var(--line);padding:18px 20px;margin-bottom:14px}
+.offer .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:11px}
+.offer .top h3{font-size:22px;font-weight:600}
+.offer .top .p{font-family:'Playfair Display',Georgia,serif;font-size:22px;color:var(--accent);white-space:nowrap;font-weight:600}
+.offer dl{display:grid;grid-template-columns:112px 1fr;gap:7px 14px;margin:0;font-size:14.5px}
+.offer dt{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:800;padding-top:3px}
+.offer dd{margin:0}
+
+.split{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface)}
+.split .col{padding:16px 18px}
+.split .col + .col{background:var(--lilac);border-left:1px solid var(--line)}
+.split h3{font-size:21px;margin-bottom:10px;font-weight:600}
+.split .row{padding:9px 0;border-top:1px solid var(--line);font-size:14.5px}
+.split .row b{display:block;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+
+/* cover */
+.cover{background:linear-gradient(170deg,#E9DDF5 0%,#F6F3FB 46%,#FFFFFF 100%)}
+.cover-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.mono{width:62px;height:62px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',Georgia,serif;font-size:23px;font-style:italic;letter-spacing:.03em;box-shadow:0 0 0 5px var(--bg),0 0 0 6px var(--accent2)}
+.kicker{font-size:12px;letter-spacing:.32em;text-transform:uppercase;font-weight:800;color:var(--ink)}
+.kicker span{color:var(--accent)}
+.cover h1{font-size:50px;line-height:1.02;font-weight:500;margin-bottom:6px}
+.cover h1 em{color:var(--accent)}
+.cover .handle{font-size:15px;color:var(--muted);margin-bottom:12px}
+.cover .handle b{color:var(--ink)}
+.cover .pos{font-family:'Playfair Display',Georgia,serif;font-size:20px;line-height:1.35;font-style:italic;max-width:38ch;margin-bottom:18px}
+.bignum{font-family:'Playfair Display',Georgia,serif;font-size:66px;line-height:1;font-weight:600;letter-spacing:-.02em;color:var(--accent);white-space:nowrap}
+.bignum .to{font-size:30px;color:var(--ink);font-style:italic;font-weight:400;margin:0 8px;letter-spacing:0}
+.est{display:inline-block;margin:10px 0 12px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--accent);border:1px solid var(--accent2);border-radius:999px;padding:4px 12px;background:rgba(255,255,255,.6)}
+.avgs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.avg{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.avg .n{font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:600;line-height:1}
+.avg .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-top:5px}
+.assume{font-size:13px;color:var(--body2);line-height:1.5;margin-bottom:8px}
+.youline{font-family:'Playfair Display',Georgia,serif;font-size:17px;font-style:italic;color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:9px 0;margin:10px 0}
+.inside{font-size:13px;color:var(--muted);line-height:1.5}
+.inside b{color:var(--ink)}
+svg.chart{width:100%;height:auto;display:block}
+
+.dl{position:fixed;top:14px;right:14px;z-index:10;background:var(--accent);color:#fff;text-decoration:none;font-size:12.5px;font-weight:800;letter-spacing:.06em;padding:9px 15px;border-radius:999px;box-shadow:0 4px 14px rgba(43,26,62,.18)}
+.dl:hover{background:var(--ink)}
+
+.closing{background:linear-gradient(180deg,#F6F3FB 0%,#EDE4F6 100%)}
+.cta{font-family:'Playfair Display',Georgia,serif;font-size:27px;line-height:1.3;font-style:italic;color:var(--accent);margin:18px 0}
+
+@page { size: A4; margin: 0; }
+@media print { html, body { background: var(--bg); } .page { width: 210mm; min-height: 297mm; break-after: page; page-break-after: always; padding: 16mm 16mm 18mm; box-sizing: border-box; position: relative; overflow: hidden; } .page:last-child { break-after: auto; page-break-after: auto; } * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .no-print { display: none !important; } }
+@media screen { .page { max-width: 900px; margin: 0 auto; padding: 48px 28px; } .page + .page{border-top:1px solid var(--line)} }
+@media screen and (max-width:640px){
+  .grid2,.grid3,.split,.avgs{grid-template-columns:1fr}
+  .grid4{grid-template-columns:1fr 1fr}
+  .bignum{font-size:44px;white-space:normal}
+  .bignum .to{font-size:22px}
+  .cover h1{font-size:38px}
+  h2.sec{font-size:29px}
+  .prod,.offer dl{grid-template-columns:1fr}
+  .split .col + .col{border-left:0;border-top:1px solid var(--line)}
+  table{font-size:13px}
+}
+</style>
+</head>
+<body>
+<a class="dl no-print" href="manalnsouli-monetisation-audit.pdf">Download the PDF</a>
+
+<!-- 1 COVER -->
+<section class="page cover">
+  <div class="cover-top">
+    <div class="kicker">Monetisation <span>Audit</span></div>
+    <div class="mono">MN</div>
+  </div>
+  <h1>Parenting with <em>Manal</em></h1>
+  <div class="handle"><b>@manal_nsouli</b> · 5,674 followers (public data) · International certified parent coach</div>
+  <div class="pos">Everyday scripts for parents of children and teens, practised until they come naturally.</div>
+
+  <div class="bignum">$406<span class="to">to</span>$21,000</div>
+  <div class="est">Estimate · not a forecast</div>
+  <div class="avgs">
+    <div class="avg"><div class="n">$2,650</div><div class="k">Median (estimate)</div></div>
+    <div class="avg"><div class="n">$4,239</div><div class="k">Mean (estimate)</div></div>
+    <div class="avg"><div class="n">$10,703</div><div class="k">Mid-range (estimate)</div></div>
+  </div>
+  <p class="assume">The bottom of the range is the ebook sales; the top is a full year of one-to-one coaching, capped at your 14 estimated buyers. Assumptions: 5% of followers are engaged and 5% of those buy; group coaching is 2 to 8 people per 8-week cohort; one-to-one is 1 to 20 hours a week; the maximum is a full year of six 8-week blocks. Median and mean count each coaching product at the middle of its 8-week range.</p>
+
+  <svg class="chart" viewBox="0 0 680 206" role="img" aria-label="Revenue estimates by product on a shared scale from $0 to $21,000">
+    <line x1="150" y1="16" x2="150" y2="172" stroke="#2B1A3E" stroke-opacity=".35"/>
+    <line x1="620" y1="16" x2="620" y2="172" stroke="#2B1A3E" stroke-opacity=".12" stroke-dasharray="2 3"/>
+    <text x="0" y="36" font-family="Nunito Sans,sans-serif" font-size="12" font-weight="700" fill="#2B1A3E">Ebook $29</text>
+    <rect x="150" y="22" width="9.1" height="20" rx="3" fill="#6B2FA3"/>
+    <text x="252" y="36" font-family="Nunito Sans,sans-serif" font-size="12" fill="#2B1A3E">$406 (14 x $29)</text>
+    <text x="0" y="74" font-family="Nunito Sans,sans-serif" font-size="12" font-weight="700" fill="#2B1A3E">Course $200</text>
+    <rect x="150" y="60" width="62.7" height="20" rx="3" fill="#6B2FA3"/>
+    <text x="270" y="74" font-family="Nunito Sans,sans-serif" font-size="12" fill="#2B1A3E">$2,800 (14 x $200)</text>
+    <text x="0" y="112" font-family="Nunito Sans,sans-serif" font-size="12" font-weight="700" fill="#2B1A3E">Group $500</text>
+    <rect x="172.4" y="98" width="67.1" height="20" rx="3" fill="#6B2FA3"/>
+    <rect x="239.5" y="98" width="67.2" height="20" rx="3" fill="#C9A6E0"/>
+    <text x="314" y="112" font-family="Nunito Sans,sans-serif" font-size="12" fill="#2B1A3E">$1,000–$4,000 per cohort · $7,000 a year</text>
+    <text x="0" y="150" font-family="Nunito Sans,sans-serif" font-size="12" font-weight="700" fill="#2B1A3E">One-to-one $1,500</text>
+    <rect x="183.6" y="136" width="436.4" height="20" rx="3" fill="#6B2FA3"/>
+    <text x="612" y="150" text-anchor="end" font-family="Nunito Sans,sans-serif" font-size="12" fill="#FFFFFF">$1,500–$21,000 per 8 weeks · a year: $21,000 (14 buyers)</text>
+    <line x1="209.3" y1="14" x2="209.3" y2="172" stroke="#2B1A3E" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <line x1="244.9" y1="14" x2="244.9" y2="172" stroke="#6B2FA3" stroke-width="1.5"/>
+    <text x="205" y="188" text-anchor="end" font-family="Nunito Sans,sans-serif" font-size="11" font-weight="700" fill="#2B1A3E">median $2,650</text>
+    <text x="249" y="188" font-family="Nunito Sans,sans-serif" font-size="11" font-weight="700" fill="#6B2FA3">mean $4,239</text>
+    <text x="150" y="203" text-anchor="middle" font-family="Nunito Sans,sans-serif" font-size="10" fill="#8A7A9A">$0</text>
+    <text x="620" y="203" text-anchor="end" font-family="Nunito Sans,sans-serif" font-size="10" fill="#8A7A9A">$21,000</text>
+    <rect x="420" y="188" width="12" height="9" rx="2" fill="#C9A6E0"/>
+    <text x="437" y="196" font-family="Nunito Sans,sans-serif" font-size="10" fill="#8A7A9A">lighter = a year</text>
+  </svg>
+
+  <div class="youline">You film the lessons and run the sessions. We host and run everything else, with nothing to pay upfront.</div>
+  <p class="inside"><b>Inside:</b> what your numbers say · where the number comes from · the product ladder · who does what · offer detail · launch plan · your first post · next steps</p>
+</section>
+
+<!-- 2 NUMBERS -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @manal_nsouli</span><span class="pg">02</span></div>
+  <span class="eyebrow">Audience snapshot</span>
+  <h2 class="sec">What your numbers <em>say</em></h2>
+  <div class="rule"></div>
+  <div class="grid4">
+    <div class="stat"><div class="n">5,674</div><div class="k">Followers</div><div class="s">Public data</div></div>
+    <div class="stat"><div class="n">0.6%</div><div class="k">Engagement</div><div class="s">Public data</div></div>
+    <div class="stat"><div class="n">30</div><div class="k">Avg comments</div><div class="s">Public data, per post</div></div>
+    <div class="stat"><div class="n">300</div><div class="k">Posts</div><div class="s">Plus TikTok, @parentingwithmanal</div></div>
+  </div>
+  <p style="margin-top:14px">Likes are hidden on most of your recent posts, so comments are the clearer signal. Several posts drew 36 to 73 comments, well above your usual level. That is engagement, not sales, and this audit treats it that way. The comments gather where you name a moment parents recognise:</p>
+  <table>
+    <thead><tr><th>Recent post (public data)</th><th class="num">Comments</th><th class="num">Views</th></tr></thead>
+    <tbody>
+      <tr><td>A joke about food that stays with a child for years</td><td class="num">63</td><td class="num">1,623</td></tr>
+      <tr><td>How financial stress reaches children</td><td class="num">51</td><td class="num">673</td></tr>
+      <tr><td>Your child's safety starts with what you teach them today</td><td class="num">43</td><td class="num">339</td></tr>
+    </tbody>
+  </table>
+  <h3 class="sub">Three content pillars</h3>
+  <div class="grid3">
+    <div class="card vio"><h4>The feeling behind the behaviour</h4><p class="small" style="color:var(--body2)">"Not every reaction is defiance." Freezing, running, anger, silence: you translate what a child cannot put into words.</p></div>
+    <div class="card vio"><h4>The words that stay</h4><p class="small" style="color:var(--body2)">A throwaway comment about food, money worries at home, comparing siblings: what parents say and how long it lasts.</p></div>
+    <div class="card vio"><h4>Safety and speaking up</h4><p class="small" style="color:var(--body2)">Teaching children to recognise unsafe situations, set boundaries and ask for help.</p></div>
+  </div>
+  <p class="small">Behind all three sits your credibility: ICC and BCI verified, with ADHD and Autism &amp; Neurodiversity specialist certifications announced on your page.</p>
+</section>
+
+<!-- 3 OPPORTUNITY -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @manal_nsouli</span><span class="pg">03</span></div>
+  <span class="eyebrow">The opportunity</span>
+  <h2 class="sec">Your method is the <em>practice</em>, not the script</h2>
+  <div class="rule"></div>
+  <p class="lede">You turn parents who fall back on rushing and shouting into parents who can pause and respond the way they planned, in the moments that matter.</p>
+  <p>In your own words:</p>
+  <div class="quote">"The goal isn't to remember the phrase perfectly, but to practice it beforehand so it becomes more natural when things get difficult."</div>
+  <div class="quote">"We work on specific situations, identify the automatic reaction, and practise alternative responses until they feel more natural."</div>
+  <div class="grid2">
+    <div class="card lav"><h4>Observed</h4><ul class="small" style="color:var(--body2)"><li>About 5,600 followers on Instagram, and on TikTok as @parentingwithmanal.</li><li>A certified parent coach who already sells workshops and consultations, online and in person.</li><li>Several posts drew 36 to 73 comments (public data: engagement, not sales).</li></ul></div>
+    <div class="card lav"><h4>Inferred, not yet confirmed</h4><ul class="small" style="color:var(--body2)"><li>Parents who comment get the script but not the practice, and you say the practice is what makes it work.</li><li>You haven't said whether there are more parents than you have time for, so this audit doesn't assume it.</li></ul></div>
+  </div>
+  <div class="card vio"><h4>Verdict</h4><p>Products that let parents rehearse on their own, in a group or one to one package exactly what you already do with clients. Nothing here asks you to change your method; it gives parents more ways in.</p></div>
+</section>
+
+<!-- 4 WHERE THE NUMBER COMES FROM -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @manal_nsouli</span><span class="pg">04</span></div>
+  <span class="eyebrow">The working</span>
+  <h2 class="sec">Where the number <em>comes from</em></h2>
+  <div class="rule"></div>
+  <p>Every figure in this audit rests on three steps. Each one is an estimate, and people are rounded down to whole numbers.</p>
+  <div class="mathrow"><div class="lab">F · Followers<em>Your public follower count (public data)</em></div><div class="val">5,674</div></div>
+  <div class="mathrow"><div class="lab">E · Engaged audience<em>5% of 5,674 = 283.7, rounded down</em></div><div class="val">283</div></div>
+  <div class="mathrow"><div class="lab">B · Buyers<em>5% of 283 = 14.15, rounded down</em></div><div class="val">14</div></div>
+  <h3 class="sub">The four products</h3>
+  <table>
+    <thead><tr><th>Product</th><th class="num">Price</th><th>What the figure rests on</th><th class="num">Revenue (estimate)</th></tr></thead>
+    <tbody>
+      <tr><td>Ebook</td><td class="num">$29</td><td>14 buyers</td><td class="num">$406</td></tr>
+      <tr><td>Online course</td><td class="num">$200</td><td>14 buyers</td><td class="num">$2,800</td></tr>
+      <tr><td>Group coaching, 8 weeks</td><td class="num">$500</td><td>2 to 8 people per cohort; a year capped at 14 buyers</td><td class="num">$1,000–$4,000 per cohort<br>$7,000 a year</td></tr>
+      <tr><td>One-to-one, 8 weeks</td><td class="num">$1,500</td><td>1 to 14 hours a week (capped at 14 buyers); a year capped at 14 buyers</td><td class="num">$1,500–$21,000 per 8 weeks<br>$21,000 a year</td></tr>
+    </tbody>
+  </table>
+  <p class="small">Ebook: 14 x $29 = $406. Course: 14 x $200 = $2,800. The model allows up to 20 one-to-one clients at a time, but with 14 estimated buyers the top of the 8-week range uses 14.</p>
+</section>
+
+<!-- 5 WORKING CONTINUED -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @manal_nsouli</span><span class="pg">05</span></div>
+  <span class="eyebrow">The working, continued</span>
+  <h2 class="sec">Coaching ranges and <em>averages</em></h2>
+  <div class="rule"></div>
+  <div class="grid2">
+    <div class="card lav"><h4>Group coaching</h4><p class="small" style="color:var(--body2)">Per 8-week cohort: 2 to 8 people x $500 = $1,000 to $4,000.<br>A year holds six cohorts, up to 48 places (8 x 6). With 14 buyers, the group programme could make you 14 x $500 = <strong>$7,000 a year</strong>.</p></div>
+    <div class="card lav"><h4>One-to-one coaching</h4><p class="small" style="color:var(--body2)">Per 8 weeks: 1 to 14 clients (one hour a week each) x $1,500 = $1,500 to $21,000.<br>A year holds six blocks, up to 120 programmes at 20 hours a week. With 14 buyers, one-to-one could make you 14 x $1,500 = <strong>$21,000 a year</strong>.</p></div>
+  </div>
+  <div class="mathrow"><div class="lab">Minimum<em>The ebook sales: 14 x $29</em></div><div class="val">$406</div></div>
+  <div class="mathrow"><div class="lab">Maximum<em>One-to-one year: 14 x $1,500 (bigger than group $7,000 and course $2,800)</em></div><div class="val">$21,000</div></div>
+  <div class="mathrow"><div class="lab">Median<em>Figures in order: $406, $2,500, $2,800, $11,250. Middle two: ($2,500 + $2,800) / 2</em></div><div class="val">$2,650</div></div>
+  <div class="mathrow"><div class="lab">Mean<em>($406 + $2,800 + $2,500 + $11,250) / 4 = $16,956 / 4</em></div><div class="val">$4,239</div></div>
+  <div class="mathrow"><div class="lab">Mid-range<em>($406 + $21,000) / 2 = $21,406 / 2</em></div><div class="val">$10,703</div></div>
+  <p class="small" style="margin-top:10px">Median and mean count each coaching product at the middle of its 8-week range: group ($1,000 + $4,000) / 2 = $2,500; one-to-one ($1,500 + $21,000) / 2 = $11,250, the middle of the range capped at 14 buyers. The mid-range uses the year maximum. With 14 buyers, one-to-one's year equals one full 8-week block, so its bar has no lighter "a year" part.</p>
+  <svg class="chart" viewBox="0 0 680 206" role="img" aria-label="Revenue estimates by product on a shared scale from $0 to $21,000">
+    <line x1="150" y1="16" x2="150" y2="172" stroke="#2B1A3E" stroke-opacity=".35"/>
+    <line x1="620" y1="16" x2="620" y2="172" stroke="#2B1A3E" stroke-opacity=".12" stroke-dasharray="2 3"/>
+    <text x="0" y="36" font-family="Nunito Sans,sans-serif" font-size="12" font-weight="700" fill="#2B1A3E">Ebook $29</text>
+    <rect x="150" y="22" width="9.1" height="20" rx="3" fill="#6B2FA3"/>
+    <text x="252" y="36" font-family="Nunito Sans,sans-serif" font-size="12" fill="#2B1A3E">$406 (14 x $29)</text>
+    <text x="0" y="74" font-family="Nunito Sans,sans-serif" font-size="12" font-weight="700" fill="#2B1A3E">Course $200</text>
+    <rect x="150" y="60" width="62.7" height="20" rx="3" fill="#6B2FA3"/>
+    <text x="270" y="74" font-family="Nunito Sans,sans-serif" font-size="12" fill="#2B1A3E">$2,800 (14 x $200)</text>
+    <text x="0" y="112" font-family="Nunito Sans,sans-serif" font-size="12" font-weight="700" fill="#2B1A3E">Group $500</text>
+    <rect x="172.4" y="98" width="67.1" height="20" rx="3" fill="#6B2FA3"/>
+    <rect x="239.5" y="98" width="67.2" height="20" rx="3" fill="#C9A6E0"/>
+    <text x="314" y="112" font-family="Nunito Sans,sans-serif" font-size="12" fill="#2B1A3E">$1,000–$4,000 per cohort · $7,000 a year</text>
+    <text x="0" y="150" font-family="Nunito Sans,sans-serif" font-size="12" font-weight="700" fill="#2B1A3E">One-to-one $1,500</text>
+    <rect x="183.6" y="136" width="436.4" height="20" rx="3" fill="#6B2FA3"/>
+    <text x="612" y="150" text-anchor="end" font-family="Nunito Sans,sans-serif" font-size="12" fill="#FFFFFF">$1,500–$21,000 per 8 weeks · a year: $21,000 (14 buyers)</text>
+    <line x1="209.3" y1="14" x2="209.3" y2="172" stroke="#2B1A3E" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <line x1="244.9" y1="14" x2="244.9" y2="172" stroke="#6B2FA3" stroke-width="1.5"/>
+    <text x="205" y="188" text-anchor="end" font-family="Nunito Sans,sans-serif" font-size="11" font-weight="700" fill="#2B1A3E">median $2,650</text>
+    <text x="249" y="188" font-family="Nunito Sans,sans-serif" font-size="11" font-weight="700" fill="#6B2FA3">mean $4,239</text>
+    <text x="150" y="203" text-anchor="middle" font-family="Nunito Sans,sans-serif" font-size="10" fill="#8A7A9A">$0</text>
+    <text x="620" y="203" text-anchor="end" font-family="Nunito Sans,sans-serif" font-size="10" fill="#8A7A9A">$21,000</text>
+    <rect x="420" y="188" width="12" height="9" rx="2" fill="#C9A6E0"/>
+    <text x="437" y="196" font-family="Nunito Sans,sans-serif" font-size="10" fill="#8A7A9A">lighter = a year</text>
+  </svg>
+</section>
+
+<!-- 6 PRODUCT LADDER -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @manal_nsouli</span><span class="pg">06</span></div>
+  <span class="eyebrow">What to sell</span>
+  <h2 class="sec">The product <em>ladder</em>: four ways to practise with you</h2>
+  <div class="rule"></div>
+  <div class="prod"><div class="price">$29<small>Ebook</small></div><div><h3>"What does my child need from me right now?"</h3><p>Scripts for rushed mornings, screens and social media, and bullying, each with the automatic reaction to spot and the alternative to practise.</p><p class="who">For parents who know the moment and want the words ready.</p><p class="rev">Estimate: 14 x $29 = $406</p></div></div>
+  <div class="prod"><div class="price">$200<small>Course</small></div><div><h3>The practice course</h3><p>Self-paced, one situation per lesson: you demonstrate the reaction and the practised alternative, then an exercise to rehearse at home.</p><p class="who">For parents who want to practise alone, at their own pace.</p><p class="rev">Estimate: 14 x $200 = $2,800</p></div></div>
+  <div class="prod"><div class="price">$500<small>Group, 8 weeks</small></div><div><h3>Practise together</h3><p>A small online group of 2 to 8 parents, rehearsing real situations together in live sessions.</p><p class="who">For parents who learn best by practising alongside others.</p><p class="rev">Estimate: $1,000–$4,000 per cohort; $7,000 a year with 14 buyers</p></div></div>
+  <div class="prod"><div class="price">$1,500<small>One-to-one, 8 weeks</small></div><div><h3>Your family's hardest moments</h3><p>One hour a week, working through one family's hardest situations and practising until the new response sticks.</p><p class="who">For parents who want your full attention on their situation.</p><p class="rev">Estimate: $1,500–$21,000 per 8 weeks; $21,000 a year with 14 buyers</p></div></div>
+  <table>
+    <thead><tr><th>Product</th><th class="num">Price</th><th>Practice</th><th class="num">Year (estimate)</th></tr></thead>
+    <tbody>
+      <tr><td>Ebook</td><td class="num">$29</td><td>On their own, from the page</td><td class="num">$406</td></tr>
+      <tr><td>Course</td><td class="num">$200</td><td>On their own, with you on screen</td><td class="num">$2,800</td></tr>
+      <tr><td>Group</td><td class="num">$500</td><td>Live, with 2 to 8 parents</td><td class="num">$7,000</td></tr>
+      <tr><td>One-to-one</td><td class="num">$1,500</td><td>Live, one family</td><td class="num">$21,000</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 7 WHO DOES WHAT -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @manal_nsouli</span><span class="pg">07</span></div>
+  <span class="eyebrow">How it works</span>
+  <h2 class="sec">Who does <em>what</em></h2>
+  <div class="rule"></div>
+  <p class="lede">Autora hosts and runs everything: the format, the build, the platform and hosting, checkout and payments, delivery, the marketing and the backend. There is nothing to pay upfront; Autora is paid from a share of what it makes.</p>
+  <div class="split">
+    <div class="col">
+      <h3>Your part</h3>
+      <div class="row"><b>Ebook</b>Confirm you're happy for it to go out. Next to no work.</div>
+      <div class="row"><b>Online course</b>Film the lessons, one situation each, and send us the footage.</div>
+      <div class="row"><b>Group coaching</b>Run the live practice sessions.</div>
+      <div class="row"><b>One-to-one coaching</b>Run the weekly sessions with each family.</div>
+    </div>
+    <div class="col">
+      <h3>What Autora does</h3>
+      <div class="row"><b>Ebook</b>Writes it from your posts, designs it, hosts it, sells it and delivers it.</div>
+      <div class="row"><b>Online course</b>Turns your footage into the course, hosts it, sells it and delivers it.</div>
+      <div class="row"><b>Group coaching</b>The sales page, booking, payments, onboarding and marketing.</div>
+      <div class="row"><b>One-to-one coaching</b>The sales page, booking, payments, onboarding and marketing.</div>
+    </div>
+  </div>
+  <div class="card vio" style="margin-top:16px"><h4>In short</h4><p>You film the lessons and run the sessions. We host and run everything else. You never have to build, host, market or sell anything yourself.</p></div>
+</section>
+
+<!-- 8 OFFER DETAIL -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @manal_nsouli</span><span class="pg">08</span></div>
+  <span class="eyebrow">Offer detail</span>
+  <h2 class="sec">What goes <em>inside</em></h2>
+  <div class="rule"></div>
+  <div class="offer">
+    <div class="top"><h3>Ebook: "What does my child need from me right now?"</h3><div class="p">$29</div></div>
+    <dl>
+      <dt>Inside</dt><dd>Scripts for rushed mornings, screens and social media, and bullying. For each: the automatic reaction to spot, and the alternative to practise.</dd>
+      <dt>Promise</dt><dd>The words ready before the moment arrives.</dd>
+      <dt>Your part</dt><dd>Autora writes it from your posts; all you do is confirm it's ready to go out.</dd>
+      <dt>First step</dt><dd>We draft it from your posts and send it to you to read.</dd>
+      <dt>Estimate</dt><dd>14 x $29 = $406</dd>
+    </dl>
+  </div>
+  <div class="offer">
+    <div class="top"><h3>Online course: the practice course</h3><div class="p">$200</div></div>
+    <dl>
+      <dt>Inside</dt><dd>One situation per lesson. You show the automatic reaction, then the practised alternative, followed by an exercise to rehearse at home.</dd>
+      <dt>Promise</dt><dd>Practise the moments that matter until the new response comes naturally.</dd>
+      <dt>Your part</dt><dd>Film the lessons and send us the footage. Autora turns it into the course, hosts it, sells it and delivers it.</dd>
+      <dt>First step</dt><dd>Run the story poll, then film around the top answers.</dd>
+      <dt>Estimate</dt><dd>14 x $200 = $2,800</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- 9 OFFER DETAIL CONTINUED -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @manal_nsouli</span><span class="pg">09</span></div>
+  <span class="eyebrow">Offer detail, continued</span>
+  <h2 class="sec">Practising <em>live</em></h2>
+  <div class="rule"></div>
+  <div class="offer">
+    <div class="top"><h3>Group coaching: practise together</h3><div class="p">$500</div></div>
+    <dl>
+      <dt>Inside</dt><dd>An 8-week online programme for 2 to 8 parents, rehearsing real situations together in live sessions.</dd>
+      <dt>Promise</dt><dd>Rehearse the hard moments with other parents before they happen at home.</dd>
+      <dt>Your part</dt><dd>Run the sessions. Autora handles the sales page, booking, payments, onboarding and marketing.</dd>
+      <dt>First step</dt><dd>Open a waitlist for the first cohort once the poll shows which moments to cover.</dd>
+      <dt>Estimate</dt><dd>$1,000–$4,000 per cohort; with 14 buyers, 14 x $500 = $7,000 a year</dd>
+    </dl>
+  </div>
+  <div class="offer">
+    <div class="top"><h3>One-to-one coaching: your family's hardest moments</h3><div class="p">$1,500</div></div>
+    <dl>
+      <dt>Inside</dt><dd>8 weeks, one hour a week, on one family's hardest situations: spotting the automatic reaction and practising the alternative until it sticks.</dd>
+      <dt>Promise</dt><dd>The response you planned, in the moment you need it.</dd>
+      <dt>Your part</dt><dd>Run the sessions. Autora handles the sales page, booking, payments, onboarding and marketing.</dd>
+      <dt>First step</dt><dd>Decide how many hours a week you want to give it; we build the booking around that.</dd>
+      <dt>Estimate</dt><dd>$1,500–$21,000 per 8 weeks; with 14 buyers, 14 x $1,500 = $21,000 a year</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- 10 LAUNCH PLAN -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @manal_nsouli</span><span class="pg">10</span></div>
+  <span class="eyebrow">Launch plan</span>
+  <h2 class="sec">Ask first, then <em>build</em></h2>
+  <div class="rule"></div>
+  <p class="lede">Three steps, in order. Nothing gets built until your audience has told you which moment they want to practise.</p>
+  <div class="step"><div class="sn">1</div><div><h4>Ask first</h4><p>Post the test carousel on the next page, then a story poll: which moment do you most want to practise: mornings, screens or bedtime?</p><p>Read the comments with the word "PRACTISE" and the poll results together.</p></div></div>
+  <div class="step"><div class="sn">2</div><div><h4>Film the course around the top answers</h4><p>One lesson per situation, starting with the moment that wins the poll. You film and send the footage; Autora builds the course and drafts the ebook from your posts for you to confirm.</p></div></div>
+  <div class="step"><div class="sn">3</div><div><h4>Waitlist, then launch with a real close</h4><p>Open a waitlist for parents who commented and voted. Then launch with a clear date and a real close, so parents know exactly when the doors open and when they shut.</p></div></div>
+  <div class="card lav" style="margin-top:18px"><h4>What to keep in mind</h4><ul class="small" style="color:var(--body2)"><li>Comments show interest, not sales. Treat the poll and the waitlist as the real test.</li><li>Keep the language practical, as you do now. No clinical claims.</li><li>Your safety, emotions and family stress posts already draw comments; they are natural places to mention the waitlist.</li></ul></div>
+</section>
+
+<!-- 11 FIRST POST -->
+<section class="page">
+  <div class="rh"><span>Monetisation Audit · @manal_nsouli</span><span class="pg">11</span></div>
+  <span class="eyebrow">Your first post</span>
+  <h2 class="sec">Test the demand <em>before</em> you build</h2>
+  <div class="rule"></div>
+  <p>A four-slide carousel in your voice. It tests one thing: whether parents want to practise, not just read the script.</p>
+  <div class="slide"><div class="no">1</div><p>You know the script. In the moment, it disappears.</p></div>
+  <div class="slide"><div class="no">2</div><p>That's normal: under stress we fall back on automatic reactions.</p></div>
+  <div class="slide"><div class="no">3</div><p>I'm thinking of a short course where we practise the moments that matter, until the new response comes naturally.</p></div>
+  <div class="slide"><div class="no">4</div><p>Comment "PRACTISE" if you'd want it.</p></div>
+  <div class="card vio" style="margin-top:14px"><h4>Caption</h4><p>The goal isn't to remember the phrase perfectly. It's to practise it beforehand, so it comes more naturally when things get difficult. That's what I do with parents: we take a specific situation, spot the automatic reaction, and practise another response until it feels natural. Would you want to practise this way too? Comment "PRACTISE" below.</p></div>
+  <div class="card lav"><h4>Don't</h4><ul class="small" style="color:var(--body2)"><li>Make clinical claims.</li><li>Treat comment counts as sales.</li><li>Say you are fully booked.</li></ul></div>
+</section>
+
+<!-- 12 CLOSING -->
+<section class="page closing">
+  <div class="rh"><span>Monetisation Audit · @manal_nsouli</span><span class="pg">12</span></div>
+  <span class="eyebrow">Next steps</span>
+  <h2 class="sec">What to do <em>next</em></h2>
+  <div class="rule"></div>
+  <div class="step"><div class="sn">1</div><div><h4>Post the test carousel and the story poll</h4><p>Mornings, screens or bedtime: let parents choose what to practise first.</p></div></div>
+  <div class="step"><div class="sn">2</div><div><h4>Read the results with us</h4><p>We'll look at the comments and the poll together and decide what to build first.</p></div></div>
+  <div class="step"><div class="sn">3</div><div><h4>Film, confirm, launch</h4><p>You film the lessons and confirm the ebook. We host and run everything else, with nothing to pay upfront.</p></div></div>
+  <p class="cta">Reply to this DM and I'll walk you through the numbers and what to build first.</p>
+  <div class="rule"></div>
+  <p><strong>Prepared by Euan Grant · Autora AI Automation · October 2026</strong></p>
+  <p class="small">All figures are estimates based on public data and this audit, not forecasts or guarantees. They assume 5% of followers are engaged and 5% of those buy, in US dollars.</p>
+  <p class="small">How this was made: I build automations, and I used AI for the analysis, which is why this took an evening rather than a fortnight.</p>
+  <svg viewBox="0 0 120 40" width="120" height="40" aria-hidden="true" style="margin-top:18px"><circle cx="20" cy="20" r="18" fill="#6B2FA3"/><circle cx="48" cy="20" r="18" fill="#C9A6E0" fill-opacity=".8"/><text x="20" y="25" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-style="italic" font-size="15" fill="#fff">MN</text></svg>
+</section>
+</body>
+</html>
