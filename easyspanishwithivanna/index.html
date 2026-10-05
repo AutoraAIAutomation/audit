@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monetisation Audit · @easyspanishwithivanna</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F4EEE2;
+  --surface: #FFFFFF;
+  --ink: #1F3D2B;
+  --muted: #8A8275;
+  --accent: #8FBF8A;
+  --accent2: #F2C84B;
+  --soft: #E6EFDF;
+  --line: #DCD3C2;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Poppins", "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+body { font-family: var(--body); font-size: 15px; line-height: 1.55; }
+h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; margin: 0; line-height: 1.1; letter-spacing: -0.01em; }
+h2 { font-size: 34px; margin-bottom: 14px; }
+h3 { font-size: 20px; margin-bottom: 6px; }
+p { margin: 0 0 10px; }
+ul { margin: 0 0 10px; padding-left: 18px; }
+li { margin-bottom: 4px; }
+strong { font-weight: 600; }
+.small { font-size: 13px; color: var(--muted); }
+.eyebrow { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: var(--muted); }
+.hl { background: linear-gradient(transparent 55%, var(--accent2) 55%); padding: 0 2px; }
+.runhead { display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-bottom: 22px; }
+.runhead .pn { font-family: var(--display); font-size: 14px; letter-spacing: 0; color: var(--ink); background: var(--accent2); border-radius: 50%; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; }
+.card { background: var(--surface); border-radius: 14px; padding: 16px 18px; box-shadow: 0 2px 0 var(--line); }
+.bubble { position: relative; background: var(--surface); border-radius: 18px; padding: 14px 18px; }
+.bubble::after { content: ""; position: absolute; left: 28px; bottom: -10px; border-width: 10px 10px 0 0; border-style: solid; border-color: var(--surface) transparent transparent transparent; }
+.sticky { background: #FCEBB0; border-radius: 4px; padding: 12px 14px; transform: rotate(-1deg); box-shadow: 2px 3px 0 rgba(31,61,43,0.08); }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; background: var(--surface); border-radius: 10px; overflow: hidden; }
+th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; background: var(--soft); }
+td.num, th.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+tr:last-child td { border-bottom: none; }
+.stat { font-family: var(--display); font-size: 34px; font-weight: 800; line-height: 1; }
+.calc { font-variant-numeric: tabular-nums; }
+.calc .row { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px dashed var(--line); }
+.calc .row:last-child { border-bottom: none; }
+.calc .row b { font-weight: 600; white-space: nowrap; }
+.tag { display: inline-block; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; background: var(--accent); color: var(--ink); border-radius: 999px; padding: 3px 10px; }
+.tag.y { background: var(--accent2); }
+.price { font-family: var(--display); font-size: 28px; font-weight: 800; }
+.chart svg { width: 100%; height: auto; display: block; }
+.dl { position: fixed; top: 14px; right: 14px; z-index: 10; background: var(--ink); color: var(--bg); text-decoration: none; font-size: 13px; font-weight: 600; padding: 8px 14px; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+
+/* cover */
+.cover { background: var(--bg); }
+.cover .top { display: flex; justify-content: space-between; align-items: flex-start; }
+.mono { width: 70px; height: 70px; border-radius: 50%; background: var(--ink); color: var(--accent2); font-family: var(--display); font-weight: 800; font-size: 28px; display: flex; align-items: center; justify-content: center; }
+.cover h1 { font-size: 15px; letter-spacing: 0.32em; font-family: var(--body); font-weight: 600; }
+.cover .name { font-family: var(--display); font-size: 46px; font-weight: 800; line-height: 1; margin: 14px 0 4px; }
+.cover .range { font-family: var(--display); font-size: 60px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; }
+.cover .strip { background: var(--accent2); display: inline-block; padding: 4px 12px; font-weight: 600; font-size: 13px; border-radius: 4px; transform: rotate(-1deg); }
+.avgs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0 10px; }
+.avgs .card { padding: 10px 12px; }
+.avgs .v { font-family: var(--display); font-size: 24px; font-weight: 800; }
+
+@media (max-width: 640px) {
+  .grid2, .grid3, .grid4, .avgs { grid-template-columns: 1fr; }
+  .cover .range { font-size: 42px; }
+  .cover .name { font-size: 34px; }
+  h2 { font-size: 28px; }
+  table { font-size: 13px; }
+}
+
+@page { size: A4; margin: 0; }
+@media print { html, body { background: var(--bg); } .page { width: 210mm; min-height: 297mm; break-after: page; page-break-after: always; padding: 16mm 16mm 18mm; box-sizing: border-box; position: relative; overflow: hidden; } .page:last-child { break-after: auto; page-break-after: auto; } * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .no-print { display: none !important; } }
+@media screen { .page { max-width: 900px; margin: 0 auto; padding: 48px 28px; } .page + .page { border-top: 1px solid var(--line); } }
+</style>
+</head>
+<body>
+<a class="dl no-print" href="easyspanishwithivanna-monetisation-audit.pdf">Download the PDF</a>
+
+<!-- 1. COVER -->
+<section class="page cover">
+  <div class="top">
+    <div>
+      <h1>MONETISATION AUDIT</h1>
+      <div class="name">Ivanna</div>
+      <div style="font-size:16px;font-weight:500;">@easyspanishwithivanna · 34,832 followers <span class="small">(public data)</span></div>
+    </div>
+    <div class="mono">IV</div>
+  </div>
+  <div class="bubble" style="margin:16px 0 22px;max-width:610px;">
+    <p style="margin:0;font-family:var(--display);font-size:20px;line-height:1.3;">Venezuelan Spanish teacher and author helping English speakers stop being beginners and start actually speaking.</p>
+  </div>
+  <div class="eyebrow">Estimated yearly revenue range, in US dollars</div>
+  <div class="range">$2,523 to $130,500</div>
+  <div style="margin-top:8px;"><span class="strip">Estimate · the bottom is the ebook sales; the top is a year of one-to-one coaching for all 87 buyers</span></div>
+  <div class="avgs">
+    <div class="card"><div class="small">Median (estimate)</div><div class="v">$9,136.50</div></div>
+    <div class="card"><div class="small">Mean (estimate)</div><div class="v">$9,543.25</div></div>
+    <div class="card"><div class="small">Mid-range (estimate)</div><div class="v">$66,511.50</div></div>
+  </div>
+  <p class="small" style="margin-bottom:6px;">Assumptions: 5% of followers are engaged and 5% of those buy (87 buyers); group coaching is 2 to 8 people per 8-week cohort; one-to-one is 1 to 20 hours a week; the maximum is a full year of six 8-week blocks. Median and mean count coaching at the middle of its 8-week range.</p>
+  <div class="chart card" style="padding:10px 12px;margin-bottom:12px;">
+    <svg viewBox="0 0 640 196" role="img" aria-label="Revenue by product on a shared scale">
+      <g font-family="Poppins, Arial, sans-serif" fill="#1F3D2B">
+        <line x1="200" y1="22" x2="200" y2="176" stroke="#DCD3C2"/>
+        <line x1="350" y1="22" x2="350" y2="176" stroke="#DCD3C2" stroke-dasharray="2 3"/>
+        <line x1="500" y1="22" x2="500" y2="176" stroke="#DCD3C2" stroke-dasharray="2 3"/>
+        <text x="200" y="190" font-size="10" fill="#8A8275" text-anchor="middle">$0</text>
+        <text x="350" y="190" font-size="10" fill="#8A8275" text-anchor="middle">$50,000</text>
+        <text x="500" y="190" font-size="10" fill="#8A8275" text-anchor="middle">$100,000</text>
+        <text x="0" y="44" font-size="12" font-weight="600">Ebook</text>
+        <text x="0" y="57" font-size="10" fill="#8A8275">87 × $29 = $2,523</text>
+        <rect x="200" y="36" width="7.6" height="18" rx="2" fill="#1F3D2B"/>
+        <text x="0" y="82" font-size="12" font-weight="600">Online course</text>
+        <text x="0" y="95" font-size="10" fill="#8A8275">87 × $200 = $17,400</text>
+        <rect x="200" y="74" width="52.2" height="18" rx="2" fill="#1F3D2B"/>
+        <text x="0" y="120" font-size="12" font-weight="600">Group coaching</text>
+        <text x="0" y="133" font-size="10" fill="#8A8275">$1,000–$4,000 · $24,000 a year</text>
+        <rect x="203" y="112" width="69" height="18" rx="2" fill="#8FBF8A" opacity="0.45"/>
+        <rect x="203" y="112" width="9" height="18" rx="2" fill="#4E8A55"/>
+        <text x="278" y="125" font-size="10" fill="#8A8275">a year</text>
+        <text x="0" y="158" font-size="12" font-weight="600">One-to-one coaching</text>
+        <text x="0" y="171" font-size="10" fill="#8A8275">$1,500–$30,000 · $130,500 a year</text>
+        <rect x="204.5" y="150" width="387" height="18" rx="2" fill="#F2C84B" opacity="0.5"/>
+        <rect x="204.5" y="150" width="85.5" height="18" rx="2" fill="#C99A17"/>
+        <text x="296" y="163" font-size="10">a year (87 × $1,500)</text>
+        <text x="210" y="163" font-size="9" fill="#FFFFFF">8 wks</text>
+        <line x1="227.4" y1="22" x2="227.4" y2="176" stroke="#1F3D2B" stroke-width="1.2"/>
+        <line x1="228.6" y1="22" x2="228.6" y2="176" stroke="#C99A17" stroke-width="1.2" stroke-dasharray="3 2"/>
+        <text x="224" y="16" font-size="10" text-anchor="end">median $9,136.50</text>
+        <text x="232" y="16" font-size="10" fill="#9A7410">mean $9,543.25</text>
+      </g>
+    </svg>
+  </div>
+  <div class="grid2" style="align-items:start;">
+    <div class="sticky"><strong>Who does what:</strong> you shoot the lessons and run the sessions. We host and run everything else, and there is nothing to pay upfront.</div>
+    <div class="small" style="color:var(--ink);"><strong>Inside:</strong> what your numbers say · where the number comes from · the product ladder · who does what · offer detail · launch plan · your first post · next steps</div>
+  </div>
+</section>
+
+<!-- 2. NUMBERS -->
+<section class="page">
+  <div class="runhead"><span>MONETISATION AUDIT · @easyspanishwithivanna</span><span class="pn">2</span></div>
+  <div class="eyebrow">Section 1</div>
+  <h2>What your numbers say</h2>
+  <div class="grid4" style="margin-bottom:16px;">
+    <div class="card"><div class="stat">34,832</div><div class="small">followers</div></div>
+    <div class="card"><div class="stat">115</div><div class="small">average likes</div></div>
+    <div class="card"><div class="stat">10</div><div class="small">average comments</div></div>
+    <div class="card"><div class="stat">0.36%</div><div class="small">engagement rate</div></div>
+  </div>
+  <p class="small">All four figures are public profile data. You are verified, you have published 997 posts, and your bio already names the person you serve: English speakers ready to stop being beginners, at A1–A2 and A2–B1.</p>
+  <h3 style="margin-top:14px;">The content that works</h3>
+  <p>Across your 12 most recent posts, the clear winners are the carousels that hand people Spanish they can use straight away. <strong>“7 phrases to sound like a native”</strong> is your strongest recent post at 459 likes, and part 3 of the same series drew 170. Your cognates carousel (-ly → -mente, -ism → -ismo) reached 195 likes. Your Learn Spanish in context videos sit lower, around 32–38 likes on 258–415 views.</p>
+  <p>Comments tell a different story. The post where you finally told your own story drew 49 comments, the most of any recent post, and your italki lesson offer drew 32. When you are personal or invite people to speak with you, they answer.</p>
+  <p>One line runs through almost every caption: <span class="hl">“knowing the rule is one thing; using it when you speak is another.”</span> That is the gap your audience is paying to close, and every product in this audit is built around it.</p>
+  <h3 style="margin-top:16px;">Three content pillars</h3>
+  <div class="grid3">
+    <div class="card"><span class="tag y">Pillar 1</span><h3 style="margin-top:8px;">Sound like a native</h3><p class="small" style="color:var(--ink);margin:0;">Natural phrases, cognates and regional expressions, like your Colombia vs Venezuela comparisons.</p></div>
+    <div class="card"><span class="tag">Pillar 2</span><h3 style="margin-top:8px;">From rule to speech</h3><p class="small" style="color:var(--ink);margin:0;">Grammar in use: the imperfect, ser vs estar, por vs para, saber + infinitive, and the A1–A2 mistakes.</p></div>
+    <div class="card"><span class="tag y">Pillar 3</span><h3 style="margin-top:8px;">Spanish in context</h3><p class="small" style="color:var(--ink);margin:0;">Vlogs from everyday life, like your coffee vlog and Conductor o copiloto, unpacked line by line.</p></div>
+  </div>
+</section>
+
+<!-- 3. WHERE THE NUMBER COMES FROM -->
+<section class="page">
+  <div class="runhead"><span>MONETISATION AUDIT · @easyspanishwithivanna</span><span class="pn">3</span></div>
+  <div class="eyebrow">Section 2</div>
+  <h2>Where the number comes from</h2>
+  <p>Every figure in this audit is an estimate built from one public number, your follower count, and one fixed model. Here it is step by step, so you can check each line.</p>
+  <div class="card calc" style="margin:14px 0 18px;">
+    <div class="row"><span><strong>F</strong> · followers (public data)</span><b>34,832</b></div>
+    <div class="row"><span><strong>E</strong> · engaged audience, 5% of F: 34,832 × 0.05 = 1,741.6, rounded down</span><b>1,741</b></div>
+    <div class="row"><span><strong>B</strong> · buyers, 5% of E: 1,741 × 0.05 = 87.05, rounded down</span><b>87</b></div>
+  </div>
+  <h3>The four products</h3>
+  <table>
+    <thead><tr><th>Product</th><th class="num">Price</th><th>What the figure rests on</th><th class="num">Revenue (estimate)</th></tr></thead>
+    <tbody>
+      <tr><td>Ebook</td><td class="num">$29</td><td>87 buyers × $29</td><td class="num">$2,523</td></tr>
+      <tr><td>Online course</td><td class="num">$200</td><td>87 buyers × $200</td><td class="num">$17,400</td></tr>
+      <tr><td>Group coaching (8 weeks)</td><td class="num">$500</td><td>2 to 8 people per cohort; up to 48 places a year (8 × 6)</td><td class="num">$1,000–$4,000 per cohort<br>$24,000 a year</td></tr>
+      <tr><td>One-to-one coaching (8 weeks)</td><td class="num">$1,500</td><td>1 to 20 hours a week; a year holds 120 places, capped at 87 buyers</td><td class="num">$1,500–$30,000 per 8 weeks<br>$130,500 a year</td></tr>
+    </tbody>
+  </table>
+  <p class="small" style="margin-top:12px;">All figures are in US dollars. The 5% and 5% shares, the prices and the cohort sizes are the fixed Autora model, applied the same way to every creator; they are assumptions, not a forecast of your sales.</p>
+</section>
+
+<!-- 4. CONTINUED -->
+<section class="page">
+  <div class="runhead"><span>MONETISATION AUDIT · @easyspanishwithivanna</span><span class="pn">4</span></div>
+  <div class="eyebrow">Section 2, continued</div>
+  <h2>The coaching ranges and the averages</h2>
+  <div class="grid2" style="margin-bottom:14px;">
+    <div class="card calc">
+      <h3>Group coaching</h3>
+      <div class="row"><span>Per cohort, low: 2 × $500</span><b>$1,000</b></div>
+      <div class="row"><span>Per cohort, high: 8 × $500</span><b>$4,000</b></div>
+      <div class="row"><span>Places a year: 8 × 6 cohorts</span><b>48</b></div>
+      <div class="row"><span>87 buyers fill all 48: 48 × $500</span><b>$24,000</b></div>
+    </div>
+    <div class="card calc">
+      <h3>One-to-one coaching</h3>
+      <div class="row"><span>Per 8 weeks, low: 1 × $1,500</span><b>$1,500</b></div>
+      <div class="row"><span>Per 8 weeks, high: 20 × $1,500</span><b>$30,000</b></div>
+      <div class="row"><span>Places a year: 20 × 6 blocks</span><b>120</b></div>
+      <div class="row"><span>Only 87 buyers: 87 × $1,500</span><b>$130,500</b></div>
+    </div>
+  </div>
+  <p class="small" style="color:var(--ink);">With 87 buyers, one-to-one could make you 87 × $1,500 = $130,500 a year, short of the 120 places a full year holds.</p>
+  <div class="card calc" style="margin:12px 0 14px;">
+    <div class="row"><span><strong>Minimum</strong> · ebook sales: 87 × $29</span><b>$2,523</b></div>
+    <div class="row"><span><strong>Maximum</strong> · one-to-one year (larger than group $24,000 and course $17,400)</span><b>$130,500</b></div>
+    <div class="row"><span><strong>Median</strong> · figures in order $2,500, $2,523, $15,750, $17,400; middle two: ($2,523 + $15,750) ÷ 2</span><b>$9,136.50</b></div>
+    <div class="row"><span><strong>Mean</strong> · ($2,523 + $17,400 + $2,500 + $15,750) ÷ 4 = $38,173 ÷ 4</span><b>$9,543.25</b></div>
+    <div class="row"><span><strong>Mid-range</strong> · ($2,523 + $130,500) ÷ 2</span><b>$66,511.50</b></div>
+  </div>
+  <p class="small">The median and mean count each coaching product at the middle of its 8-week range: group $2,500 (midway between $1,000 and $4,000) and one-to-one $15,750 (midway between $1,500 and $30,000). All are estimates.</p>
+  <div class="chart card" style="padding:10px 12px;">
+    <svg viewBox="0 0 640 196" role="img" aria-label="Revenue by product on a shared scale">
+      <g font-family="Poppins, Arial, sans-serif" fill="#1F3D2B">
+        <line x1="200" y1="22" x2="200" y2="176" stroke="#DCD3C2"/>
+        <line x1="350" y1="22" x2="350" y2="176" stroke="#DCD3C2" stroke-dasharray="2 3"/>
+        <line x1="500" y1="22" x2="500" y2="176" stroke="#DCD3C2" stroke-dasharray="2 3"/>
+        <text x="200" y="190" font-size="10" fill="#8A8275" text-anchor="middle">$0</text>
+        <text x="350" y="190" font-size="10" fill="#8A8275" text-anchor="middle">$50,000</text>
+        <text x="500" y="190" font-size="10" fill="#8A8275" text-anchor="middle">$100,000</text>
+        <text x="0" y="44" font-size="12" font-weight="600">Ebook</text>
+        <text x="0" y="57" font-size="10" fill="#8A8275">87 × $29 = $2,523</text>
+        <rect x="200" y="36" width="7.6" height="18" rx="2" fill="#1F3D2B"/>
+        <text x="0" y="82" font-size="12" font-weight="600">Online course</text>
+        <text x="0" y="95" font-size="10" fill="#8A8275">87 × $200 = $17,400</text>
+        <rect x="200" y="74" width="52.2" height="18" rx="2" fill="#1F3D2B"/>
+        <text x="0" y="120" font-size="12" font-weight="600">Group coaching</text>
+        <text x="0" y="133" font-size="10" fill="#8A8275">$1,000–$4,000 · $24,000 a year</text>
+        <rect x="203" y="112" width="69" height="18" rx="2" fill="#8FBF8A" opacity="0.45"/>
+        <rect x="203" y="112" width="9" height="18" rx="2" fill="#4E8A55"/>
+        <text x="278" y="125" font-size="10" fill="#8A8275">a year</text>
+        <text x="0" y="158" font-size="12" font-weight="600">One-to-one coaching</text>
+        <text x="0" y="171" font-size="10" fill="#8A8275">$1,500–$30,000 · $130,500 a year</text>
+        <rect x="204.5" y="150" width="387" height="18" rx="2" fill="#F2C84B" opacity="0.5"/>
+        <rect x="204.5" y="150" width="85.5" height="18" rx="2" fill="#C99A17"/>
+        <text x="296" y="163" font-size="10">a year (87 × $1,500)</text>
+        <text x="210" y="163" font-size="9" fill="#FFFFFF">8 wks</text>
+        <line x1="227.4" y1="22" x2="227.4" y2="176" stroke="#1F3D2B" stroke-width="1.2"/>
+        <line x1="228.6" y1="22" x2="228.6" y2="176" stroke="#C99A17" stroke-width="1.2" stroke-dasharray="3 2"/>
+        <text x="224" y="16" font-size="10" text-anchor="end">median $9,136.50</text>
+        <text x="232" y="16" font-size="10" fill="#9A7410">mean $9,543.25</text>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- 5. LADDER -->
+<section class="page">
+  <div class="runhead"><span>MONETISATION AUDIT · @easyspanishwithivanna</span><span class="pn">5</span></div>
+  <div class="eyebrow">Section 3</div>
+  <h2>The product ladder</h2>
+  <p>Four steps, in price order, each one a bigger version of the same promise: take what your followers already understand and get it out of their mouths in real conversation.</p>
+  <div class="card" style="margin:14px 0;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;"><span class="tag y">Step 1 · Ebook</span><span class="price">$29</span></div>
+    <h3 style="margin-top:8px;">Sound Like a Native: the phrasebook for A1–B1 speakers</h3>
+    <p><strong>What it is:</strong> your “7 phrases to sound like a native” series, your cognate patterns and your Colombia vs Venezuela expressions, gathered into one guide with a real example sentence and a “when you’d actually say this” note for each phrase.</p>
+    <p><strong>Who it is for:</strong> the follower who saves your phrase carousels but freezes when it’s time to use one.</p>
+    <p style="margin:0;"><strong>Revenue (estimate):</strong> 87 × $29 = $2,523. Autora writes it from your own posts; all you do is confirm you’re happy for it to go out.</p>
+  </div>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;"><span class="tag">Step 2 · Online course</span><span class="price">$200</span></div>
+    <h3 style="margin-top:8px;">From Knowing to Speaking: A2–B1 Spanish in Context</h3>
+    <p><strong>What it is:</strong> a video course in the format your audience already knows: a short scene from your everyday life, then the structure inside it (the imperfect, saber + infinitive, ser vs estar, por vs para) and a speaking drill to use it out loud.</p>
+    <p><strong>Who it is for:</strong> learners who have done the grammar and the apps and are tired of being stuck at beginner.</p>
+    <p style="margin:0;"><strong>Revenue (estimate):</strong> 87 × $200 = $17,400.</p>
+  </div>
+</section>
+
+<!-- 6. LADDER CONTINUED -->
+<section class="page">
+  <div class="runhead"><span>MONETISATION AUDIT · @easyspanishwithivanna</span><span class="pn">6</span></div>
+  <div class="eyebrow">Section 3, continued</div>
+  <h2>The product ladder, continued</h2>
+  <div class="card" style="margin-bottom:14px;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;"><span class="tag y">Step 3 · Group coaching</span><span class="price">$500</span></div>
+    <h3 style="margin-top:8px;">Stop Being a Beginner: an 8-week speaking circle</h3>
+    <p><strong>What it is:</strong> 2 to 8 learners at one level, meeting live with you every week for 8 weeks, each week built around one structure and one real situation, with everyone speaking in every session.</p>
+    <p><strong>Who it is for:</strong> A1–A2 or A2–B1 learners who want accountability and a small group to practise with you directly.</p>
+    <p style="margin:0;"><strong>Revenue (estimate):</strong> $1,000 to $4,000 per cohort; six cohorts fill 48 places, so 48 × $500 = $24,000 a year.</p>
+  </div>
+  <div class="card" style="margin-bottom:16px;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;"><span class="tag">Step 4 · One-to-one</span><span class="price">$1,500</span></div>
+    <h3 style="margin-top:8px;">Speak with Ivanna: 8 weeks one-to-one</h3>
+    <p><strong>What it is:</strong> one hour a week with you for 8 weeks, planned around the learner’s own goal: a trip, a partner’s family, work.</p>
+    <p><strong>Who it is for:</strong> the people who already answer your lesson offers, and who want a premium programme rather than single lessons.</p>
+    <p style="margin:0;"><strong>Revenue (estimate):</strong> $1,500 to $30,000 per 8 weeks; with 87 buyers, 87 × $1,500 = $130,500 a year.</p>
+  </div>
+  <table>
+    <thead><tr><th>Product</th><th class="num">Price</th><th>Your time</th><th class="num">Revenue (estimate)</th></tr></thead>
+    <tbody>
+      <tr><td>Ebook</td><td class="num">$29</td><td>A sign-off</td><td class="num">$2,523</td></tr>
+      <tr><td>Online course</td><td class="num">$200</td><td>Filming once</td><td class="num">$17,400</td></tr>
+      <tr><td>Group coaching</td><td class="num">$500</td><td>One session a week per cohort</td><td class="num">$24,000 a year</td></tr>
+      <tr><td>One-to-one</td><td class="num">$1,500</td><td>One hour a week per client</td><td class="num">$130,500 a year</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 7. WHO DOES WHAT -->
+<section class="page">
+  <div class="runhead"><span>MONETISATION AUDIT · @easyspanishwithivanna</span><span class="pn">7</span></div>
+  <div class="eyebrow">Section 4</div>
+  <h2>Who does what</h2>
+  <div class="bubble" style="margin-bottom:22px;background:var(--ink);color:var(--bg);"><p style="margin:0;font-family:var(--display);font-size:20px;">Autora hosts and runs everything. There is nothing to pay upfront: we are paid from a share of what it makes.</p></div>
+  <style>.bubble[style*="var(--ink)"]::after{border-color:var(--ink) transparent transparent transparent;}</style>
+  <table>
+    <thead><tr><th style="width:22%;">Product</th><th style="width:34%;">Your part</th><th>What Autora does</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Ebook</strong></td><td>Confirm you’re happy for it to go out. Next to no work.</td><td>Writes it from your posts, designs it, hosts it, sets up checkout and payments, delivers it and markets it.</td></tr>
+      <tr><td><strong>Online course</strong></td><td>Shoot the lessons and send us the footage.</td><td>Edits it into the course, builds and hosts the platform, handles checkout, payments, delivery and marketing.</td></tr>
+      <tr><td><strong>Group coaching</strong></td><td>Run the weekly live sessions.</td><td>Sales page, booking, payments, onboarding, reminders and marketing for each cohort.</td></tr>
+      <tr><td><strong>One-to-one</strong></td><td>Run the weekly hour with each client.</td><td>Sales page, booking and scheduling, payments, onboarding and marketing.</td></tr>
+    </tbody>
+  </table>
+  <div class="grid2" style="margin-top:20px;">
+    <div class="sticky"><strong>Your part, in one line:</strong> you teach, on camera and live, which is what you already do every week.</div>
+    <div class="card"><strong>Behind the scenes:</strong> the format, the build, the hosting, the checkout, the delivery, the marketing and the backend all sit with Autora.</div>
+  </div>
+</section>
+
+<!-- 8. OFFER DETAIL -->
+<section class="page">
+  <div class="runhead"><span>MONETISATION AUDIT · @easyspanishwithivanna</span><span class="pn">8</span></div>
+  <div class="eyebrow">Section 5</div>
+  <h2>Offer detail</h2>
+  <div class="card" style="margin-bottom:14px;">
+    <span class="tag y">Ebook · $29</span>
+    <h3 style="margin-top:8px;">Sound Like a Native</h3>
+    <ul>
+      <li><strong>Inside:</strong> your native-phrase series in full, the English–Spanish word patterns (-ly → -mente, -ic → -ico/-ica, -ism → -ismo), the common A1–A2 mistakes and the Colombia vs Venezuela expressions, each with an example and when to use it.</li>
+      <li><strong>The promise:</strong> phrases you can say tomorrow, not just recognise.</li>
+      <li><strong>Your part:</strong> confirm you’re happy for it to go out. Autora writes it from your content.</li>
+      <li><strong>First step:</strong> run the test post on page 11; the comments decide which phrases lead.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <span class="tag">Online course · $200</span>
+    <h3 style="margin-top:8px;">From Knowing to Speaking</h3>
+    <ul>
+      <li><strong>Inside:</strong> short modules, each opening with a scene from your life (coffee, the car, the market), then one structure from that scene, then a speak-it-out-loud drill. Separate tracks for A1–A2 and A2–B1, matching your bio.</li>
+      <li><strong>The promise:</strong> the move from beginner to someone who can hold a conversation, using the grammar you already know.</li>
+      <li><strong>Your part:</strong> shoot the lessons and send us the footage. Autora turns it into the course, hosts it, sells it and delivers it.</li>
+      <li><strong>First step:</strong> pick the six structures your “Knowing the rule is one thing” posts already cover and film one scene for each.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 9. OFFER DETAIL CONTINUED -->
+<section class="page">
+  <div class="runhead"><span>MONETISATION AUDIT · @easyspanishwithivanna</span><span class="pn">9</span></div>
+  <div class="eyebrow">Section 5, continued</div>
+  <h2>Offer detail, continued</h2>
+  <div class="card" style="margin-bottom:14px;">
+    <span class="tag y">Group coaching · $500</span>
+    <h3 style="margin-top:8px;">Stop Being a Beginner</h3>
+    <ul>
+      <li><strong>Inside:</strong> 8 weekly live sessions for 2 to 8 people at one level, a theme per week (talking about your past, your routines, your plans, telling a story), and a short task between sessions.</li>
+      <li><strong>The promise:</strong> after 8 weeks, you can tell a story in Spanish without stopping to translate.</li>
+      <li><strong>Your part:</strong> run the sessions. Autora handles the sales page, booking, payments, onboarding and marketing.</li>
+      <li><strong>First step:</strong> choose the level for the first cohort; your bio already names A1–A2 and A2–B1.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <span class="tag">One-to-one · $1,500</span>
+    <h3 style="margin-top:8px;">Speak with Ivanna</h3>
+    <ul>
+      <li><strong>Inside:</strong> an opening call to set one real goal, then one hour a week for 8 weeks, with a short written review after each session.</li>
+      <li><strong>The promise:</strong> a native teacher’s full attention on the conversation you need to be ready for.</li>
+      <li><strong>Your part:</strong> run the weekly hour with each client. Autora handles the sales page, booking, payments, onboarding and marketing.</li>
+      <li><strong>First step:</strong> decide how many hours a week you want to give to it (1 to 20), so we open only that many places.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 10. LAUNCH PLAN -->
+<section class="page">
+  <div class="runhead"><span>MONETISATION AUDIT · @easyspanishwithivanna</span><span class="pn">10</span></div>
+  <div class="eyebrow">Section 6</div>
+  <h2>Launch plan</h2>
+  <p>Three steps, each one built on content that is already working for you.</p>
+  <div class="card" style="margin:14px 0;">
+    <span class="tag y">Step 1 · Week 1</span>
+    <h3 style="margin-top:8px;">Test the demand with your strongest format</h3>
+    <p style="margin:0;">Post part 4 of “7 phrases to sound like a native” (script on the next page), ending with an invitation to comment for the full guide. Your phrase carousels are your best-liked recent posts, so this is the fairest test. Count the comments over 7 days.</p>
+  </div>
+  <div class="card" style="margin-bottom:14px;">
+    <span class="tag">Step 2 · Weeks 2–4</span>
+    <h3 style="margin-top:8px;">Release the ebook to the people who asked</h3>
+    <p style="margin:0;">Autora writes the phrasebook from your series. You reply to everyone who commented, then keep posting phrase and cognate carousels, each pointing to it. Tell your story again in a short reel: it drew your most comments, and it is why people trust a native teacher.</p>
+  </div>
+  <div class="card">
+    <span class="tag y">Step 3 · Weeks 5–8</span>
+    <h3 style="margin-top:8px;">Open the first group cohort and the one-to-one places</h3>
+    <p style="margin:0;">Run a week of “Knowing the rule is one thing” posts on the mistakes you see at A1–A2, then open the first 8-week cohort and a small number of one-to-one places. Ebook buyers hear first. Filming for the course runs alongside.</p>
+  </div>
+</section>
+
+<!-- 11. FIRST POST -->
+<section class="page">
+  <div class="runhead"><span>MONETISATION AUDIT · @easyspanishwithivanna</span><span class="pn">11</span></div>
+  <div class="eyebrow">Section 7</div>
+  <h2>Your first post</h2>
+  <p>A carousel in your own format, testing one thing: do your followers want your phrases gathered in one place? Ready to publish as written.</p>
+  <div class="card" style="margin:14px 0;">
+    <p class="eyebrow" style="margin-bottom:8px;">Slides</p>
+    <ol style="margin:0;padding-left:20px;">
+      <li>7 phrases to sound like a native in Spanish, parte 4</li>
+      <li>¡Qué pena! · How embarrassing! (in Colombia and Venezuela)</li>
+      <li>Estoy limpio/a · I’m broke (in Venezuela)</li>
+      <li>Estaba yo… · Telling a story like a native</li>
+      <li>Supongo que no · I guess not</li>
+      <li>Me tomó años · It took me years</li>
+      <li>Estoy pelado/a · I’m broke (in Colombia)</li>
+      <li>Saber + infinitivo · ¿Sabes manejar? Can you drive?</li>
+      <li>Want all of them in one place? Comment GUÍA</li>
+    </ol>
+  </div>
+  <div class="bubble" style="margin-bottom:18px;">
+    <p class="eyebrow" style="margin-bottom:6px;">Caption</p>
+    <p style="margin:0;">You understand these phrases… but do you actually USE them when you speak?<br><br>Knowing natural expressions is one thing. Remembering them in the middle of a real conversation is another.<br><br>I’m putting every phrase from this series into one short guide, with an example for each one and when a native would actually say it.<br><br>Comment GUÍA and I’ll send it to you first.<br><br>And tell me: which one are you going to use this week?</p>
+  </div>
+  <div class="sticky" style="margin-top:10px;"><strong>How to read the result:</strong> every GUÍA comment is a person asking for the ebook. They are the first people the ebook goes to, and the first to hear about the group cohort.</div>
+</section>
+
+<!-- 12. CLOSING -->
+<section class="page">
+  <div class="runhead"><span>MONETISATION AUDIT · @easyspanishwithivanna</span><span class="pn">12</span></div>
+  <div class="eyebrow">Next steps</div>
+  <h2>What to do next</h2>
+  <div class="card calc" style="margin:14px 0 20px;">
+    <div class="row"><span>1. Post the carousel on page 11 this week.</span></div>
+    <div class="row"><span>2. Send us your phrase posts and confirm you’re happy for the ebook to go out.</span></div>
+    <div class="row"><span>3. Tell us which level you want for the first group cohort and how many one-to-one hours a week you want to give.</span></div>
+  </div>
+  <div class="bubble" style="background:var(--accent2);margin-bottom:28px;">
+    <p style="margin:0;font-family:var(--display);font-size:24px;line-height:1.3;">Reply to this DM and I'll walk you through the numbers and what to build first.</p>
+  </div>
+  <style>.bubble[style*="accent2"]::after{border-color:var(--accent2) transparent transparent transparent;}</style>
+  <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+    <div class="mono">IV</div>
+    <div><strong>Prepared by Euan Grant · Autora AI Automation · October 2026</strong><br><span class="small">for Ivanna, @easyspanishwithivanna</span></div>
+  </div>
+  <p class="small">All figures are estimates in US dollars, based on public profile data and the Autora revenue model set out in this audit; they are not a forecast or a guarantee.</p>
+  <p class="small">How this was made: I build automations, and I used AI for the analysis, which is why this took an evening rather than a fortnight.</p>
+</section>
+</body>
+</html>
