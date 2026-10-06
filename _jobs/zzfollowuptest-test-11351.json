@@ -1,0 +1,1 @@
+{"job_id": "zzfollowuptest-test-11351", "status": "failed", "error": "No follower count: creator.profile.followers is null and audit_text gives none, so the REVENUE MODEL (F, E, B and every figure) can't be computed without inventing numbers. Add the follower count to audit_text (or re-scrape the profile) and re-run."}
